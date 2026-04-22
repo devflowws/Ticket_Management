@@ -1,0 +1,1106 @@
+INFO 2026-04-21 23:01:30,815 autoreload 3924 7444 Watching for file changes with StatReloader
+WARNING 2026-04-21 23:01:44,077 log 3924 13832 "GET / HTTP/1.1" 404 17956
+INFO 2026-04-21 23:01:44,220 log 3924 13832 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 30587
+INFO 2026-04-21 23:01:44,335 log 3924 7396 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 14879
+INFO 2026-04-21 23:01:44,855 log 3924 7396 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2026-04-21 23:01:45,022 log 3924 7396 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4700
+INFO 2026-04-21 23:01:45,342 log 3924 10032 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 14879
+INFO 2026-04-21 23:01:45,357 log 3924 10032 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4700
+WARNING 2026-04-21 23:01:46,246 log 3924 7396 "GET /logo.png HTTP/1.1" 404 18005
+WARNING 2026-04-21 23:01:46,641 log 3924 7396 "GET /favicon.ico HTTP/1.1" 404 18017
+WARNING 2026-04-21 23:01:56,614 log 3924 7396 "GET / HTTP/1.1" 404 17955
+WARNING 2026-04-21 23:01:57,043 log 3924 7396 "GET /logo.png HTTP/1.1" 404 18005
+INFO 2026-04-21 23:02:14,387 log 3924 9256 "GET /swagger/ HTTP/1.1" 200 15680
+INFO 2026-04-21 23:02:14,527 log 3924 9256 "GET /static/drf-yasg/style.css HTTP/1.1" 200 1187
+INFO 2026-04-21 23:02:14,533 log 3924 9256 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 30587
+INFO 2026-04-21 23:02:14,582 log 3924 18908 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 177183
+INFO 2026-04-21 23:02:14,684 log 3924 18908 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-04-21 23:02:14,774 log 3924 9256 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 252451
+INFO 2026-04-21 23:02:14,806 log 3924 19536 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 14879
+INFO 2026-04-21 23:02:14,857 log 3924 9256 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-04-21 23:02:14,876 log 3924 9800 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1510271
+INFO 2026-04-21 23:02:14,901 log 3924 18908 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-04-21 23:02:15,419 log 3924 18908 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2026-04-21 23:02:15,469 log 3924 18908 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4700
+INFO 2026-04-21 23:02:15,739 log 3924 9548 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-04-21 23:02:15,766 log 3924 12044 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 14879
+INFO 2026-04-21 23:02:15,767 log 3924 9548 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4700
+INFO 2026-04-21 23:02:15,770 log 3924 19584 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-04-21 23:02:15,773 log 3924 8276 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-04-21 23:02:15,777 log 3924 7392 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 252451
+INFO 2026-04-21 23:02:15,799 log 3924 16508 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1510271
+WARNING 2026-04-21 23:02:16,767 log 3924 18908 "GET /swagger/logo.png HTTP/1.1" 404 18037
+WARNING 2026-04-21 23:02:17,065 base 3924 18908 view's EmployeeViewSet.get_queryset raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 48, in call_view_method
+    return view_method()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\employees\views.py", line 51, in get_queryset
+    if self.request.user.role == 'employee':
+       ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2026-04-21 23:02:17,073 base 3924 18908 view's TicketLotViewSet.get_queryset raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 48, in call_view_method
+    return view_method()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\tickets\views.py", line 45, in get_queryset
+    if self.request.user.role == 'employee':
+       ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2026-04-21 23:02:17,077 base 3924 18908 view's TicketViewSet.get_queryset raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 48, in call_view_method
+    return view_method()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\tickets\views.py", line 94, in get_queryset
+    if self.request.user.role == 'employee':
+       ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2026-04-21 23:02:17,080 base 3924 18908 view's TicketLotViewSet.get_queryset raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 48, in call_view_method
+    return view_method()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\tickets\views.py", line 45, in get_queryset
+    if self.request.user.role == 'employee':
+       ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2026-04-21 23:02:17,084 base 3924 18908 view's EmployeeViewSet.get_queryset raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 48, in call_view_method
+    return view_method()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\employees\views.py", line 51, in get_queryset
+    if self.request.user.role == 'employee':
+       ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2026-04-21 23:02:17,094 base 3924 18908 view's TicketLotViewSet.get_queryset raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 48, in call_view_method
+    return view_method()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\tickets\views.py", line 45, in get_queryset
+    if self.request.user.role == 'employee':
+       ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2026-04-21 23:02:17,110 base 3924 18908 view's EmployeeViewSet.get_queryset raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 48, in call_view_method
+    return view_method()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\employees\views.py", line 51, in get_queryset
+    if self.request.user.role == 'employee':
+       ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2026-04-21 23:02:17,121 base 3924 18908 view's EmployeeViewSet.get_queryset raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 48, in call_view_method
+    return view_method()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\employees\views.py", line 51, in get_queryset
+    if self.request.user.role == 'employee':
+       ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2026-04-21 23:02:17,132 base 3924 18908 view's TicketLotViewSet.get_queryset raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 48, in call_view_method
+    return view_method()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\tickets\views.py", line 45, in get_queryset
+    if self.request.user.role == 'employee':
+       ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2026-04-21 23:02:17,149 base 3924 18908 view's EmployeeViewSet.get_queryset raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 48, in call_view_method
+    return view_method()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\employees\views.py", line 51, in get_queryset
+    if self.request.user.role == 'employee':
+       ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2026-04-21 23:02:17,152 base 3924 18908 view's TicketLotViewSet.get_queryset raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 48, in call_view_method
+    return view_method()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\tickets\views.py", line 45, in get_queryset
+    if self.request.user.role == 'employee':
+       ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2026-04-21 23:02:17,264 base 3924 18908 view's ExpireTicketsView.get_serializer raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 48, in call_view_method
+    return view_method()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\generics.py", line 112, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\generics.py", line 126, in get_serializer_class
+    assert self.serializer_class is not None, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'ExpireTicketsView' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+WARNING 2026-04-21 23:02:17,268 base 3924 18908 view's ExpireTicketsView.get_serializer raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 48, in call_view_method
+    return view_method()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\generics.py", line 112, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\generics.py", line 126, in get_serializer_class
+    assert self.serializer_class is not None, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'ExpireTicketsView' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+INFO 2026-04-21 23:02:17,380 log 3924 9800 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-04-21 23:02:17,432 log 3924 18908 "GET /swagger/?format=openapi HTTP/1.1" 200 27005
+INFO 2026-04-21 23:02:18,011 log 3924 18908 "GET /__debug__/history_sidebar/?request_id=9261eb06757f4420bc8284614431cf04 HTTP/1.1" 200 10454
+INFO 2026-04-21 23:03:37,250 autoreload 3924 7444 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\employees\views.py changed, reloading.
+INFO 2026-04-21 23:03:39,830 autoreload 14988 17952 Watching for file changes with StatReloader
+INFO 2026-04-21 23:04:02,487 autoreload 14988 17952 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\tickets\views.py changed, reloading.
+INFO 2026-04-21 23:04:04,959 autoreload 5888 18988 Watching for file changes with StatReloader
+INFO 2026-04-21 23:04:22,632 autoreload 5888 18988 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\tickets\serializers.py changed, reloading.
+INFO 2026-04-21 23:04:24,562 autoreload 8120 11400 Watching for file changes with StatReloader
+INFO 2026-04-21 23:05:06,467 autoreload 8120 11400 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\tickets\serializers.py changed, reloading.
+INFO 2026-04-21 23:05:08,379 autoreload 7944 9832 Watching for file changes with StatReloader
+INFO 2026-04-21 23:05:16,351 autoreload 11612 17860 Watching for file changes with StatReloader
+INFO 2026-04-21 23:05:57,358 autoreload 11612 17860 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\tickets\views.py changed, reloading.
+INFO 2026-04-21 23:05:59,937 autoreload 5888 3636 Watching for file changes with StatReloader
+INFO 2026-04-21 23:06:07,752 log 5888 10096 "GET /redoc/ HTTP/1.1" 200 14972
+INFO 2026-04-21 23:06:07,817 log 5888 10096 "GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+INFO 2026-04-21 23:06:07,830 log 5888 10096 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:06:07,836 log 5888 10096 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2026-04-21 23:06:07,842 log 5888 10096 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:06:07,946 log 5888 13476 "GET /static/drf-yasg/redoc-init.js HTTP/1.1" 200 2566
+INFO 2026-04-21 23:06:08,029 log 5888 13984 "GET /static/drf-yasg/redoc/redoc.min.js HTTP/1.1" 200 1042511
+INFO 2026-04-21 23:06:08,155 log 5888 6508 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:06:08,156 log 5888 9952 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:06:08,173 log 5888 6508 "GET /static/drf-yasg/redoc-init.js HTTP/1.1" 200 2566
+INFO 2026-04-21 23:06:08,187 log 5888 9952 "GET /static/drf-yasg/redoc/redoc.min.js HTTP/1.1" 200 1042511
+INFO 2026-04-21 23:06:08,709 log 5888 13476 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2026-04-21 23:06:08,763 log 5888 10096 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:06:08,794 log 5888 9952 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:06:08,837 log 5888 13984 "GET /redoc/?format=openapi HTTP/1.1" 200 27149
+WARNING 2026-04-21 23:06:09,744 log 5888 13984 "GET /redoc/logo.png HTTP/1.1" 404 18029
+INFO 2026-04-21 23:06:11,011 log 5888 13984 "GET /static/drf-yasg/redoc/redoc-logo.png HTTP/1.1" 200 4969
+INFO 2026-04-21 23:06:31,016 log 5888 13984 "GET /swagger/ HTTP/1.1" 200 15679
+INFO 2026-04-21 23:06:31,107 log 5888 13984 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+INFO 2026-04-21 23:06:31,109 log 5888 13476 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:06:31,113 log 5888 10096 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:06:31,114 log 5888 8972 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:06:31,121 log 5888 10900 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:06:31,124 log 5888 13984 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:06:31,138 log 5888 6508 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:06:31,140 log 5888 17492 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:06:31,140 log 5888 348 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:06:31,138 log 5888 9952 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+WARNING 2026-04-21 23:06:32,819 log 5888 13984 "GET /swagger/logo.png HTTP/1.1" 404 18037
+INFO 2026-04-21 23:06:33,113 log 5888 10900 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 304 0
+INFO 2026-04-21 23:06:33,154 log 5888 13984 "GET /swagger/?format=openapi HTTP/1.1" 200 27149
+INFO 2026-04-21 23:06:33,588 log 5888 13984 "GET /__debug__/history_sidebar/?request_id=7029e52bf9e84536b982d086c38bdddf HTTP/1.1" 200 10454
+WARNING 2026-04-21 23:06:44,694 log 5888 4088 "GET /api/docs/ HTTP/1.1" 404 18009
+INFO 2026-04-21 23:06:44,773 log 5888 4088 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2026-04-21 23:06:44,776 log 5888 5620 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:06:44,894 log 5888 5620 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2026-04-21 23:06:44,930 log 5888 5620 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+WARNING 2026-04-21 23:06:45,291 log 5888 5620 "GET /api/docs/logo.png HTTP/1.1" 404 18042
+INFO 2026-04-21 23:06:46,520 log 5888 796 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:06:46,521 log 5888 6264 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:07:00,926 log 5888 13984 "GET /swagger/ HTTP/1.1" 200 27149
+INFO 2026-04-21 23:07:01,189 log 5888 13984 "GET /__debug__/history_sidebar/?request_id=9c23279f04fd4f9c8dff744e270f725c HTTP/1.1" 200 10439
+WARNING 2026-04-21 23:08:31,100 log 5888 13984 "POST /api/auth/login/ HTTP/1.1" 400 80
+INFO 2026-04-21 23:08:31,329 log 5888 13984 "GET /__debug__/history_sidebar/?request_id=4517a68cee334674811c9bba47d84bcc HTTP/1.1" 200 10444
+WARNING 2026-04-21 23:09:04,097 log 5888 13984 "GET /api/v1/auth/login/ HTTP/1.1" 404 18045
+INFO 2026-04-21 23:09:04,312 log 5888 13984 "GET /__debug__/history_sidebar/?request_id=d427dd8d5f194ec98a61b368e65ca25a HTTP/1.1" 200 10456
+INFO 2026-04-21 23:09:08,208 log 5888 13984 "GET /swagger/ HTTP/1.1" 200 27149
+INFO 2026-04-21 23:09:08,430 log 5888 13984 "GET /__debug__/history_sidebar/?request_id=1014aa28068f41c4a00e0091cf66f2c9 HTTP/1.1" 200 10439
+INFO 2026-04-21 23:10:45,906 autoreload 5888 3636 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\accounts\views.py changed, reloading.
+INFO 2026-04-21 23:10:49,249 autoreload 16396 8736 Watching for file changes with StatReloader
+INFO 2026-04-21 23:11:13,377 autoreload 16396 8736 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\settings\base.py changed, reloading.
+INFO 2026-04-21 23:12:40,241 autoreload 18496 3452 Watching for file changes with StatReloader
+INFO 2026-04-21 23:13:41,498 autoreload 18496 3452 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\accounts\views.py changed, reloading.
+INFO 2026-04-21 23:13:43,580 autoreload 14628 8736 Watching for file changes with StatReloader
+INFO 2026-04-21 23:13:53,716 autoreload 14628 8736 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\accounts\urls.py changed, reloading.
+INFO 2026-04-21 23:13:55,773 autoreload 18644 6892 Watching for file changes with StatReloader
+INFO 2026-04-21 23:14:03,468 log 18644 10032 "GET /swagger/ HTTP/1.1" 200 15679
+INFO 2026-04-21 23:14:03,561 log 18644 10032 "GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+INFO 2026-04-21 23:14:03,566 log 18644 10796 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+INFO 2026-04-21 23:14:03,571 log 18644 10032 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2026-04-21 23:14:03,574 log 18644 10796 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:14:03,576 log 18644 10032 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:14:03,581 log 18644 10796 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:14:03,583 log 18644 10032 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:14:03,587 log 18644 10796 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:14:03,591 log 18644 10032 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:14:03,893 log 18644 3620 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:14:03,900 log 18644 10140 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:14:03,907 log 18644 20416 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:14:03,908 log 18644 3620 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:14:03,909 log 18644 19964 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:14:03,912 log 18644 6340 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:14:04,215 log 18644 10032 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2026-04-21 23:14:04,226 log 18644 10032 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:14:05,349 log 18644 6340 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+WARNING 2026-04-21 23:14:05,524 log 18644 10032 "GET /swagger/logo.png HTTP/1.1" 404 18037
+INFO 2026-04-21 23:14:06,067 log 18644 10796 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 304 0
+INFO 2026-04-21 23:14:06,654 log 18644 10032 "GET /swagger/?format=openapi HTTP/1.1" 200 95412
+INFO 2026-04-21 23:14:07,497 log 18644 10032 "GET /__debug__/history_sidebar/?request_id=3c06c8db1fa54a94bdd4346062798546 HTTP/1.1" 200 10454
+INFO 2026-04-21 23:14:30,733 log 18644 10032 "GET /swagger/ HTTP/1.1" 200 15679
+WARNING 2026-04-21 23:14:31,215 log 18644 10032 "GET /swagger/logo.png HTTP/1.1" 404 18037
+INFO 2026-04-21 23:14:32,038 log 18644 10032 "GET /swagger/?format=openapi HTTP/1.1" 200 95412
+INFO 2026-04-21 23:14:32,403 log 18644 10032 "GET /__debug__/history_sidebar/?request_id=a6da8d23f2514d7c809051010ab98d33 HTTP/1.1" 200 10454
+WARNING 2026-04-21 23:15:26,411 log 18644 10032 "POST /api/auth/login/ HTTP/1.1" 400 57
+INFO 2026-04-21 23:15:26,635 log 18644 10032 "GET /__debug__/history_sidebar/?request_id=f79ac9a94b3344c692ddffadfd6f0361 HTTP/1.1" 200 10446
+INFO 2026-04-21 23:17:29,462 log 18644 10032 "POST /api/auth/login/ HTTP/1.1" 200 835
+INFO 2026-04-21 23:17:29,674 log 18644 10032 "GET /__debug__/history_sidebar/?request_id=aa1555499e0843ad8b315d9dd9d7d727 HTTP/1.1" 200 10446
+INFO 2026-04-21 23:19:38,209 autoreload 18644 6892 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\settings\dev.py changed, reloading.
+INFO 2026-04-21 23:22:33,393 autoreload 4136 14812 Watching for file changes with StatReloader
+INFO 2026-04-21 23:22:44,264 middleware 4136 11844 ← [92m200[0m POST /api/auth/login/ - 1442.80ms
+INFO 2026-04-21 23:22:44,270 log 4136 11844 "POST /api/auth/login/ HTTP/1.1" 200 835
+INFO 2026-04-21 23:26:28,942 autoreload 4136 14812 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\providers\models.py changed, reloading.
+INFO 2026-04-21 23:26:31,326 autoreload 9560 1484 Watching for file changes with StatReloader
+INFO 2026-04-21 23:26:58,588 autoreload 9560 1484 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\purchases\models.py changed, reloading.
+INFO 2026-04-21 23:27:00,564 autoreload 13640 4652 Watching for file changes with StatReloader
+INFO 2026-04-21 23:27:54,996 autoreload 13640 4652 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\providers\models.py changed, reloading.
+INFO 2026-04-21 23:27:57,351 autoreload 1356 10248 Watching for file changes with StatReloader
+INFO 2026-04-21 23:29:07,214 autoreload 1356 10248 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\providers\admin.py changed, reloading.
+INFO 2026-04-21 23:29:09,797 autoreload 9248 17156 Watching for file changes with StatReloader
+INFO 2026-04-21 23:33:58,291 autoreload 11812 4148 Watching for file changes with StatReloader
+INFO 2026-04-21 23:34:11,977 middleware 11812 3760 ← [92m200[0m GET /swagger/ - 48.41ms
+INFO 2026-04-21 23:34:11,983 log 11812 3760 "GET /swagger/ HTTP/1.1" 200 1704
+INFO 2026-04-21 23:34:12,072 log 11812 3760 "GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+INFO 2026-04-21 23:34:12,073 log 11812 3732 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+INFO 2026-04-21 23:34:12,082 log 11812 3760 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:34:12,085 log 11812 3732 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:34:12,096 log 11812 3760 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:34:12,103 log 11812 3732 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:34:12,106 log 11812 3760 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:34:12,404 log 11812 17832 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:34:12,409 log 11812 17832 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:34:12,409 log 11812 11852 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:34:12,416 log 11812 17832 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:34:12,417 log 11812 11852 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:34:13,770 middleware 11812 3760 ← [91m404[0m GET /swagger/logo.png - 12.37ms
+WARNING 2026-04-21 23:34:13,771 log 11812 3760 Not Found: /swagger/logo.png
+WARNING 2026-04-21 23:34:13,773 log 11812 3760 "GET /swagger/logo.png HTTP/1.1" 404 3938
+INFO 2026-04-21 23:34:14,214 log 11812 3732 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 304 0
+INFO 2026-04-21 23:34:14,792 middleware 11812 3760 ← [92m200[0m GET /swagger/ - 776.79ms
+INFO 2026-04-21 23:34:14,795 log 11812 3760 "GET /swagger/?format=openapi HTTP/1.1" 200 95412
+INFO 2026-04-21 23:35:35,812 autoreload 11812 4148 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\purchases\models.py changed, reloading.
+INFO 2026-04-21 23:35:37,659 autoreload 13832 10352 Watching for file changes with StatReloader
+INFO 2026-04-21 23:36:50,246 autoreload 13832 10352 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\validations\models.py changed, reloading.
+INFO 2026-04-21 23:36:52,537 autoreload 20120 9916 Watching for file changes with StatReloader
+INFO 2026-04-21 23:36:56,592 autoreload 20120 9916 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\validations\models.py changed, reloading.
+INFO 2026-04-21 23:36:58,579 autoreload 5188 10060 Watching for file changes with StatReloader
+INFO 2026-04-21 23:39:46,165 autoreload 12532 11684 Watching for file changes with StatReloader
+INFO 2026-04-21 23:39:54,140 middleware 12532 5968 ← [92m200[0m GET /swagger/ - 47.61ms
+INFO 2026-04-21 23:39:54,144 log 12532 5968 "GET /swagger/ HTTP/1.1" 200 1704
+INFO 2026-04-21 23:39:54,231 log 12532 5968 "GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+INFO 2026-04-21 23:39:54,242 log 12532 19396 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:39:54,243 log 12532 5968 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+INFO 2026-04-21 23:39:54,257 log 12532 19396 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:39:54,257 log 12532 5968 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:39:54,263 log 12532 19396 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:39:54,265 log 12532 5968 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:39:54,564 log 12532 20016 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:39:54,568 log 12532 20016 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:39:54,577 log 12532 20016 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:39:54,579 log 12532 348 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:39:54,588 log 12532 3344 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:39:56,105 middleware 12532 5968 ← [91m404[0m GET /swagger/logo.png - 8.73ms
+WARNING 2026-04-21 23:39:56,106 log 12532 5968 Not Found: /swagger/logo.png
+WARNING 2026-04-21 23:39:56,107 log 12532 5968 "GET /swagger/logo.png HTTP/1.1" 404 3938
+INFO 2026-04-21 23:39:56,638 log 12532 19396 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 304 0
+INFO 2026-04-21 23:39:57,359 middleware 12532 5968 ← [92m200[0m GET /swagger/ - 856.90ms
+INFO 2026-04-21 23:39:57,360 log 12532 5968 "GET /swagger/?format=openapi HTTP/1.1" 200 95412
+INFO 2026-04-21 23:43:12,368 middleware 12532 5968 ← [92m200[0m GET /swagger/ - 4.62ms
+INFO 2026-04-21 23:43:12,370 log 12532 5968 "GET /swagger/ HTTP/1.1" 200 1704
+INFO 2026-04-21 23:43:13,930 middleware 12532 5968 ← [91m404[0m GET /swagger/logo.png - 7.44ms
+WARNING 2026-04-21 23:43:13,931 log 12532 5968 Not Found: /swagger/logo.png
+WARNING 2026-04-21 23:43:13,933 log 12532 5968 "GET /swagger/logo.png HTTP/1.1" 404 3938
+INFO 2026-04-21 23:43:14,954 middleware 12532 5968 ← [92m200[0m GET /swagger/ - 789.12ms
+INFO 2026-04-21 23:43:14,956 log 12532 5968 "GET /swagger/?format=openapi HTTP/1.1" 200 95412
+INFO 2026-04-21 23:44:46,145 middleware 12532 5968 ← [92m200[0m GET /swagger/ - 3.13ms
+INFO 2026-04-21 23:44:46,147 log 12532 5968 "GET /swagger/ HTTP/1.1" 200 1704
+INFO 2026-04-21 23:44:46,681 middleware 12532 5968 ← [91m404[0m GET /swagger/logo.png - 9.66ms
+WARNING 2026-04-21 23:44:46,682 log 12532 5968 Not Found: /swagger/logo.png
+WARNING 2026-04-21 23:44:46,683 log 12532 5968 "GET /swagger/logo.png HTTP/1.1" 404 3938
+INFO 2026-04-21 23:44:47,492 middleware 12532 5968 ← [92m200[0m GET /swagger/ - 741.15ms
+INFO 2026-04-21 23:44:47,494 log 12532 5968 "GET /swagger/?format=openapi HTTP/1.1" 200 95412
+INFO 2026-04-21 23:45:51,507 middleware 12532 5968 ← [92m200[0m GET /swagger/ - 3.52ms
+INFO 2026-04-21 23:45:51,509 log 12532 5968 "GET /swagger/ HTTP/1.1" 200 1704
+INFO 2026-04-21 23:45:51,778 log 12532 5968 "GET /static/drf-yasg/style.css HTTP/1.1" 200 1187
+INFO 2026-04-21 23:45:51,791 log 12532 5968 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 177183
+INFO 2026-04-21 23:45:51,825 log 12532 19692 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 252451
+INFO 2026-04-21 23:45:51,840 log 12532 19692 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-04-21 23:45:51,842 log 12532 5968 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1510271
+INFO 2026-04-21 23:45:51,853 log 12532 19692 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-04-21 23:45:51,854 log 12532 5968 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-04-21 23:45:52,153 log 12532 18272 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 252451
+INFO 2026-04-21 23:45:52,161 log 12532 10880 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-04-21 23:45:52,162 log 12532 18272 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-04-21 23:45:52,173 log 12532 4976 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-04-21 23:45:52,184 log 12532 4128 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1510271
+INFO 2026-04-21 23:45:52,258 middleware 12532 5968 ← [91m404[0m GET /swagger/logo.png - 9.81ms
+WARNING 2026-04-21 23:45:52,259 log 12532 5968 Not Found: /swagger/logo.png
+WARNING 2026-04-21 23:45:52,260 log 12532 5968 "GET /swagger/logo.png HTTP/1.1" 404 3938
+INFO 2026-04-21 23:45:52,531 log 12532 19692 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-04-21 23:45:53,147 middleware 12532 5968 ← [92m200[0m GET /swagger/ - 800.04ms
+INFO 2026-04-21 23:45:53,149 log 12532 5968 "GET /swagger/?format=openapi HTTP/1.1" 200 95412
+INFO 2026-04-22 00:02:28,481 autoreload 18364 9228 Watching for file changes with StatReloader
+INFO 2026-04-22 00:02:36,837 middleware 18364 9520 ← [92m200[0m GET /swagger/ - 44.71ms
+INFO 2026-04-22 00:02:36,841 log 18364 9520 "GET /swagger/ HTTP/1.1" 200 1704
+INFO 2026-04-22 00:02:36,943 log 18364 9520 "GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+INFO 2026-04-22 00:02:36,947 log 18364 9300 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+INFO 2026-04-22 00:02:36,960 log 18364 9520 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:02:36,967 log 18364 9300 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:02:36,968 log 18364 9520 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:02:36,976 log 18364 9300 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:02:37,037 log 18364 18816 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:02:37,380 log 18364 13364 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:02:37,383 log 18364 13364 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:02:37,389 log 18364 13364 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:02:37,397 log 18364 13364 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:02:37,404 log 18364 13364 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:02:38,958 middleware 18364 18816 ← [91m404[0m GET /swagger/logo.png - 15.33ms
+WARNING 2026-04-22 00:02:38,960 log 18364 18816 Not Found: /swagger/logo.png
+WARNING 2026-04-22 00:02:38,962 log 18364 18816 "GET /swagger/logo.png HTTP/1.1" 404 3938
+INFO 2026-04-22 00:02:39,401 log 18364 9300 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 304 0
+INFO 2026-04-22 00:02:40,121 middleware 18364 18816 ← [92m200[0m GET /swagger/ - 930.70ms
+INFO 2026-04-22 00:02:40,122 log 18364 18816 "GET /swagger/?format=openapi HTTP/1.1" 200 95412
+INFO 2026-04-22 00:05:11,560 autoreload 18364 9228 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 00:05:14,081 autoreload 20204 12684 Watching for file changes with StatReloader
+INFO 2026-04-22 00:06:16,790 middleware 20204 3760 ← [92m200[0m GET /swagger/ - 54.10ms
+INFO 2026-04-22 00:06:16,793 log 20204 3760 "GET /swagger/ HTTP/1.1" 200 1704
+INFO 2026-04-22 00:06:18,372 middleware 20204 3760 ← [91m404[0m GET /swagger/logo.png - 10.41ms
+WARNING 2026-04-22 00:06:18,374 log 20204 3760 Not Found: /swagger/logo.png
+WARNING 2026-04-22 00:06:18,375 log 20204 3760 "GET /swagger/logo.png HTTP/1.1" 404 3624
+INFO 2026-04-22 00:06:20,354 middleware 20204 3760 ← [92m200[0m GET /swagger/ - 1760.76ms
+INFO 2026-04-22 00:06:20,356 log 20204 3760 "GET /swagger/?format=openapi HTTP/1.1" 200 214256
+INFO 2026-04-22 00:06:43,788 middleware 20204 3760 ← [92m200[0m GET /swagger/ - 3.13ms
+INFO 2026-04-22 00:06:43,791 log 20204 3760 "GET /swagger/ HTTP/1.1" 200 1704
+INFO 2026-04-22 00:06:44,262 middleware 20204 3760 ← [91m404[0m GET /swagger/logo.png - 12.55ms
+WARNING 2026-04-22 00:06:44,264 log 20204 3760 Not Found: /swagger/logo.png
+WARNING 2026-04-22 00:06:44,266 log 20204 3760 "GET /swagger/logo.png HTTP/1.1" 404 3624
+INFO 2026-04-22 00:06:46,358 middleware 20204 3760 ← [92m200[0m GET /swagger/ - 2018.21ms
+INFO 2026-04-22 00:06:46,361 log 20204 3760 "GET /swagger/?format=openapi HTTP/1.1" 200 214256
+INFO 2026-04-22 00:08:37,900 autoreload 20204 12684 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 00:08:40,250 autoreload 19868 18148 Watching for file changes with StatReloader
+INFO 2026-04-22 00:08:53,339 middleware 19868 19980 ← [92m200[0m GET /swagger/ - 46.08ms
+INFO 2026-04-22 00:08:53,342 log 19868 19980 "GET /swagger/ HTTP/1.1" 200 1703
+INFO 2026-04-22 00:08:55,018 middleware 19868 19980 ← [91m404[0m GET /swagger/logo.png - 12.70ms
+WARNING 2026-04-22 00:08:55,019 log 19868 19980 Not Found: /swagger/logo.png
+WARNING 2026-04-22 00:08:55,020 log 19868 19980 "GET /swagger/logo.png HTTP/1.1" 404 3624
+INFO 2026-04-22 00:08:57,086 middleware 19868 19980 ← [92m200[0m GET /swagger/ - 1837.05ms
+INFO 2026-04-22 00:08:57,087 log 19868 19980 "GET /swagger/?format=openapi HTTP/1.1" 200 214255
+INFO 2026-04-22 00:12:00,162 autoreload 19868 18148 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 00:12:02,819 autoreload 7684 7244 Watching for file changes with StatReloader
+INFO 2026-04-22 00:12:25,308 middleware 7684 18208 ← [92m200[0m GET /swagger/ - 47.95ms
+INFO 2026-04-22 00:12:25,312 log 7684 18208 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-04-22 00:12:25,402 log 7684 1032 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+INFO 2026-04-22 00:12:25,403 log 7684 18208 "GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+INFO 2026-04-22 00:12:25,411 log 7684 1032 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:12:25,413 log 7684 18208 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:12:25,472 log 7684 1032 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:12:25,473 log 7684 18208 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:12:25,497 log 7684 18208 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:12:25,920 middleware 7684 18208 ← [91m404[0m GET /swagger/logo.png - 9.83ms
+WARNING 2026-04-22 00:12:25,922 log 7684 18208 Not Found: /swagger/logo.png
+WARNING 2026-04-22 00:12:25,924 log 7684 18208 "GET /swagger/logo.png HTTP/1.1" 404 4208
+INFO 2026-04-22 00:12:25,979 log 7684 17232 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:12:25,990 log 7684 6328 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:12:25,991 log 7684 8812 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:12:25,993 log 7684 8852 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:12:25,994 log 7684 17232 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:12:26,310 log 7684 1032 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 304 0
+INFO 2026-04-22 00:12:28,123 middleware 7684 18208 ← [92m200[0m GET /swagger/ - 1933.83ms
+INFO 2026-04-22 00:12:28,133 log 7684 18208 "GET /swagger/?format=openapi HTTP/1.1" 200 214253
+INFO 2026-04-22 00:13:06,632 autoreload 6768 16612 Watching for file changes with StatReloader
+INFO 2026-04-22 00:13:12,560 middleware 6768 17504 ← [92m200[0m GET /swagger/ - 45.60ms
+INFO 2026-04-22 00:13:12,564 log 6768 17504 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-04-22 00:13:13,116 middleware 6768 17504 ← [91m404[0m GET /swagger/logo.png - 11.56ms
+WARNING 2026-04-22 00:13:13,117 log 6768 17504 Not Found: /swagger/logo.png
+WARNING 2026-04-22 00:13:13,119 log 6768 17504 "GET /swagger/logo.png HTTP/1.1" 404 4208
+INFO 2026-04-22 00:13:15,117 middleware 6768 17504 ← [92m200[0m GET /swagger/ - 1919.31ms
+INFO 2026-04-22 00:13:15,120 log 6768 17504 "GET /swagger/?format=openapi HTTP/1.1" 200 214253
+INFO 2026-04-22 00:14:33,998 middleware 6768 17504 ← [91m400[0m POST /api/auth/login/ - 1333.26ms
+WARNING 2026-04-22 00:14:33,999 log 6768 17504 Bad Request: /api/auth/login/
+WARNING 2026-04-22 00:14:34,000 log 6768 17504 "POST /api/auth/login/ HTTP/1.1" 400 57
+INFO 2026-04-22 00:15:36,986 middleware 6768 17504 ← [91m400[0m POST /api/auth/login/ - 1287.19ms
+WARNING 2026-04-22 00:15:36,987 log 6768 17504 Bad Request: /api/auth/login/
+WARNING 2026-04-22 00:15:36,988 log 6768 17504 "POST /api/auth/login/ HTTP/1.1" 400 57
+INFO 2026-04-22 00:15:56,283 middleware 6768 17504 ← [91m302[0m GET /admin/ - 39.39ms
+INFO 2026-04-22 00:15:56,285 log 6768 17504 "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-04-22 00:15:57,215 middleware 6768 17504 ← [92m200[0m GET /admin/login/ - 918.70ms
+INFO 2026-04-22 00:15:57,217 log 6768 17504 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4152
+INFO 2026-04-22 00:15:57,530 log 6768 17504 "GET /static/admin/css/base.css HTTP/1.1" 200 23100
+INFO 2026-04-22 00:15:57,560 log 6768 17504 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2026-04-22 00:15:57,590 log 6768 17504 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 3538
+INFO 2026-04-22 00:15:57,626 log 6768 17504 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2026-04-22 00:15:57,648 log 6768 19620 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2026-04-22 00:15:57,660 log 6768 20260 "GET /static/admin/css/responsive.css HTTP/1.1" 200 16273
+INFO 2026-04-22 00:15:58,033 log 6768 20260 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2026-04-22 00:15:58,602 log 6768 3160 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2026-04-22 00:15:58,604 log 6768 6648 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2026-04-22 00:15:59,027 middleware 6768 20260 ← [91m302[0m GET /admin/login/logo.png - 1.41ms
+INFO 2026-04-22 00:15:59,029 log 6768 20260 "GET /admin/login/logo.png HTTP/1.1" 302 0
+INFO 2026-04-22 00:15:59,061 middleware 6768 20260 ← [92m200[0m GET /admin/login/ - 10.53ms
+INFO 2026-04-22 00:15:59,063 log 6768 20260 "GET /admin/login/?next=/admin/login/logo.png HTTP/1.1" 200 4180
+INFO 2026-04-22 00:15:59,352 middleware 6768 20260 ← [91m404[0m GET /favicon.ico - 14.27ms
+WARNING 2026-04-22 00:15:59,358 log 6768 20260 Not Found: /favicon.ico
+WARNING 2026-04-22 00:15:59,363 log 6768 20260 "GET /favicon.ico HTTP/1.1" 404 4193
+INFO 2026-04-22 00:16:05,799 middleware 6768 20260 ← [92m200[0m POST /admin/login/ - 1311.02ms
+INFO 2026-04-22 00:16:05,801 log 6768 20260 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4413
+INFO 2026-04-22 00:16:06,239 middleware 6768 20260 ← [91m302[0m GET /admin/login/logo.png - 1.35ms
+INFO 2026-04-22 00:16:06,241 log 6768 20260 "GET /admin/login/logo.png HTTP/1.1" 302 0
+INFO 2026-04-22 00:16:06,273 middleware 6768 20260 ← [92m200[0m GET /admin/login/ - 9.53ms
+INFO 2026-04-22 00:16:06,275 log 6768 20260 "GET /admin/login/?next=/admin/login/logo.png HTTP/1.1" 200 4180
+INFO 2026-04-22 00:17:25,028 autoreload 7976 100 Watching for file changes with StatReloader
+INFO 2026-04-22 00:17:31,304 middleware 7976 4012 ← [91m302[0m POST /admin/login/ - 1244.02ms
+INFO 2026-04-22 00:17:31,319 log 7976 4012 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2026-04-22 00:17:31,549 middleware 7976 4012 ← [92m200[0m GET /admin/ - 221.19ms
+INFO 2026-04-22 00:17:31,553 log 7976 4012 "GET /admin/ HTTP/1.1" 200 12219
+INFO 2026-04-22 00:17:31,816 log 7976 4012 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2026-04-22 00:17:31,985 log 7976 11980 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 978
+INFO 2026-04-22 00:17:31,986 log 7976 4012 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 593
+INFO 2026-04-22 00:17:32,312 middleware 7976 4012 ← [91m404[0m GET /admin/logo.png - 87.41ms
+WARNING 2026-04-22 00:17:32,322 log 7976 4012 Not Found: /admin/logo.png
+WARNING 2026-04-22 00:17:32,324 log 7976 4012 "GET /admin/logo.png HTTP/1.1" 404 7027
+INFO 2026-04-22 00:17:38,284 middleware 7976 4012 ← [92m200[0m POST /api/auth/login/ - 1335.45ms
+INFO 2026-04-22 00:17:38,285 log 7976 4012 "POST /api/auth/login/ HTTP/1.1" 200 835
+INFO 2026-04-22 00:19:07,641 middleware 7976 4012 ← [91m401[0m POST /api/purchases/ - 9.55ms
+WARNING 2026-04-22 00:19:07,642 log 7976 4012 Unauthorized: /api/purchases/
+WARNING 2026-04-22 00:19:07,643 log 7976 4012 "POST /api/purchases/ HTTP/1.1" 401 58
+INFO 2026-04-22 00:20:59,707 middleware 7976 4012 ← [91m401[0m POST /api/purchases/ - 7.64ms
+WARNING 2026-04-22 00:20:59,708 log 7976 4012 Unauthorized: /api/purchases/
+WARNING 2026-04-22 00:20:59,710 log 7976 4012 "POST /api/purchases/ HTTP/1.1" 401 58
+INFO 2026-04-22 00:23:09,961 middleware 7976 4012 ← [92m200[0m POST /api/auth/login/ - 1354.69ms
+INFO 2026-04-22 00:23:09,963 log 7976 4012 "POST /api/auth/login/ HTTP/1.1" 200 835
+INFO 2026-04-22 00:24:11,705 middleware 7976 4012 ← [91m401[0m POST /api/purchases/ - 7.33ms
+WARNING 2026-04-22 00:24:11,706 log 7976 4012 Unauthorized: /api/purchases/
+WARNING 2026-04-22 00:24:11,707 log 7976 4012 "POST /api/purchases/ HTTP/1.1" 401 58
+INFO 2026-04-22 00:24:23,856 middleware 7976 4012 ← [91m401[0m POST /api/purchases/ - 6.48ms
+WARNING 2026-04-22 00:24:23,857 log 7976 4012 Unauthorized: /api/purchases/
+WARNING 2026-04-22 00:24:23,858 log 7976 4012 "POST /api/purchases/ HTTP/1.1" 401 58
+INFO 2026-04-22 00:25:21,908 middleware 7976 4012 ← [91m401[0m POST /api/purchases/ - 6.79ms
+WARNING 2026-04-22 00:25:21,908 log 7976 4012 Unauthorized: /api/purchases/
+WARNING 2026-04-22 00:25:21,909 log 7976 4012 "POST /api/purchases/ HTTP/1.1" 401 58
+INFO 2026-04-22 00:27:58,507 middleware 7976 4012 ← [91m401[0m GET /api/employees/ - 9.48ms
+WARNING 2026-04-22 00:27:58,509 log 7976 4012 Unauthorized: /api/employees/
+WARNING 2026-04-22 00:27:58,512 log 7976 4012 "GET /api/employees/ HTTP/1.1" 401 58
+INFO 2026-04-22 00:28:07,154 middleware 7976 4012 ← [91m401[0m GET /api/employees/ - 6.41ms
+WARNING 2026-04-22 00:28:07,154 log 7976 4012 Unauthorized: /api/employees/
+WARNING 2026-04-22 00:28:07,155 log 7976 4012 "GET /api/employees/ HTTP/1.1" 401 58
+INFO 2026-04-22 00:28:16,808 middleware 7976 23448 ← [92m200[0m GET /swagger/ - 10.10ms
+INFO 2026-04-22 00:28:16,810 log 7976 23448 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-04-22 00:28:16,896 log 7976 23448 "GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+INFO 2026-04-22 00:28:16,897 log 7976 23452 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+INFO 2026-04-22 00:28:16,907 log 7976 23448 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:28:16,911 log 7976 23452 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:28:16,920 log 7976 23448 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:28:16,921 log 7976 23452 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:28:16,925 log 7976 23448 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:28:17,232 log 7976 23476 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:28:17,235 log 7976 23480 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:28:17,244 log 7976 23484 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:28:17,245 log 7976 23476 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:28:17,250 log 7976 23488 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:28:17,878 middleware 7976 23448 ← [91m404[0m GET /swagger/logo.png - 14.88ms
+WARNING 2026-04-22 00:28:17,878 log 7976 23448 Not Found: /swagger/logo.png
+WARNING 2026-04-22 00:28:17,879 log 7976 23448 "GET /swagger/logo.png HTTP/1.1" 404 4208
+INFO 2026-04-22 00:28:18,227 log 7976 23452 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 304 0
+INFO 2026-04-22 00:28:19,875 middleware 7976 23448 ← [92m200[0m GET /swagger/ - 1710.62ms
+INFO 2026-04-22 00:28:19,877 log 7976 23448 "GET /swagger/?format=openapi HTTP/1.1" 200 214253
+INFO 2026-04-22 00:30:00,760 middleware 7976 23448 ← [91m400[0m POST /api/auth/login/ - 1352.83ms
+WARNING 2026-04-22 00:30:00,761 log 7976 23448 Bad Request: /api/auth/login/
+WARNING 2026-04-22 00:30:00,762 log 7976 23448 "POST /api/auth/login/ HTTP/1.1" 400 57
+INFO 2026-04-22 00:30:25,347 middleware 7976 23448 ← [92m200[0m POST /api/auth/login/ - 1369.28ms
+INFO 2026-04-22 00:30:25,348 log 7976 23448 "POST /api/auth/login/ HTTP/1.1" 200 835
+INFO 2026-04-22 00:31:17,217 middleware 7976 23448 ← [91m401[0m GET /api/employees/ - 6.47ms
+WARNING 2026-04-22 00:31:17,218 log 7976 23448 Unauthorized: /api/employees/
+WARNING 2026-04-22 00:31:17,220 log 7976 23448 "GET /api/employees/ HTTP/1.1" 401 58
+INFO 2026-04-22 00:34:12,799 middleware 7976 23448 ← [92m200[0m GET /api/employees/ - 30.20ms
+INFO 2026-04-22 00:34:12,802 log 7976 23448 "GET /api/employees/ HTTP/1.1" 200 719
+INFO 2026-04-22 00:37:20,463 autoreload 7976 100 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\settings\base.py changed, reloading.
+INFO 2026-04-22 00:37:23,503 autoreload 21292 19912 Watching for file changes with StatReloader
+INFO 2026-04-22 00:38:12,474 autoreload 21292 19912 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 00:38:14,635 autoreload 8644 22552 Watching for file changes with StatReloader
+INFO 2026-04-22 00:38:25,033 middleware 8644 7296 ← [92m200[0m GET /swagger/ - 64.77ms
+INFO 2026-04-22 00:38:25,038 log 8644 7296 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-04-22 00:38:26,634 middleware 8644 7296 ← [91m404[0m GET /swagger/logo.png - 19.20ms
+WARNING 2026-04-22 00:38:26,636 log 8644 7296 Not Found: /swagger/logo.png
+WARNING 2026-04-22 00:38:26,638 log 8644 7296 "GET /swagger/logo.png HTTP/1.1" 404 4208
+INFO 2026-04-22 00:38:28,670 middleware 8644 7296 ← [92m200[0m GET /swagger/ - 1758.69ms
+INFO 2026-04-22 00:38:28,672 log 8644 7296 "GET /swagger/?format=openapi HTTP/1.1" 200 214355
+INFO 2026-04-22 00:39:20,867 middleware 8644 7296 ← [92m200[0m POST /api/auth/login/ - 1523.49ms
+INFO 2026-04-22 00:39:20,868 log 8644 7296 "POST /api/auth/login/ HTTP/1.1" 200 835
+INFO 2026-04-22 00:39:46,847 middleware 8644 7296 ← [91m401[0m GET /api/employees/ - 6.01ms
+WARNING 2026-04-22 00:39:46,848 log 8644 7296 Unauthorized: /api/employees/
+WARNING 2026-04-22 00:39:46,849 log 8644 7296 "GET /api/employees/ HTTP/1.1" 401 58
+INFO 2026-04-22 00:40:32,870 middleware 8644 7296 ← [92m200[0m GET /api/employees/ - 31.49ms
+INFO 2026-04-22 00:40:32,873 log 8644 7296 "GET /api/employees/ HTTP/1.1" 200 719
+INFO 2026-04-22 00:42:58,758 middleware 8644 7296 ← [91m404[0m GET /api_test.html - 60.05ms
+WARNING 2026-04-22 00:42:58,761 log 8644 7296 Not Found: /api_test.html
+WARNING 2026-04-22 00:42:58,762 log 8644 7296 "GET /api_test.html HTTP/1.1" 404 4199
+INFO 2026-04-22 00:43:02,314 middleware 8644 7296 ← [91m404[0m GET /logo.png - 34.86ms
+WARNING 2026-04-22 00:43:02,317 log 8644 7296 Not Found: /logo.png
+WARNING 2026-04-22 00:43:02,319 log 8644 7296 "GET /logo.png HTTP/1.1" 404 4184
+ERROR 2026-04-22 00:44:45,157 log 8644 7296 Internal Server Error: /api/purchases/
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\purchases\views.py", line 49, in create
+    serializer.is_valid(raise_exception=True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\serializers.py", line 225, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\serializers.py", line 456, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\serializers.py", line 515, in to_internal_value
+    validated_value = validate_method(validated_value)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\purchases\serializers.py", line 52, in validate_quantity
+    if not employee.can_request_tickets(value):
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+TypeError: 'bool' object is not callable
+INFO 2026-04-22 00:44:45,163 middleware 8644 7296 ← [91m500[0m POST /api/purchases/ - 285.23ms
+ERROR 2026-04-22 00:44:45,164 log 8644 7296 "POST /api/purchases/ HTTP/1.1" 500 24210
+INFO 2026-04-22 00:45:19,031 autoreload 21520 23100 Watching for file changes with StatReloader
+ERROR 2026-04-22 00:45:27,647 log 21520 20936 Internal Server Error: /api/purchases/
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\purchases\views.py", line 49, in create
+    serializer.is_valid(raise_exception=True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\serializers.py", line 225, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\serializers.py", line 456, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\serializers.py", line 515, in to_internal_value
+    validated_value = validate_method(validated_value)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\purchases\serializers.py", line 52, in validate_quantity
+    if not employee.can_request_tickets(value):
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+TypeError: 'bool' object is not callable
+INFO 2026-04-22 00:45:27,655 middleware 21520 20936 ← [91m500[0m POST /api/purchases/ - 117.91ms
+ERROR 2026-04-22 00:45:27,656 log 21520 20936 "POST /api/purchases/ HTTP/1.1" 500 24210
+INFO 2026-04-22 00:47:57,863 autoreload 21520 23100 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\purchases\serializers.py changed, reloading.
+INFO 2026-04-22 00:47:59,994 autoreload 18104 20272 Watching for file changes with StatReloader
+ERROR 2026-04-22 00:48:33,844 log 18104 6496 Internal Server Error: /api/purchases/
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\purchases\views.py", line 49, in create
+    serializer.is_valid(raise_exception=True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\serializers.py", line 225, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\serializers.py", line 456, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\serializers.py", line 515, in to_internal_value
+    validated_value = validate_method(validated_value)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\purchases\serializers.py", line 76, in validate_quantity
+    if not employee.can_request_tickets(value):
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+TypeError: 'bool' object is not callable
+INFO 2026-04-22 00:48:33,851 middleware 18104 6496 ← [91m500[0m POST /api/purchases/ - 117.24ms
+ERROR 2026-04-22 00:48:33,852 log 18104 6496 "POST /api/purchases/ HTTP/1.1" 500 24210
+INFO 2026-04-22 00:48:43,031 middleware 18104 6496 ← [92m200[0m GET /swagger/ - 83.08ms
+INFO 2026-04-22 00:48:43,033 log 18104 6496 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-04-22 00:48:43,150 log 18104 6496 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:48:43,152 log 18104 20832 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:48:43,156 log 18104 6496 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+INFO 2026-04-22 00:48:43,160 log 18104 20832 "GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+INFO 2026-04-22 00:48:43,163 log 18104 6496 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:48:43,165 log 18104 20832 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:48:43,174 log 18104 6496 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:48:43,467 log 18104 13476 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:48:43,473 log 18104 13476 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:48:43,473 log 18104 10948 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:48:43,484 log 18104 10948 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:48:43,485 log 18104 13476 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 00:48:44,744 middleware 18104 6496 ← [91m404[0m GET /swagger/logo.png - 16.39ms
+WARNING 2026-04-22 00:48:44,746 log 18104 6496 Not Found: /swagger/logo.png
+WARNING 2026-04-22 00:48:44,747 log 18104 6496 "GET /swagger/logo.png HTTP/1.1" 404 4208
+INFO 2026-04-22 00:48:45,317 log 18104 20832 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 304 0
+INFO 2026-04-22 00:48:46,833 middleware 18104 6496 ← [92m200[0m GET /swagger/ - 1702.13ms
+INFO 2026-04-22 00:48:46,835 log 18104 6496 "GET /swagger/?format=openapi HTTP/1.1" 200 214355
+INFO 2026-04-22 00:49:35,777 middleware 18104 6496 ← [92m200[0m POST /api/auth/login/ - 1415.96ms
+INFO 2026-04-22 00:49:35,779 log 18104 6496 "POST /api/auth/login/ HTTP/1.1" 200 835
+INFO 2026-04-22 00:50:02,546 middleware 18104 6496 ← [92m200[0m GET /api/employees/ - 50.03ms
+INFO 2026-04-22 00:50:02,547 log 18104 6496 "GET /api/employees/ HTTP/1.1" 200 719
+ERROR 2026-04-22 00:50:49,946 log 18104 6496 Internal Server Error: /api/purchases/
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\purchases\views.py", line 49, in create
+    serializer.is_valid(raise_exception=True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\serializers.py", line 225, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\serializers.py", line 456, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\serializers.py", line 515, in to_internal_value
+    validated_value = validate_method(validated_value)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\purchases\serializers.py", line 76, in validate_quantity
+    if not employee.can_request_tickets(value):
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+TypeError: 'bool' object is not callable
+INFO 2026-04-22 00:50:49,950 middleware 18104 6496 ← [91m500[0m POST /api/purchases/ - 68.03ms
+ERROR 2026-04-22 00:50:49,952 log 18104 6496 "POST /api/purchases/ HTTP/1.1" 500 24210
+INFO 2026-04-22 00:54:00,070 autoreload 18104 20272 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\purchases\models.py changed, reloading.
+INFO 2026-04-22 00:54:04,596 autoreload 21064 19492 Watching for file changes with StatReloader
+INFO 2026-04-22 00:54:33,229 autoreload 21064 19492 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\purchases\models.py changed, reloading.
+INFO 2026-04-22 00:54:39,456 autoreload 21888 7396 Watching for file changes with StatReloader
+INFO 2026-04-22 00:54:45,481 autoreload 21888 7396 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\purchases\models.py changed, reloading.
+INFO 2026-04-22 00:54:50,471 autoreload 21004 22024 Watching for file changes with StatReloader
+INFO 2026-04-22 00:55:02,594 autoreload 21004 22024 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\purchases\models.py changed, reloading.
+INFO 2026-04-22 00:55:09,670 autoreload 16896 20096 Watching for file changes with StatReloader
+INFO 2026-04-22 00:56:22,783 autoreload 16896 20096 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\purchases\models.py changed, reloading.
+INFO 2026-04-22 00:56:28,805 autoreload 20932 9736 Watching for file changes with StatReloader
+INFO 2026-04-22 00:56:46,322 autoreload 20932 9736 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\purchases\models.py changed, reloading.
+INFO 2026-04-22 00:56:54,068 autoreload 13476 5452 Watching for file changes with StatReloader
+INFO 2026-04-22 00:57:39,515 autoreload 13476 5452 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\purchases\models.py changed, reloading.
+INFO 2026-04-22 00:57:43,249 autoreload 9920 21532 Watching for file changes with StatReloader
+INFO 2026-04-22 00:58:51,193 autoreload 9920 21532 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\purchases\models.py changed, reloading.
+INFO 2026-04-22 00:58:55,558 autoreload 2208 22364 Watching for file changes with StatReloader
+INFO 2026-04-22 00:59:45,004 autoreload 10352 20344 Watching for file changes with StatReloader
+INFO 2026-04-22 01:00:11,658 middleware 10352 23412 ← [92m201[0m POST /api/purchases/ - 252.39ms
+INFO 2026-04-22 01:00:11,668 log 10352 23412 "POST /api/purchases/ HTTP/1.1" 201 1203
+INFO 2026-04-22 01:00:56,817 middleware 10352 23412 ← [91m403[0m GET /api/validations/pending/ - 26.79ms
+WARNING 2026-04-22 01:00:56,856 log 10352 23412 Forbidden: /api/validations/pending/
+WARNING 2026-04-22 01:00:56,916 log 10352 23412 "GET /api/validations/pending/ HTTP/1.1" 403 68
+INFO 2026-04-22 01:07:04,850 middleware 10352 13552 ← [92m200[0m POST /api/auth/login/ - 1797.24ms
+INFO 2026-04-22 01:07:04,853 log 10352 13552 "POST /api/auth/login/ HTTP/1.1" 200 873
+INFO 2026-04-22 01:07:57,601 middleware 10352 13552 ← [92m200[0m GET /api/validations/pending/ - 67.40ms
+INFO 2026-04-22 01:07:57,606 log 10352 13552 "GET /api/validations/pending/ HTTP/1.1" 200 247
+INFO 2026-04-22 01:09:35,610 middleware 10352 13552 ← [92m200[0m POST /api/validations/1/approve/ - 151.89ms
+INFO 2026-04-22 01:09:35,613 log 10352 13552 "POST /api/validations/1/approve/ HTTP/1.1" 200 77
+INFO 2026-04-22 01:10:54,245 middleware 10352 13552 ← [92m200[0m POST /api/auth/login/ - 1964.57ms
+INFO 2026-04-22 01:10:54,247 log 10352 13552 "POST /api/auth/login/ HTTP/1.1" 200 835
+INFO 2026-04-22 01:11:58,552 middleware 10352 13552 ← [92m200[0m GET /api/tickets/balance/1/ - 300.23ms
+INFO 2026-04-22 01:11:58,554 log 10352 13552 "GET /api/tickets/balance/1/ HTTP/1.1" 200 188
+INFO 2026-04-22 01:18:04,782 autoreload 10352 20344 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\purchases\models.py changed, reloading.
+INFO 2026-04-22 01:18:11,631 autoreload 3316 23168 Watching for file changes with StatReloader
+INFO 2026-04-22 01:18:30,817 autoreload 3316 23168 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\purchases\models.py changed, reloading.
+INFO 2026-04-22 01:18:37,336 autoreload 20756 20520 Watching for file changes with StatReloader
+INFO 2026-04-22 01:18:56,973 autoreload 20756 20520 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\purchases\models.py changed, reloading.
+INFO 2026-04-22 01:19:01,990 autoreload 14016 11816 Watching for file changes with StatReloader
+INFO 2026-04-22 01:19:51,842 middleware 14016 20268 ← [92m200[0m GET /api/tickets/balance/1/ - 290.92ms
+INFO 2026-04-22 01:19:51,851 log 14016 20268 "GET /api/tickets/balance/1/ HTTP/1.1" 200 188
+INFO 2026-04-22 01:20:49,592 autoreload 14016 11816 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\consumption\models.py changed, reloading.
+INFO 2026-04-22 01:20:54,465 autoreload 13220 22488 Watching for file changes with StatReloader
+INFO 2026-04-22 01:30:07,882 autoreload 6356 21156 Watching for file changes with StatReloader
+INFO 2026-04-22 01:30:13,288 middleware 6356 752 ← [92m200[0m GET /swagger/ - 107.25ms
+INFO 2026-04-22 01:30:13,293 log 6356 752 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-04-22 01:30:13,456 log 6356 752 "GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+INFO 2026-04-22 01:30:13,466 log 6356 8032 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+INFO 2026-04-22 01:30:13,474 log 6356 11812 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-22 01:30:13,483 log 6356 8032 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 01:30:13,486 log 6356 752 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-22 01:30:13,491 log 6356 11812 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 01:30:13,515 log 6356 8032 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-22 01:30:13,828 log 6356 20636 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-22 01:30:13,844 log 6356 20636 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 01:30:13,849 log 6356 4448 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-22 01:30:13,859 log 6356 21312 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-22 01:30:13,866 log 6356 21816 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 01:30:16,446 middleware 6356 8032 ← [91m404[0m GET /swagger/logo.png - 34.00ms
+WARNING 2026-04-22 01:30:16,449 log 6356 8032 Not Found: /swagger/logo.png
+WARNING 2026-04-22 01:30:16,452 log 6356 8032 "GET /swagger/logo.png HTTP/1.1" 404 4368
+INFO 2026-04-22 01:30:17,326 log 6356 11812 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 304 0
+INFO 2026-04-22 01:30:19,998 middleware 6356 8032 ← [92m200[0m GET /swagger/ - 3040.50ms
+INFO 2026-04-22 01:30:20,002 log 6356 8032 "GET /swagger/?format=openapi HTTP/1.1" 200 219885
+INFO 2026-04-22 01:32:06,244 middleware 6356 8032 ← [92m200[0m POST /api/auth/login/ - 2591.69ms
+INFO 2026-04-22 01:32:06,246 log 6356 8032 "POST /api/auth/login/ HTTP/1.1" 200 835
+INFO 2026-04-22 01:32:57,524 middleware 6356 8032 ← [91m401[0m POST /api/consumptions/ - 9.70ms
+WARNING 2026-04-22 01:32:57,525 log 6356 8032 Unauthorized: /api/consumptions/
+WARNING 2026-04-22 01:32:57,527 log 6356 8032 "POST /api/consumptions/ HTTP/1.1" 401 58
+INFO 2026-04-22 01:33:28,340 middleware 6356 8032 ← [91m401[0m POST /api/consumptions/ - 10.78ms
+WARNING 2026-04-22 01:33:28,341 log 6356 8032 Unauthorized: /api/consumptions/
+WARNING 2026-04-22 01:33:28,343 log 6356 8032 "POST /api/consumptions/ HTTP/1.1" 401 58
+INFO 2026-04-22 01:33:55,413 middleware 6356 8032 ← [92m200[0m GET /swagger/ - 17.66ms
+INFO 2026-04-22 01:33:55,416 log 6356 8032 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-04-22 01:33:57,098 middleware 6356 8032 ← [91m404[0m GET /swagger/logo.png - 25.35ms
+WARNING 2026-04-22 01:33:57,100 log 6356 8032 Not Found: /swagger/logo.png
+WARNING 2026-04-22 01:33:57,103 log 6356 8032 "GET /swagger/logo.png HTTP/1.1" 404 4368
+INFO 2026-04-22 01:34:00,805 middleware 6356 8032 ← [92m200[0m GET /swagger/ - 3325.69ms
+INFO 2026-04-22 01:34:00,815 log 6356 8032 "GET /swagger/?format=openapi HTTP/1.1" 200 219885
+INFO 2026-04-22 01:34:50,625 middleware 6356 8032 ← [92m200[0m GET /swagger/ - 19.22ms
+INFO 2026-04-22 01:34:50,629 log 6356 8032 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-04-22 01:34:51,692 middleware 6356 8032 ← [91m404[0m GET /swagger/logo.png - 213.05ms
+WARNING 2026-04-22 01:34:51,695 log 6356 8032 Not Found: /swagger/logo.png
+WARNING 2026-04-22 01:34:51,698 log 6356 8032 "GET /swagger/logo.png HTTP/1.1" 404 4368
+INFO 2026-04-22 01:34:54,822 middleware 6356 8032 ← [92m200[0m GET /swagger/ - 2898.80ms
+INFO 2026-04-22 01:34:54,827 log 6356 8032 "GET /swagger/?format=openapi HTTP/1.1" 200 219885
+INFO 2026-04-22 01:35:35,971 middleware 6356 8032 ← [92m200[0m POST /api/auth/login/ - 1945.64ms
+INFO 2026-04-22 01:35:35,973 log 6356 8032 "POST /api/auth/login/ HTTP/1.1" 200 835
+INFO 2026-04-22 01:37:13,528 middleware 6356 8032 ← [91m400[0m POST /api/consumptions/ - 31.91ms
+WARNING 2026-04-22 01:37:13,532 log 6356 8032 Bad Request: /api/consumptions/
+WARNING 2026-04-22 01:37:13,534 log 6356 8032 "POST /api/consumptions/ HTTP/1.1" 400 75
+INFO 2026-04-22 01:39:08,175 middleware 6356 8032 ← [91m403[0m POST /api/providers/ - 14.96ms
+WARNING 2026-04-22 01:39:08,176 log 6356 8032 Forbidden: /api/providers/
+WARNING 2026-04-22 01:39:08,178 log 6356 8032 "POST /api/providers/ HTTP/1.1" 403 68
+INFO 2026-04-22 01:48:46,783 autoreload 6356 21156 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 01:48:52,069 autoreload 15952 13784 Watching for file changes with StatReloader
+INFO 2026-04-22 01:49:43,006 autoreload 15952 13784 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\settings\base.py changed, reloading.
+INFO 2026-04-22 01:49:47,065 autoreload 22536 23316 Watching for file changes with StatReloader
+INFO 2026-04-22 01:52:36,590 autoreload 10348 16204 Watching for file changes with StatReloader
+INFO 2026-04-22 01:53:15,174 middleware 10348 10020 ← [92m200[0m GET /swagger/ - 100.24ms
+INFO 2026-04-22 01:53:15,185 log 10348 10020 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-04-22 01:53:15,366 log 10348 5004 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+INFO 2026-04-22 01:53:15,374 log 10348 10020 "GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+INFO 2026-04-22 01:53:15,387 log 10348 6508 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-22 01:53:15,403 log 10348 5004 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-22 01:53:15,407 log 10348 10020 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-22 01:53:15,409 log 10348 6508 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 01:53:15,440 log 10348 5004 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 01:53:15,769 log 10348 13136 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-22 01:53:15,793 log 10348 13136 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-22 01:53:15,805 log 10348 3652 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-22 01:53:15,821 log 10348 23376 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 01:53:15,826 log 10348 5748 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 01:53:19,343 middleware 10348 5004 ← [91m404[0m GET /swagger/logo.png - 29.83ms
+WARNING 2026-04-22 01:53:19,345 log 10348 5004 Not Found: /swagger/logo.png
+WARNING 2026-04-22 01:53:19,347 log 10348 5004 "GET /swagger/logo.png HTTP/1.1" 404 4536
+INFO 2026-04-22 01:53:20,983 log 10348 6508 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 304 0
+INFO 2026-04-22 01:53:24,192 middleware 10348 5004 ← [92m200[0m GET /swagger/ - 3595.55ms
+INFO 2026-04-22 01:53:24,197 log 10348 5004 "GET /swagger/?format=openapi HTTP/1.1" 200 237809
+INFO 2026-04-22 01:54:05,925 middleware 10348 5004 ← [92m200[0m POST /api/auth/login/ - 1850.99ms
+INFO 2026-04-22 01:54:05,928 log 10348 5004 "POST /api/auth/login/ HTTP/1.1" 200 835
+INFO 2026-04-22 01:55:32,222 middleware 10348 5004 ← [91m400[0m POST /api/consumption-requests/ - 24.60ms
+WARNING 2026-04-22 01:55:32,227 log 10348 5004 Bad Request: /api/consumption-requests/
+WARNING 2026-04-22 01:55:32,230 log 10348 5004 "POST /api/consumption-requests/ HTTP/1.1" 400 116
+INFO 2026-04-22 01:57:30,170 middleware 10348 5004 ← [91m403[0m POST /api/providers/ - 11.43ms
+WARNING 2026-04-22 01:57:30,171 log 10348 5004 Forbidden: /api/providers/
+WARNING 2026-04-22 01:57:30,173 log 10348 5004 "POST /api/providers/ HTTP/1.1" 403 68
+INFO 2026-04-22 01:58:25,856 middleware 10348 8048 ← [91m400[0m POST /api/auth/login/ - 1706.31ms
+WARNING 2026-04-22 01:58:25,858 log 10348 8048 Bad Request: /api/auth/login/
+WARNING 2026-04-22 01:58:25,859 log 10348 8048 "POST /api/auth/login/ HTTP/1.1" 400 57
+INFO 2026-04-22 01:58:39,040 middleware 10348 8048 ← [91m400[0m POST /api/auth/login/ - 1727.15ms
+WARNING 2026-04-22 01:58:39,041 log 10348 8048 Bad Request: /api/auth/login/
+WARNING 2026-04-22 01:58:39,043 log 10348 8048 "POST /api/auth/login/ HTTP/1.1" 400 57
+INFO 2026-04-22 01:58:48,685 middleware 10348 8048 ← [91m400[0m POST /api/auth/login/ - 2340.17ms
+WARNING 2026-04-22 01:58:48,686 log 10348 8048 Bad Request: /api/auth/login/
+WARNING 2026-04-22 01:58:48,688 log 10348 8048 "POST /api/auth/login/ HTTP/1.1" 400 57
+INFO 2026-04-22 02:00:42,560 autoreload 10348 16204 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\menus\models.py changed, reloading.
+INFO 2026-04-22 02:00:47,512 autoreload 13208 21108 Watching for file changes with StatReloader
+INFO 2026-04-22 02:01:05,112 autoreload 13208 21108 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\orders\models.py changed, reloading.
+INFO 2026-04-22 02:01:09,140 autoreload 20856 3708 Watching for file changes with StatReloader
+INFO 2026-04-22 02:04:05,765 autoreload 20856 3708 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 02:04:09,643 autoreload 4160 20552 Watching for file changes with StatReloader
+INFO 2026-04-22 02:04:14,682 autoreload 4160 20552 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 02:04:18,154 autoreload 22852 8904 Watching for file changes with StatReloader
+INFO 2026-04-22 02:13:18,454 autoreload 21424 3336 Watching for file changes with StatReloader
+INFO 2026-04-22 02:14:36,087 autoreload 21424 3336 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\reporting\models.py changed, reloading.
+INFO 2026-04-22 02:14:39,380 autoreload 18464 20492 Watching for file changes with StatReloader
+INFO 2026-04-22 02:16:44,719 autoreload 18464 20492 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\reporting\models.py changed, reloading.
+INFO 2026-04-22 02:16:48,725 autoreload 5624 21052 Watching for file changes with StatReloader
+INFO 2026-04-22 02:18:20,430 autoreload 5624 21052 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 02:18:24,507 autoreload 18340 19912 Watching for file changes with StatReloader
+INFO 2026-04-22 02:19:52,890 autoreload 7728 21780 Watching for file changes with StatReloader
+INFO 2026-04-22 02:28:50,940 autoreload 7728 21780 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 02:28:57,835 autoreload 5280 17952 Watching for file changes with StatReloader
+INFO 2026-04-22 02:29:20,678 autoreload 5280 17952 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 02:29:23,937 autoreload 15700 4388 Watching for file changes with StatReloader
+INFO 2026-04-22 02:33:12,795 autoreload 15700 4388 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\settings\base.py changed, reloading.
+INFO 2026-04-22 02:33:16,277 autoreload 17016 22908 Watching for file changes with StatReloader
+INFO 2026-04-22 02:33:24,379 autoreload 17016 22908 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\settings\base.py changed, reloading.
+INFO 2026-04-22 02:33:27,673 autoreload 4600 20936 Watching for file changes with StatReloader
+INFO 2026-04-22 02:33:32,684 autoreload 4600 20936 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\settings\base.py changed, reloading.
+INFO 2026-04-22 02:33:35,977 autoreload 21172 16392 Watching for file changes with StatReloader
+INFO 2026-04-22 02:33:53,561 autoreload 21172 16392 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\settings\base.py changed, reloading.
+INFO 2026-04-22 02:33:56,836 autoreload 5692 14644 Watching for file changes with StatReloader
+INFO 2026-04-22 02:34:06,865 autoreload 5692 14644 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\settings\base.py changed, reloading.
+INFO 2026-04-22 02:34:09,853 autoreload 13984 1756 Watching for file changes with StatReloader
+ERROR 2026-04-22 02:34:19,035 log 13984 23520 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py", line 31, in login_view
+    return render(request, 'accounts/login.html')
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\loader_tags.py", line 211, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 176, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'dashboard' not found. 'dashboard' is not a valid view function or pattern name.
+INFO 2026-04-22 02:34:19,055 middleware 13984 23520 ← [91m500[0m GET / - 951.57ms
+ERROR 2026-04-22 02:34:19,059 log 13984 23520 "GET / HTTP/1.1" 500 169776
+INFO 2026-04-22 02:34:22,186 middleware 13984 23520 ← [91m404[0m GET /logo.png - 21.53ms
+WARNING 2026-04-22 02:34:22,188 log 13984 23520 Not Found: /logo.png
+WARNING 2026-04-22 02:34:22,191 log 13984 23520 "GET /logo.png HTTP/1.1" 404 6376
+INFO 2026-04-22 02:35:15,420 autoreload 13984 1756 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 02:35:19,179 autoreload 22824 23460 Watching for file changes with StatReloader
+INFO 2026-04-22 02:36:27,137 autoreload 22824 23460 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\dashboard\views.py changed, reloading.
+INFO 2026-04-22 02:36:31,432 autoreload 7536 23212 Watching for file changes with StatReloader
+ERROR 2026-04-22 02:36:49,157 log 7536 21508 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py", line 31, in login_view
+    return render(request, 'accounts/login.html')
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\loader_tags.py", line 211, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 176, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'my_balance' not found. 'my_balance' is not a valid view function or pattern name.
+INFO 2026-04-22 02:36:49,180 middleware 7536 21508 ← [91m500[0m GET / - 317.59ms
+ERROR 2026-04-22 02:36:49,183 log 7536 21508 "GET / HTTP/1.1" 500 183577
+INFO 2026-04-22 02:36:51,475 middleware 7536 21508 ← [91m404[0m GET /logo.png - 32.94ms
+WARNING 2026-04-22 02:36:51,479 log 7536 21508 Not Found: /logo.png
+WARNING 2026-04-22 02:36:51,482 log 7536 21508 "GET /logo.png HTTP/1.1" 404 6570
+INFO 2026-04-22 02:38:05,161 autoreload 7536 23212 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 02:38:08,981 autoreload 2004 22656 Watching for file changes with StatReloader
+INFO 2026-04-22 02:44:11,406 autoreload 20976 21904 Watching for file changes with StatReloader
+INFO 2026-04-22 02:44:55,955 autoreload 20976 21904 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 02:44:59,649 autoreload 11484 8608 Watching for file changes with StatReloader
+INFO 2026-04-22 02:45:22,964 autoreload 11484 8608 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 02:45:26,071 autoreload 6300 21372 Watching for file changes with StatReloader
+INFO 2026-04-22 02:45:32,819 middleware 6300 3652 ← [92m200[0m GET / - 101.51ms
+INFO 2026-04-22 02:45:32,825 log 6300 3652 "GET / HTTP/1.1" 200 5654
+WARNING 2026-04-22 02:45:33,066 log 6300 20792 "GET /static/img/logo.png HTTP/1.1" 404 1963
+INFO 2026-04-22 02:45:33,111 log 6300 3652 "GET /static/css/main.css HTTP/1.1" 200 2390
+INFO 2026-04-22 02:45:33,922 log 6300 3652 "GET /static/js/main.js HTTP/1.1" 200 978
+INFO 2026-04-22 02:45:34,354 log 6300 876 "GET /static/js/main.js HTTP/1.1" 200 978
+INFO 2026-04-22 02:45:35,620 middleware 6300 3652 ← [91m404[0m GET /logo.png - 23.13ms
+WARNING 2026-04-22 02:45:35,622 log 6300 3652 Not Found: /logo.png
+WARNING 2026-04-22 02:45:35,624 log 6300 3652 "GET /logo.png HTTP/1.1" 404 8214
+INFO 2026-04-22 02:45:45,362 middleware 6300 3652 ← [91m302[0m GET /logout/ - 29.73ms
+INFO 2026-04-22 02:45:45,367 log 6300 3652 "GET /logout/ HTTP/1.1" 302 0
+INFO 2026-04-22 02:45:45,400 middleware 6300 3652 ← [92m200[0m GET /login/ - 4.25ms
+INFO 2026-04-22 02:45:45,403 log 6300 3652 "GET /login/ HTTP/1.1" 200 5012
+WARNING 2026-04-22 02:45:45,734 log 6300 3652 "GET /static/img/logo.png HTTP/1.1" 404 1963
+INFO 2026-04-22 02:45:46,679 middleware 6300 9032 ← [91m404[0m GET /login/logo.png - 21.15ms
+WARNING 2026-04-22 02:45:46,680 log 6300 9032 Not Found: /login/logo.png
+WARNING 2026-04-22 02:45:46,682 log 6300 9032 "GET /login/logo.png HTTP/1.1" 404 8232
+INFO 2026-04-22 02:45:55,434 middleware 6300 9032 ← [91m302[0m GET /logout/ - 1.83ms
+INFO 2026-04-22 02:45:55,436 log 6300 9032 "GET /logout/ HTTP/1.1" 302 0
+INFO 2026-04-22 02:45:55,482 middleware 6300 9032 ← [91m404[0m GET /accounts/login/ - 19.75ms
+WARNING 2026-04-22 02:45:55,484 log 6300 9032 Not Found: /accounts/login/
+WARNING 2026-04-22 02:45:55,489 log 6300 9032 "GET /accounts/login/?next=/logout/ HTTP/1.1" 404 8249
+INFO 2026-04-22 02:45:56,365 middleware 6300 9032 ← [91m404[0m GET /accounts/login/logo.png - 15.00ms
+WARNING 2026-04-22 02:45:56,367 log 6300 9032 Not Found: /accounts/login/logo.png
+WARNING 2026-04-22 02:45:56,369 log 6300 9032 "GET /accounts/login/logo.png HTTP/1.1" 404 8259
+INFO 2026-04-22 02:49:54,040 middleware 6300 9032 ← [91m404[0m GET /api_test.html - 16.49ms
+WARNING 2026-04-22 02:49:54,043 log 6300 9032 Not Found: /api_test.html
+WARNING 2026-04-22 02:49:54,046 log 6300 9032 "GET /api_test.html HTTP/1.1" 404 8229
+INFO 2026-04-22 02:49:56,950 middleware 6300 9032 ← [91m404[0m GET /logo.png - 15.49ms
+WARNING 2026-04-22 02:49:56,952 log 6300 9032 Not Found: /logo.png
+WARNING 2026-04-22 02:49:56,957 log 6300 9032 "GET /logo.png HTTP/1.1" 404 8214
+INFO 2026-04-22 03:10:23,922 autoreload 6300 21372 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 03:10:27,227 autoreload 23356 13984 Watching for file changes with StatReloader
+INFO 2026-04-22 03:11:01,057 autoreload 23356 13984 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 03:11:03,086 autoreload 21608 10964 Watching for file changes with StatReloader
+INFO 2026-04-22 03:11:15,788 autoreload 21608 10964 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 03:11:17,933 autoreload 23520 11052 Watching for file changes with StatReloader
+INFO 2026-04-22 03:12:18,963 autoreload 23520 11052 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 03:12:20,928 autoreload 23256 22488 Watching for file changes with StatReloader
+INFO 2026-04-22 03:12:43,068 autoreload 23256 22488 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 03:12:45,336 autoreload 8056 15800 Watching for file changes with StatReloader
+INFO 2026-04-22 03:12:48,930 autoreload 8056 15800 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 03:12:50,713 autoreload 12784 21540 Watching for file changes with StatReloader
+INFO 2026-04-22 03:13:00,478 autoreload 20064 21800 Watching for file changes with StatReloader
+INFO 2026-04-22 03:13:50,273 autoreload 20064 21800 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 03:13:52,055 autoreload 5344 3636 Watching for file changes with StatReloader
+INFO 2026-04-22 03:13:58,145 autoreload 5344 3636 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 03:14:00,255 autoreload 18556 20516 Watching for file changes with StatReloader
+INFO 2026-04-22 03:14:20,097 autoreload 18556 20516 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 03:14:22,186 autoreload 20344 22648 Watching for file changes with StatReloader
+INFO 2026-04-22 03:14:30,863 log 20344 7268 "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-04-22 03:14:35,970 middleware 20344 22608 ← [92m200[0m GET /login/ - 20.12ms
+INFO 2026-04-22 03:14:35,973 log 20344 22608 "GET /login/ HTTP/1.1" 200 6406
+INFO 2026-04-22 03:14:36,430 middleware 20344 22608 ← [91m404[0m GET /login/logo.png - 13.41ms
+WARNING 2026-04-22 03:14:36,432 log 20344 22608 Not Found: /login/logo.png
+WARNING 2026-04-22 03:14:36,433 log 20344 22608 "GET /login/logo.png HTTP/1.1" 404 8576
+INFO 2026-04-22 03:14:45,792 middleware 20344 22608 ← [92m200[0m GET / - 2.44ms
+INFO 2026-04-22 03:14:45,793 log 20344 22608 "GET / HTTP/1.1" 200 16804
+INFO 2026-04-22 03:14:46,372 middleware 20344 22608 ← [91m404[0m GET /logo.png - 14.39ms
+WARNING 2026-04-22 03:14:46,373 log 20344 22608 Not Found: /logo.png
+WARNING 2026-04-22 03:14:46,374 log 20344 22608 "GET /logo.png HTTP/1.1" 404 8558
+INFO 2026-04-22 03:15:07,853 middleware 20344 22608 ← [92m200[0m GET /register-company/ - 2.12ms
+INFO 2026-04-22 03:15:07,854 log 20344 22608 "GET /register-company/ HTTP/1.1" 200 9406
+INFO 2026-04-22 03:15:08,391 middleware 20344 22608 ← [91m404[0m GET /register-company/logo.png - 8.15ms
+WARNING 2026-04-22 03:15:08,392 log 20344 22608 Not Found: /register-company/logo.png
+WARNING 2026-04-22 03:15:08,393 log 20344 22608 "GET /register-company/logo.png HTTP/1.1" 404 8609
+INFO 2026-04-22 03:15:16,614 middleware 20344 22608 ← [92m200[0m GET /login/ - 1.23ms
+INFO 2026-04-22 03:15:16,616 log 20344 22608 "GET /login/ HTTP/1.1" 200 6406
+INFO 2026-04-22 03:15:17,091 middleware 20344 22608 ← [91m404[0m GET /login/logo.png - 9.23ms
+WARNING 2026-04-22 03:15:17,092 log 20344 22608 Not Found: /login/logo.png
+WARNING 2026-04-22 03:15:17,093 log 20344 22608 "GET /login/logo.png HTTP/1.1" 404 8576
+INFO 2026-04-22 03:17:34,779 middleware 20344 22608 ← [92m200[0m POST /login/ - 1256.33ms
+INFO 2026-04-22 03:17:34,786 log 20344 22608 "POST /login/ HTTP/1.1" 200 6406
+INFO 2026-04-22 03:17:35,189 middleware 20344 22608 ← [91m404[0m GET /login/logo.png - 7.74ms
+WARNING 2026-04-22 03:17:35,190 log 20344 22608 Not Found: /login/logo.png
+WARNING 2026-04-22 03:17:35,192 log 20344 22608 "GET /login/logo.png HTTP/1.1" 404 8576
+INFO 2026-04-22 03:17:42,188 middleware 20344 22608 ← [92m200[0m GET /login/ - 1.14ms
+INFO 2026-04-22 03:17:42,189 log 20344 22608 "GET /login/ HTTP/1.1" 200 6406
+INFO 2026-04-22 03:17:45,145 middleware 20344 22608 ← [92m200[0m GET / - 0.92ms
+INFO 2026-04-22 03:17:45,146 log 20344 22608 "GET / HTTP/1.1" 200 16804
+INFO 2026-04-22 03:17:45,534 middleware 20344 22608 ← [91m404[0m GET /logo.png - 8.52ms
+WARNING 2026-04-22 03:17:45,535 log 20344 22608 Not Found: /logo.png
+WARNING 2026-04-22 03:17:45,537 log 20344 22608 "GET /logo.png HTTP/1.1" 404 8558

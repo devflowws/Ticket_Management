@@ -1,0 +1,8 @@
+<!-- templates/validations/pending.html -->
+{% extends 'base/base.html' %}
+{% block title %}Demandes en attente{% endblock %}
+{% block content %}
+<h1>Demandes en attente de validation</h1>
+<p>Nombre: {{ pending|length }}</p>
+<a href="{% url 'validator_dashboard' %}" class="btn btn-primary">Retour</a>
+{% endblock %}

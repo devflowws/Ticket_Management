@@ -1,0 +1,8 @@
+<!-- templates/orders/list.html -->
+{% extends 'base/base.html' %}
+{% block title %}Mes commandes{% endblock %}
+{% block content %}
+<h1>Mes commandes</h1>
+<p>Nombre de commandes: {{ orders|length }}</p>
+<a href="{% url 'employee_dashboard' %}" class="btn btn-primary">Retour</a>
+{% endblock %}

@@ -1,0 +1,72 @@
+<!-- templates/dashboard/employee_dashboard.html -->
+{% extends 'base/base.html' %}
+{% block title %}Mon tableau de bord{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="h3 mb-4">Bonjour {{ user.get_full_name }}</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card bg-primary text-white">
+            <div class="card-body">
+                <h5>Mon solde de tickets</h5>
+                <h2 class="mb-0">{{ balance }}</h2>
+                <small>Tickets disponibles</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card bg-warning text-white">
+            <div class="card-body">
+                <h5>Demandes en attente</h5>
+                <h2 class="mb-0">{{ pending_purchases }}</h2>
+                <small>En cours de validation</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card bg-success text-white">
+            <div class="card-body">
+                <h5>Quota mensuel</h5>
+                <h2 class="mb-0">{{ employee.remaining_quota }}</h2>
+                <small>Tickets restants ce mois</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Actions rapides
+            </div>
+            <div class="card-body">
+                <a href="{% url 'purchase_request_create' %}" class="btn btn-primary w-100 mb-2">
+                    <i class="fas fa-shopping-cart"></i> Acheter des tickets
+                </a>
+                <a href="{% url 'my_orders' %}" class="btn btn-outline-primary w-100 mb-2">
+                    <i class="fas fa-clipboard-list"></i> Mes commandes
+                </a>
+                <a href="{% url 'my_balance' %}" class="btn btn-outline-secondary w-100">
+                    <i class="fas fa-ticket-alt"></i> Voir mon solde
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Menu du jour
+            </div>
+            <div class="card-body">
+                <p class="text-muted">Aucun menu disponible pour aujourd'hui</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

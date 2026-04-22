@@ -1,0 +1,8 @@
+<!-- templates/tickets/balance.html -->
+{% extends 'base/base.html' %}
+{% block title %}Mon solde{% endblock %}
+{% block content %}
+<h1>Mon solde de tickets</h1>
+<p>Vous avez {{ balance.active_tickets|default:0 }} tickets disponibles</p>
+<a href="{% url 'employee_dashboard' %}" class="btn btn-primary">Retour</a>
+{% endblock %}

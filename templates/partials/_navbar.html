@@ -1,0 +1,27 @@
+<!-- templates/partials/_navbar.html -->
+<nav class="navbar">
+    <div class="navbar-toggle" id="sidebarToggle">
+        <i class="fas fa-bars"></i>
+    </div>
+    
+    <div class="navbar-user">
+        <div class="dropdown">
+            <button class="dropdown-toggle" data-bs-toggle="dropdown">
+                <i class="fas fa-user-circle"></i>
+                <span>{{ user.get_full_name }}</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="{% url 'profile' %}">
+                    <i class="fas fa-user"></i> Mon profil
+                </a></li>
+                <li><a class="dropdown-item" href="{% url 'change_password' %}">
+                    <i class="fas fa-key"></i> Changer mot de passe
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item text-danger" href="{% url 'logout' %}">
+                    <i class="fas fa-sign-out-alt"></i> Déconnexion
+                </a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

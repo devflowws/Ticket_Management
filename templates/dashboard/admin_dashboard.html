@@ -1,0 +1,239 @@
+<!-- templates/dashboard/admin_dashboard.html -->
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Tableau de bord - Admin{% endblock %}
+
+{% block extra_css %}
+<style>
+    .stat-card {
+        background: white;
+        border-radius: 15px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        transition: all 0.3s;
+    }
+    .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .stat-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: white;
+    }
+    .stat-icon.blue { background: linear-gradient(135deg, #667eea, #764ba2); }
+    .stat-icon.green { background: linear-gradient(135deg, #11998e, #38ef7d); }
+    .stat-icon.orange { background: linear-gradient(135deg, #f093fb, #f5576c); }
+    .stat-icon.purple { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+    .stat-value {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #333;
+    }
+    .stat-label {
+        color: #666;
+        font-size: 0.85rem;
+    }
+    .chart-card {
+        background: white;
+        border-radius: 15px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+    .chart-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: #333;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="h3 mb-4">Tableau de bord</h1>
+        <p class="text-muted">Bienvenue, {{ user.get_full_name }} ! Voici l'activité récente.</p>
+    </div>
+</div>
+
+<!-- Statistiques -->
+<div class="row">
+    <div class="col-md-3">
+        <div class="stat-card d-flex justify-content-between align-items-center">
+            <div>
+                <div class="stat-value">{{ employees_count }}</div>
+                <div class="stat-label">Employés actifs</div>
+            </div>
+            <div class="stat-icon blue"><i class="fas fa-users"></i></div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card d-flex justify-content-between align-items-center">
+            <div>
+                <div class="stat-value">{{ providers_count }}</div>
+                <div class="stat-label">Prestataires</div>
+            </div>
+            <div class="stat-icon green"><i class="fas fa-store"></i></div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card d-flex justify-content-between align-items-center">
+            <div>
+                <div class="stat-value">{{ active_tickets }}</div>
+                <div class="stat-label">Tickets actifs</div>
+            </div>
+            <div class="stat-icon orange"><i class="fas fa-ticket-alt"></i></div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card d-flex justify-content-between align-items-center">
+            <div>
+                <div class="stat-value">{{ pending_requests }}</div>
+                <div class="stat-label">Demandes en attente</div>
+            </div>
+            <div class="stat-icon purple"><i class="fas fa-clock"></i></div>
+        </div>
+    </div>
+</div>
+
+<!-- Graphiques -->
+<div class="row">
+    <div class="col-md-8">
+        <div class="chart-card">
+            <div class="chart-title">Évolution des achats de tickets</div>
+            <canvas id="purchasesChart" height="250"></canvas>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="chart-card">
+            <div class="chart-title">Répartition par prestataire</div>
+            <canvas id="providersChart" height="250"></canvas>
+        </div>
+    </div>
+</div>
+
+<!-- Actions rapides -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="chart-card">
+            <div class="chart-title">Actions rapides</div>
+            <div class="row">
+                <div class="col-md-3">
+                    <a href="#" class="btn btn-primary w-100 mb-2">
+                        <i class="fas fa-user-plus"></i> Ajouter employé
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#" class="btn btn-success w-100 mb-2">
+                        <i class="fas fa-store"></i> Ajouter prestataire
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#" class="btn btn-warning w-100 mb-2">
+                        <i class="fas fa-utensils"></i> Gérer menus
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#" class="btn btn-info w-100 mb-2">
+                        <i class="fas fa-chart-line"></i> Voir rapports
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Dernières activités -->
+<div class="row">
+    <div class="col-md-6">
+        <div class="chart-card">
+            <div class="chart-title">Dernières demandes d'achat</div>
+            <div class="table-responsive">
+                <table class="table table-sm">
+                    <thead>
+                        <tr><th>Employé</th><th>Quantité</th><th>Statut</th><th>Date</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Jean Dupont</td><td>10</td><td><span class="badge bg-warning">En attente</span></td><td>15/01/2024</td></tr>
+                        <tr><td>Marie Martin</td><td>5</td><td><span class="badge bg-success">Approuvé</span></td><td>14/01/2024</td></tr>
+                        <tr><td>Paul Durand</td><td>20</td><td><span class="badge bg-danger">Refusé</span></td><td>13/01/2024</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="chart-card">
+            <div class="chart-title">Commandes du jour</div>
+            <div class="table-responsive">
+                <table class="table table-sm">
+                    <thead>
+                        <tr><th>Employé</th><th>Menu</th><th>Statut</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Jean Dupont</td><td>Menu Poisson</td><td><span class="badge bg-success">Livré</span></td></tr>
+                        <tr><td>Marie Martin</td><td>Menu Burger</td><td><span class="badge bg-warning">En préparation</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Graphique des achats
+    const ctx1 = document.getElementById('purchasesChart').getContext('2d');
+    new Chart(ctx1, {
+        type: 'line',
+        data: {
+            labels: {{ months|safe }},
+            datasets: [{
+                label: 'Tickets achetés',
+                data: {{ purchases_data|safe }},
+                borderColor: '#667eea',
+                backgroundColor: 'rgba(102,126,234,0.1)',
+                fill: true,
+                tension: 0.4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: { position: 'bottom' }
+            }
+        }
+    });
+    
+    // Graphique des prestataires
+    const ctx2 = document.getElementById('providersChart').getContext('2d');
+    new Chart(ctx2, {
+        type: 'doughnut',
+        data: {
+            labels: {{ provider_names|safe }},
+            datasets: [{
+                data: {{ consumptions_data|safe }},
+                backgroundColor: ['#667eea', '#11998e', '#f093fb', '#4facfe']
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: { position: 'bottom' }
+            }
+        }
+    });
+</script>
+{% endblock %}

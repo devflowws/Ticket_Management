@@ -1,0 +1,367 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketMeal Pro - Gestion des tickets repas</title>
+    <style>
+        :root {
+            --bg: #f7fafc;
+            --dark: #050b1c;
+            --text: #111827;
+            --muted: #6b7280;
+            --primary: #1ec997;
+            --primary-dark: #10ac7d;
+            --card: #ffffff;
+            --border: #e5e7eb;
+            --radius: 18px;
+            --shadow: 0 18px 50px rgba(12, 19, 34, 0.12);
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { margin: 0; font-family: "Inter", "Segoe UI", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+        .container { width: min(1120px, 92%); margin: 0 auto; }
+        .section { padding: 88px 0; }
+        .section-title { font-size: clamp(32px, 4vw, 52px); margin: 0 0 12px; letter-spacing: -0.02em; }
+        .kicker { color: var(--primary); text-transform: uppercase; font-weight: 700; font-size: 12px; letter-spacing: 0.16em; margin-bottom: 12px; }
+
+        .nav { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(12px); background: rgba(8, 14, 32, 0.9); border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; min-height: 74px; }
+        .brand { display: flex; align-items: center; gap: 10px; color: #fff; font-weight: 700; }
+        .logo { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(130deg, #27dfaa, #0ca678); display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(20,193,143,0.4); }
+        .menu { display: flex; gap: 24px; }
+        .menu a { color: #d1d5db; text-decoration: none; font-weight: 500; }
+        .menu a:hover { color: #fff; }
+        .actions { display: flex; align-items: center; gap: 12px; }
+
+        .btn { display: inline-flex; align-items: center; justify-content: center; border: 1px solid transparent; text-decoration: none; cursor: pointer; border-radius: 12px; padding: 12px 20px; font-weight: 700; transition: .25s ease; }
+        .btn-primary { background: var(--primary); color: #07281f; }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .btn-outline { color: #fff; border-color: rgba(255,255,255,0.26); }
+        .btn-outline:hover { background: rgba(255,255,255,0.12); }
+        .btn-dark { background: #0f172a; color: #fff; }
+        .btn-dark:hover { background: #1d2a45; }
+
+        .hero {
+            min-height: 92vh;
+            color: #fff;
+            background:
+              linear-gradient(180deg, rgba(7, 16, 34, 0.60), rgba(7, 16, 34, 0.84)),
+              radial-gradient(circle at 10% 20%, rgba(21,193,143,0.28), transparent 32%),
+              radial-gradient(circle at 90% 0%, rgba(34,211,238,0.18), transparent 35%),
+              url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80") center/cover no-repeat;
+            display: flex; align-items: center;
+        }
+        .hero-wrap { text-align: center; }
+        .badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 16px; border-radius: 999px; margin-bottom: 22px; border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,0.08); color: #d1fae5; font-weight: 600; font-size: 13px; }
+        .hero h1 { font-size: clamp(44px, 6vw, 86px); line-height: 1.04; margin: 0 0 20px; }
+        .hero h1 span { color: var(--primary); }
+        .hero p { font-size: clamp(17px, 2vw, 23px); color: #d1d5db; max-width: 840px; margin: 0 auto 30px; }
+        .hero-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; margin-bottom: 36px; }
+        .hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+        .stat { border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,0.08); border-radius: 14px; padding: 15px 12px; }
+        .stat .val { font-size: 30px; font-weight: 800; color: #fff; }
+        .stat .lbl { color: #cbd5e1; font-size: 13px; }
+
+        .cards-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 34px; }
+        .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); transition: transform .25s ease; }
+        .card:hover { transform: translateY(-6px); }
+        .icon { width: 44px; height: 44px; border-radius: 11px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 14px; border: 1px solid transparent; }
+        .icon svg { width: 20px; height: 20px; stroke: currentColor; }
+        .card h3 { margin: 0 0 8px; font-size: 20px; }
+        .card p { margin: 0; color: var(--muted); }
+
+        .feature-ticket { color: #31b58d; background: #eafdf7; border-color: #cef8ea; }
+        .feature-orders { color: #e2a325; background: #fff8e8; border-color: #ffebb7; }
+        .feature-validation { color: #2da4cc; background: #eef9ff; border-color: #c8ebfa; }
+        .feature-provider { color: #df4f82; background: #fff1f6; border-color: #ffd6e4; }
+        .feature-reporting { color: #905af0; background: #f3edff; border-color: #e0d2ff; }
+        .feature-mobile { color: #2ca98d; background: #ecfff8; border-color: #cbf6e9; }
+
+        .role-admin { color: #ef476f; background: #fff0f4; border-color: #ffd6df; }
+        .role-employee { color: #1ec997; background: #ecfff8; border-color: #cbf6e9; }
+        .role-validator { color: #eab308; background: #fff9e8; border-color: #fce8b8; }
+        .role-provider { color: #38bdf8; background: #edf8ff; border-color: #cdefff; }
+        .role-finance { color: #8b5cf6; background: #f2edff; border-color: #ddd2ff; }
+
+        .dark-section { background: var(--dark); color: #fff; text-align: center; }
+        .steps { margin-top: 36px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; text-align: left; }
+        .step { border-top: 2px solid rgba(255,255,255,0.16); padding-top: 16px; }
+        .step .num { color: var(--primary); font-weight: 800; margin-bottom: 8px; display: inline-block; }
+        .step h4 { margin: 0 0 8px; font-size: 20px; }
+        .step p { margin: 0; color: #d1d5db; }
+
+        .interface { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; align-items: center; }
+        .checklist { display: grid; gap: 12px; margin: 18px 0 24px; }
+        .check-item { display: flex; gap: 10px; color: #374151; align-items: center; }
+        .check-dot { width: 24px; height: 24px; border-radius: 50%; background: #dcfce7; color: #16a34a; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; }
+
+        .device { border-radius: 20px; min-height: 350px; position: relative; background: linear-gradient(145deg, #dfe9ff, #f0f4ff); border: 1px solid #d4dcff; box-shadow: var(--shadow); padding: 28px; overflow: hidden; }
+        .laptop { margin: 18px auto 0; width: min(420px, 100%); border-radius: 14px; background: #0d172f; border: 6px solid #101e3f; box-shadow: 0 14px 30px rgba(4, 12, 32, 0.35); }
+        .laptop-screen { background: linear-gradient(160deg, #131f3d, #1c2f5f); border-radius: 8px; padding: 16px; color: #e2e8f0; }
+        .bars { display: grid; gap: 10px; margin-top: 12px; }
+        .bar-row { display: grid; grid-template-columns: 88px 1fr; align-items: center; gap: 10px; font-size: 12px; color: #bfdbfe; }
+        .bar { height: 10px; border-radius: 999px; background: rgba(255,255,255,0.12); overflow: hidden; }
+        .bar > span { display: block; height: 100%; border-radius: inherit; }
+        .bar-a { width: 84%; background: linear-gradient(90deg, #22d3ee, #14b8a6); }
+        .bar-b { width: 67%; background: linear-gradient(90deg, #34d399, #10b981); }
+        .bar-c { width: 58%; background: linear-gradient(90deg, #a78bfa, #8b5cf6); }
+
+        .kpi { position: absolute; background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 10px 12px; box-shadow: var(--shadow); min-width: 162px; }
+        .kpi strong { display: block; font-size: 22px; color: #0f172a; }
+        .kpi small { color: #64748b; font-weight: 600; }
+        .kpi.top { top: 16px; right: 16px; border-color: #baf5df; }
+        .kpi.bottom { left: 16px; bottom: 16px; border-color: #cde8ff; }
+
+        .faq-wrap { max-width: 880px; margin: 0 auto; }
+        .faq-item { margin-bottom: 12px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); background: #fff; }
+        .faq-btn { width: 100%; text-align: left; border: 0; background: transparent; cursor: pointer; padding: 18px 20px; font-size: 17px; font-weight: 600; color: #111827; display: flex; justify-content: space-between; align-items: center; }
+        .faq-content { display: none; padding: 0 20px 18px; color: #4b5563; }
+        .faq-item.active .faq-content { display: block; }
+        .faq-item.active .faq-btn span { transform: rotate(45deg); }
+        .faq-btn span { font-size: 24px; color: #6b7280; transition: .2s ease; }
+
+        .cta { background: linear-gradient(130deg, #071022, #0e1f40); color: #fff; border-radius: 24px; padding: 58px 24px; text-align: center; }
+        .cta h2 { margin: 0 0 10px; font-size: clamp(30px, 4vw, 52px); }
+        .cta p { margin: 0 0 24px; color: #d1d5db; }
+        .cta .btn-primary { min-width: 260px; }
+        .cta .btn-outline { min-width: 180px; }
+
+        footer { margin-top: 72px; padding: 22px 0; background: #0d1f2f; color: #d1d5db; border-top: 1px solid rgba(255,255,255,0.08); }
+        .footer-row { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+        .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+        .footer-links a { color: #d1d5db; text-decoration: none; }
+
+        @media (max-width: 1000px) {
+            .menu { display: none; }
+            .hero-stats, .steps, .cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .interface { grid-template-columns: 1fr; }
+            .device { min-height: 390px; }
+        }
+        @media (max-width: 640px) {
+            .actions a:first-child { display: none; }
+            .hero-stats, .steps, .cards-grid { grid-template-columns: 1fr; }
+            .section { padding: 66px 0; }
+            .hero { min-height: 86vh; }
+            .hero h1 { font-size: clamp(34px, 9vw, 48px); }
+            .kpi.top { right: 10px; top: 10px; }
+            .kpi.bottom { left: 10px; bottom: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="nav">
+        <div class="container nav-inner">
+            <div class="brand"><span class="logo">🎟</span> TicketMeal Pro</div>
+            <nav class="menu">
+                <a href="#features">Fonctionnalités</a>
+                <a href="#roles">Rôles</a>
+                <a href="#stats">Statistiques</a>
+                <a href="#faq">FAQ</a>
+                <a href="/api/docs/">API docs</a>
+            </nav>
+            <div class="actions">
+                <a class="btn btn-outline" href="#">Connexion</a>
+                <a class="btn btn-primary" href="#">Commencer gratuitement</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero section">
+        <div class="container hero-wrap">
+            <div class="badge">{{ landing.hero.badge }}</div>
+            <h1>Gérez vos tickets repas <span>sans effort</span></h1>
+            <p>{{ landing.hero.subtitle }}</p>
+            <div class="hero-buttons">
+                <a class="btn btn-primary" href="#cta">{{ landing.hero.cta_primary }}</a>
+                <a class="btn btn-outline" href="#features">{{ landing.hero.cta_secondary }}</a>
+            </div>
+            <div class="hero-stats">
+                {% for stat in landing.hero.stats %}
+                <div class="stat">
+                    <div class="val">{{ stat.value }}</div>
+                    <div class="lbl">{{ stat.label }}</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <div class="container">
+            <div class="kicker" style="text-align:center;">Fonctionnalités</div>
+            <h2 class="section-title" style="text-align:center;">Tout ce dont vous avez besoin</h2>
+            <p style="text-align:center; color: var(--muted); max-width: 700px; margin: 0 auto;">
+                Une solution complète pensée pour simplifier la gestion des repas, de l'achat à la comptabilité.
+            </p>
+            <div class="cards-grid">
+                {% for feature in landing.features %}
+                <article class="card">
+                    <div class="icon
+                        {% if feature.key == 'ticket-management' %}feature-ticket{% endif %}
+                        {% if feature.key == 'meal-orders' %}feature-orders{% endif %}
+                        {% if feature.key == 'request-validation' %}feature-validation{% endif %}
+                        {% if feature.key == 'provider-management' %}feature-provider{% endif %}
+                        {% if feature.key == 'reporting' %}feature-reporting{% endif %}
+                        {% if feature.key == 'mobile-app' %}feature-mobile{% endif %}">
+                        {% if feature.key == 'ticket-management' %}
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M3 8h18v8H3zM8 8V6h8v2M8 16v2h8v-2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        {% elif feature.key == 'meal-orders' %}
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M6 4v8M10 4v8M6 8h4M15 4v8m0 0c0 3 1 6 3 8M18 12c0 3-1 6-3 8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        {% elif feature.key == 'request-validation' %}
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M7 12l3 3 7-7M12 21a9 9 0 100-18 9 9 0 000 18z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        {% elif feature.key == 'provider-management' %}
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M4 20h16M6 20V8l6-4 6 4v12M9 12h6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        {% elif feature.key == 'reporting' %}
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M4 20h16M7 16V9m5 7V5m5 11v-4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        {% else %}
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M9 3h6m-8 3h10a2 2 0 012 2v11a2 2 0 01-2 2H7a2 2 0 01-2-2V8a2 2 0 012-2z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        {% endif %}
+                    </div>
+                    <h3>{{ feature.title }}</h3>
+                    <p>{{ feature.description }}</p>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section dark-section">
+        <div class="container">
+            <div class="kicker">Comment ça marche</div>
+            <h2 class="section-title">Simple en 4 étapes</h2>
+            <div class="steps">
+                {% for step in landing.steps %}
+                <article class="step">
+                    <span class="num">0{{ step.order }}</span>
+                    <h4>{{ step.title }}</h4>
+                    <p>{{ step.description }}</p>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section id="roles" class="section">
+        <div class="container">
+            <div class="kicker" style="text-align:center;">Rôles</div>
+            <h2 class="section-title" style="text-align:center;">Une interface pour chaque profil</h2>
+            <p style="text-align:center; color: var(--muted); max-width: 680px; margin: 0 auto;">
+                Chaque utilisateur accède à une interface adaptée à ses responsabilités.
+            </p>
+            <div class="cards-grid">
+                {% for role in landing.roles %}
+                <article class="card">
+                    <div class="icon
+                        {% if role.key == 'administrator' %}role-admin{% endif %}
+                        {% if role.key == 'employee' %}role-employee{% endif %}
+                        {% if role.key == 'validator' %}role-validator{% endif %}
+                        {% if role.key == 'provider' %}role-provider{% endif %}
+                        {% if role.key == 'finance' %}role-finance{% endif %}">
+                        {% if role.key == 'administrator' %}
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M12 15a4 4 0 100-8 4 4 0 000 8zM4 20a8 8 0 0116 0" stroke-width="1.8" stroke-linecap="round"/></svg>
+                        {% elif role.key == 'employee' %}
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zM5 20a7 7 0 0114 0" stroke-width="1.8" stroke-linecap="round"/></svg>
+                        {% elif role.key == 'validator' %}
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M8 12l3 3 5-6M12 21a9 9 0 100-18 9 9 0 000 18z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        {% elif role.key == 'provider' %}
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M3 10l9-6 9 6v10H3V10zm6 4h6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        {% else %}
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M4 20h16M7 16V9m5 7V5m5 11v-4" stroke-width="1.8" stroke-linecap="round"/></svg>
+                        {% endif %}
+                    </div>
+                    <h3>{{ role.title }}</h3>
+                    <p>{{ role.description }}</p>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section id="stats" class="section">
+        <div class="container interface">
+            <div>
+                <div class="kicker">Interface</div>
+                <h2 class="section-title" style="font-size: clamp(30px, 4vw, 56px);">
+                    Conçu pour être utilisé au quotidien
+                </h2>
+                <p style="color: var(--muted);">
+                    Une interface épurée, rapide et intuitive. Que vous soyez au bureau ou en déplacement, TicketMeal Pro
+                    s'adapte à votre écran et affiche vos indicateurs clés en temps réel.
+                </p>
+                <div class="checklist">
+                    <div class="check-item"><span class="check-dot">✓</span> Tableau de bord en temps réel</div>
+                    <div class="check-item"><span class="check-dot">✓</span> Notifications instantanées</div>
+                    <div class="check-item"><span class="check-dot">✓</span> Export PDF et Excel</div>
+                    <div class="check-item"><span class="check-dot">✓</span> Compatible mobile et desktop</div>
+                </div>
+                <a class="btn btn-dark" href="#cta">Créer mon espace</a>
+            </div>
+            <div class="device">
+                <div class="kpi top"><small>Demandes validées</small><strong>94%</strong></div>
+                <div class="kpi bottom"><small>Taux de satisfaction</small><strong>98%</strong></div>
+                <div class="laptop">
+                    <div class="laptop-screen">
+                        <strong style="font-size:14px; color:#c7d2fe;">Dashboard financier</strong>
+                        <div class="bars">
+                            <div class="bar-row"><span>Repas validés</span><div class="bar"><span class="bar-a"></span></div></div>
+                            <div class="bar-row"><span>Tickets actifs</span><div class="bar"><span class="bar-b"></span></div></div>
+                            <div class="bar-row"><span>Commandes du jour</span><div class="bar"><span class="bar-c"></span></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section">
+        <div class="container faq-wrap">
+            <div class="kicker" style="text-align:center;">FAQ</div>
+            <h2 class="section-title" style="text-align:center;">Questions fréquentes</h2>
+            {% for item in landing.faq %}
+            <div class="faq-item">
+                <button class="faq-btn" type="button">{{ item.question }} <span>+</span></button>
+                <div class="faq-content">{{ item.answer }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section id="cta" class="section">
+        <div class="container">
+            <div class="cta">
+                <h2>{{ landing.cta.title }}</h2>
+                <p>{{ landing.cta.subtitle }}</p>
+                <div class="hero-buttons" style="margin-bottom: 0;">
+                    <a class="btn btn-primary" href="#">{{ landing.cta.cta_primary }}</a>
+                    <a class="btn btn-outline" href="#">{{ landing.cta.cta_secondary }}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-row">
+            <div class="brand"><span class="logo">🎟</span> TicketMeal Pro</div>
+            <div>© 2026 TicketMeal Pro. Tous droits réservés.</div>
+            <div class="footer-links">
+                <a href="#">Confidentialité</a>
+                <a href="#">Conditions</a>
+                <a href="#">Connexion</a>
+                <a href="#">S'inscrire</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const faqItems = document.querySelectorAll(".faq-item");
+        faqItems.forEach((item) => {
+            item.querySelector(".faq-btn").addEventListener("click", () => {
+                faqItems.forEach((other) => { if (other !== item) other.classList.remove("active"); });
+                item.classList.toggle("active");
+            });
+        });
+    </script>
+</body>
+</html>

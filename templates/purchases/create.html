@@ -1,0 +1,25 @@
+<!-- templates/purchases/create.html -->
+{% extends 'base/base.html' %}
+{% block title %}Acheter des tickets{% endblock %}
+{% block content %}
+<h1>Demande d'achat de tickets</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label>Nombre de tickets</label>
+        <input type="number" name="quantity" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Mode de paiement</label>
+        <select name="payment_method" class="form-control">
+            <option value="moov">Moov Money</option>
+            <option value="mixx_by_yas">Mixx By Yas</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label>Référence de paiement</label>
+        <input type="text" name="payment_reference" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Envoyer la demande</button>
+</form>
+{% endblock %}

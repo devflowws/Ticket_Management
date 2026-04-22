@@ -1,0 +1,105 @@
+<!-- templates/partials/_sidebar.html -->
+{% load static %}
+<nav class="sidebar">
+    <div class="sidebar-header">
+        <img src="{% static 'img/logo.png' %}" alt="Logo" class="logo">
+        <h3>Ticket Manager</h3>
+    </div>
+    
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link" href="
+                {% if user.role == 'admin' %}{% url 'admin_dashboard' %}
+                {% elif user.role == 'employee' %}{% url 'employee_dashboard' %}
+                {% elif user.role == 'validator' %}{% url 'validator_dashboard' %}
+                {% elif user.role == 'finance' %}{% url 'finance_dashboard' %}
+                {% else %}{% url 'login' %}
+                {% endif %}">
+                <i class="fas fa-tachometer-alt"></i> Tableau de bord
+            </a>
+        </li>
+        
+        {% if user.role == 'admin' %}
+        <li class="nav-section">Gestion</li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fas fa-users"></i> Employés
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'provider_list' %}">
+                <i class="fas fa-store"></i> Prestataires
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'menu_list' %}">
+                <i class="fas fa-utensils"></i> Menus
+            </a>
+        </li>
+        {% endif %}
+        
+        {% if user.role == 'employee' %}
+        <li class="nav-section">Mes Tickets</li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'my_balance' %}">
+                <i class="fas fa-ticket-alt"></i> Mon solde
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'purchase_request_create' %}">
+                <i class="fas fa-shopping-cart"></i> Acheter des tickets
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'my_orders' %}">
+                <i class="fas fa-clipboard-list"></i> Mes commandes
+            </a>
+        </li>
+        {% endif %}
+        
+        {% if user.role == 'validator' %}
+        <li class="nav-section">Validations</li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'pending_validations' %}">
+                <i class="fas fa-check-circle"></i> Demandes en attente
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'validation_history' %}">
+                <i class="fas fa-history"></i> Historique
+            </a>
+        </li>
+        {% endif %}
+        
+        {% if user.role == 'finance' %}
+        <li class="nav-section">Reporting</li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'reports_dashboard' %}">
+                <i class="fas fa-chart-line"></i> Statistiques
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'provider_payment' %}">
+                <i class="fas fa-money-bill"></i> Paiements prestataires
+            </a>
+        </li>
+        {% endif %}
+        
+        <li class="nav-section">Paramètres</li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'profile' %}">
+                <i class="fas fa-user"></i> Mon profil
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'change_password' %}">
+                <i class="fas fa-key"></i> Changer mot de passe
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-danger" href="{% url 'logout' %}">
+                <i class="fas fa-sign-out-alt"></i> Déconnexion
+            </a>
+        </li>
+    </ul>
+</nav>

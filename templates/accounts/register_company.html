@@ -1,0 +1,190 @@
+<!-- templates/accounts/register_company.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription entreprise - TicketManager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .register-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .register-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+        .register-body {
+            padding: 40px;
+        }
+        .form-control, .form-select {
+            border-radius: 10px;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102,126,234,0.25);
+        }
+        .btn-register {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 600;
+            width: 100%;
+        }
+        .btn-register:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102,126,234,0.4);
+        }
+        .step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        .step-title {
+            font-weight: 600;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="register-card">
+                    <div class="register-header">
+                        <h2><i class="fas fa-building"></i> Créer votre espace entreprise</h2>
+                        <p>Inscrivez votre entreprise et commencez à gérer vos tickets repas</p>
+                    </div>
+                    <div class="register-body">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-title">Informations de l'entreprise</div>
+                        </div>
+                        
+                        <form method="post" action="/register-company/">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Nom de l'entreprise</label>
+                                    <input type="text" name="company_name" class="form-control" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Email de l'entreprise</label>
+                                    <input type="email" name="company_email" class="form-control" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Téléphone</label>
+                                    <input type="tel" name="phone" class="form-control" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Secteur d'activité</label>
+                                    <select name="sector" class="form-select">
+                                        <option>Technologie</option>
+                                        <option>Finance</option>
+                                        <option>Commerce</option>
+                                        <option>Santé</option>
+                                        <option>Autre</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label class="form-label">Adresse</label>
+                                    <textarea name="address" class="form-control" rows="2"></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="step mt-4">
+                                <div class="step-number">2</div>
+                                <div class="step-title">Compte administrateur</div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Prénom</label>
+                                    <input type="text" name="first_name" class="form-control" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Nom</label>
+                                    <input type="text" name="last_name" class="form-control" required>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label class="form-label">Email admin</label>
+                                    <input type="email" name="admin_email" class="form-control" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Mot de passe</label>
+                                    <input type="password" name="password" class="form-control" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Confirmer mot de passe</label>
+                                    <input type="password" name="password_confirm" class="form-control" required>
+                                </div>
+                            </div>
+                            
+                            <div class="step mt-4">
+                                <div class="step-number">3</div>
+                                <div class="step-title">Configuration initiale</div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Valeur d'un ticket (FCFA)</label>
+                                    <input type="number" name="ticket_value" class="form-control" value="1000" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Part employé (%)</label>
+                                    <input type="number" name="employee_percentage" class="form-control" value="40" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Quota mensuel par employé</label>
+                                    <input type="number" name="default_quota" class="form-control" value="30" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Validité des tickets (jours)</label>
+                                    <input type="number" name="ticket_validity_days" class="form-control" value="90" required>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-register text-white mt-3">
+                                <i class="fas fa-check-circle"></i> Créer mon espace entreprise
+                            </button>
+                        </form>
+                        
+                        <div class="text-center mt-4">
+                            <p>Déjà inscrit ? <a href="/login/">Se connecter</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

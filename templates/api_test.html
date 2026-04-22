@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test API</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        input, button { padding: 8px; margin: 5px; }
+        input { width: 400px; }
+        button { background: #007bff; color: white; border: none; cursor: pointer; }
+        .result { background: #f4f4f4; padding: 10px; margin-top: 10px; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <h1>Test API - Gestion Tickets</h1>
+    
+    <div>
+        <h3>Connexion</h3>
+        <input type="email" id="email" placeholder="Email" value="hounkpatigedeon4@gmail.com">
+        <input type="password" id="password" placeholder="Mot de passe" value="1234">
+        <button onclick="login()">Se connecter</button>
+        <div id="token_result"></div>
+    </div>
+    
+    <hr>
+    
+    <div>
+        <h3>Token (collez-le ici, Bearer est ajoute automatiquement)</h3>
+        <input type="text" id="token" placeholder="Collez votre token ici" style="width: 500px;">
+        <button onclick="getEmployees()">Liste employes</button>
+        <button onclick="getMyProfile()">Mon profil</button>
+        <button onclick="createPurchase()">Acheter tickets (5)</button>
+        <div id="result" class="result"></div>
+    </div>
+    
+    <script>
+        async function login() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            const response = await fetch('/api/auth/login/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            });
+            
+            const data = await response.json();
+            if (data.access) {
+                document.getElementById('token').value = data.access;
+                document.getElementById('token_result').innerHTML = '✅ Connecte! Token recu';
+            } else {
+                document.getElementById('token_result').innerHTML = JSON.stringify(data, null, 2);
+            }
+        }
+        
+        function getBearerToken() {
+            let token = document.getElementById('token').value;
+            if (!token) return null;
+            if (token.startsWith('Bearer ')) return token;
+            return 'Bearer ' + token;
+        }
+        
+        async function getEmployees() {
+            const auth = getBearerToken();
+            if (!auth) { alert('Connectez-vous d\'abord'); return; }
+            
+            const response = await fetch('/api/employees/', {
+                headers: { 'Authorization': auth }
+            });
+            const data = await response.json();
+            document.getElementById('result').innerHTML = JSON.stringify(data, null, 2);
+        }
+        
+        async function getMyProfile() {
+            const auth = getBearerToken();
+            if (!auth) { alert('Connectez-vous d\'abord'); return; }
+            
+            const response = await fetch('/api/employees/me/', {
+                headers: { 'Authorization': auth }
+            });
+            const data = await response.json();
+            document.getElementById('result').innerHTML = JSON.stringify(data, null, 2);
+        }
+        
+        async function createPurchase() {
+            const auth = getBearerToken();
+            if (!auth) { alert('Connectez-vous d\'abord'); return; }
+            
+            const response = await fetch('/api/purchases/', {
+                method: 'POST',
+                headers: { 
+                    'Authorization': auth,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    quantity: 5,
+                    payment_method: 'moov',
+                    payment_reference: 'TEST123'
+                })
+            });
+            const data = await response.json();
+            document.getElementById('result').innerHTML = JSON.stringify(data, null, 2);
+        }
+    </script>
+</body>
+</html>
