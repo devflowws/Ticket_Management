@@ -18,7 +18,37 @@
                 <i class="fas fa-tachometer-alt"></i> Tableau de bord
             </a>
         </li>
+
+        {% if user.role == 'admin' %}
+        <li class="nav-section">Configuration</li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'quota_config' %}">
+                <i class="fas fa-sliders-h"></i> Quotas et tickets
+            </a>
+        </li>
+        {% endif %}
         
+
+
+        {% if user.role == 'provider' %}
+        <li class="nav-section">Gestion</li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'provider_menus' %}">
+                <i class="fas fa-utensils"></i> Mes menus
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'provider_consumptions' %}">
+                <i class="fas fa-check-circle"></i> Consommations
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'provider_stats' %}">
+                <i class="fas fa-chart-line"></i> Mes statistiques
+            </a>
+        </li>
+        {% endif %}
+
         {% if user.role == 'admin' %}
         <li class="nav-section">Gestion</li>
         <li class="nav-item">

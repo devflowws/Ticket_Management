@@ -6,147 +6,454 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion - TicketManager</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', 'Poppins', sans-serif;
             min-height: 100vh;
             display: flex;
             align-items: center;
-            font-family: 'Segoe UI', sans-serif;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
+        
+        /* Background image floutée */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop');
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px);
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .login-container {
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+            z-index: 1;
+        }
+        
         .login-card {
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border-radius: 30px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
             overflow: hidden;
         }
+        
         .login-header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 30px;
+            padding: 40px 30px;
             text-align: center;
             color: white;
         }
+        
+        .login-header i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .login-header h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .login-header p {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+        
         .login-body {
-            padding: 40px;
+            padding: 40px 35px;
         }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .form-group label i {
+            margin-right: 8px;
+            color: #667eea;
+        }
+        
+        .input-wrapper {
+            position: relative;
+        }
+        
         .form-control {
-            border-radius: 10px;
+            width: 100%;
             padding: 12px 15px;
-            border: 1px solid #e0e0e0;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s;
         }
+        
         .form-control:focus {
             border-color: #667eea;
-            box-shadow: 0 0 0 0.2rem rgba(102,126,234,0.25);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
         }
+        
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #aaa;
+            background: white;
+            padding-left: 8px;
+            transition: all 0.3s;
+        }
+        
+        .password-toggle:hover {
+            color: #667eea;
+        }
+        
         .btn-login {
+            width: 100%;
+            padding: 14px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border: none;
-            padding: 12px;
-            border-radius: 10px;
+            border-radius: 12px;
+            color: white;
             font-weight: 600;
-            width: 100%;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
         }
+        
         .btn-login:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 20px rgba(102,126,234,0.4);
         }
-        .company-selector {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 20px;
+        
+        .login-footer {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
         }
-        .company-item {
+        
+        .login-footer a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+        
+        .login-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .back-link {
+            color: #64748b;
+        }
+        
+        .back-link:hover {
+            color: #667eea;
+        }
+        
+        .alert {
+            padding: 12px 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+        }
+        
+        .alert-danger {
+            background: #fee2e2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+        
+        .alert-success {
+            background: #dcfce7;
+            color: #16a34a;
+            border: 1px solid #bbf7d0;
+        }
+        
+        /* Company selector styling */
+        .company-select {
+            position: relative;
+        }
+        
+        .company-select select {
+            appearance: none;
+            cursor: pointer;
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-size: 1rem;
+            background: white;
+        }
+        
+        .company-select select:focus {
+            border-color: #667eea;
+            outline: none;
+        }
+        
+        .company-select i.fa-chevron-down {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+            pointer-events: none;
+        }
+        
+        /* Search input */
+        .company-search {
+            margin-bottom: 10px;
+        }
+        
+        .company-search input {
+            padding: 10px 12px;
+            font-size: 0.85rem;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            width: 100%;
+        }
+        
+        .company-search input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        /* Role selector */
+        .role-selector {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .role-btn {
+            flex: 1;
             padding: 10px;
-            border-radius: 8px;
+            border: 2px solid #e9ecef;
+            background: white;
+            border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s;
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.85rem;
         }
-        .company-item:hover {
-            background: #e9ecef;
-        }
-        .company-item.active {
+        
+        .role-btn.active {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-color: #667eea;
             color: white;
         }
-        .role-badge {
-            display: inline-block;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-top: 10px;
+        
+        .role-btn i {
+            margin-right: 5px;
         }
-        .role-admin { background: #dc3545; color: white; }
-        .role-employee { background: #28a745; color: white; }
-        .role-validator { background: #ffc107; color: #333; }
-        .role-finance { background: #17a2b8; color: white; }
+        
+        @media (max-width: 576px) {
+            .login-body {
+                padding: 30px 25px;
+            }
+            .login-header {
+                padding: 30px 25px;
+            }
+            .login-header h2 {
+                font-size: 1.5rem;
+            }
+            .role-btn {
+                font-size: 0.7rem;
+                padding: 8px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="login-card">
-                    <div class="login-header">
-                        <i class="fas fa-ticket-alt fa-3x mb-3"></i>
-                        <h2>Bienvenue</h2>
-                        <p>Connectez-vous à votre espace</p>
-                    </div>
-                    <div class="login-body">
-                        <div class="company-selector">
-                            <label class="form-label fw-bold"><i class="fas fa-building"></i> Sélectionnez votre entreprise</label>
-                            <div id="companyList">
-                                <div class="company-item" data-company-id="1">
-                                    <strong>Ma Société SARL</strong><br>
-                                    <small>Abidjan, Côte d'Ivoire</small>
-                                </div>
-                                <div class="company-item" data-company-id="2">
-                                    <strong>Groupe Entreprise SA</strong><br>
-                                    <small>Dakar, Sénégal</small>
-                                </div>
-                                <div class="company-item" data-company-id="3">
-                                    <strong>Startup Innov SARL</strong><br>
-                                    <small>Lomé, Togo</small>
-                                </div>
-                            </div>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <i class="fas fa-ticket-alt"></i>
+                <h2>Bienvenue</h2>
+                <p>Connectez-vous à votre espace de travail</p>
+            </div>
+            <div class="login-body">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                            <i class="fas fa-{% if message.tags == 'success' %}check-circle{% else %}exclamation-circle{% endif %} me-2"></i>
+                            {{ message }}
+                            <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
                         </div>
-                        
-                        <form method="post" action="/login/">
-                            {% csrf_token %}
-                            <input type="hidden" name="company_id" id="selectedCompany" required>
-                            <div class="mb-3">
-                                <label class="form-label"><i class="fas fa-envelope"></i> Email</label>
-                                <input type="email" name="email" class="form-control" placeholder="votre@email.com" required>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label"><i class="fas fa-lock"></i> Mot de passe</label>
-                                <input type="password" name="password" class="form-control" placeholder="••••••••" required>
-                            </div>
-                            <button type="submit" class="btn btn-login text-white">
-                                <i class="fas fa-sign-in-alt"></i> Se connecter
-                            </button>
-                        </form>
-                        
-                        <div class="text-center mt-4">
-                            <p>Pas encore de compte ? <a href="/register-company/">Inscrire mon entreprise</a></p>
-                            <p><a href="#">Mot de passe oublié ?</a></p>
+                    {% endfor %}
+                {% endif %}
+                
+                <!-- Sélecteur de rôle -->
+                <div class="role-selector">
+                    <button type="button" class="role-btn" data-role="admin" id="roleAdminBtn">
+                        <i class="fas fa-user-shield"></i> Administrateur
+                    </button>
+                    <button type="button" class="role-btn" data-role="employee" id="roleEmployeeBtn">
+                        <i class="fas fa-user"></i> Employé
+                    </button>
+                    <button type="button" class="role-btn" data-role="validator" id="roleValidatorBtn">
+                        <i class="fas fa-check-double"></i> Validateur
+                    </button>
+                    <button type="button" class="role-btn" data-role="finance" id="roleFinanceBtn">
+                        <i class="fas fa-chart-pie"></i> Finance
+                    </button>
+                    <button type="button" class="role-btn" data-role="provider" id="roleProviderBtn">
+                        <i class="fas fa-store"></i> Prestataire
+                    </button>
+                </div>
+                
+                <form method="post" id="loginForm">
+                    {% csrf_token %}
+                    <input type="hidden" name="role" id="selectedRole" value="admin">
+                    
+                    <!-- Champ Entreprise (caché par défaut pour admin) -->
+                    <div class="form-group company-select" id="companyField" style="display: none;">
+                        <label><i class="fas fa-building"></i> Entreprise</label>
+                        <div class="company-search">
+                            <input type="text" id="companySearch" class="form-control" placeholder="Rechercher une entreprise...">
+                        </div>
+                        <select name="company_id" id="companySelect" class="form-control">
+                            <option value="">-- Sélectionnez votre entreprise --</option>
+                            {% for company in companies %}
+                            <option value="{{ company.id }}" data-name="{{ company.name }}" data-city="{{ company.city }}">
+                                {{ company.name }} - {{ company.city }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><i class="fas fa-envelope"></i> Email</label>
+                        <div class="input-wrapper">
+                            <input type="email" name="email" id="email" class="form-control" placeholder="exemple@entreprise.com" required>
                         </div>
                     </div>
+                    
+                    <div class="form-group">
+                        <label><i class="fas fa-lock"></i> Mot de passe</label>
+                        <div class="input-wrapper">
+                            <input type="password" name="password" id="password" class="form-control" placeholder="••••••••" required>
+                            <span class="password-toggle" id="togglePassword">
+                                <i class="far fa-eye-slash"></i>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-login">
+                        <i class="fas fa-sign-in-alt me-2"></i> Se connecter
+                    </button>
+                </form>
+                
+                <div class="login-footer">
+                    <a href="/" class="back-link">
+                        <i class="fas fa-arrow-left"></i> Retour à l'accueil
+                    </a>
+                    <a href="#">Mot de passe oublié ?</a>
+                </div>
+                
+                <div class="text-center mt-3">
+                    <p class="mb-0" style="font-size: 0.8rem;">Vous êtes une entreprise ? <a href="/register-company/">Créer mon espace</a></p>
                 </div>
             </div>
         </div>
     </div>
     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Sélection de l'entreprise
-        document.querySelectorAll('.company-item').forEach(item => {
-            item.addEventListener('click', function() {
-                document.querySelectorAll('.company-item').forEach(i => i.classList.remove('active'));
+        // Toggle password visibility
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+        
+        togglePassword.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.querySelector('i').classList.toggle('fa-eye');
+            this.querySelector('i').classList.toggle('fa-eye-slash');
+        });
+        
+        // Role selection
+        const roleBtns = document.querySelectorAll('.role-btn');
+        const companyField = document.getElementById('companyField');
+        const selectedRoleInput = document.getElementById('selectedRole');
+        const companySelect = document.getElementById('companySelect');
+        
+        roleBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all
+                roleBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked
                 this.classList.add('active');
-                document.getElementById('selectedCompany').value = this.dataset.companyId;
+                
+                const role = this.dataset.role;
+                selectedRoleInput.value = role;
+                
+                // Show company field for non-admin roles
+                if (role === 'admin') {
+                    companyField.style.display = 'none';
+                    companySelect.required = false;
+                } else {
+                    companyField.style.display = 'block';
+                    companySelect.required = true;
+                }
             });
         });
+        
+        // Set default active (admin)
+        document.getElementById('roleAdminBtn').classList.add('active');
+        
+        // Company search filter
+        const searchInput = document.getElementById('companySearch');
+        const select = document.getElementById('companySelect');
+        const options = Array.from(select.options);
+        
+        if (searchInput) {
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                options.forEach(option => {
+                    if (option.value === '') return;
+                    const text = option.textContent.toLowerCase();
+                    if (text.includes(searchTerm)) {
+                        option.style.display = '';
+                    } else {
+                        option.style.display = 'none';
+                    }
+                });
+            });
+        }
     </script>
 </body>
 </html>

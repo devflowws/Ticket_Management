@@ -1,4 +1,3 @@
-# config/urls.py - Version simplifiée et stable
 from django.contrib import admin
 from django.urls import path, include, re_path
 from django.conf import settings
@@ -8,16 +7,25 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
-# Import des vues core
-from apps.core.views import login_view, logout_view, profile_view, change_password_view
-
+# Imports des vues core
 from apps.core.views import (
     landing_page, register_company, login_view, logout_view, profile_view, 
     change_password_view, admin_dashboard, employee_dashboard, validator_dashboard, 
-    finance_dashboard, my_balance, purchase_request_create, my_orders, 
-    pending_validations, validation_history, reports_dashboard, provider_payment, 
-    provider_list, menu_list
+    finance_dashboard, provider_dashboard, my_balance, purchase_request_create, 
+    my_orders, pending_validations, validation_history, reports_dashboard, 
+    provider_payment, provider_list, menu_list, order_menu, select_company
 )
+
+# Imports des vues API admin
+from apps.core.api_views import (
+    api_add_user, api_edit_user, api_delete_user,
+    api_add_provider, api_edit_provider, api_delete_provider,
+    api_generate_ticket_lot
+)
+
+
+# Import de quota_config
+from apps.companies.views import quota_config  # Ajouter cette ligne
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -29,69 +37,8 @@ schema_view = get_schema_view(
     permission_classes=(permissions.AllowAny,),
 )
 
-# Vues dashboard (seront importées dynamiquement pour éviter les erreurs)
-def get_dashboard_views():
-    try:
-        from apps.dashboard.views import (
-            admin_dashboard, employee_dashboard, 
-            validator_dashboard, finance_dashboard
-        )
-        return admin_dashboard, employee_dashboard, validator_dashboard, finance_dashboard
-    except ImportError:
-        # Vues par défaut si dashboard n'existe pas
-        from django.shortcuts import render
-        def default_dashboard(request):
-            return render(request, 'base/base.html')
-        return default_dashboard, default_dashboard, default_dashboard, default_dashboard
-
-admin_dash, emp_dash, val_dash, fin_dash = get_dashboard_views()
-
-# Vues supplémentaires
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
-
-@login_required
-def my_balance(request):
-    return render(request, 'tickets/balance.html')
-
-@login_required
-def purchase_request_create(request):
-    return render(request, 'purchases/create.html')
-
-@login_required
-def my_orders(request):
-    return render(request, 'orders/list.html')
-
-@login_required
-def pending_validations(request):
-    return render(request, 'validations/pending.html')
-
-@login_required
-def validation_history(request):
-    return render(request, 'validations/history.html')
-
-@login_required
-def reports_dashboard(request):
-    return render(request, 'reports/dashboard.html')
-
-@login_required
-def provider_payment(request):
-    return render(request, 'reports/provider_payment.html')
-
-@login_required
-def provider_list(request):
-    return render(request, 'providers/list.html')
-
-@login_required
-def menu_list(request):
-    return render(request, 'menus/list.html')
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-    # Ajouter ces lignes dans urlpatterns
-    path('', landing_page, name='landing'),
-    path('register-company/', register_company, name='register_company'),
     
     # Swagger
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
@@ -113,19 +60,25 @@ urlpatterns = [
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     
+    # Frontend - Page d'accueil publique
+    path('', landing_page, name='landing'),
+    path('register-company/', register_company, name='register_company'),
+    
     # Frontend Auth
-    path('', login_view, name='login'),
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
     path('profile/', profile_view, name='profile'),
     path('change-password/', change_password_view, name='change_password'),
     
     # Dashboards
-    path('dashboard/', admin_dash, name='dashboard'),
-    path('admin/dashboard/', admin_dash, name='admin_dashboard'),
-    path('employee/dashboard/', emp_dash, name='employee_dashboard'),
-    path('validator/dashboard/', val_dash, name='validator_dashboard'),
-    path('finance/dashboard/', fin_dash, name='finance_dashboard'),
+    path('dashboard/admin/', admin_dashboard, name='admin_dashboard'),
+    path('dashboard/employee/', employee_dashboard, name='employee_dashboard'),
+    path('dashboard/validator/', validator_dashboard, name='validator_dashboard'),
+    path('dashboard/finance/', finance_dashboard, name='finance_dashboard'),
+    path('dashboard/provider/', provider_dashboard, name='provider_dashboard'),
+
+    # Configuration
+    path('admin/quota-config/', quota_config, name='quota_config'),
     
     # Tickets
     path('tickets/balance/', my_balance, name='my_balance'),
@@ -149,7 +102,16 @@ urlpatterns = [
     
     # Menus
     path('menus/', menu_list, name='menu_list'),
-]
+
+    # Ajouter dans urlpatterns
+    path('api/admin/add-user/', api_add_user, name='api_add_user'),
+    path('api/admin/edit-user/<int:user_id>/', api_edit_user, name='api_edit_user'),
+    path('api/admin/delete-user/<int:user_id>/', api_delete_user, name='api_delete_user'),
+    path('api/admin/add-provider/', api_add_provider, name='api_add_provider'),
+    path('api/admin/edit-provider/<int:provider_id>/', api_edit_provider, name='api_edit_provider'),
+    path('api/admin/delete-provider/<int:provider_id>/', api_delete_provider, name='api_delete_provider'),
+    path('api/admin/generate-lot/', api_generate_ticket_lot, name='api_generate_lot'),
+]   
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

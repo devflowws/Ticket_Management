@@ -3,10 +3,10 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ticket Manager - Solution de gestion des tickets repas en entreprise</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>TicketManager - Solution de gestion des tickets repas en entreprise</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,70 +15,85 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
             overflow-x: hidden;
         }
         
         /* Navbar */
         .navbar {
-            background: rgba(255,255,255,0.95);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-            padding: 15px 0;
-            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            padding: 1rem 0;
+            transition: all 0.3s ease;
         }
         
         .navbar.scrolled {
-            padding: 10px 0;
-            background: white;
+            padding: 0.5rem 0;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
         }
         
         .navbar-brand {
             font-size: 1.8rem;
-            font-weight: 700;
+            font-weight: 800;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: #333;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: #667eea;
         }
         
         /* Hero Section */
         .hero {
             min-height: 100vh;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            position: relative;
-            overflow: hidden;
             display: flex;
             align-items: center;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
         }
         
         .hero::before {
             content: '';
             position: absolute;
-            width: 150%;
-            height: 150%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
-            background-size: cover;
-            bottom: 0;
+            width: 100%;
+            height: 100%;
+            top: 0;
             left: 0;
-            opacity: 0.3;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.08)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.5;
+            pointer-events: none;
         }
         
         .hero-content {
             position: relative;
             z-index: 2;
             color: white;
-            padding: 100px 0;
         }
         
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
         }
         
         .hero p {
             font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.6;
         }
         
         .btn-custom {
@@ -88,21 +103,30 @@
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s;
-            margin: 0 10px;
+            display: inline-block;
+            text-decoration: none;
+            margin-right: 15px;
+            border: none;
+            cursor: pointer;
         }
         
         .btn-custom:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            color: #667eea;
         }
         
         .btn-outline-custom {
             border: 2px solid white;
+            background: transparent;
             color: white;
             padding: 12px 35px;
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
         }
         
         .btn-outline-custom:hover {
@@ -123,50 +147,59 @@
         }
         
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
-            color: #333;
+            color: #2d3748;
+            margin-bottom: 15px;
         }
         
         .section-title p {
-            color: #666;
+            color: #718096;
             font-size: 1.1rem;
         }
         
         .feature-card {
             background: white;
-            padding: 40px 25px;
-            border-radius: 15px;
+            padding: 35px 20px;
+            border-radius: 20px;
             text-align: center;
             transition: all 0.3s;
             margin-bottom: 30px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            height: 100%;
         }
         
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
         
         .feature-icon {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 50%;
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 25px;
+            margin: 0 auto 20px;
         }
         
         .feature-icon i {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: white;
         }
         
         .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        .feature-card p {
+            color: #718096;
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
         
         /* Stats */
@@ -178,37 +211,102 @@
         
         .stat-item {
             text-align: center;
+            padding: 20px;
         }
         
         .stat-number {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 800;
+            margin-bottom: 10px;
         }
         
         .stat-label {
-            font-size: 1.1rem;
+            font-size: 1rem;
             opacity: 0.9;
+        }
+        
+        /* Acteurs */
+        .actors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .actor-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        
+        .actor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .actor-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+        }
+        
+        .actor-icon i {
+            font-size: 1.8rem;
+            color: white;
+        }
+        
+        .actor-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .actor-card p {
+            color: #718096;
+            font-size: 0.85rem;
         }
         
         /* CTA */
         .cta {
             padding: 80px 0;
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
         
         .cta-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 50px;
-            border-radius: 20px;
-            color: white;
             text-align: center;
+            color: white;
+        }
+        
+        .cta h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .cta p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
         }
         
         /* Footer */
         .footer {
             background: #1a1a2e;
-            color: white;
+            color: #aaa;
             padding: 50px 0 20px;
+        }
+        
+        .footer h4, .footer h5 {
+            color: white;
+            margin-bottom: 20px;
         }
         
         .footer a {
@@ -221,7 +319,68 @@
             color: white;
         }
         
-        /* Animations */
+        .footer ul {
+            padding-left: 0;
+        }
+        
+        .footer li {
+            list-style: none;
+            margin-bottom: 10px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                text-align: center;
+                padding: 100px 0 60px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .btn-custom, .btn-outline-custom {
+                display: block;
+                width: 100%;
+                margin: 10px 0;
+                text-align: center;
+            }
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            .actors-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 15px;
+            }
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .feature-card, .actor-card {
+                padding: 20px 15px;
+            }
+            .feature-icon, .actor-icon {
+                width: 50px;
+                height: 50px;
+            }
+            .feature-icon i, .actor-icon i {
+                font-size: 1.5rem;
+            }
+            .feature-card h3 {
+                font-size: 1.1rem;
+            }
+        }
+        
+        /* Animation */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -233,20 +392,8 @@
             }
         }
         
-        .animate {
-            animation: fadeInUp 0.8s ease-out;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .btn-custom, .btn-outline-custom {
-                display: block;
-                margin: 10px 0;
-                text-align: center;
-            }
+        .fade-up {
+            animation: fadeInUp 0.6s ease-out forwards;
         }
     </style>
 </head>
@@ -265,9 +412,7 @@
                 <li class="nav-item"><a class="nav-link" href="#fonctionnalites">Fonctionnalités</a></li>
                 <li class="nav-item"><a class="nav-link" href="#acteurs">Acteurs</a></li>
                 <li class="nav-item"><a class="nav-link" href="#tarifs">Tarifs</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                <li class="nav-item"><a class="btn btn-outline-primary ms-3" href="/login/">Connexion</a></li>
-                <li class="nav-item"><a class="btn btn-primary" href="/register-company/">Inscription entreprise</a></li>
+                <li class="nav-item"><a class="btn btn-primary ms-2 px-4" href="/login/" style="border-radius: 50px;">Connexion</a></li>
             </ul>
         </div>
     </div>
@@ -277,14 +422,16 @@
 <section class="hero" id="accueil">
     <div class="container hero-content">
         <div class="row align-items-center">
-            <div class="col-lg-6">
-                <h1>La solution moderne pour gérer vos tickets repas</h1>
-                <p>Digitalisez la gestion de vos tickets repas, simplifiez les processus et offrez une expérience fluide à tous vos employés.</p>
-                <a href="/register-company/" class="btn-custom">Commencer gratuitement</a>
-                <a href="/login/" class="btn-outline-custom">Se connecter</a>
+            <div class="col-lg-6 fade-up">
+                <h1>La solution complète pour gérer vos tickets repas</h1>
+                <p>Digitalisez, simplifiez et optimisez la gestion des tickets repas de votre entreprise. Une expérience fluide pour tous vos employés et partenaires.</p>
+                <div>
+                    <a href="/register-company/" class="btn-custom">Créer mon entreprise</a>
+                    <a href="/login/" class="btn-outline-custom">Se connecter</a>
+                </div>
             </div>
-            <div class="col-lg-6">
-                <img src="https://cdn-icons-png.flaticon.com/512/3063/3063751.png" alt="Illustration" class="img-fluid" style="filter: brightness(0) invert(1);">
+            <div class="col-lg-6 text-center d-none d-lg-block fade-up">
+                <img src="https://cdn-icons-png.flaticon.com/512/3063/3063751.png" alt="Illustration" class="img-fluid" style="filter: brightness(0) invert(1); max-width: 70%;">
             </div>
         </div>
     </div>
@@ -295,7 +442,7 @@
     <div class="container">
         <div class="section-title">
             <h2>Fonctionnalités complètes</h2>
-            <p>Tout ce dont votre entreprise a besoin pour gérer les tickets repas</p>
+            <p>Tout ce dont votre entreprise a besoin</p>
         </div>
         <div class="row">
             <div class="col-md-4">
@@ -315,29 +462,29 @@
             <div class="col-md-4">
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>Reporting avancé</h3>
-                    <p>Statistiques en temps réel et exports PDF/Excel pour la direction.</p>
+                    <h3>Statistiques avancées</h3>
+                    <p>Tableaux de bord, graphiques et exports PDF/Excel pour la direction.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-utensils"></i></div>
                     <h3>Commandes repas</h3>
-                    <p>Menus du jour, commandes anonymes, pour tiers, hors-menu.</p>
+                    <p>Menus du jour, commandes anonymes, pour tiers et hors-menu.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
-                    <h3>Validation automatique</h3>
-                    <p>Workflow de validation des demandes d'achat de tickets.</p>
+                    <h3>Workflow validation</h3>
+                    <p>Processus complet de validation des demandes d'achat de tickets.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
                     <h3>Sécurité renforcée</h3>
-                    <p>Données cryptées, authentification JWT, rôles et permissions.</p>
+                    <p>Authentification sécurisée, rôles et permissions granulaires.</p>
                 </div>
             </div>
         </div>
@@ -348,25 +495,25 @@
 <section class="stats">
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-6 col-md-3">
                 <div class="stat-item">
                     <div class="stat-number">500+</div>
                     <div class="stat-label">Entreprises clientes</div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-6 col-md-3">
                 <div class="stat-item">
                     <div class="stat-number">50k+</div>
                     <div class="stat-label">Employés actifs</div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-6 col-md-3">
                 <div class="stat-item">
                     <div class="stat-number">1M+</div>
                     <div class="stat-label">Tickets échangés</div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-6 col-md-3">
                 <div class="stat-item">
                     <div class="stat-number">98%</div>
                     <div class="stat-label">Satisfaction client</div>
@@ -383,46 +530,43 @@
             <h2>Une solution pour tous les acteurs</h2>
             <p>Des interfaces adaptées à chaque profil</p>
         </div>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-user-shield"></i></div>
-                    <h3>Administrateur</h3>
-                    <p>Configuration globale, gestion des comptes et supervision.</p>
-                </div>
+        <div class="actors-grid">
+            <div class="actor-card">
+                <div class="actor-icon"><i class="fas fa-user-shield"></i></div>
+                <h4>Administrateur</h4>
+                <p>Configuration, gestion des comptes, supervision</p>
             </div>
-            <div class="col-md-3">
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-user"></i></div>
-                    <h3>Employé</h3>
-                    <p>Achat de tickets, commandes repas, consultation solde.</p>
-                </div>
+            <div class="actor-card">
+                <div class="actor-icon"><i class="fas fa-user"></i></div>
+                <h4>Employé</h4>
+                <p>Achat tickets, commandes repas, solde</p>
             </div>
-            <div class="col-md-3">
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-check-double"></i></div>
-                    <h3>Validateur</h3>
-                    <p>Vérification des preuves et validation des achats.</p>
-                </div>
+            <div class="actor-card">
+                <div class="actor-icon"><i class="fas fa-check-double"></i></div>
+                <h4>Validateur</h4>
+                <p>Vérification et validation des achats</p>
             </div>
-            <div class="col-md-3">
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-chart-pie"></i></div>
-                    <h3>Direction financière</h3>
-                    <p>Statistiques, rapports, gestion des paiements prestataires.</p>
-                </div>
+            <div class="actor-card">
+                <div class="actor-icon"><i class="fas fa-chart-pie"></i></div>
+                <h4>Direction financière</h4>
+                <p>Statistiques, rapports, paiements</p>
+            </div>
+            <div class="actor-card">
+                <div class="actor-icon"><i class="fas fa-store"></i></div>
+                <h4>Prestataire</h4>
+                <p>Menus, commandes, consommations</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- CTA -->
-<section class="cta">
+<section class="cta" id="tarifs">
     <div class="container">
         <div class="cta-box">
-            <h2 class="mb-3">Prêt à digitaliser votre gestion de tickets ?</h2>
-            <p class="mb-4">Rejoignez les entreprises qui nous font confiance</p>
-            <a href="/register-company/" class="btn btn-light btn-lg rounded-pill px-5">Inscrire mon entreprise</a>
+            <h2>Prêt à digitaliser votre gestion de tickets ?</h2>
+            <p>Rejoignez les entreprises qui nous font confiance</p>
+            <a href="/register-company/" class="btn btn-light btn-lg rounded-pill px-5 py-3">Commencer gratuitement</a>
         </div>
     </div>
 </section>
@@ -431,41 +575,73 @@
 <footer class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <h4>TicketManager</h4>
                 <p>La solution complète de gestion des tickets repas pour les entreprises modernes.</p>
+                <div class="mt-3">
+                    <a href="#" class="me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 mb-4">
                 <h5>Produit</h5>
-                <ul class="list-unstyled">
+                <ul>
                     <li><a href="#">Fonctionnalités</a></li>
                     <li><a href="#">Tarifs</a></li>
                     <li><a href="#">Démo</a></li>
                 </ul>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 mb-4">
                 <h5>Support</h5>
-                <ul class="list-unstyled">
+                <ul>
                     <li><a href="#">Aide</a></li>
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">Documentation</a></li>
                 </ul>
             </div>
-            <div class="col-md-4">
-                <h5>Suivez-nous</h5>
-                <div>
-                    <a href="#" class="me-3"><i class="fab fa-facebook fa-2x"></i></a>
-                    <a href="#" class="me-3"><i class="fab fa-linkedin fa-2x"></i></a>
-                    <a href="#" class="me-3"><i class="fab fa-twitter fa-2x"></i></a>
+            <div class="col-md-4 mb-4">
+                <h5>Newsletter</h5>
+                <div class="input-group">
+                    <input type="email" class="form-control" placeholder="Votre email">
+                    <button class="btn btn-primary">S'abonner</button>
                 </div>
+                <p class="mt-3 small">En vous abonnant, vous acceptez nos <a href="#" data-bs-toggle="modal" data-bs-target="#conditionsModal">conditions d'utilisation</a></p>
             </div>
         </div>
-        <hr class="mt-4">
+        <hr>
         <div class="text-center">
-            <p>&copy; 2024 TicketManager - Tous droits réservés</p>
+            <p class="mb-0">&copy; 2026 TicketManager - Tous droits réservés</p>
         </div>
     </div>
 </footer>
+
+<!-- Modal Conditions -->
+<div class="modal fade" id="conditionsModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title">Conditions Générales d'Utilisation</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" style="max-height: 60vh; overflow-y: auto;">
+                <h6>1. Objet</h6>
+                <p>Les présentes conditions régissent l'utilisation de la plateforme TicketManager...</p>
+                <h6>2. Définitions</h6>
+                <p>"Plateforme" : l'application web et mobile TicketManager...</p>
+                <h6>3. Inscription de l'entreprise</h6>
+                <p>L'entreprise s'inscrit et fournit des informations exactes...</p>
+                <h6>4. Protection des données</h6>
+                <p>Conformément au RGPD, vos données sont protégées...</p>
+                <h6>5. Responsabilités</h6>
+                <p>TicketManager s'engage à assurer un service continu...</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">J'accepte</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
@@ -477,17 +653,6 @@
             document.querySelector('.navbar').classList.remove('scrolled');
         }
     });
-    
-    // Animation au scroll
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-            }
-        });
-    });
-    
-    document.querySelectorAll('.feature-card, .stat-item').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>

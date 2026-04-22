@@ -1,0 +1,60 @@
+<!-- templates/companies/quota_config.html -->
+{% extends 'base/base.html' %}
+{% block title %}Paramétrage des quotas{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Paramétrage des tickets</h4>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Valeur d'un ticket (FCFA)</label>
+                        <input type="number" name="ticket_value" class="form-control" value="{{ company.ticket_value }}" required>
+                        <small class="text-muted">Montant total du ticket (ex: 1000 FCFA)</small>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="form-label">Part employé (%)</label>
+                            <input type="number" name="employee_percentage" class="form-control" value="{{ company.employee_percentage }}" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Part entreprise (%)</label>
+                            <input type="number" name="company_percentage" class="form-control" value="{{ company.company_percentage }}" readonly>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3 mt-3">
+                        <label class="form-label">Quota mensuel par employé (tickets)</label>
+                        <input type="number" name="default_quota" class="form-control" value="{{ company.default_quota }}" required>
+                        <small class="text-muted">Nombre maximum de tickets qu'un employé peut acheter par mois</small>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Validité des tickets (jours)</label>
+                        <input type="number" name="ticket_validity_days" class="form-control" value="{{ company.ticket_validity_days }}" required>
+                        <small class="text-muted">Durée de validité des tickets après achat</small>
+                    </div>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Répartition actuelle :</strong><br>
+                        - Employé paie {{ company.employee_percentage }}% ({{ ticket_employee }} FCFA par ticket)<br>
+                        - Entreprise paie {{ company.company_percentage }}% ({{ ticket_company }} FCFA par ticket)
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Enregistrer
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

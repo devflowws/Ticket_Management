@@ -1,0 +1,68 @@
+ 
+<!-- templates/dashboard/provider_dashboard.html -->
+{% extends 'base/base.html' %}
+{% block title %}Dashboard Prestataire{% endblock %}
+
+{% block content %}
+<div class="container-fluid px-4">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="h3 mb-2">Mon espace prestataire</h1>
+            <p class="text-muted">Bienvenue, {{ user.get_full_name }} !</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm rounded-4 bg-primary text-white">
+                <div class="card-body">
+                    <h6 class="mb-1 opacity-75">Commandes aujourd'hui</h6>
+                    <h2 class="mb-0">{{ today_orders|default:"0" }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm rounded-4 bg-warning text-white">
+                <div class="card-body">
+                    <h6 class="mb-1 opacity-75">Consommations en attente</h6>
+                    <h2 class="mb-0">{{ pending_consumptions|default:"0" }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm rounded-4 bg-success text-white">
+                <div class="card-body">
+                    <h6 class="mb-1 opacity-75">Total consommations</h6>
+                    <h2 class="mb-0">{{ total_consumptions|default:"0" }}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card border-0 shadow-sm rounded-4">
+                <div class="card-header bg-transparent border-0 pt-4">
+                    <h5 class="mb-0">Mes menus du jour</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="table-light">
+                                <tr><th>Titre</th><th>Prix (tickets)</th><th>Disponible</th><th>Action</th></tr>
+                            </thead>
+                            <tbody>
+                                {% for menu in menus %}
+                                <tr><td>{{ menu.title }}</td><td>{{ menu.price_tickets }}</td><td>{% if menu.is_available %}Oui{% else %}Non{% endif %}</td><td><a href="#" class="btn btn-sm btn-outline-primary">Modifier</a></td></tr>
+                                {% empty %}
+                                <td><td colspan="4" class="text-center">Aucun menu</td></tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

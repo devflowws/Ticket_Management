@@ -1104,3 +1104,1368 @@ INFO 2026-04-22 03:17:45,146 log 20344 22608 "GET / HTTP/1.1" 200 16804
 INFO 2026-04-22 03:17:45,534 middleware 20344 22608 ← [91m404[0m GET /logo.png - 8.52ms
 WARNING 2026-04-22 03:17:45,535 log 20344 22608 Not Found: /logo.png
 WARNING 2026-04-22 03:17:45,537 log 20344 22608 "GET /logo.png HTTP/1.1" 404 8558
+INFO 2026-04-22 07:27:43,351 autoreload 26524 28588 Watching for file changes with StatReloader
+INFO 2026-04-22 07:29:20,107 autoreload 26524 28588 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\middleware.py changed, reloading.
+INFO 2026-04-22 07:29:23,112 autoreload 9932 23444 Watching for file changes with StatReloader
+INFO 2026-04-22 07:29:37,298 autoreload 9932 23444 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\middleware.py changed, reloading.
+INFO 2026-04-22 07:29:40,564 autoreload 28748 28592 Watching for file changes with StatReloader
+ERROR 2026-04-22 07:29:59,118 log 28748 29548 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 311, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\middleware.py", line 44, in process_response
+    logger.info(f"{response.status_code} {request.method} {request.path} - {duration:.2f}ms")
+    ^^^^^^
+NameError: name 'logger' is not defined
+ERROR 2026-04-22 07:29:59,123 log 28748 29548 "GET /login/ HTTP/1.1" 500 76253
+ERROR 2026-04-22 07:29:59,881 log 28748 29548 Internal Server Error: /login/logo.png
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 311, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\middleware.py", line 44, in process_response
+    logger.info(f"{response.status_code} {request.method} {request.path} - {duration:.2f}ms")
+    ^^^^^^
+NameError: name 'logger' is not defined
+ERROR 2026-04-22 07:29:59,885 log 28748 29548 "GET /login/logo.png HTTP/1.1" 500 75777
+ERROR 2026-04-22 07:30:05,666 log 28748 29548 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 311, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\middleware.py", line 44, in process_response
+    logger.info(f"{response.status_code} {request.method} {request.path} - {duration:.2f}ms")
+    ^^^^^^
+NameError: name 'logger' is not defined
+ERROR 2026-04-22 07:30:05,669 log 28748 29548 "GET /login/ HTTP/1.1" 500 76251
+ERROR 2026-04-22 07:30:06,185 log 28748 29548 Internal Server Error: /login/logo.png
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 311, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\middleware.py", line 44, in process_response
+    logger.info(f"{response.status_code} {request.method} {request.path} - {duration:.2f}ms")
+    ^^^^^^
+NameError: name 'logger' is not defined
+ERROR 2026-04-22 07:30:06,189 log 28748 29548 "GET /login/logo.png HTTP/1.1" 500 75777
+ERROR 2026-04-22 07:30:16,519 log 28748 29548 Internal Server Error: /register-company/
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 311, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\middleware.py", line 44, in process_response
+    logger.info(f"{response.status_code} {request.method} {request.path} - {duration:.2f}ms")
+    ^^^^^^
+NameError: name 'logger' is not defined
+ERROR 2026-04-22 07:30:16,522 log 28748 29548 "GET /register-company/ HTTP/1.1" 500 76368
+ERROR 2026-04-22 07:30:16,980 log 28748 29548 Internal Server Error: /register-company/logo.png
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 311, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\middleware.py", line 44, in process_response
+    logger.info(f"{response.status_code} {request.method} {request.path} - {duration:.2f}ms")
+    ^^^^^^
+NameError: name 'logger' is not defined
+ERROR 2026-04-22 07:30:16,983 log 28748 29548 "GET /register-company/logo.png HTTP/1.1" 500 75897
+ERROR 2026-04-22 07:30:21,946 log 28748 29548 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 311, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\middleware.py", line 44, in process_response
+    logger.info(f"{response.status_code} {request.method} {request.path} - {duration:.2f}ms")
+    ^^^^^^
+NameError: name 'logger' is not defined
+ERROR 2026-04-22 07:30:21,948 log 28748 29548 "GET /login/ HTTP/1.1" 500 76265
+ERROR 2026-04-22 07:30:22,407 log 28748 29548 Internal Server Error: /login/logo.png
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 311, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\middleware.py", line 44, in process_response
+    logger.info(f"{response.status_code} {request.method} {request.path} - {duration:.2f}ms")
+    ^^^^^^
+NameError: name 'logger' is not defined
+ERROR 2026-04-22 07:30:22,410 log 28748 29548 "GET /login/logo.png HTTP/1.1" 500 75788
+INFO 2026-04-22 07:31:47,016 autoreload 28748 28592 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\middleware.py changed, reloading.
+INFO 2026-04-22 07:31:49,348 autoreload 17116 27792 Watching for file changes with StatReloader
+INFO 2026-04-22 07:31:55,669 middleware 17116 23484 200 GET /login/ - 12.08ms
+INFO 2026-04-22 07:31:55,673 log 17116 23484 "GET /login/ HTTP/1.1" 200 6406
+INFO 2026-04-22 07:31:56,093 middleware 17116 23484 404 GET /login/logo.png - 9.97ms
+WARNING 2026-04-22 07:31:56,095 log 17116 23484 Not Found: /login/logo.png
+WARNING 2026-04-22 07:31:56,096 log 17116 23484 "GET /login/logo.png HTTP/1.1" 404 8248
+INFO 2026-04-22 07:32:01,465 middleware 17116 23484 200 GET /register-company/ - 1.66ms
+INFO 2026-04-22 07:32:01,466 log 17116 23484 "GET /register-company/ HTTP/1.1" 200 9129
+INFO 2026-04-22 07:32:01,910 middleware 17116 23484 404 GET /register-company/logo.png - 11.28ms
+WARNING 2026-04-22 07:32:01,911 log 17116 23484 Not Found: /register-company/logo.png
+WARNING 2026-04-22 07:32:01,912 log 17116 23484 "GET /register-company/logo.png HTTP/1.1" 404 8281
+INFO 2026-04-22 07:32:16,716 middleware 17116 23484 200 GET /register-company/ - 0.97ms
+INFO 2026-04-22 07:32:16,718 log 17116 23484 "GET /register-company/ HTTP/1.1" 200 9129
+INFO 2026-04-22 07:32:17,137 middleware 17116 23484 404 GET /register-company/logo.png - 7.82ms
+WARNING 2026-04-22 07:32:17,138 log 17116 23484 Not Found: /register-company/logo.png
+WARNING 2026-04-22 07:32:17,139 log 17116 23484 "GET /register-company/logo.png HTTP/1.1" 404 8281
+INFO 2026-04-22 07:32:56,934 middleware 17116 23484 200 GET /login/ - 0.55ms
+INFO 2026-04-22 07:32:56,937 log 17116 23484 "GET /login/ HTTP/1.1" 200 6406
+INFO 2026-04-22 07:32:57,544 middleware 17116 23484 404 GET /login/logo.png - 9.15ms
+WARNING 2026-04-22 07:32:57,545 log 17116 23484 Not Found: /login/logo.png
+WARNING 2026-04-22 07:32:57,545 log 17116 23484 "GET /login/logo.png HTTP/1.1" 404 8248
+INFO 2026-04-22 07:33:24,618 middleware 17116 23484 200 GET /register-company/ - 0.49ms
+INFO 2026-04-22 07:33:24,620 log 17116 23484 "GET /register-company/ HTTP/1.1" 200 9129
+INFO 2026-04-22 07:33:25,179 middleware 17116 23484 404 GET /register-company/logo.png - 8.03ms
+WARNING 2026-04-22 07:33:25,180 log 17116 23484 Not Found: /register-company/logo.png
+WARNING 2026-04-22 07:33:25,181 log 17116 23484 "GET /register-company/logo.png HTTP/1.1" 404 8281
+INFO 2026-04-22 07:38:39,917 autoreload 17116 27792 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 07:38:42,110 autoreload 26184 25948 Watching for file changes with StatReloader
+INFO 2026-04-22 07:40:29,021 autoreload 26184 25948 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\purchases\serializers.py changed, reloading.
+INFO 2026-04-22 07:40:31,325 autoreload 29136 22932 Watching for file changes with StatReloader
+INFO 2026-04-22 07:40:36,982 autoreload 29136 22932 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\purchases\serializers.py changed, reloading.
+INFO 2026-04-22 07:40:39,233 autoreload 12628 16864 Watching for file changes with StatReloader
+INFO 2026-04-22 07:41:37,329 autoreload 12628 16864 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 07:41:39,548 autoreload 11596 22444 Watching for file changes with StatReloader
+INFO 2026-04-22 07:53:03,911 autoreload 11596 22444 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\companies\views.py changed, reloading.
+INFO 2026-04-22 07:53:07,507 autoreload 28348 28912 Watching for file changes with StatReloader
+ERROR 2026-04-22 07:55:29,690 log 28348 7128 Internal Server Error: /register-company/
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py", line 29, in register_company
+    admin = User.objects.create_user(
+        username=admin_email,
+    ...<5 lines>...
+        company_name=company_name
+    )
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\contrib\auth\models.py", line 175, in create_user
+    return self._create_user(username, email, password, **extra_fields)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\contrib\auth\models.py", line 162, in _create_user
+    user = self._create_user_object(username, email, password, **extra_fields)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\contrib\auth\models.py", line 154, in _create_user_object
+    user = self.model(username=username, email=email, **extra_fields)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\base.py", line 590, in __init__
+    raise TypeError(
+    ...<2 lines>...
+    )
+TypeError: User() got unexpected keyword arguments: 'company_name'
+INFO 2026-04-22 07:55:29,699 middleware 28348 7128 500 POST /register-company/ - 251.73ms
+ERROR 2026-04-22 07:55:29,700 log 28348 7128 "POST /register-company/ HTTP/1.1" 500 103893
+INFO 2026-04-22 07:55:31,312 middleware 28348 7128 404 GET /register-company/logo.png - 11.61ms
+WARNING 2026-04-22 07:55:31,313 log 28348 7128 Not Found: /register-company/logo.png
+WARNING 2026-04-22 07:55:31,314 log 28348 7128 "GET /register-company/logo.png HTTP/1.1" 404 8464
+INFO 2026-04-22 07:56:50,212 autoreload 28348 28912 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 07:56:52,822 autoreload 8136 28600 Watching for file changes with StatReloader
+ERROR 2026-04-22 07:57:10,542 log 8136 25968 Internal Server Error: /register-company/
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py", line 63, in register_company
+    admin = User.objects.create_user(
+        username=admin_email,
+    ...<5 lines>...
+        company=company  # Lier l'admin à l'entreprise
+    )
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\contrib\auth\models.py", line 175, in create_user
+    return self._create_user(username, email, password, **extra_fields)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\contrib\auth\models.py", line 162, in _create_user
+    user = self._create_user_object(username, email, password, **extra_fields)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\contrib\auth\models.py", line 154, in _create_user_object
+    user = self.model(username=username, email=email, **extra_fields)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\base.py", line 590, in __init__
+    raise TypeError(
+    ...<2 lines>...
+    )
+TypeError: User() got unexpected keyword arguments: 'company'
+INFO 2026-04-22 07:57:10,552 middleware 8136 25968 500 POST /register-company/ - 98.53ms
+ERROR 2026-04-22 07:57:10,553 log 8136 25968 "POST /register-company/ HTTP/1.1" 500 106193
+INFO 2026-04-22 07:57:10,998 middleware 8136 25968 404 GET /register-company/logo.png - 10.14ms
+WARNING 2026-04-22 07:57:11,000 log 8136 25968 Not Found: /register-company/logo.png
+WARNING 2026-04-22 07:57:11,001 log 8136 25968 "GET /register-company/logo.png HTTP/1.1" 404 8464
+INFO 2026-04-22 07:58:54,527 autoreload 8136 28600 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 07:58:57,440 autoreload 27352 19912 Watching for file changes with StatReloader
+ERROR 2026-04-22 07:59:06,853 log 27352 25824 Internal Server Error: /register-company/
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 359, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: UNIQUE constraint failed: companies_company.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py", line 45, in register_company
+    company = Company.objects.create(
+        name=company_name,
+    ...<10 lines>...
+        is_active=True
+    )
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\query.py", line 669, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\base.py", line 874, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\base.py", line 966, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, insert_fields, returning_fields, raw
+    )
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\base.py", line 1220, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\query.py", line 1918, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1925, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\utils.py", line 94, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 359, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: UNIQUE constraint failed: companies_company.email
+INFO 2026-04-22 07:59:06,872 middleware 27352 25824 500 POST /register-company/ - 333.79ms
+ERROR 2026-04-22 07:59:06,873 log 27352 25824 "POST /register-company/ HTTP/1.1" 500 183713
+INFO 2026-04-22 07:59:07,419 middleware 27352 25824 404 GET /register-company/logo.png - 9.26ms
+WARNING 2026-04-22 07:59:07,421 log 27352 25824 Not Found: /register-company/logo.png
+WARNING 2026-04-22 07:59:07,422 log 27352 25824 "GET /register-company/logo.png HTTP/1.1" 404 8464
+ERROR 2026-04-22 08:00:23,783 log 27352 28260 Internal Server Error: /register-company/
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 359, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: UNIQUE constraint failed: companies_company.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py", line 45, in register_company
+    company = Company.objects.create(
+        name=company_name,
+    ...<10 lines>...
+        is_active=True
+    )
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\query.py", line 669, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\base.py", line 874, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\base.py", line 966, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, insert_fields, returning_fields, raw
+    )
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\base.py", line 1220, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\query.py", line 1918, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1925, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\utils.py", line 94, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 359, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: UNIQUE constraint failed: companies_company.email
+INFO 2026-04-22 08:00:23,790 middleware 27352 28260 500 POST /register-company/ - 78.20ms
+ERROR 2026-04-22 08:00:23,791 log 27352 28260 "POST /register-company/ HTTP/1.1" 500 183766
+INFO 2026-04-22 08:00:24,347 middleware 27352 28260 404 GET /register-company/logo.png - 9.63ms
+WARNING 2026-04-22 08:00:24,349 log 27352 28260 Not Found: /register-company/logo.png
+WARNING 2026-04-22 08:00:24,350 log 27352 28260 "GET /register-company/logo.png HTTP/1.1" 404 8464
+ERROR 2026-04-22 08:00:25,343 log 27352 25824 Internal Server Error: /register-company/
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 359, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: accounts_user.company_name
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py", line 61, in register_company
+    admin = User.objects.create_user(
+        username=admin_email,
+    ...<4 lines>...
+        role='admin'
+    )
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\contrib\auth\models.py", line 175, in create_user
+    return self._create_user(username, email, password, **extra_fields)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\contrib\auth\models.py", line 163, in _create_user
+    user.save(using=self._db)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\contrib\auth\base_user.py", line 62, in save
+    super().save(**kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\base.py", line 874, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\base.py", line 966, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, insert_fields, returning_fields, raw
+    )
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\base.py", line 1220, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\query.py", line 1918, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1925, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\utils.py", line 94, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 359, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: accounts_user.company_name
+INFO 2026-04-22 08:00:25,354 middleware 27352 25824 500 POST /register-company/ - 1957.69ms
+INFO 2026-04-22 08:00:25,364 basehttp 27352 25824 - Broken pipe from ('127.0.0.1', 59696)
+INFO 2026-04-22 08:01:33,669 autoreload 27352 19912 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 08:01:36,521 autoreload 27724 27488 Watching for file changes with StatReloader
+INFO 2026-04-22 08:02:09,099 autoreload 27724 27488 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 08:02:11,702 autoreload 11452 29116 Watching for file changes with StatReloader
+INFO 2026-04-22 08:02:25,413 autoreload 11452 29116 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 08:02:28,024 autoreload 17016 27420 Watching for file changes with StatReloader
+INFO 2026-04-22 08:03:58,184 autoreload 17016 27420 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\purchases\migrations\__init__.py changed, reloading.
+INFO 2026-04-22 08:04:00,972 autoreload 24024 25456 Watching for file changes with StatReloader
+INFO 2026-04-22 08:06:16,556 autoreload 24024 25456 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\validations\migrations\__init__.py changed, reloading.
+INFO 2026-04-22 08:06:19,994 autoreload 27948 26480 Watching for file changes with StatReloader
+INFO 2026-04-22 08:09:19,952 autoreload 29612 25676 Watching for file changes with StatReloader
+INFO 2026-04-22 08:09:32,222 middleware 29612 7524 302 POST /register-company/ - 1153.94ms
+INFO 2026-04-22 08:09:32,231 log 29612 7524 "POST /register-company/ HTTP/1.1" 302 0
+INFO 2026-04-22 08:09:32,395 middleware 29612 7524 200 GET /login/ - 146.94ms
+INFO 2026-04-22 08:09:32,397 log 29612 7524 "GET /login/ HTTP/1.1" 200 6406
+INFO 2026-04-22 08:09:33,910 middleware 29612 7524 404 GET /login/logo.png - 12.22ms
+WARNING 2026-04-22 08:09:33,912 log 29612 7524 Not Found: /login/logo.png
+WARNING 2026-04-22 08:09:33,913 log 29612 7524 "GET /login/logo.png HTTP/1.1" 404 8431
+INFO 2026-04-22 08:10:09,406 middleware 29612 7524 200 POST /login/ - 1275.94ms
+INFO 2026-04-22 08:10:09,410 log 29612 7524 "POST /login/ HTTP/1.1" 200 6406
+INFO 2026-04-22 08:10:09,918 middleware 29612 7524 404 GET /login/logo.png - 9.58ms
+WARNING 2026-04-22 08:10:09,919 log 29612 7524 Not Found: /login/logo.png
+WARNING 2026-04-22 08:10:09,920 log 29612 7524 "GET /login/logo.png HTTP/1.1" 404 8431
+INFO 2026-04-22 08:10:37,853 middleware 29612 7524 302 POST /login/ - 1098.93ms
+INFO 2026-04-22 08:10:37,863 log 29612 7524 "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-22 08:10:37,901 middleware 29612 7524 302 GET /admin/dashboard/ - 26.07ms
+INFO 2026-04-22 08:10:37,902 log 29612 7524 "GET /admin/dashboard/ HTTP/1.1" 302 0
+INFO 2026-04-22 08:10:38,400 middleware 29612 7524 200 GET /admin/login/ - 490.29ms
+INFO 2026-04-22 08:10:38,402 log 29612 7524 "GET /admin/login/?next=/admin/dashboard/ HTTP/1.1" 200 4246
+INFO 2026-04-22 08:10:38,499 log 29612 7524 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2026-04-22 08:10:38,513 log 29612 7524 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2026-04-22 08:10:38,514 log 29612 28676 "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2026-04-22 08:10:38,522 log 29612 7524 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2026-04-22 08:10:38,528 log 29612 28676 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2026-04-22 08:10:38,531 log 29612 7524 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2026-04-22 08:10:38,648 log 29612 7524 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-04-22 08:10:38,707 log 29612 7524 "GET /static/admin/img/icon-info.svg HTTP/1.1" 200 630
+INFO 2026-04-22 08:10:38,711 log 29612 28676 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 645
+INFO 2026-04-22 08:10:38,758 log 29612 7524 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 558
+INFO 2026-04-22 08:10:38,963 log 29612 27444 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2026-04-22 08:10:38,969 log 29612 27444 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-04-22 08:10:38,971 middleware 29612 7524 302 GET /admin/login/logo.png - 10.87ms
+INFO 2026-04-22 08:10:38,973 log 29612 7524 "GET /admin/login/logo.png HTTP/1.1" 302 0
+INFO 2026-04-22 08:10:39,024 middleware 29612 7524 200 GET /admin/login/ - 22.99ms
+INFO 2026-04-22 08:10:39,025 log 29612 7524 "GET /admin/login/?next=/admin/login/logo.png HTTP/1.1" 200 3746
+INFO 2026-04-22 08:11:45,999 middleware 29612 7524 200 GET /login/ - 0.71ms
+INFO 2026-04-22 08:11:46,001 log 29612 7524 "GET /login/ HTTP/1.1" 200 6406
+INFO 2026-04-22 08:11:47,875 middleware 29612 7524 404 GET /login/logo.png - 7.99ms
+WARNING 2026-04-22 08:11:47,876 log 29612 7524 Not Found: /login/logo.png
+WARNING 2026-04-22 08:11:47,878 log 29612 7524 "GET /login/logo.png HTTP/1.1" 404 8431
+INFO 2026-04-22 08:12:19,374 middleware 29612 7524 200 POST /login/ - 1148.22ms
+INFO 2026-04-22 08:12:19,376 log 29612 7524 "POST /login/ HTTP/1.1" 200 6406
+INFO 2026-04-22 08:12:19,793 middleware 29612 7524 404 GET /login/logo.png - 11.26ms
+WARNING 2026-04-22 08:12:19,794 log 29612 7524 Not Found: /login/logo.png
+WARNING 2026-04-22 08:12:19,795 log 29612 7524 "GET /login/logo.png HTTP/1.1" 404 8431
+INFO 2026-04-22 08:14:15,478 middleware 29612 24896 200 POST /login/ - 1226.27ms
+INFO 2026-04-22 08:14:15,480 log 29612 24896 "POST /login/ HTTP/1.1" 200 6406
+INFO 2026-04-22 08:14:15,962 middleware 29612 24896 404 GET /login/logo.png - 57.15ms
+WARNING 2026-04-22 08:14:15,964 log 29612 24896 Not Found: /login/logo.png
+WARNING 2026-04-22 08:14:15,965 log 29612 24896 "GET /login/logo.png HTTP/1.1" 404 8431
+INFO 2026-04-22 08:21:56,965 middleware 29612 7212 200 GET /register-company/ - 2.28ms
+INFO 2026-04-22 08:21:56,967 log 29612 7212 "GET /register-company/ HTTP/1.1" 200 9129
+INFO 2026-04-22 08:21:58,910 middleware 29612 7212 404 GET /register-company/logo.png - 12.81ms
+WARNING 2026-04-22 08:21:58,912 log 29612 7212 Not Found: /register-company/logo.png
+WARNING 2026-04-22 08:21:58,913 log 29612 7212 "GET /register-company/logo.png HTTP/1.1" 404 8464
+INFO 2026-04-22 08:27:24,645 middleware 29612 27508 200 GET /login/ - 0.67ms
+INFO 2026-04-22 08:27:24,647 log 29612 27508 "GET /login/ HTTP/1.1" 200 6406
+INFO 2026-04-22 08:27:26,362 middleware 29612 27508 404 GET /login/logo.png - 8.59ms
+WARNING 2026-04-22 08:27:26,364 log 29612 27508 Not Found: /login/logo.png
+WARNING 2026-04-22 08:27:26,364 log 29612 27508 "GET /login/logo.png HTTP/1.1" 404 8431
+INFO 2026-04-22 08:27:50,458 middleware 29612 27508 200 POST /login/ - 1096.34ms
+INFO 2026-04-22 08:27:50,460 log 29612 27508 "POST /login/ HTTP/1.1" 200 6406
+INFO 2026-04-22 08:27:50,925 middleware 29612 27508 404 GET /login/logo.png - 9.18ms
+WARNING 2026-04-22 08:27:50,926 log 29612 27508 Not Found: /login/logo.png
+WARNING 2026-04-22 08:27:50,927 log 29612 27508 "GET /login/logo.png HTTP/1.1" 404 8431
+INFO 2026-04-22 08:33:28,803 middleware 29612 27492 200 POST /login/ - 1094.03ms
+INFO 2026-04-22 08:33:28,805 log 29612 27492 "POST /login/ HTTP/1.1" 200 6406
+INFO 2026-04-22 08:33:30,242 middleware 29612 27492 404 GET /login/logo.png - 9.88ms
+WARNING 2026-04-22 08:33:30,244 log 29612 27492 Not Found: /login/logo.png
+WARNING 2026-04-22 08:33:30,245 log 29612 27492 "GET /login/logo.png HTTP/1.1" 404 8431
+INFO 2026-04-22 08:33:51,888 autoreload 19828 25956 Watching for file changes with StatReloader
+INFO 2026-04-22 08:34:08,886 middleware 19828 24440 200 POST /login/ - 1204.90ms
+INFO 2026-04-22 08:34:08,890 basehttp 19828 24440 - Broken pipe from ('127.0.0.1', 61997)
+INFO 2026-04-22 08:34:09,970 middleware 19828 23112 200 POST /login/ - 1282.88ms
+INFO 2026-04-22 08:34:09,976 log 19828 23112 "POST /login/ HTTP/1.1" 200 6406
+INFO 2026-04-22 08:34:10,405 middleware 19828 23112 404 GET /login/logo.png - 11.34ms
+WARNING 2026-04-22 08:34:10,406 log 19828 23112 Not Found: /login/logo.png
+WARNING 2026-04-22 08:34:10,408 log 19828 23112 "GET /login/logo.png HTTP/1.1" 404 8431
+INFO 2026-04-22 08:35:36,679 autoreload 19828 25956 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 08:35:39,292 autoreload 14816 24884 Watching for file changes with StatReloader
+INFO 2026-04-22 08:36:11,154 autoreload 14816 24884 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 08:36:13,540 autoreload 25424 25364 Watching for file changes with StatReloader
+INFO 2026-04-22 08:36:18,156 autoreload 25424 25364 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 08:36:19,914 autoreload 26332 3572 Watching for file changes with StatReloader
+INFO 2026-04-22 08:36:48,191 middleware 26332 27248 200 POST /login/ - 1154.36ms
+INFO 2026-04-22 08:36:48,197 log 26332 27248 "POST /login/ HTTP/1.1" 200 6406
+INFO 2026-04-22 08:36:48,676 middleware 26332 27248 404 GET /login/logo.png - 27.40ms
+WARNING 2026-04-22 08:36:48,677 log 26332 27248 Not Found: /login/logo.png
+WARNING 2026-04-22 08:36:48,678 log 26332 27248 "GET /login/logo.png HTTP/1.1" 404 8431
+INFO 2026-04-22 08:37:26,596 middleware 26332 27248 404 GET /.well-known/appspecific/com.chrome.devtools.json - 13.19ms
+WARNING 2026-04-22 08:37:26,597 log 26332 27248 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-04-22 08:37:26,598 log 26332 27248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8533
+INFO 2026-04-22 08:38:19,904 middleware 26332 27248 200 POST /login/ - 1189.35ms
+INFO 2026-04-22 08:38:19,906 log 26332 27248 "POST /login/ HTTP/1.1" 200 6406
+INFO 2026-04-22 08:38:20,090 middleware 26332 27248 404 GET /.well-known/appspecific/com.chrome.devtools.json - 12.27ms
+WARNING 2026-04-22 08:38:20,092 log 26332 27248 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-04-22 08:38:20,093 log 26332 27248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8533
+INFO 2026-04-22 08:38:21,878 middleware 26332 27248 404 GET /login/logo.png - 7.54ms
+WARNING 2026-04-22 08:38:21,880 log 26332 27248 Not Found: /login/logo.png
+WARNING 2026-04-22 08:38:21,881 log 26332 27248 "GET /login/logo.png HTTP/1.1" 404 8431
+INFO 2026-04-22 08:48:32,314 autoreload 26332 3572 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 08:48:35,980 autoreload 22956 21208 Watching for file changes with StatReloader
+INFO 2026-04-22 08:48:43,524 autoreload 22956 21208 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 08:48:45,578 autoreload 9908 22152 Watching for file changes with StatReloader
+INFO 2026-04-22 08:48:54,033 autoreload 9908 22152 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 08:48:56,164 autoreload 4056 29232 Watching for file changes with StatReloader
+INFO 2026-04-22 08:48:59,760 autoreload 4056 29232 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 08:49:02,060 autoreload 10740 10348 Watching for file changes with StatReloader
+INFO 2026-04-22 08:49:07,152 autoreload 10740 10348 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 08:49:10,220 autoreload 28216 13436 Watching for file changes with StatReloader
+INFO 2026-04-22 08:49:14,256 autoreload 28216 13436 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 08:49:16,585 autoreload 29464 23840 Watching for file changes with StatReloader
+INFO 2026-04-22 08:49:24,475 autoreload 29464 23840 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 08:49:26,626 autoreload 25796 20260 Watching for file changes with StatReloader
+INFO 2026-04-22 08:50:16,423 autoreload 25796 20260 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 08:50:19,228 autoreload 26332 20924 Watching for file changes with StatReloader
+INFO 2026-04-22 08:51:53,332 middleware 26332 29016 200 POST /login/ - 1246.12ms
+INFO 2026-04-22 08:51:53,338 log 26332 29016 "POST /login/ HTTP/1.1" 200 6406
+INFO 2026-04-22 08:51:53,730 middleware 26332 29016 404 GET /.well-known/appspecific/com.chrome.devtools.json - 248.33ms
+WARNING 2026-04-22 08:51:53,731 log 26332 29016 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-04-22 08:51:53,733 log 26332 29016 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8533
+INFO 2026-04-22 08:51:55,302 middleware 26332 29016 404 GET /login/logo.png - 11.79ms
+WARNING 2026-04-22 08:51:55,303 log 26332 29016 Not Found: /login/logo.png
+WARNING 2026-04-22 08:51:55,304 log 26332 29016 "GET /login/logo.png HTTP/1.1" 404 8431
+INFO 2026-04-22 08:54:57,543 middleware 26332 29016 302 POST /login/ - 1350.45ms
+INFO 2026-04-22 08:54:57,555 log 26332 29016 "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-22 08:54:57,606 middleware 26332 29016 302 GET /admin/dashboard/ - 28.30ms
+INFO 2026-04-22 08:54:57,609 log 26332 29016 "GET /admin/dashboard/ HTTP/1.1" 302 0
+INFO 2026-04-22 08:54:57,724 middleware 26332 29016 200 GET /admin/login/ - 107.22ms
+INFO 2026-04-22 08:54:57,725 log 26332 29016 "GET /admin/login/?next=/admin/dashboard/ HTTP/1.1" 200 4447
+INFO 2026-04-22 08:54:57,915 middleware 26332 29016 404 GET /.well-known/appspecific/com.chrome.devtools.json - 16.60ms
+WARNING 2026-04-22 08:54:57,918 log 26332 29016 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-04-22 08:54:57,920 log 26332 29016 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8533
+INFO 2026-04-22 08:54:57,968 log 26332 25752 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 3538
+INFO 2026-04-22 08:54:57,997 log 26332 29016 "GET /static/admin/css/base.css HTTP/1.1" 200 23100
+INFO 2026-04-22 08:54:58,002 log 26332 25752 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2026-04-22 08:54:58,046 log 26332 29016 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2026-04-22 08:54:58,056 log 26332 25752 "GET /static/admin/css/responsive.css HTTP/1.1" 200 16273
+INFO 2026-04-22 08:54:58,246 log 26332 29016 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2026-04-22 08:54:58,640 log 26332 26036 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2026-04-22 08:54:58,741 log 26332 25752 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 645
+INFO 2026-04-22 08:54:58,839 log 26332 29016 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2026-04-22 08:54:59,588 log 26332 26036 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2026-04-22 08:55:00,263 middleware 26332 29016 302 GET /admin/login/logo.png - 7.49ms
+INFO 2026-04-22 08:55:00,265 log 26332 29016 "GET /admin/login/logo.png HTTP/1.1" 302 0
+INFO 2026-04-22 08:55:00,302 middleware 26332 29016 200 GET /admin/login/ - 19.62ms
+INFO 2026-04-22 08:55:00,304 log 26332 29016 "GET /admin/login/?next=/admin/login/logo.png HTTP/1.1" 200 3746
+INFO 2026-04-22 08:59:44,758 autoreload 26332 20924 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 08:59:47,238 autoreload 10096 28192 Watching for file changes with StatReloader
+INFO 2026-04-22 08:59:59,188 autoreload 10096 28192 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 09:00:01,500 autoreload 23564 26156 Watching for file changes with StatReloader
+INFO 2026-04-22 09:00:44,374 autoreload 23564 26156 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 09:00:46,908 autoreload 25816 27240 Watching for file changes with StatReloader
+INFO 2026-04-22 09:01:28,833 autoreload 25816 27240 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 09:01:31,908 autoreload 2012 27672 Watching for file changes with StatReloader
+WARNING 2026-04-22 09:01:44,971 log 2012 27128 Forbidden (CSRF token from POST incorrect.): /login/
+INFO 2026-04-22 09:01:44,972 middleware 2012 27128 403 POST /login/ - 315.10ms
+WARNING 2026-04-22 09:01:44,973 log 2012 27128 "POST /login/ HTTP/1.1" 403 2526
+INFO 2026-04-22 09:01:46,929 middleware 2012 27128 404 GET /login/logo.png - 10.10ms
+WARNING 2026-04-22 09:01:46,930 log 2012 27128 Not Found: /login/logo.png
+WARNING 2026-04-22 09:01:46,931 log 2012 27128 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 09:01:55,641 middleware 2012 27128 200 GET /login/ - 15.47ms
+INFO 2026-04-22 09:01:55,643 log 2012 27128 "GET /login/ HTTP/1.1" 200 6406
+INFO 2026-04-22 09:02:17,155 middleware 2012 27128 302 POST /login/ - 1194.92ms
+INFO 2026-04-22 09:02:17,167 log 2012 27128 "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-22 09:02:17,199 middleware 2012 27128 200 GET /dashboard/admin/ - 21.12ms
+INFO 2026-04-22 09:02:17,200 log 2012 27128 "GET /dashboard/admin/ HTTP/1.1" 200 1766
+INFO 2026-04-22 09:02:17,688 middleware 2012 27128 404 GET /dashboard/admin/logo.png - 8.91ms
+WARNING 2026-04-22 09:02:17,689 log 2012 27128 Not Found: /dashboard/admin/logo.png
+WARNING 2026-04-22 09:02:17,690 log 2012 27128 "GET /dashboard/admin/logo.png HTTP/1.1" 404 8650
+INFO 2026-04-22 09:02:35,280 middleware 2012 27128 200 GET /swagger/ - 147.15ms
+INFO 2026-04-22 09:02:35,282 log 2012 27128 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-04-22 09:02:35,403 log 2012 20692 "GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+INFO 2026-04-22 09:02:35,405 log 2012 27128 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+INFO 2026-04-22 09:02:35,412 log 2012 20692 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-22 09:02:35,413 log 2012 27128 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-22 09:02:35,431 log 2012 27128 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 09:02:35,439 log 2012 20692 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-22 09:02:35,446 log 2012 27128 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 09:02:35,934 log 2012 28676 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 09:02:35,935 log 2012 7376 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-22 09:02:35,942 log 2012 24144 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-22 09:02:35,936 log 2012 26884 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-22 09:02:35,944 log 2012 780 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 09:02:36,160 middleware 2012 27128 404 GET /swagger/logo.png - 10.95ms
+WARNING 2026-04-22 09:02:36,161 log 2012 27128 Not Found: /swagger/logo.png
+WARNING 2026-04-22 09:02:36,162 log 2012 27128 "GET /swagger/logo.png HTTP/1.1" 404 8626
+INFO 2026-04-22 09:02:38,100 middleware 2012 27128 200 GET /swagger/ - 1848.70ms
+INFO 2026-04-22 09:02:38,102 log 2012 27128 "GET /swagger/?format=openapi HTTP/1.1" 200 298323
+INFO 2026-04-22 09:21:13,049 middleware 2012 24880 200 GET / - 2.25ms
+INFO 2026-04-22 09:21:13,051 log 2012 24880 "GET / HTTP/1.1" 200 19706
+INFO 2026-04-22 09:21:14,074 middleware 2012 24880 404 GET /logo.png - 12.54ms
+WARNING 2026-04-22 09:21:14,076 log 2012 24880 Not Found: /logo.png
+WARNING 2026-04-22 09:21:14,077 log 2012 24880 "GET /logo.png HTTP/1.1" 404 8602
+INFO 2026-04-22 09:22:19,322 middleware 2012 24880 200 GET /login/ - 2.21ms
+INFO 2026-04-22 09:22:19,324 log 2012 24880 "GET /login/ HTTP/1.1" 200 6406
+INFO 2026-04-22 09:22:20,044 middleware 2012 24880 404 GET /login/logo.png - 12.08ms
+WARNING 2026-04-22 09:22:20,045 log 2012 24880 Not Found: /login/logo.png
+WARNING 2026-04-22 09:22:20,046 log 2012 24880 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 09:22:30,679 middleware 2012 24880 200 GET /login/ - 0.48ms
+INFO 2026-04-22 09:22:30,681 log 2012 24880 "GET /login/ HTTP/1.1" 200 6406
+INFO 2026-04-22 09:22:31,189 middleware 2012 24880 404 GET /login/logo.png - 12.11ms
+WARNING 2026-04-22 09:22:31,190 log 2012 24880 Not Found: /login/logo.png
+WARNING 2026-04-22 09:22:31,191 log 2012 24880 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 09:22:35,024 middleware 2012 24880 200 GET /register-company/ - 2.34ms
+INFO 2026-04-22 09:22:35,026 log 2012 24880 "GET /register-company/ HTTP/1.1" 200 9129
+INFO 2026-04-22 09:22:35,485 middleware 2012 24880 404 GET /register-company/logo.png - 10.92ms
+WARNING 2026-04-22 09:22:35,486 log 2012 24880 Not Found: /register-company/logo.png
+WARNING 2026-04-22 09:22:35,487 log 2012 24880 "GET /register-company/logo.png HTTP/1.1" 404 8653
+INFO 2026-04-22 10:00:55,565 middleware 2012 31116 200 GET / - 2.75ms
+INFO 2026-04-22 10:00:55,566 log 2012 31116 "GET / HTTP/1.1" 200 21850
+INFO 2026-04-22 10:00:57,217 middleware 2012 31116 404 GET /logo.png - 15.50ms
+WARNING 2026-04-22 10:00:57,218 log 2012 31116 Not Found: /logo.png
+WARNING 2026-04-22 10:00:57,219 log 2012 31116 "GET /logo.png HTTP/1.1" 404 8602
+INFO 2026-04-22 10:02:17,640 middleware 2012 31116 200 GET / - 1.54ms
+INFO 2026-04-22 10:02:17,642 log 2012 31116 "GET / HTTP/1.1" 200 21850
+INFO 2026-04-22 10:02:18,147 middleware 2012 31116 404 GET /logo.png - 16.68ms
+WARNING 2026-04-22 10:02:18,149 log 2012 31116 Not Found: /logo.png
+WARNING 2026-04-22 10:02:18,150 log 2012 31116 "GET /logo.png HTTP/1.1" 404 8602
+INFO 2026-04-22 10:03:22,022 middleware 2012 31116 200 GET /login/ - 15.38ms
+INFO 2026-04-22 10:03:22,025 log 2012 31116 "GET /login/ HTTP/1.1" 200 7244
+INFO 2026-04-22 10:03:22,854 middleware 2012 31116 404 GET /login/logo.png - 15.98ms
+WARNING 2026-04-22 10:03:22,855 log 2012 31116 Not Found: /login/logo.png
+WARNING 2026-04-22 10:03:22,857 log 2012 31116 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:03:39,880 middleware 2012 31116 200 GET /register-company/ - 48.54ms
+INFO 2026-04-22 10:03:39,881 log 2012 31116 "GET /register-company/ HTTP/1.1" 200 9129
+INFO 2026-04-22 10:03:40,444 middleware 2012 31116 404 GET /register-company/logo.png - 16.99ms
+WARNING 2026-04-22 10:03:40,446 log 2012 31116 Not Found: /register-company/logo.png
+WARNING 2026-04-22 10:03:40,447 log 2012 31116 "GET /register-company/logo.png HTTP/1.1" 404 8653
+INFO 2026-04-22 10:07:43,895 autoreload 2012 27672 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 10:07:52,113 autoreload 21724 16292 Watching for file changes with StatReloader
+INFO 2026-04-22 10:08:04,425 autoreload 21724 16292 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 10:08:07,116 autoreload 29588 23028 Watching for file changes with StatReloader
+INFO 2026-04-22 10:08:11,007 autoreload 29588 23028 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 10:08:14,352 autoreload 28632 28916 Watching for file changes with StatReloader
+INFO 2026-04-22 10:08:25,704 autoreload 28632 28916 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 10:08:28,236 autoreload 31008 11504 Watching for file changes with StatReloader
+INFO 2026-04-22 10:09:10,415 middleware 31008 25108 200 GET /login/ - 21.76ms
+INFO 2026-04-22 10:09:10,421 log 31008 25108 "GET /login/ HTTP/1.1" 200 9829
+INFO 2026-04-22 10:09:12,283 middleware 31008 25108 404 GET /login/logo.png - 12.64ms
+WARNING 2026-04-22 10:09:12,285 log 31008 25108 Not Found: /login/logo.png
+WARNING 2026-04-22 10:09:12,287 log 31008 25108 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:09:29,953 middleware 31008 25108 200 GET /login/ - 5.51ms
+INFO 2026-04-22 10:09:29,955 log 31008 25108 "GET /login/ HTTP/1.1" 200 9829
+INFO 2026-04-22 10:09:30,457 middleware 31008 25108 404 GET /login/logo.png - 12.40ms
+WARNING 2026-04-22 10:09:30,458 log 31008 25108 Not Found: /login/logo.png
+WARNING 2026-04-22 10:09:30,459 log 31008 25108 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:10:56,040 middleware 31008 25108 200 GET /register-company/ - 2.95ms
+INFO 2026-04-22 10:10:56,041 log 31008 25108 "GET /register-company/ HTTP/1.1" 200 9129
+INFO 2026-04-22 10:10:56,606 middleware 31008 25108 404 GET /register-company/logo.png - 11.52ms
+WARNING 2026-04-22 10:10:56,609 log 31008 25108 Not Found: /register-company/logo.png
+WARNING 2026-04-22 10:10:56,611 log 31008 25108 "GET /register-company/logo.png HTTP/1.1" 404 8653
+INFO 2026-04-22 10:13:54,333 middleware 31008 12836 200 GET /register-company/ - 0.71ms
+INFO 2026-04-22 10:13:54,334 log 31008 12836 "GET /register-company/ HTTP/1.1" 200 9129
+INFO 2026-04-22 10:13:54,910 middleware 31008 12836 404 GET /register-company/logo.png - 13.72ms
+WARNING 2026-04-22 10:13:54,911 log 31008 12836 Not Found: /register-company/logo.png
+WARNING 2026-04-22 10:13:54,913 log 31008 12836 "GET /register-company/logo.png HTTP/1.1" 404 8653
+INFO 2026-04-22 10:14:32,945 middleware 31008 12836 200 GET /login/ - 10.27ms
+INFO 2026-04-22 10:14:32,948 log 31008 12836 "GET /login/ HTTP/1.1" 200 12377
+INFO 2026-04-22 10:14:33,661 middleware 31008 12836 404 GET /login/logo.png - 9.65ms
+WARNING 2026-04-22 10:14:33,662 log 31008 12836 Not Found: /login/logo.png
+WARNING 2026-04-22 10:14:33,663 log 31008 12836 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:18:01,277 middleware 31008 12836 200 GET /login/ - 7.45ms
+INFO 2026-04-22 10:18:01,279 log 31008 12836 "GET /login/ HTTP/1.1" 200 13540
+INFO 2026-04-22 10:18:03,133 middleware 31008 12836 404 GET /login/logo.png - 11.49ms
+WARNING 2026-04-22 10:18:03,134 log 31008 12836 Not Found: /login/logo.png
+WARNING 2026-04-22 10:18:03,136 log 31008 12836 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:18:18,234 middleware 31008 12836 200 GET /login/ - 7.04ms
+INFO 2026-04-22 10:18:18,236 log 31008 12836 "GET /login/ HTTP/1.1" 200 13540
+INFO 2026-04-22 10:18:18,733 middleware 31008 12836 404 GET /login/logo.png - 12.37ms
+WARNING 2026-04-22 10:18:18,734 log 31008 12836 Not Found: /login/logo.png
+WARNING 2026-04-22 10:18:18,736 log 31008 12836 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:18:34,719 middleware 31008 12836 200 GET /login/ - 5.00ms
+INFO 2026-04-22 10:18:34,721 log 31008 12836 "GET /login/ HTTP/1.1" 200 13540
+INFO 2026-04-22 10:18:35,218 middleware 31008 12836 404 GET /login/logo.png - 9.76ms
+WARNING 2026-04-22 10:18:35,219 log 31008 12836 Not Found: /login/logo.png
+WARNING 2026-04-22 10:18:35,220 log 31008 12836 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:25:55,363 middleware 31008 25192 200 GET / - 1.09ms
+INFO 2026-04-22 10:25:55,365 log 31008 25192 "GET / HTTP/1.1" 200 21629
+INFO 2026-04-22 10:25:55,837 middleware 31008 25192 404 GET /logo.png - 11.35ms
+WARNING 2026-04-22 10:25:55,838 log 31008 25192 Not Found: /logo.png
+WARNING 2026-04-22 10:25:55,840 log 31008 25192 "GET /logo.png HTTP/1.1" 404 8602
+INFO 2026-04-22 10:27:28,732 middleware 31008 25192 200 GET /login/ - 7.39ms
+INFO 2026-04-22 10:27:28,734 log 31008 25192 "GET /login/ HTTP/1.1" 200 13540
+INFO 2026-04-22 10:27:29,360 middleware 31008 25192 404 GET /login/logo.png - 12.76ms
+WARNING 2026-04-22 10:27:29,362 log 31008 25192 Not Found: /login/logo.png
+WARNING 2026-04-22 10:27:29,365 log 31008 25192 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:28:04,797 middleware 31008 25192 200 GET /login/ - 4.37ms
+INFO 2026-04-22 10:28:04,799 log 31008 25192 "GET /login/ HTTP/1.1" 200 13540
+INFO 2026-04-22 10:28:05,465 middleware 31008 25192 404 GET /login/logo.png - 34.19ms
+WARNING 2026-04-22 10:28:05,467 log 31008 25192 Not Found: /login/logo.png
+WARNING 2026-04-22 10:28:05,468 log 31008 25192 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:30:59,396 middleware 31008 25192 200 GET / - 1.91ms
+INFO 2026-04-22 10:30:59,398 log 31008 25192 "GET / HTTP/1.1" 200 15833
+INFO 2026-04-22 10:30:59,941 middleware 31008 25192 404 GET /logo.png - 33.43ms
+WARNING 2026-04-22 10:30:59,963 log 31008 25192 Not Found: /logo.png
+WARNING 2026-04-22 10:30:59,996 log 31008 25192 "GET /logo.png HTTP/1.1" 404 8602
+INFO 2026-04-22 10:31:19,358 middleware 31008 25192 200 GET /login/ - 4.40ms
+INFO 2026-04-22 10:31:19,359 log 31008 25192 "GET /login/ HTTP/1.1" 200 9647
+INFO 2026-04-22 10:31:19,825 middleware 31008 25192 404 GET /login/logo.png - 13.14ms
+WARNING 2026-04-22 10:31:19,826 log 31008 25192 Not Found: /login/logo.png
+WARNING 2026-04-22 10:31:19,827 log 31008 25192 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:31:33,326 middleware 31008 25192 200 GET / - 0.32ms
+INFO 2026-04-22 10:31:33,327 log 31008 25192 "GET / HTTP/1.1" 200 15833
+INFO 2026-04-22 10:31:33,898 middleware 31008 25192 404 GET /logo.png - 22.53ms
+WARNING 2026-04-22 10:31:33,900 log 31008 25192 Not Found: /logo.png
+WARNING 2026-04-22 10:31:33,901 log 31008 25192 "GET /logo.png HTTP/1.1" 404 8602
+INFO 2026-04-22 10:33:11,100 middleware 31008 25192 200 GET /login/ - 4.03ms
+INFO 2026-04-22 10:33:11,102 log 31008 25192 "GET /login/ HTTP/1.1" 200 9647
+INFO 2026-04-22 10:33:11,661 middleware 31008 25192 404 GET /login/logo.png - 19.17ms
+WARNING 2026-04-22 10:33:11,663 log 31008 25192 Not Found: /login/logo.png
+WARNING 2026-04-22 10:33:11,663 log 31008 25192 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:37:23,122 middleware 31008 25192 200 GET / - 1.64ms
+INFO 2026-04-22 10:37:23,125 log 31008 25192 "GET / HTTP/1.1" 200 29528
+INFO 2026-04-22 10:37:25,375 middleware 31008 25192 404 GET /logo.png - 11.53ms
+WARNING 2026-04-22 10:37:25,378 log 31008 25192 Not Found: /logo.png
+WARNING 2026-04-22 10:37:25,379 log 31008 25192 "GET /logo.png HTTP/1.1" 404 8602
+INFO 2026-04-22 10:37:56,498 middleware 31008 25192 200 GET /login/ - 8.45ms
+INFO 2026-04-22 10:37:56,501 log 31008 25192 "GET /login/ HTTP/1.1" 200 9647
+INFO 2026-04-22 10:37:57,129 middleware 31008 25192 404 GET /login/logo.png - 10.62ms
+WARNING 2026-04-22 10:37:57,130 log 31008 25192 Not Found: /login/logo.png
+WARNING 2026-04-22 10:37:57,131 log 31008 25192 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:38:01,300 middleware 31008 25192 200 GET / - 0.26ms
+INFO 2026-04-22 10:38:01,301 log 31008 25192 "GET / HTTP/1.1" 200 29528
+INFO 2026-04-22 10:38:01,828 middleware 31008 25192 404 GET /logo.png - 10.42ms
+WARNING 2026-04-22 10:38:01,829 log 31008 25192 Not Found: /logo.png
+WARNING 2026-04-22 10:38:01,830 log 31008 25192 "GET /logo.png HTTP/1.1" 404 8602
+INFO 2026-04-22 10:38:35,128 middleware 31008 25192 200 GET /login/ - 9.40ms
+INFO 2026-04-22 10:38:35,130 log 31008 25192 "GET /login/ HTTP/1.1" 200 13727
+INFO 2026-04-22 10:38:35,893 middleware 31008 25192 404 GET /login/logo.png - 15.31ms
+WARNING 2026-04-22 10:38:35,894 log 31008 25192 Not Found: /login/logo.png
+WARNING 2026-04-22 10:38:35,895 log 31008 25192 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:38:48,559 middleware 31008 25192 200 GET / - 1.00ms
+INFO 2026-04-22 10:38:48,560 log 31008 25192 "GET / HTTP/1.1" 200 29528
+INFO 2026-04-22 10:38:49,298 middleware 31008 25192 404 GET /logo.png - 14.22ms
+WARNING 2026-04-22 10:38:49,299 log 31008 25192 Not Found: /logo.png
+WARNING 2026-04-22 10:38:49,300 log 31008 25192 "GET /logo.png HTTP/1.1" 404 8602
+INFO 2026-04-22 10:44:31,349 middleware 31008 20608 200 GET / - 1.21ms
+INFO 2026-04-22 10:44:31,350 log 31008 20608 "GET / HTTP/1.1" 200 19595
+INFO 2026-04-22 10:44:33,254 middleware 31008 20608 404 GET /logo.png - 9.08ms
+WARNING 2026-04-22 10:44:33,255 log 31008 20608 Not Found: /logo.png
+WARNING 2026-04-22 10:44:33,256 log 31008 20608 "GET /logo.png HTTP/1.1" 404 8602
+INFO 2026-04-22 10:45:03,854 middleware 31008 20608 200 GET /login/ - 5.47ms
+INFO 2026-04-22 10:45:03,856 log 31008 20608 "GET /login/ HTTP/1.1" 200 13727
+INFO 2026-04-22 10:45:04,507 middleware 31008 20608 404 GET /login/logo.png - 9.10ms
+WARNING 2026-04-22 10:45:04,508 log 31008 20608 Not Found: /login/logo.png
+WARNING 2026-04-22 10:45:04,509 log 31008 20608 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:45:31,903 middleware 31008 20608 200 GET /login/ - 7.56ms
+INFO 2026-04-22 10:45:31,905 log 31008 20608 "GET /login/ HTTP/1.1" 200 13123
+INFO 2026-04-22 10:45:32,382 middleware 31008 20608 404 GET /login/logo.png - 28.27ms
+WARNING 2026-04-22 10:45:32,396 log 31008 20608 Not Found: /login/logo.png
+WARNING 2026-04-22 10:45:32,420 log 31008 20608 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:45:48,374 middleware 31008 20608 200 GET / - 1.50ms
+INFO 2026-04-22 10:45:48,375 log 31008 20608 "GET / HTTP/1.1" 200 19595
+INFO 2026-04-22 10:45:49,076 middleware 31008 20608 404 GET /logo.png - 11.01ms
+WARNING 2026-04-22 10:45:49,077 log 31008 20608 Not Found: /logo.png
+WARNING 2026-04-22 10:45:49,077 log 31008 20608 "GET /logo.png HTTP/1.1" 404 8602
+INFO 2026-04-22 10:46:30,607 middleware 31008 20608 200 GET /login/ - 5.07ms
+INFO 2026-04-22 10:46:30,609 log 31008 20608 "GET /login/ HTTP/1.1" 200 13123
+INFO 2026-04-22 10:46:31,226 middleware 31008 20608 404 GET /login/logo.png - 10.37ms
+WARNING 2026-04-22 10:46:31,228 log 31008 20608 Not Found: /login/logo.png
+WARNING 2026-04-22 10:46:31,230 log 31008 20608 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:46:35,880 middleware 31008 20608 200 GET /login/ - 10.38ms
+INFO 2026-04-22 10:46:35,882 log 31008 20608 "GET /login/ HTTP/1.1" 200 9647
+INFO 2026-04-22 10:46:36,328 middleware 31008 20608 404 GET /login/logo.png - 10.18ms
+WARNING 2026-04-22 10:46:36,329 log 31008 20608 Not Found: /login/logo.png
+WARNING 2026-04-22 10:46:36,330 log 31008 20608 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:46:43,979 middleware 31008 20608 200 GET /login/ - 8.04ms
+INFO 2026-04-22 10:46:43,981 log 31008 20608 "GET /login/ HTTP/1.1" 200 13540
+INFO 2026-04-22 10:46:44,394 middleware 31008 20608 404 GET /login/logo.png - 7.61ms
+WARNING 2026-04-22 10:46:44,395 log 31008 20608 Not Found: /login/logo.png
+WARNING 2026-04-22 10:46:44,396 log 31008 20608 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:46:50,579 middleware 31008 20608 200 GET /login/ - 4.60ms
+INFO 2026-04-22 10:46:50,581 log 31008 20608 "GET /login/ HTTP/1.1" 200 13540
+INFO 2026-04-22 10:46:51,064 middleware 31008 20608 404 GET /login/logo.png - 47.50ms
+WARNING 2026-04-22 10:46:51,083 log 31008 20608 Not Found: /login/logo.png
+WARNING 2026-04-22 10:46:51,085 log 31008 20608 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:46:53,854 middleware 31008 20608 200 GET /login/ - 9.18ms
+INFO 2026-04-22 10:46:53,856 log 31008 20608 "GET /login/ HTTP/1.1" 200 12377
+INFO 2026-04-22 10:46:54,289 middleware 31008 20608 404 GET /login/logo.png - 10.90ms
+WARNING 2026-04-22 10:46:54,290 log 31008 20608 Not Found: /login/logo.png
+WARNING 2026-04-22 10:46:54,291 log 31008 20608 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:47:03,646 middleware 31008 20608 200 GET /login/ - 30.62ms
+INFO 2026-04-22 10:47:03,650 log 31008 20608 "GET /login/ HTTP/1.1" 200 9829
+INFO 2026-04-22 10:47:04,151 middleware 31008 20608 404 GET /login/logo.png - 8.12ms
+WARNING 2026-04-22 10:47:04,152 log 31008 20608 Not Found: /login/logo.png
+WARNING 2026-04-22 10:47:04,152 log 31008 20608 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:47:28,442 middleware 31008 20608 200 GET / - 1.22ms
+INFO 2026-04-22 10:47:28,444 log 31008 20608 "GET / HTTP/1.1" 200 29528
+INFO 2026-04-22 10:47:29,019 middleware 31008 20608 404 GET /logo.png - 96.19ms
+WARNING 2026-04-22 10:47:29,053 log 31008 20608 Not Found: /logo.png
+WARNING 2026-04-22 10:47:29,062 log 31008 20608 "GET /logo.png HTTP/1.1" 404 8602
+INFO 2026-04-22 10:47:31,724 middleware 31008 20608 200 GET / - 0.48ms
+INFO 2026-04-22 10:47:31,726 log 31008 20608 "GET / HTTP/1.1" 200 29528
+INFO 2026-04-22 10:47:32,377 middleware 31008 20608 404 GET /logo.png - 13.10ms
+WARNING 2026-04-22 10:47:32,378 log 31008 20608 Not Found: /logo.png
+WARNING 2026-04-22 10:47:32,379 log 31008 20608 "GET /logo.png HTTP/1.1" 404 8602
+INFO 2026-04-22 10:47:34,560 middleware 31008 20608 200 GET / - 1.91ms
+INFO 2026-04-22 10:47:34,563 log 31008 20608 "GET / HTTP/1.1" 200 15833
+INFO 2026-04-22 10:47:35,075 middleware 31008 20608 404 GET /logo.png - 11.87ms
+WARNING 2026-04-22 10:47:35,076 log 31008 20608 Not Found: /logo.png
+WARNING 2026-04-22 10:47:35,077 log 31008 20608 "GET /logo.png HTTP/1.1" 404 8602
+INFO 2026-04-22 10:47:39,664 middleware 31008 20608 200 GET / - 0.40ms
+INFO 2026-04-22 10:47:39,666 log 31008 20608 "GET / HTTP/1.1" 200 15833
+INFO 2026-04-22 10:47:40,252 middleware 31008 20608 404 GET /logo.png - 15.33ms
+WARNING 2026-04-22 10:47:40,253 log 31008 20608 Not Found: /logo.png
+WARNING 2026-04-22 10:47:40,255 log 31008 20608 "GET /logo.png HTTP/1.1" 404 8602
+INFO 2026-04-22 10:47:42,536 middleware 31008 20608 200 GET / - 2.16ms
+INFO 2026-04-22 10:47:42,538 log 31008 20608 "GET / HTTP/1.1" 200 15832
+INFO 2026-04-22 10:47:42,938 middleware 31008 20608 404 GET /logo.png - 12.90ms
+WARNING 2026-04-22 10:47:42,939 log 31008 20608 Not Found: /logo.png
+WARNING 2026-04-22 10:47:42,940 log 31008 20608 "GET /logo.png HTTP/1.1" 404 8602
+INFO 2026-04-22 10:47:48,642 middleware 31008 20608 200 GET / - 1.34ms
+INFO 2026-04-22 10:47:48,644 log 31008 20608 "GET / HTTP/1.1" 200 21629
+INFO 2026-04-22 10:47:49,134 middleware 31008 20608 404 GET /logo.png - 13.15ms
+WARNING 2026-04-22 10:47:49,135 log 31008 20608 Not Found: /logo.png
+WARNING 2026-04-22 10:47:49,136 log 31008 20608 "GET /logo.png HTTP/1.1" 404 8602
+INFO 2026-04-22 10:48:03,899 middleware 31008 20608 200 GET / - 1.04ms
+INFO 2026-04-22 10:48:03,901 log 31008 20608 "GET / HTTP/1.1" 200 21850
+INFO 2026-04-22 10:48:04,394 middleware 31008 20608 404 GET /logo.png - 32.77ms
+WARNING 2026-04-22 10:48:04,408 log 31008 20608 Not Found: /logo.png
+WARNING 2026-04-22 10:48:04,445 log 31008 20608 "GET /logo.png HTTP/1.1" 404 8602
+INFO 2026-04-22 10:48:12,751 middleware 31008 20608 200 GET /login/ - 6.33ms
+INFO 2026-04-22 10:48:12,753 log 31008 20608 "GET /login/ HTTP/1.1" 200 9829
+INFO 2026-04-22 10:48:13,437 middleware 31008 20608 404 GET /login/logo.png - 11.96ms
+WARNING 2026-04-22 10:48:13,438 log 31008 20608 Not Found: /login/logo.png
+WARNING 2026-04-22 10:48:13,440 log 31008 20608 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:48:53,075 middleware 31008 20608 200 GET /login/ - 6.45ms
+INFO 2026-04-22 10:48:53,077 log 31008 20608 "GET /login/ HTTP/1.1" 200 9829
+INFO 2026-04-22 10:48:53,885 middleware 31008 20608 404 GET /login/logo.png - 11.05ms
+WARNING 2026-04-22 10:48:53,886 log 31008 20608 Not Found: /login/logo.png
+WARNING 2026-04-22 10:48:53,887 log 31008 20608 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:54:15,648 middleware 31008 20528 200 GET /login/ - 10.53ms
+INFO 2026-04-22 10:54:15,649 log 31008 20528 "GET /login/ HTTP/1.1" 200 12067
+INFO 2026-04-22 10:54:17,188 middleware 31008 20528 404 GET /login/logo.png - 9.27ms
+WARNING 2026-04-22 10:54:17,189 log 31008 20528 Not Found: /login/logo.png
+WARNING 2026-04-22 10:54:17,190 log 31008 20528 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:54:23,845 middleware 31008 20528 200 GET / - 5.34ms
+INFO 2026-04-22 10:54:23,851 log 31008 20528 "GET / HTTP/1.1" 200 21850
+INFO 2026-04-22 10:54:24,415 middleware 31008 20528 404 GET /logo.png - 12.24ms
+WARNING 2026-04-22 10:54:24,416 log 31008 20528 Not Found: /logo.png
+WARNING 2026-04-22 10:54:24,417 log 31008 20528 "GET /logo.png HTTP/1.1" 404 8602
+INFO 2026-04-22 10:54:26,222 middleware 31008 20528 200 GET /login/ - 5.85ms
+INFO 2026-04-22 10:54:26,224 log 31008 20528 "GET /login/ HTTP/1.1" 200 12067
+INFO 2026-04-22 10:54:26,663 middleware 31008 20528 404 GET /login/logo.png - 12.93ms
+WARNING 2026-04-22 10:54:26,664 log 31008 20528 Not Found: /login/logo.png
+WARNING 2026-04-22 10:54:26,665 log 31008 20528 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:56:46,538 middleware 31008 20528 200 GET /login/ - 8.89ms
+INFO 2026-04-22 10:56:46,539 log 31008 20528 "GET /login/ HTTP/1.1" 200 12134
+INFO 2026-04-22 10:56:47,162 middleware 31008 20528 404 GET /login/logo.png - 66.05ms
+WARNING 2026-04-22 10:56:47,179 log 31008 20528 Not Found: /login/logo.png
+WARNING 2026-04-22 10:56:47,186 log 31008 20528 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:56:51,899 middleware 31008 20528 200 GET / - 1.23ms
+INFO 2026-04-22 10:56:51,900 log 31008 20528 "GET / HTTP/1.1" 200 21850
+INFO 2026-04-22 10:56:52,514 middleware 31008 20528 404 GET /logo.png - 8.60ms
+WARNING 2026-04-22 10:56:52,515 log 31008 20528 Not Found: /logo.png
+WARNING 2026-04-22 10:56:52,516 log 31008 20528 "GET /logo.png HTTP/1.1" 404 8602
+INFO 2026-04-22 10:56:56,963 middleware 31008 20528 200 GET /login/ - 6.34ms
+INFO 2026-04-22 10:56:56,965 log 31008 20528 "GET /login/ HTTP/1.1" 200 12134
+INFO 2026-04-22 10:56:57,574 middleware 31008 20528 404 GET /login/logo.png - 12.75ms
+WARNING 2026-04-22 10:56:57,575 log 31008 20528 Not Found: /login/logo.png
+WARNING 2026-04-22 10:56:57,576 log 31008 20528 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:57:49,877 middleware 31008 20528 200 GET /login/ - 6.19ms
+INFO 2026-04-22 10:57:49,879 log 31008 20528 "GET /login/ HTTP/1.1" 200 12134
+INFO 2026-04-22 10:57:50,487 middleware 31008 20528 404 GET /login/logo.png - 11.04ms
+WARNING 2026-04-22 10:57:50,488 log 31008 20528 Not Found: /login/logo.png
+WARNING 2026-04-22 10:57:50,489 log 31008 20528 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:57:57,659 middleware 31008 20528 200 GET / - 0.40ms
+INFO 2026-04-22 10:57:57,660 log 31008 20528 "GET / HTTP/1.1" 200 21850
+INFO 2026-04-22 10:57:58,140 middleware 31008 20528 404 GET /logo.png - 10.64ms
+WARNING 2026-04-22 10:57:58,141 log 31008 20528 Not Found: /logo.png
+WARNING 2026-04-22 10:57:58,142 log 31008 20528 "GET /logo.png HTTP/1.1" 404 8602
+INFO 2026-04-22 10:58:00,746 middleware 31008 20528 200 GET /login/ - 7.00ms
+INFO 2026-04-22 10:58:00,749 log 31008 20528 "GET /login/ HTTP/1.1" 200 12134
+INFO 2026-04-22 10:58:01,311 middleware 31008 20528 404 GET /login/logo.png - 13.44ms
+WARNING 2026-04-22 10:58:01,313 log 31008 20528 Not Found: /login/logo.png
+WARNING 2026-04-22 10:58:01,315 log 31008 20528 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:58:04,219 middleware 31008 20528 200 GET /register-company/ - 3.48ms
+INFO 2026-04-22 10:58:04,221 log 31008 20528 "GET /register-company/ HTTP/1.1" 200 9129
+INFO 2026-04-22 10:58:04,712 middleware 31008 20528 404 GET /register-company/logo.png - 12.24ms
+WARNING 2026-04-22 10:58:04,713 log 31008 20528 Not Found: /register-company/logo.png
+WARNING 2026-04-22 10:58:04,715 log 31008 20528 "GET /register-company/logo.png HTTP/1.1" 404 8653
+INFO 2026-04-22 10:58:10,575 middleware 31008 20528 200 GET /login/ - 4.66ms
+INFO 2026-04-22 10:58:10,577 log 31008 20528 "GET /login/ HTTP/1.1" 200 12134
+INFO 2026-04-22 10:58:11,208 middleware 31008 20528 404 GET /login/logo.png - 12.88ms
+WARNING 2026-04-22 10:58:11,209 log 31008 20528 Not Found: /login/logo.png
+WARNING 2026-04-22 10:58:11,210 log 31008 20528 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 10:59:45,259 middleware 31008 20528 200 GET /login/ - 10.96ms
+INFO 2026-04-22 10:59:45,261 log 31008 20528 "GET /login/ HTTP/1.1" 200 12134
+INFO 2026-04-22 10:59:45,704 middleware 31008 20528 404 GET /login/logo.png - 12.17ms
+WARNING 2026-04-22 10:59:45,706 log 31008 20528 Not Found: /login/logo.png
+WARNING 2026-04-22 10:59:45,707 log 31008 20528 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 11:06:18,365 middleware 31008 27428 200 GET /login/ - 8.88ms
+INFO 2026-04-22 11:06:18,368 log 31008 27428 "GET /login/ HTTP/1.1" 200 14885
+INFO 2026-04-22 11:06:19,909 middleware 31008 27428 404 GET /login/logo.png - 9.63ms
+WARNING 2026-04-22 11:06:19,910 log 31008 27428 Not Found: /login/logo.png
+WARNING 2026-04-22 11:06:19,911 log 31008 27428 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 11:08:05,891 middleware 31008 27428 302 POST /login/ - 1516.95ms
+INFO 2026-04-22 11:08:05,913 log 31008 27428 "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-22 11:08:05,978 middleware 31008 27428 200 GET /dashboard/admin/ - 36.59ms
+INFO 2026-04-22 11:08:05,979 log 31008 27428 "GET /dashboard/admin/ HTTP/1.1" 200 1766
+INFO 2026-04-22 11:08:06,494 middleware 31008 27428 404 GET /dashboard/admin/logo.png - 11.91ms
+WARNING 2026-04-22 11:08:06,495 log 31008 27428 Not Found: /dashboard/admin/logo.png
+WARNING 2026-04-22 11:08:06,496 log 31008 27428 "GET /dashboard/admin/logo.png HTTP/1.1" 404 8650
+INFO 2026-04-22 11:08:56,106 middleware 31008 27428 200 GET / - 2.08ms
+INFO 2026-04-22 11:08:56,108 log 31008 27428 "GET / HTTP/1.1" 200 21850
+INFO 2026-04-22 11:08:56,774 middleware 31008 27428 404 GET /logo.png - 12.78ms
+WARNING 2026-04-22 11:08:56,775 log 31008 27428 Not Found: /logo.png
+WARNING 2026-04-22 11:08:56,776 log 31008 27428 "GET /logo.png HTTP/1.1" 404 8602
+INFO 2026-04-22 11:08:58,402 middleware 31008 27428 200 GET /login/ - 15.72ms
+INFO 2026-04-22 11:08:58,405 log 31008 27428 "GET /login/ HTTP/1.1" 200 15314
+INFO 2026-04-22 11:08:58,946 middleware 31008 27428 404 GET /login/logo.png - 13.21ms
+WARNING 2026-04-22 11:08:58,948 log 31008 27428 Not Found: /login/logo.png
+WARNING 2026-04-22 11:08:58,949 log 31008 27428 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 11:09:14,830 middleware 31008 27428 200 GET / - 0.49ms
+INFO 2026-04-22 11:09:14,832 log 31008 27428 "GET / HTTP/1.1" 200 21850
+INFO 2026-04-22 11:09:15,479 middleware 31008 27428 404 GET /logo.png - 42.62ms
+WARNING 2026-04-22 11:09:15,487 log 31008 27428 Not Found: /logo.png
+WARNING 2026-04-22 11:09:15,510 log 31008 27428 "GET /logo.png HTTP/1.1" 404 8602
+INFO 2026-04-22 11:09:16,997 middleware 31008 27428 200 GET /login/ - 5.14ms
+INFO 2026-04-22 11:09:17,000 log 31008 27428 "GET /login/ HTTP/1.1" 200 14885
+INFO 2026-04-22 11:09:17,410 middleware 31008 27428 404 GET /login/logo.png - 10.44ms
+WARNING 2026-04-22 11:09:17,411 log 31008 27428 Not Found: /login/logo.png
+WARNING 2026-04-22 11:09:17,411 log 31008 27428 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 11:12:06,891 middleware 31008 27428 302 POST /login/ - 1355.43ms
+INFO 2026-04-22 11:12:06,907 log 31008 27428 "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-22 11:12:06,935 middleware 31008 27428 200 GET /dashboard/admin/ - 15.44ms
+INFO 2026-04-22 11:12:06,936 log 31008 27428 "GET /dashboard/admin/ HTTP/1.1" 200 1766
+INFO 2026-04-22 11:12:07,418 middleware 31008 27428 404 GET /dashboard/admin/logo.png - 12.48ms
+WARNING 2026-04-22 11:12:07,419 log 31008 27428 Not Found: /dashboard/admin/logo.png
+WARNING 2026-04-22 11:12:07,420 log 31008 27428 "GET /dashboard/admin/logo.png HTTP/1.1" 404 8650
+INFO 2026-04-22 11:26:59,953 autoreload 31008 11504 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 11:27:16,545 autoreload 31240 8016 Watching for file changes with StatReloader
+INFO 2026-04-22 11:27:23,349 autoreload 31240 8016 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 11:27:31,657 autoreload 27832 27008 Watching for file changes with StatReloader
+INFO 2026-04-22 11:29:41,594 middleware 27832 27824 200 GET /dashboard/admin/ - 38.09ms
+INFO 2026-04-22 11:29:41,604 log 27832 27824 "GET /dashboard/admin/ HTTP/1.1" 200 1766
+INFO 2026-04-22 11:29:42,331 middleware 27832 27824 404 GET /dashboard/admin/logo.png - 30.85ms
+WARNING 2026-04-22 11:29:42,334 log 27832 27824 Not Found: /dashboard/admin/logo.png
+WARNING 2026-04-22 11:29:42,336 log 27832 27824 "GET /dashboard/admin/logo.png HTTP/1.1" 404 8650
+INFO 2026-04-22 11:29:49,289 middleware 27832 27824 302 GET /logout/ - 115.34ms
+INFO 2026-04-22 11:29:49,293 log 27832 27824 "GET /logout/ HTTP/1.1" 302 0
+INFO 2026-04-22 11:29:49,379 middleware 27832 27824 200 GET /login/ - 65.04ms
+INFO 2026-04-22 11:29:49,382 log 27832 27824 "GET /login/ HTTP/1.1" 200 15706
+INFO 2026-04-22 11:29:50,739 middleware 27832 27824 404 GET /login/logo.png - 20.14ms
+WARNING 2026-04-22 11:29:50,741 log 27832 27824 Not Found: /login/logo.png
+WARNING 2026-04-22 11:29:50,742 log 27832 27824 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 11:30:04,951 middleware 27832 27824 200 GET /login/ - 8.47ms
+INFO 2026-04-22 11:30:04,954 log 27832 27824 "GET /login/ HTTP/1.1" 200 14885
+INFO 2026-04-22 11:30:05,708 middleware 27832 27824 404 GET /login/logo.png - 63.05ms
+WARNING 2026-04-22 11:30:05,710 log 27832 27824 Not Found: /login/logo.png
+WARNING 2026-04-22 11:30:05,713 log 27832 27824 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 11:32:53,534 middleware 27832 27824 302 POST /login/ - 1713.91ms
+INFO 2026-04-22 11:32:53,551 log 27832 27824 "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-22 11:32:53,611 middleware 27832 27824 200 GET /dashboard/admin/ - 40.10ms
+INFO 2026-04-22 11:32:53,614 log 27832 27824 "GET /dashboard/admin/ HTTP/1.1" 200 1766
+INFO 2026-04-22 11:32:54,862 middleware 27832 27824 404 GET /dashboard/admin/logo.png - 58.69ms
+WARNING 2026-04-22 11:32:54,879 log 27832 27824 Not Found: /dashboard/admin/logo.png
+WARNING 2026-04-22 11:32:54,893 log 27832 27824 "GET /dashboard/admin/logo.png HTTP/1.1" 404 8650
+INFO 2026-04-22 11:33:10,651 middleware 27832 27824 302 GET /logout/ - 24.75ms
+INFO 2026-04-22 11:33:10,656 log 27832 27824 "GET /logout/ HTTP/1.1" 302 0
+INFO 2026-04-22 11:33:10,692 middleware 27832 27824 200 GET /login/ - 22.30ms
+INFO 2026-04-22 11:33:10,696 log 27832 27824 "GET /login/ HTTP/1.1" 200 15706
+INFO 2026-04-22 11:33:11,737 middleware 27832 27824 404 GET /login/logo.png - 16.80ms
+WARNING 2026-04-22 11:33:11,739 log 27832 27824 Not Found: /login/logo.png
+WARNING 2026-04-22 11:33:11,740 log 27832 27824 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 11:36:21,938 middleware 27832 27824 302 POST /login/ - 1576.65ms
+INFO 2026-04-22 11:36:21,954 log 27832 27824 "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-22 11:36:21,999 middleware 27832 27824 200 GET /dashboard/admin/ - 29.95ms
+INFO 2026-04-22 11:36:22,001 log 27832 27824 "GET /dashboard/admin/ HTTP/1.1" 200 1766
+INFO 2026-04-22 11:36:23,243 middleware 27832 27824 404 GET /dashboard/admin/logo.png - 21.54ms
+WARNING 2026-04-22 11:36:23,245 log 27832 27824 Not Found: /dashboard/admin/logo.png
+WARNING 2026-04-22 11:36:23,248 log 27832 27824 "GET /dashboard/admin/logo.png HTTP/1.1" 404 8650
+INFO 2026-04-22 11:36:31,230 middleware 27832 27824 302 GET /dashboard/admin/ - 1.72ms
+INFO 2026-04-22 11:36:31,232 log 27832 27824 "GET /dashboard/admin/ HTTP/1.1" 302 0
+INFO 2026-04-22 11:36:31,273 middleware 27832 27824 404 GET /accounts/login/ - 19.10ms
+WARNING 2026-04-22 11:36:31,274 log 27832 27824 Not Found: /accounts/login/
+WARNING 2026-04-22 11:36:31,279 log 27832 27824 "GET /accounts/login/?next=/dashboard/admin/ HTTP/1.1" 404 8646
+INFO 2026-04-22 11:36:32,042 middleware 27832 27824 404 GET /accounts/login/logo.png - 14.06ms
+WARNING 2026-04-22 11:36:32,045 log 27832 27824 Not Found: /accounts/login/logo.png
+WARNING 2026-04-22 11:36:32,047 log 27832 27824 "GET /accounts/login/logo.png HTTP/1.1" 404 8647
+INFO 2026-04-22 11:36:40,738 middleware 27832 27824 404 GET /accounts/login/ - 15.81ms
+WARNING 2026-04-22 11:36:40,740 log 27832 27824 Not Found: /accounts/login/
+WARNING 2026-04-22 11:36:40,742 log 27832 27824 "GET /accounts/login/?next=/dashboard/admin/ HTTP/1.1" 404 8646
+INFO 2026-04-22 11:36:41,507 middleware 27832 27824 404 GET /accounts/login/logo.png - 100.17ms
+WARNING 2026-04-22 11:36:41,513 log 27832 27824 Not Found: /accounts/login/logo.png
+WARNING 2026-04-22 11:36:41,522 log 27832 27824 "GET /accounts/login/logo.png HTTP/1.1" 404 8647
+INFO 2026-04-22 11:36:43,223 middleware 27832 27824 200 GET /login/ - 7.43ms
+INFO 2026-04-22 11:36:43,225 log 27832 27824 "GET /login/ HTTP/1.1" 200 14885
+INFO 2026-04-22 11:36:44,256 middleware 27832 27824 404 GET /login/logo.png - 23.48ms
+WARNING 2026-04-22 11:36:44,258 log 27832 27824 Not Found: /login/logo.png
+WARNING 2026-04-22 11:36:44,261 log 27832 27824 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 11:36:55,831 middleware 27832 27824 200 GET /login/ - 5.71ms
+INFO 2026-04-22 11:36:55,833 log 27832 27824 "GET /login/ HTTP/1.1" 200 14885
+INFO 2026-04-22 11:36:56,709 middleware 27832 27824 404 GET /login/logo.png - 15.21ms
+WARNING 2026-04-22 11:36:56,710 log 27832 27824 Not Found: /login/logo.png
+WARNING 2026-04-22 11:36:56,712 log 27832 27824 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 11:37:15,575 middleware 27832 27824 302 POST /login/ - 1616.11ms
+INFO 2026-04-22 11:37:15,590 log 27832 27824 "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-22 11:37:15,629 middleware 27832 27824 200 GET /dashboard/admin/ - 25.88ms
+INFO 2026-04-22 11:37:15,633 log 27832 27824 "GET /dashboard/admin/ HTTP/1.1" 200 1766
+INFO 2026-04-22 11:37:16,505 middleware 27832 27824 404 GET /dashboard/admin/logo.png - 17.24ms
+WARNING 2026-04-22 11:37:16,508 log 27832 27824 Not Found: /dashboard/admin/logo.png
+WARNING 2026-04-22 11:37:16,510 log 27832 27824 "GET /dashboard/admin/logo.png HTTP/1.1" 404 8650
+INFO 2026-04-22 11:37:18,934 middleware 27832 27824 302 GET /logout/ - 26.58ms
+INFO 2026-04-22 11:37:18,937 log 27832 27824 "GET /logout/ HTTP/1.1" 302 0
+INFO 2026-04-22 11:37:18,960 middleware 27832 27824 200 GET /login/ - 11.90ms
+INFO 2026-04-22 11:37:18,965 log 27832 27824 "GET /login/ HTTP/1.1" 200 15706
+INFO 2026-04-22 11:37:19,694 middleware 27832 27824 404 GET /login/logo.png - 18.72ms
+WARNING 2026-04-22 11:37:19,696 log 27832 27824 Not Found: /login/logo.png
+WARNING 2026-04-22 11:37:19,699 log 27832 27824 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 11:39:58,595 middleware 27832 27824 200 GET /register-company/ - 11.05ms
+INFO 2026-04-22 11:39:58,597 log 27832 27824 "GET /register-company/ HTTP/1.1" 200 9129
+INFO 2026-04-22 11:40:00,491 middleware 27832 27824 404 GET /register-company/logo.png - 10.98ms
+WARNING 2026-04-22 11:40:00,493 log 27832 27824 Not Found: /register-company/logo.png
+WARNING 2026-04-22 11:40:00,494 log 27832 27824 "GET /register-company/logo.png HTTP/1.1" 404 8653
+INFO 2026-04-22 11:45:03,518 autoreload 27832 27008 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 11:45:07,441 autoreload 24288 26288 Watching for file changes with StatReloader
+INFO 2026-04-22 11:45:37,222 middleware 24288 4004 200 GET /login/ - 25.15ms
+INFO 2026-04-22 11:45:37,227 log 24288 4004 "GET /login/ HTTP/1.1" 200 14885
+INFO 2026-04-22 11:45:38,845 middleware 24288 4004 404 GET /login/logo.png - 13.41ms
+WARNING 2026-04-22 11:45:38,846 log 24288 4004 Not Found: /login/logo.png
+WARNING 2026-04-22 11:45:38,847 log 24288 4004 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 11:57:05,961 middleware 24288 17144 200 GET /login/ - 25.70ms
+INFO 2026-04-22 11:57:05,963 log 24288 17144 "GET /login/ HTTP/1.1" 200 15103
+INFO 2026-04-22 11:57:07,626 middleware 24288 17144 404 GET /login/logo.png - 11.01ms
+WARNING 2026-04-22 11:57:07,627 log 24288 17144 Not Found: /login/logo.png
+WARNING 2026-04-22 11:57:07,629 log 24288 17144 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 11:57:40,774 middleware 24288 17144 302 POST /login/ - 1246.79ms
+INFO 2026-04-22 11:57:40,784 log 24288 17144 "POST /login/ HTTP/1.1" 302 0
+ERROR 2026-04-22 11:57:41,439 log 24288 17144 Internal Server Error: /dashboard/admin/
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py", line 202, in admin_dashboard
+    return render(request, 'dashboard/admin_dashboard.html', context)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'employee_list' not found. 'employee_list' is not a valid view function or pattern name.
+INFO 2026-04-22 11:57:41,463 middleware 24288 17144 500 GET /dashboard/admin/ - 669.51ms
+ERROR 2026-04-22 11:57:41,465 log 24288 17144 "GET /dashboard/admin/ HTTP/1.1" 500 181442
+INFO 2026-04-22 11:57:42,167 middleware 24288 17144 404 GET /dashboard/admin/logo.png - 11.33ms
+WARNING 2026-04-22 11:57:42,168 log 24288 17144 Not Found: /dashboard/admin/logo.png
+WARNING 2026-04-22 11:57:42,169 log 24288 17144 "GET /dashboard/admin/logo.png HTTP/1.1" 404 8650
+INFO 2026-04-22 11:59:44,238 middleware 24288 17144 200 GET /dashboard/admin/ - 29.04ms
+INFO 2026-04-22 11:59:44,239 log 24288 17144 "GET /dashboard/admin/ HTTP/1.1" 200 16053
+INFO 2026-04-22 11:59:45,273 middleware 24288 17144 404 GET /dashboard/admin/logo.png - 11.13ms
+WARNING 2026-04-22 11:59:45,274 log 24288 17144 Not Found: /dashboard/admin/logo.png
+WARNING 2026-04-22 11:59:45,275 log 24288 17144 "GET /dashboard/admin/logo.png HTTP/1.1" 404 8650
+INFO 2026-04-22 11:59:53,572 middleware 24288 17144 200 GET /admin/ - 151.78ms
+INFO 2026-04-22 11:59:53,573 log 24288 17144 "GET /admin/ HTTP/1.1" 200 12219
+INFO 2026-04-22 11:59:53,663 log 24288 17144 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2026-04-22 11:59:53,664 log 24288 21292 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2026-04-22 11:59:53,672 log 24288 21292 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2026-04-22 11:59:53,673 log 24288 17144 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2026-04-22 11:59:53,680 log 24288 21292 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2026-04-22 11:59:53,687 log 24288 17144 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2026-04-22 11:59:53,886 log 24288 17144 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-04-22 11:59:53,901 log 24288 21292 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2026-04-22 11:59:53,904 log 24288 17144 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2026-04-22 11:59:54,219 middleware 24288 17144 404 GET /admin/logo.png - 19.68ms
+WARNING 2026-04-22 11:59:54,221 log 24288 17144 Not Found: /admin/logo.png
+WARNING 2026-04-22 11:59:54,223 log 24288 17144 "GET /admin/logo.png HTTP/1.1" 404 7027
+INFO 2026-04-22 11:59:54,225 log 24288 14052 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2026-04-22 11:59:54,231 log 24288 25384 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-04-22 12:00:32,354 middleware 24288 17144 404 GET /admin/quota-config/ - 15.44ms
+WARNING 2026-04-22 12:00:32,355 log 24288 17144 Not Found: /admin/quota-config/
+WARNING 2026-04-22 12:00:32,356 log 24288 17144 "GET /admin/quota-config/ HTTP/1.1" 404 7042
+INFO 2026-04-22 12:00:32,863 middleware 24288 17144 404 GET /admin/quota-config/logo.png - 15.06ms
+WARNING 2026-04-22 12:00:32,864 log 24288 17144 Not Found: /admin/quota-config/logo.png
+WARNING 2026-04-22 12:00:32,866 log 24288 17144 "GET /admin/quota-config/logo.png HTTP/1.1" 404 7066
+INFO 2026-04-22 12:00:37,375 middleware 24288 17144 200 GET /change-password/ - 98.82ms
+INFO 2026-04-22 12:00:37,377 log 24288 17144 "GET /change-password/ HTTP/1.1" 200 8929
+INFO 2026-04-22 12:00:37,762 middleware 24288 17144 404 GET /change-password/logo.png - 7.82ms
+WARNING 2026-04-22 12:00:37,763 log 24288 17144 Not Found: /change-password/logo.png
+WARNING 2026-04-22 12:00:37,764 log 24288 17144 "GET /change-password/logo.png HTTP/1.1" 404 8650
+INFO 2026-04-22 12:00:46,060 middleware 24288 17144 200 GET /admin/ - 22.75ms
+INFO 2026-04-22 12:00:46,061 log 24288 17144 "GET /admin/ HTTP/1.1" 200 12219
+INFO 2026-04-22 12:00:46,582 middleware 24288 17144 404 GET /admin/logo.png - 16.85ms
+WARNING 2026-04-22 12:00:46,583 log 24288 17144 Not Found: /admin/logo.png
+WARNING 2026-04-22 12:00:46,584 log 24288 17144 "GET /admin/logo.png HTTP/1.1" 404 7027
+INFO 2026-04-22 12:00:50,872 middleware 24288 17144 200 GET /dashboard/admin/ - 16.12ms
+INFO 2026-04-22 12:00:50,874 log 24288 17144 "GET /dashboard/admin/ HTTP/1.1" 200 15730
+INFO 2026-04-22 12:00:51,318 middleware 24288 17144 404 GET /dashboard/admin/logo.png - 11.62ms
+WARNING 2026-04-22 12:00:51,320 log 24288 17144 Not Found: /dashboard/admin/logo.png
+WARNING 2026-04-22 12:00:51,321 log 24288 17144 "GET /dashboard/admin/logo.png HTTP/1.1" 404 8650
+INFO 2026-04-22 12:01:10,094 middleware 24288 17144 302 GET /logout/ - 16.60ms
+INFO 2026-04-22 12:01:10,095 log 24288 17144 "GET /logout/ HTTP/1.1" 302 0
+INFO 2026-04-22 12:01:10,128 middleware 24288 17144 200 GET /login/ - 19.10ms
+INFO 2026-04-22 12:01:10,130 log 24288 17144 "GET /login/ HTTP/1.1" 200 15533
+INFO 2026-04-22 12:01:10,748 middleware 24288 17144 404 GET /login/logo.png - 10.42ms
+WARNING 2026-04-22 12:01:10,750 log 24288 17144 Not Found: /login/logo.png
+WARNING 2026-04-22 12:01:10,752 log 24288 17144 "GET /login/logo.png HTTP/1.1" 404 8620
+ERROR 2026-04-22 12:02:03,774 log 24288 17144 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py", line 123, in login_view
+    if user.company and user.company.id != company.id:
+       ^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'company'
+INFO 2026-04-22 12:02:03,780 middleware 24288 17144 500 POST /login/ - 1086.08ms
+ERROR 2026-04-22 12:02:03,782 log 24288 17144 "POST /login/ HTTP/1.1" 500 80597
+INFO 2026-04-22 12:02:04,207 middleware 24288 17144 404 GET /login/logo.png - 6.38ms
+WARNING 2026-04-22 12:02:04,208 log 24288 17144 Not Found: /login/logo.png
+WARNING 2026-04-22 12:02:04,209 log 24288 17144 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 12:02:08,188 middleware 24288 17144 200 GET /login/ - 7.26ms
+INFO 2026-04-22 12:02:08,190 log 24288 17144 "GET /login/ HTTP/1.1" 200 15103
+INFO 2026-04-22 12:02:33,897 middleware 24288 17144 200 POST /login/ - 1279.48ms
+INFO 2026-04-22 12:02:33,898 log 24288 17144 "POST /login/ HTTP/1.1" 200 15584
+INFO 2026-04-22 12:02:34,322 middleware 24288 17144 404 GET /login/logo.png - 11.53ms
+WARNING 2026-04-22 12:02:34,323 log 24288 17144 Not Found: /login/logo.png
+WARNING 2026-04-22 12:02:34,324 log 24288 17144 "GET /login/logo.png HTTP/1.1" 404 8620
+INFO 2026-04-22 12:02:50,620 middleware 24288 17144 302 POST /login/ - 1140.99ms
+INFO 2026-04-22 12:02:50,632 log 24288 17144 "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-22 12:02:50,665 middleware 24288 17144 200 GET /dashboard/admin/ - 23.23ms
+INFO 2026-04-22 12:02:50,667 log 24288 17144 "GET /dashboard/admin/ HTTP/1.1" 200 16053
+INFO 2026-04-22 12:02:51,088 middleware 24288 17144 404 GET /dashboard/admin/logo.png - 8.01ms
+WARNING 2026-04-22 12:02:51,089 log 24288 17144 Not Found: /dashboard/admin/logo.png
+WARNING 2026-04-22 12:02:51,090 log 24288 17144 "GET /dashboard/admin/logo.png HTTP/1.1" 404 8650
+INFO 2026-04-22 12:19:27,139 autoreload 24288 26288 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 12:19:34,829 autoreload 16284 4556 Watching for file changes with StatReloader
+INFO 2026-04-22 12:19:48,225 middleware 16284 22568 200 GET /dashboard/admin/ - 88.88ms
+INFO 2026-04-22 12:19:48,229 log 16284 22568 "GET /dashboard/admin/ HTTP/1.1" 200 54078
+INFO 2026-04-22 12:19:49,945 middleware 16284 22568 404 GET /dashboard/admin/logo.png - 13.54ms
+WARNING 2026-04-22 12:19:49,946 log 16284 22568 Not Found: /dashboard/admin/logo.png
+WARNING 2026-04-22 12:19:49,947 log 16284 22568 "GET /dashboard/admin/logo.png HTTP/1.1" 404 8650
+INFO 2026-04-22 12:23:01,295 middleware 16284 22568 200 GET /admin/ - 115.68ms
+INFO 2026-04-22 12:23:01,296 log 16284 22568 "GET /admin/ HTTP/1.1" 200 12219
+INFO 2026-04-22 12:23:02,328 middleware 16284 22568 404 GET /admin/logo.png - 18.59ms
+WARNING 2026-04-22 12:23:02,329 log 16284 22568 Not Found: /admin/logo.png
+WARNING 2026-04-22 12:23:02,330 log 16284 22568 "GET /admin/logo.png HTTP/1.1" 404 7027
+INFO 2026-04-22 12:23:05,383 middleware 16284 22568 200 GET /admin/ - 16.62ms
+INFO 2026-04-22 12:23:05,384 log 16284 22568 "GET /admin/ HTTP/1.1" 200 12219
+INFO 2026-04-22 12:23:05,794 middleware 16284 22568 404 GET /admin/logo.png - 15.63ms
+WARNING 2026-04-22 12:23:05,795 log 16284 22568 Not Found: /admin/logo.png
+WARNING 2026-04-22 12:23:05,796 log 16284 22568 "GET /admin/logo.png HTTP/1.1" 404 7027
+INFO 2026-04-22 12:23:09,913 middleware 16284 22568 200 GET /profile/ - 6.51ms
+INFO 2026-04-22 12:23:09,914 log 16284 22568 "GET /profile/ HTTP/1.1" 200 0
+INFO 2026-04-22 12:23:10,358 middleware 16284 22568 404 GET /profile/logo.png - 9.23ms
+WARNING 2026-04-22 12:23:10,359 log 16284 22568 Not Found: /profile/logo.png
+WARNING 2026-04-22 12:23:10,360 log 16284 22568 "GET /profile/logo.png HTTP/1.1" 404 8626
+INFO 2026-04-22 12:25:36,439 autoreload 16284 4556 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 12:25:40,578 autoreload 30020 17504 Watching for file changes with StatReloader
+INFO 2026-04-22 12:25:50,044 autoreload 30020 17504 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 12:25:52,464 autoreload 31124 4480 Watching for file changes with StatReloader
+INFO 2026-04-22 12:27:36,704 autoreload 31124 4480 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 12:27:38,865 autoreload 15864 30388 Watching for file changes with StatReloader
+INFO 2026-04-22 12:30:11,345 autoreload 15864 30388 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-22 12:30:13,920 autoreload 31224 21804 Watching for file changes with StatReloader
+ERROR 2026-04-22 12:30:50,964 log 31224 29176 Internal Server Error: /dashboard/admin/
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py", line 199, in admin_dashboard
+    'ticket_lots': TicketLot.objects.all().order_by('-created_at')[:10],
+                   ^^^^^^^^^
+NameError: name 'TicketLot' is not defined. Did you mean: 'Ticket'?
+INFO 2026-04-22 12:30:50,972 middleware 31224 29176 500 GET /dashboard/admin/ - 113.23ms
+ERROR 2026-04-22 12:30:50,973 log 31224 29176 "GET /dashboard/admin/ HTTP/1.1" 500 83257
+INFO 2026-04-22 12:30:52,668 middleware 31224 29176 404 GET /dashboard/admin/logo.png - 9.68ms
+WARNING 2026-04-22 12:30:52,669 log 31224 29176 Not Found: /dashboard/admin/logo.png
+WARNING 2026-04-22 12:30:52,671 log 31224 29176 "GET /dashboard/admin/logo.png HTTP/1.1" 404 10067
+INFO 2026-04-22 12:31:45,968 autoreload 31224 21804 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-22 12:31:48,992 autoreload 29548 30108 Watching for file changes with StatReloader
+INFO 2026-04-22 12:31:58,788 middleware 29548 28884 200 GET /dashboard/admin/ - 107.86ms
+INFO 2026-04-22 12:31:58,793 log 29548 28884 "GET /dashboard/admin/ HTTP/1.1" 200 46716
+INFO 2026-04-22 12:31:59,421 middleware 29548 28884 404 GET /dashboard/admin/logo.png - 13.08ms
+WARNING 2026-04-22 12:31:59,424 log 29548 28884 Not Found: /dashboard/admin/logo.png
+WARNING 2026-04-22 12:31:59,426 log 29548 28884 "GET /dashboard/admin/logo.png HTTP/1.1" 404 10067
+INFO 2026-04-22 12:32:09,850 middleware 29548 28884 200 GET /dashboard/admin/ - 48.04ms
+INFO 2026-04-22 12:32:09,851 log 29548 28884 "GET /dashboard/admin/ HTTP/1.1" 200 46716
+INFO 2026-04-22 12:32:10,409 middleware 29548 28884 404 GET /dashboard/admin/logo.png - 12.11ms
+WARNING 2026-04-22 12:32:10,410 log 29548 28884 Not Found: /dashboard/admin/logo.png
+WARNING 2026-04-22 12:32:10,411 log 29548 28884 "GET /dashboard/admin/logo.png HTTP/1.1" 404 10067
+INFO 2026-04-22 12:32:48,153 middleware 29548 28884 200 GET /dashboard/admin/ - 52.84ms
+INFO 2026-04-22 12:32:48,156 log 29548 28884 "GET /dashboard/admin/ HTTP/1.1" 200 46716
+INFO 2026-04-22 12:32:48,819 middleware 29548 28884 404 GET /dashboard/admin/logo.png - 13.33ms
+WARNING 2026-04-22 12:32:48,820 log 29548 28884 Not Found: /dashboard/admin/logo.png
+WARNING 2026-04-22 12:32:48,821 log 29548 28884 "GET /dashboard/admin/logo.png HTTP/1.1" 404 10067
+INFO 2026-04-22 12:32:51,559 middleware 29548 28884 200 GET /profile/ - 15.78ms
+INFO 2026-04-22 12:32:51,560 log 29548 28884 "GET /profile/ HTTP/1.1" 200 0
+INFO 2026-04-22 12:32:51,966 middleware 29548 28884 404 GET /profile/logo.png - 10.00ms
+WARNING 2026-04-22 12:32:51,967 log 29548 28884 Not Found: /profile/logo.png
+WARNING 2026-04-22 12:32:51,968 log 29548 28884 "GET /profile/logo.png HTTP/1.1" 404 10043
+INFO 2026-04-22 13:08:36,713 middleware 29548 30620 200 GET /dashboard/admin/ - 148.19ms
+INFO 2026-04-22 13:08:36,716 log 29548 30620 "GET /dashboard/admin/ HTTP/1.1" 200 46716
+INFO 2026-04-22 13:08:40,469 middleware 29548 30620 404 GET /dashboard/admin/logo.png - 39.29ms
+WARNING 2026-04-22 13:08:40,470 log 29548 30620 Not Found: /dashboard/admin/logo.png
+WARNING 2026-04-22 13:08:40,472 log 29548 30620 "GET /dashboard/admin/logo.png HTTP/1.1" 404 10067
+INFO 2026-04-22 13:09:23,389 middleware 29548 9872 302 GET /logout/ - 68.69ms
+INFO 2026-04-22 13:09:23,398 log 29548 9872 "GET /logout/ HTTP/1.1" 302 0
+INFO 2026-04-22 13:09:23,520 middleware 29548 9872 200 GET /login/ - 50.13ms
+INFO 2026-04-22 13:09:23,525 log 29548 9872 "GET /login/ HTTP/1.1" 200 15533
+INFO 2026-04-22 13:09:25,147 middleware 29548 9872 404 GET /login/logo.png - 49.18ms
+WARNING 2026-04-22 13:09:25,149 log 29548 9872 Not Found: /login/logo.png
+WARNING 2026-04-22 13:09:25,152 log 29548 9872 "GET /login/logo.png HTTP/1.1" 404 10037
+INFO 2026-04-22 13:09:32,483 middleware 29548 9872 200 GET / - 3.48ms
+INFO 2026-04-22 13:09:32,486 log 29548 9872 "GET / HTTP/1.1" 200 21850
+INFO 2026-04-22 13:09:33,662 middleware 29548 9872 404 GET /logo.png - 24.10ms
+WARNING 2026-04-22 13:09:33,665 log 29548 9872 Not Found: /logo.png
+WARNING 2026-04-22 13:09:33,668 log 29548 9872 "GET /logo.png HTTP/1.1" 404 10019
+INFO 2026-04-22 13:09:41,610 middleware 29548 9872 200 GET /login/ - 10.98ms
+INFO 2026-04-22 13:09:41,618 log 29548 9872 "GET /login/ HTTP/1.1" 200 15103
+INFO 2026-04-22 13:09:42,477 middleware 29548 9872 404 GET /login/logo.png - 20.98ms
+WARNING 2026-04-22 13:09:42,478 log 29548 9872 Not Found: /login/logo.png
+WARNING 2026-04-22 13:09:42,481 log 29548 9872 "GET /login/logo.png HTTP/1.1" 404 10037
+INFO 2026-04-22 13:13:59,046 middleware 29548 9872 200 GET / - 0.84ms
+INFO 2026-04-22 13:13:59,049 log 29548 9872 "GET / HTTP/1.1" 200 21850
+INFO 2026-04-22 13:14:01,440 middleware 29548 9872 404 GET /logo.png - 18.77ms
+WARNING 2026-04-22 13:14:01,441 log 29548 9872 Not Found: /logo.png
+WARNING 2026-04-22 13:14:01,444 log 29548 9872 "GET /logo.png HTTP/1.1" 404 10019
+INFO 2026-04-22 13:14:09,181 middleware 29548 9872 200 GET /login/ - 22.63ms
+INFO 2026-04-22 13:14:09,185 log 29548 9872 "GET /login/ HTTP/1.1" 200 15103
+INFO 2026-04-22 13:14:10,240 middleware 29548 9872 404 GET /login/logo.png - 25.91ms
+WARNING 2026-04-22 13:14:10,243 log 29548 9872 Not Found: /login/logo.png
+WARNING 2026-04-22 13:14:10,245 log 29548 9872 "GET /login/logo.png HTTP/1.1" 404 10037

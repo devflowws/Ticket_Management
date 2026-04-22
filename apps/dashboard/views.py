@@ -1,4 +1,6 @@
 # apps/dashboard/views.py - Ajouter ces fonctions
+from datetime import timezone
+
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from apps.employees.models import Employee
@@ -53,6 +55,31 @@ def finance_dashboard(request):
         'total_tickets_sold': Ticket.objects.filter(status='used').count(),
     }
     return render(request, 'dashboard/finance_dashboard.html', context)
+
+
+@login_required
+def provider_dashboard(request):
+    """Dashboard pour le prestataire"""
+    # Récupérer le prestataire associé à l'utilisateur
+    try:
+        provider_user = request.user.provider_profile
+        provider = provider_user.provider
+    except:
+        provider = None
+    
+    # Statistiques du prestataire
+    from apps.consumption_requests.models import ConsumptionRequest
+    from apps.menus.models import DailyMenu
+    from apps.orders.models import MealOrder
+    
+    context = {
+        'provider': provider,
+        'today_menus': DailyMenu.objects.filter(provider=provider, date=timezone.now().date()),
+        'pending_consumptions': ConsumptionRequest.objects.filter(provider=provider, status='pending').count(),
+        'total_consumptions': ConsumptionRequest.objects.filter(provider=provider, status='confirmed').count(),
+        'today_orders': MealOrder.objects.filter(menu__provider=provider, created_at__date=timezone.now().date()).count(),
+    }
+    return render(request, 'dashboard/provider_dashboard.html', context)
 
 
 # Alias pour éviter les erreurs

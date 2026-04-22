@@ -21,6 +21,8 @@ class Employee(models.Model):
     position = models.CharField(_('poste'), max_length=100, blank=True)
     phone = models.CharField(_('téléphone professionnel'), max_length=20, blank=True)
     hire_date = models.DateField(_('date d\'embauche'), null=True, blank=True)
+
+    company = models.ForeignKey('companies.Company', on_delete=models.CASCADE, related_name='employees', null=True)
     
     # Champs pour la gestion des tickets
     monthly_ticket_quota = models.PositiveIntegerField(

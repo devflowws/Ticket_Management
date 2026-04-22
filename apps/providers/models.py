@@ -21,6 +21,8 @@ class Provider(models.Model):
     email = models.EmailField(_('email'), blank=True)
     phone = models.CharField(_('téléphone'), max_length=50, blank=True, default='')  # Ajouter blank=True, default=''
     alternative_phone = models.CharField(_('téléphone alternatif'), max_length=50, blank=True)
+
+    company = models.ForeignKey('companies.Company', on_delete=models.CASCADE, related_name='providers', null=True)
     
     # Adresse
     address = models.TextField(_('adresse'), blank=True, default='')  # Ajouter blank=True, default=''
@@ -160,3 +162,19 @@ class ProviderCategory(models.Model):
     
     def __str__(self):
         return self.name
+    
+
+class ProviderUser(models.Model):
+    """Liaison entre un prestataire et son compte utilisateur"""
+    provider = models.ForeignKey(Provider, on_delete=models.CASCADE, related_name='users')
+    user = models.OneToOneField('accounts.User', on_delete=models.CASCADE, related_name='provider_profile')
+    role_in_provider = models.CharField(max_length=100, blank=True, help_text="Ex: Gérant, Caissier")
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        verbose_name = 'Utilisateur prestataire'
+        verbose_name_plural = 'Utilisateurs prestataires'
+    
+    def __str__(self):
+        return f"{self.user.get_full_name()} - {self.provider.name}"

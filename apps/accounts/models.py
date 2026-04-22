@@ -1,46 +1,36 @@
-# ticket_backend/apps/accounts/models.py
-"""
-Modèles pour la gestion des utilisateurs et authentification
-"""
+# apps/accounts/models.py
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+# Import correct - sans "ticket_backend."
+from apps.companies.models import Company
+
 
 class Role(models.TextChoices):
-    """Choix des rôles utilisateurs"""
     ADMIN = 'admin', _('Administrateur')
     EMPLOYEE = 'employee', _('Employé')
     VALIDATOR = 'validator', _('Responsable validation')
     FINANCE = 'finance', _('Direction financière')
+    PROVIDER = 'provider', _('Prestataire')
 
 
 class User(AbstractUser):
-    """
-    Modèle utilisateur personnalisé avec gestion des rôles
-    """
-    ROLE_CHOICES = [
-        (Role.ADMIN, 'Administrateur'),
-        (Role.EMPLOYEE, 'Employé'),
-        (Role.VALIDATOR, 'Responsable validation'),
-        (Role.FINANCE, 'Direction financière'),
-    ]
-    
     email = models.EmailField(_('adresse email'), unique=True)
-    role = models.CharField(
-        _('rôle'),
-        max_length=20,
-        choices=ROLE_CHOICES,
-        default=Role.EMPLOYEE
-    )
+    role = models.CharField(_('rôle'), max_length=20, choices=Role.choices, default=Role.EMPLOYEE)
     phone = models.CharField(_('téléphone'), max_length=20, blank=True)
     is_active = models.BooleanField(_('actif'), default=True)
     created_at = models.DateTimeField(_('date de création'), auto_now_add=True)
     updated_at = models.DateTimeField(_('date de modification'), auto_now=True)
     
-    # Nouveaux champs pour la gestion d'entreprise
-    company_name = models.CharField(_('nom de l\'entreprise'), max_length=200, blank=True)
-    company_tax_id = models.CharField(_('numéro fiscal'), max_length=50, blank=True)
+    # Company relation - temporairement commentée car companies n'existe pas encore
+    # company = models.ForeignKey(
+    #     Company, 
+    #     on_delete=models.CASCADE, 
+    #     related_name='users',
+    #     null=True, 
+    #     blank=True
+    # )
     
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
@@ -68,3 +58,7 @@ class User(AbstractUser):
     @property
     def is_finance(self):
         return self.role == Role.FINANCE
+    
+    @property
+    def is_provider(self):
+        return self.role == Role.PROVIDER

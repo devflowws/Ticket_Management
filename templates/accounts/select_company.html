@@ -1,0 +1,31 @@
+<!-- templates/accounts/select_company.html -->
+{% extends 'base/base.html' %}
+{% block title %}Sélectionnez votre entreprise{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white text-center">
+                <h4>Sélectionnez votre entreprise</h4>
+            </div>
+            <div class="card-body">
+                <p>Bonjour {{ user.get_full_name }}, veuillez sélectionner l'entreprise pour laquelle vous souhaitez travailler.</p>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label class="form-label">Entreprise</label>
+                        <select name="company_id" class="form-control" required>
+                            <option value="">-- Sélectionnez --</option>
+                            {% for company in companies %}
+                            <option value="{{ company.id }}">{{ company.name }} - {{ company.city }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Continuer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

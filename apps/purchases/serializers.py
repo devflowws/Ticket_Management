@@ -56,3 +56,16 @@ class PurchaseRequestCreateSerializer(serializers.ModelSerializer):
             employee=employee,
             **validated_data
         )
+    
+def validate_quantity(self, value):
+    employee = self.context['request'].user.employee_profile
+    
+    # Vérifier le quota mensuel
+    remaining = employee.monthly_ticket_quota - employee.current_month_tickets
+    
+    if value > remaining:
+        raise serializers.ValidationError(
+            f"Vous ne pouvez demander que {remaining} tickets ce mois. "
+            f"Quota mensuel: {employee.monthly_ticket_quota}"
+        )
+    return value
