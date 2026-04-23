@@ -3,6 +3,9 @@ from django.shortcuts import render, redirect
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib import messages
 from .models import Company
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.permissions import AllowAny
 
 
 @staff_member_required
@@ -41,3 +44,15 @@ def quota_config(request):
         'ticket_company': (company.ticket_value * company.company_percentage / 100),
     }
     return render(request, 'companies/quota_config.html', context)
+
+
+class CompanyListView(APIView):
+    """API pour lister les entreprises (utilisé par l'app mobile)"""
+    permission_classes = [AllowAny]
+    
+    def get(self, request):
+        companies = Company.objects.filter(is_active=True).values('id', 'name', 'city', 'email')
+        return Response({
+            'success': True,
+            'companies': list(companies)
+        })

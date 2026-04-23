@@ -2469,3 +2469,706 @@ INFO 2026-04-22 13:14:09,185 log 29548 9872 "GET /login/ HTTP/1.1" 200 15103
 INFO 2026-04-22 13:14:10,240 middleware 29548 9872 404 GET /login/logo.png - 25.91ms
 WARNING 2026-04-22 13:14:10,243 log 29548 9872 Not Found: /login/logo.png
 WARNING 2026-04-22 13:14:10,245 log 29548 9872 "GET /login/logo.png HTTP/1.1" 404 10037
+INFO 2026-04-22 16:50:31,330 log 29548 32664 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-22 16:50:32,141 log 29548 32664 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 16:50:32,149 log 29548 33072 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-22 16:50:32,333 log 29548 32664 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-22 16:50:32,359 log 29548 33072 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-22 16:50:32,585 middleware 29548 18328 404 GET /favicon.ico - 237.91ms
+WARNING 2026-04-22 16:50:32,602 log 29548 18328 Not Found: /favicon.ico
+WARNING 2026-04-22 16:50:32,605 log 29548 18328 "GET /favicon.ico HTTP/1.1" 404 10028
+INFO 2026-04-22 20:21:26,533 middleware 29548 1268 200 GET /login/ - 591.92ms
+INFO 2026-04-22 20:21:26,606 log 29548 1268 "GET /login/ HTTP/1.1" 200 15103
+INFO 2026-04-22 20:21:27,893 middleware 29548 1268 404 GET /login/logo.png - 178.92ms
+WARNING 2026-04-22 20:21:27,902 log 29548 1268 Not Found: /login/logo.png
+WARNING 2026-04-22 20:21:27,906 log 29548 1268 "GET /login/logo.png HTTP/1.1" 404 10037
+INFO 2026-04-22 20:22:13,965 middleware 29548 1268 200 GET /login/ - 14.68ms
+INFO 2026-04-22 20:22:13,967 log 29548 1268 "GET /login/ HTTP/1.1" 200 15103
+INFO 2026-04-22 20:22:14,623 middleware 29548 1268 404 GET /login/logo.png - 18.55ms
+WARNING 2026-04-22 20:22:14,624 log 29548 1268 Not Found: /login/logo.png
+WARNING 2026-04-22 20:22:14,625 log 29548 1268 "GET /login/logo.png HTTP/1.1" 404 10037
+INFO 2026-04-22 21:42:38,785 middleware 29548 27840 200 GET /login/ - 220.09ms
+INFO 2026-04-22 21:42:38,813 log 29548 27840 "GET /login/ HTTP/1.1" 200 15103
+INFO 2026-04-22 21:42:39,791 middleware 29548 27840 404 GET /login/logo.png - 67.08ms
+WARNING 2026-04-22 21:42:39,794 log 29548 27840 Not Found: /login/logo.png
+WARNING 2026-04-22 21:42:39,795 log 29548 27840 "GET /login/logo.png HTTP/1.1" 404 10037
+INFO 2026-04-22 21:42:57,480 middleware 29548 27840 200 GET /register-company/ - 628.77ms
+INFO 2026-04-22 21:42:57,482 log 29548 27840 "GET /register-company/ HTTP/1.1" 200 9129
+INFO 2026-04-22 21:42:58,552 middleware 29548 27840 404 GET /register-company/logo.png - 30.90ms
+WARNING 2026-04-22 21:42:58,554 log 29548 27840 Not Found: /register-company/logo.png
+WARNING 2026-04-22 21:42:58,559 log 29548 27840 "GET /register-company/logo.png HTTP/1.1" 404 10070
+INFO 2026-04-22 21:43:01,365 middleware 29548 27840 200 GET /login/ - 37.01ms
+INFO 2026-04-22 21:43:01,369 log 29548 27840 "GET /login/ HTTP/1.1" 200 15103
+INFO 2026-04-22 21:43:02,444 middleware 29548 27840 404 GET /login/logo.png - 17.09ms
+WARNING 2026-04-22 21:43:02,446 log 29548 27840 Not Found: /login/logo.png
+WARNING 2026-04-22 21:43:02,447 log 29548 27840 "GET /login/logo.png HTTP/1.1" 404 10037
+INFO 2026-04-22 21:45:13,636 middleware 29548 27840 302 POST /login/ - 1853.23ms
+INFO 2026-04-22 21:45:13,665 log 29548 27840 "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-22 21:45:13,907 middleware 29548 27840 200 GET /dashboard/admin/ - 216.87ms
+INFO 2026-04-22 21:45:13,911 log 29548 27840 "GET /dashboard/admin/ HTTP/1.1" 200 47039
+INFO 2026-04-22 21:45:15,391 middleware 29548 27840 404 GET /dashboard/admin/logo.png - 23.74ms
+WARNING 2026-04-22 21:45:15,392 log 29548 27840 Not Found: /dashboard/admin/logo.png
+WARNING 2026-04-22 21:45:15,394 log 29548 27840 "GET /dashboard/admin/logo.png HTTP/1.1" 404 10067
+INFO 2026-04-22 21:49:29,176 middleware 29548 27840 200 GET /dashboard/admin/ - 118.82ms
+INFO 2026-04-22 21:49:29,179 log 29548 27840 "GET /dashboard/admin/ HTTP/1.1" 200 46716
+INFO 2026-04-22 21:49:30,549 middleware 29548 27840 404 GET /dashboard/admin/logo.png - 32.31ms
+WARNING 2026-04-22 21:49:30,552 log 29548 27840 Not Found: /dashboard/admin/logo.png
+WARNING 2026-04-22 21:49:30,555 log 29548 27840 "GET /dashboard/admin/logo.png HTTP/1.1" 404 10067
+INFO 2026-04-22 21:50:47,893 middleware 29548 27840 200 POST /api/admin/generate-lot/ - 668.95ms
+INFO 2026-04-22 21:50:47,896 log 29548 27840 "POST /api/admin/generate-lot/ HTTP/1.1" 200 103
+INFO 2026-04-22 21:50:48,120 middleware 29548 27840 200 GET /dashboard/admin/ - 155.27ms
+INFO 2026-04-22 21:50:48,123 log 29548 27840 "GET /dashboard/admin/ HTTP/1.1" 200 47570
+INFO 2026-04-22 21:50:49,051 middleware 29548 27840 404 GET /dashboard/admin/logo.png - 23.61ms
+WARNING 2026-04-22 21:50:49,053 log 29548 27840 Not Found: /dashboard/admin/logo.png
+WARNING 2026-04-22 21:50:49,055 log 29548 27840 "GET /dashboard/admin/logo.png HTTP/1.1" 404 10067
+INFO 2026-04-22 21:51:09,792 middleware 29548 27840 200 POST /api/admin/generate-lot/ - 46.98ms
+INFO 2026-04-22 21:51:09,794 log 29548 27840 "POST /api/admin/generate-lot/ HTTP/1.1" 200 103
+INFO 2026-04-22 21:51:09,934 middleware 29548 27840 200 GET /dashboard/admin/ - 104.02ms
+INFO 2026-04-22 21:51:09,936 log 29548 27840 "GET /dashboard/admin/ HTTP/1.1" 200 48423
+INFO 2026-04-22 21:51:10,530 middleware 29548 27840 404 GET /dashboard/admin/logo.png - 17.70ms
+WARNING 2026-04-22 21:51:10,531 log 29548 27840 Not Found: /dashboard/admin/logo.png
+WARNING 2026-04-22 21:51:10,533 log 29548 27840 "GET /dashboard/admin/logo.png HTTP/1.1" 404 10067
+INFO 2026-04-22 21:51:41,026 middleware 29548 27840 200 GET /dashboard/admin/ - 931.07ms
+INFO 2026-04-22 21:51:41,029 log 29548 27840 "GET /dashboard/admin/ HTTP/1.1" 200 48423
+INFO 2026-04-22 21:51:42,628 middleware 29548 27840 404 GET /dashboard/admin/logo.png - 376.29ms
+WARNING 2026-04-22 21:51:42,632 log 29548 27840 Not Found: /dashboard/admin/logo.png
+WARNING 2026-04-22 21:51:42,637 log 29548 27840 "GET /dashboard/admin/logo.png HTTP/1.1" 404 10067
+INFO 2026-04-22 21:51:45,220 middleware 29548 27840 200 GET /profile/ - 8.23ms
+INFO 2026-04-22 21:51:45,222 log 29548 27840 "GET /profile/ HTTP/1.1" 200 0
+INFO 2026-04-22 21:51:45,867 middleware 29548 27840 404 GET /profile/logo.png - 16.45ms
+WARNING 2026-04-22 21:51:45,868 log 29548 27840 Not Found: /profile/logo.png
+WARNING 2026-04-22 21:51:45,870 log 29548 27840 "GET /profile/logo.png HTTP/1.1" 404 10043
+INFO 2026-04-22 21:51:54,111 middleware 29548 27840 200 GET /change-password/ - 67.00ms
+INFO 2026-04-22 21:51:54,113 log 29548 27840 "GET /change-password/ HTTP/1.1" 200 9156
+INFO 2026-04-22 21:51:55,015 middleware 29548 27840 404 GET /change-password/logo.png - 12.04ms
+WARNING 2026-04-22 21:51:55,016 log 29548 27840 Not Found: /change-password/logo.png
+WARNING 2026-04-22 21:51:55,017 log 29548 27840 "GET /change-password/logo.png HTTP/1.1" 404 10067
+INFO 2026-04-22 21:51:55,222 middleware 29548 27840 200 GET /change-password/ - 22.70ms
+INFO 2026-04-22 21:51:55,226 log 29548 27840 "GET /change-password/ HTTP/1.1" 200 9156
+INFO 2026-04-22 21:51:55,760 middleware 29548 27840 404 GET /change-password/logo.png - 18.37ms
+WARNING 2026-04-22 21:51:55,762 log 29548 27840 Not Found: /change-password/logo.png
+WARNING 2026-04-22 21:51:55,764 log 29548 27840 "GET /change-password/logo.png HTTP/1.1" 404 10067
+INFO 2026-04-23 15:50:25,374 autoreload 21396 19752 Watching for file changes with StatReloader
+INFO 2026-04-23 15:52:55,073 middleware 21396 23716 200 GET /swagger/ - 181.51ms
+INFO 2026-04-23 15:52:55,083 log 21396 23716 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-04-23 15:52:55,241 log 21396 23716 "GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+INFO 2026-04-23 15:52:55,248 log 21396 1356 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+INFO 2026-04-23 15:52:55,262 log 21396 23716 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-23 15:52:55,267 log 21396 1356 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-23 15:52:55,282 log 21396 23716 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-23 15:52:55,288 log 21396 1356 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-23 15:52:55,302 log 21396 23716 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-23 15:52:55,642 middleware 21396 23716 404 GET /swagger/logo.png - 80.32ms
+WARNING 2026-04-23 15:52:55,644 log 21396 23716 Not Found: /swagger/logo.png
+WARNING 2026-04-23 15:52:55,647 log 21396 23716 "GET /swagger/logo.png HTTP/1.1" 404 10043
+INFO 2026-04-23 15:52:55,775 log 21396 1356 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 304 0
+INFO 2026-04-23 15:52:58,655 middleware 21396 23716 200 GET /swagger/ - 2936.26ms
+INFO 2026-04-23 15:52:58,660 log 21396 23716 "GET /swagger/?format=openapi HTTP/1.1" 200 298323
+INFO 2026-04-23 15:53:05,623 middleware 21396 23716 200 GET / - 4.51ms
+INFO 2026-04-23 15:53:05,625 log 21396 23716 "GET / HTTP/1.1" 200 21850
+INFO 2026-04-23 15:53:06,345 middleware 21396 23716 404 GET /logo.png - 17.88ms
+WARNING 2026-04-23 15:53:06,348 log 21396 23716 Not Found: /logo.png
+WARNING 2026-04-23 15:53:06,350 log 21396 23716 "GET /logo.png HTTP/1.1" 404 10019
+INFO 2026-04-23 15:53:17,301 middleware 21396 23716 200 GET /swagger/ - 5.06ms
+INFO 2026-04-23 15:53:17,304 log 21396 23716 "GET /swagger/ HTTP/1.1" 200 1681
+ERROR 2026-04-23 15:53:17,757 log 21396 23420 Invalid HTTP_HOST header: '10.150.69.138:8000'. You may need to add '10.150.69.138' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '10.150.69.138:8000'. You may need to add '10.150.69.138' to ALLOWED_HOSTS.
+WARNING 2026-04-23 15:53:17,915 log 21396 23420 "GET /api/docs HTTP/1.1" 400 80052
+INFO 2026-04-23 15:53:17,917 middleware 21396 23716 404 GET /swagger/logo.png - 80.66ms
+WARNING 2026-04-23 15:53:17,928 log 21396 23716 Not Found: /swagger/logo.png
+WARNING 2026-04-23 15:53:17,934 log 21396 23716 "GET /swagger/logo.png HTTP/1.1" 404 10043
+ERROR 2026-04-23 15:53:18,988 log 21396 31664 Invalid HTTP_HOST header: '10.150.69.138:8000'. You may need to add '10.150.69.138' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '10.150.69.138:8000'. You may need to add '10.150.69.138' to ALLOWED_HOSTS.
+WARNING 2026-04-23 15:53:19,020 log 21396 31664 "GET /favicon.ico HTTP/1.1" 400 80029
+INFO 2026-04-23 15:53:20,478 middleware 21396 23716 200 GET /swagger/ - 2426.76ms
+INFO 2026-04-23 15:53:20,481 log 21396 23716 "GET /swagger/?format=openapi HTTP/1.1" 200 298323
+ERROR 2026-04-23 15:53:48,490 log 21396 12564 Invalid HTTP_HOST header: '10.150.69.138:8000'. You may need to add '10.150.69.138' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '10.150.69.138:8000'. You may need to add '10.150.69.138' to ALLOWED_HOSTS.
+WARNING 2026-04-23 15:53:48,500 log 21396 12564 "GET /swagger HTTP/1.1" 400 80041
+ERROR 2026-04-23 15:53:48,818 log 21396 32880 Invalid HTTP_HOST header: '10.150.69.138:8000'. You may need to add '10.150.69.138' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '10.150.69.138:8000'. You may need to add '10.150.69.138' to ALLOWED_HOSTS.
+WARNING 2026-04-23 15:53:48,825 log 21396 32880 "GET /favicon.ico HTTP/1.1" 400 80028
+ERROR 2026-04-23 16:15:21,538 log 21396 41940 Invalid HTTP_HOST header: '10.150.69.138:8000'. You may need to add '10.150.69.138' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '10.150.69.138:8000'. You may need to add '10.150.69.138' to ALLOWED_HOSTS.
+WARNING 2026-04-23 16:15:21,546 log 21396 41940 "GET /api/docs HTTP/1.1" 400 80189
+ERROR 2026-04-23 16:15:21,866 log 21396 41956 Invalid HTTP_HOST header: '10.150.69.138:8000'. You may need to add '10.150.69.138' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '10.150.69.138:8000'. You may need to add '10.150.69.138' to ALLOWED_HOSTS.
+WARNING 2026-04-23 16:15:21,869 log 21396 41956 "GET /favicon.ico HTTP/1.1" 400 80029
+INFO 2026-04-23 16:21:06,464 autoreload 21396 19752 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\settings\dev.py changed, reloading.
+INFO 2026-04-23 16:21:12,220 autoreload 33160 36440 Watching for file changes with StatReloader
+INFO 2026-04-23 16:24:55,257 middleware 33160 40848 404 GET /api/docs - 22.72ms
+WARNING 2026-04-23 16:24:55,275 log 33160 40848 Not Found: /api/docs
+WARNING 2026-04-23 16:24:55,278 log 33160 40848 "GET /api/docs HTTP/1.1" 404 10023
+INFO 2026-04-23 16:24:55,499 middleware 33160 40848 404 GET /favicon.ico - 8.60ms
+WARNING 2026-04-23 16:24:55,500 log 33160 40848 Not Found: /favicon.ico
+WARNING 2026-04-23 16:24:55,501 log 33160 40848 "GET /favicon.ico HTTP/1.1" 404 10032
+INFO 2026-04-23 16:25:28,961 middleware 33160 40848 404 GET /swagger - 10.49ms
+INFO 2026-04-23 16:25:28,963 log 33160 40848 "GET /swagger HTTP/1.1" 301 0
+INFO 2026-04-23 16:25:29,116 middleware 33160 40848 200 GET /swagger/ - 80.54ms
+INFO 2026-04-23 16:25:29,117 log 33160 40848 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-04-23 16:25:29,438 log 33160 40848 "GET /static/drf-yasg/style.css HTTP/1.1" 200 1187
+INFO 2026-04-23 16:25:29,706 log 33160 19580 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-04-23 16:25:29,708 log 33160 29920 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-04-23 16:25:29,819 log 33160 29812 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 177183
+INFO 2026-04-23 16:25:29,887 log 33160 40848 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-04-23 16:25:30,075 log 33160 9132 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 252451
+INFO 2026-04-23 16:25:31,249 log 33160 21880 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1510271
+INFO 2026-04-23 16:25:31,541 log 33160 9132 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-04-23 16:25:32,921 middleware 33160 21880 200 GET /swagger/ - 1409.18ms
+INFO 2026-04-23 16:25:32,925 log 33160 21880 "GET /swagger/?format=openapi HTTP/1.1" 200 298327
+INFO 2026-04-23 16:28:43,297 middleware 33160 39564 200 GET /dashboard/admin/ - 1074.49ms
+INFO 2026-04-23 16:28:43,303 log 33160 39564 "GET /dashboard/admin/ HTTP/1.1" 200 48423
+INFO 2026-04-23 16:28:46,386 middleware 33160 41316 200 GET /dashboard/admin/ - 100.42ms
+INFO 2026-04-23 16:28:46,388 log 33160 41316 "GET /dashboard/admin/ HTTP/1.1" 200 48423
+INFO 2026-04-23 16:28:47,614 middleware 33160 41316 404 GET /dashboard/admin/logo.png - 14.87ms
+WARNING 2026-04-23 16:28:47,616 log 33160 41316 Not Found: /dashboard/admin/logo.png
+WARNING 2026-04-23 16:28:47,617 log 33160 41316 "GET /dashboard/admin/logo.png HTTP/1.1" 404 10067
+INFO 2026-04-23 16:28:49,628 middleware 33160 41316 302 GET /logout/ - 36.17ms
+INFO 2026-04-23 16:28:49,632 log 33160 41316 "GET /logout/ HTTP/1.1" 302 0
+INFO 2026-04-23 16:28:50,023 middleware 33160 41316 200 GET /login/ - 372.21ms
+INFO 2026-04-23 16:28:50,025 log 33160 41316 "GET /login/ HTTP/1.1" 200 15533
+INFO 2026-04-23 16:28:50,368 middleware 33160 41316 404 GET /login/logo.png - 22.34ms
+WARNING 2026-04-23 16:28:50,371 log 33160 41316 Not Found: /login/logo.png
+WARNING 2026-04-23 16:28:50,375 log 33160 41316 "GET /login/logo.png HTTP/1.1" 404 10037
+INFO 2026-04-23 16:31:59,107 basehttp 33160 41316 - Broken pipe from ('127.0.0.1', 56587)
+INFO 2026-04-23 16:32:12,645 middleware 33160 26272 200 GET /login/ - 12.84ms
+INFO 2026-04-23 16:32:12,652 log 33160 26272 "GET /login/ HTTP/1.1" 200 15103
+INFO 2026-04-23 16:32:15,765 middleware 33160 26272 404 GET /favicon.ico - 23.10ms
+WARNING 2026-04-23 16:32:15,767 log 33160 26272 Not Found: /favicon.ico
+WARNING 2026-04-23 16:32:15,769 log 33160 26272 "GET /favicon.ico HTTP/1.1" 404 10028
+INFO 2026-04-23 16:34:26,371 middleware 33160 32432 200 GET / - 440.92ms
+INFO 2026-04-23 16:34:26,373 log 33160 32432 "GET / HTTP/1.1" 200 21850
+INFO 2026-04-23 16:34:27,380 middleware 33160 32432 404 GET /logo.png - 73.95ms
+WARNING 2026-04-23 16:34:27,383 log 33160 32432 Not Found: /logo.png
+WARNING 2026-04-23 16:34:27,385 log 33160 32432 "GET /logo.png HTTP/1.1" 404 10019
+INFO 2026-04-23 19:27:04,529 middleware 33160 5172 200 GET /swagger/ - 395.98ms
+INFO 2026-04-23 19:27:04,607 log 33160 5172 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-04-23 19:27:07,878 middleware 33160 5172 200 GET /swagger/ - 2809.53ms
+INFO 2026-04-23 19:27:07,882 log 33160 5172 "GET /swagger/?format=openapi HTTP/1.1" 200 298327
+INFO 2026-04-23 20:00:36,977 log 33160 16896 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-23 20:00:38,269 log 33160 5012 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-23 20:00:38,273 log 33160 16896 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-23 20:00:38,282 log 33160 5012 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-23 20:00:38,303 log 33160 5012 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-23 20:00:39,759 middleware 33160 30904 404 GET /favicon.ico - 440.76ms
+WARNING 2026-04-23 20:00:39,790 log 33160 30904 Not Found: /favicon.ico
+WARNING 2026-04-23 20:00:39,805 log 33160 30904 "GET /favicon.ico HTTP/1.1" 404 10028
+INFO 2026-04-23 20:31:37,832 autoreload 33160 36440 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\accounts\views.py changed, reloading.
+INFO 2026-04-23 20:31:57,498 autoreload 19628 19440 Watching for file changes with StatReloader
+INFO 2026-04-23 20:33:12,524 autoreload 19628 19440 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\companies\views.py changed, reloading.
+INFO 2026-04-23 20:33:21,470 autoreload 30736 31360 Watching for file changes with StatReloader
+INFO 2026-04-23 20:34:51,905 autoreload 30736 31360 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\companies\views.py changed, reloading.
+INFO 2026-04-23 20:34:55,812 autoreload 35880 37176 Watching for file changes with StatReloader
+INFO 2026-04-23 20:36:06,220 autoreload 35880 37176 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-23 20:36:12,563 autoreload 34636 35800 Watching for file changes with StatReloader
+INFO 2026-04-23 20:36:50,965 autoreload 34636 35800 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\urls.py changed, reloading.
+INFO 2026-04-23 20:36:57,358 autoreload 41400 17352 Watching for file changes with StatReloader
+INFO 2026-04-23 20:37:07,585 middleware 41400 34420 200 GET /swagger/ - 146.70ms
+INFO 2026-04-23 20:37:07,597 log 41400 34420 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-04-23 20:37:07,660 log 41400 34420 "GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+INFO 2026-04-23 20:37:07,680 log 41400 1388 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+INFO 2026-04-23 20:37:07,685 log 41400 41572 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-23 20:37:07,686 log 41400 27524 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-23 20:37:07,692 log 41400 18576 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-23 20:37:07,734 log 41400 34420 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-23 20:37:07,765 log 41400 18576 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-23 20:37:08,110 log 41400 34420 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 304 0
+INFO 2026-04-23 20:37:11,012 middleware 41400 18576 200 GET /swagger/ - 2934.03ms
+INFO 2026-04-23 20:37:11,015 log 41400 18576 "GET /swagger/?format=openapi HTTP/1.1" 200 298566
+INFO 2026-04-23 20:43:00,299 basehttp 41400 34420 - Broken pipe from ('10.150.69.2', 63702)
+INFO 2026-04-23 20:43:00,300 basehttp 41400 1388 - Broken pipe from ('10.150.69.2', 63629)
+INFO 2026-04-23 20:43:00,301 basehttp 41400 18576 - Broken pipe from ('10.150.69.2', 64642)
+INFO 2026-04-23 20:43:00,302 basehttp 41400 41572 - Broken pipe from ('10.150.69.2', 55442)
+INFO 2026-04-23 20:43:00,302 basehttp 41400 27524 - Broken pipe from ('10.150.69.2', 55250)
+ERROR 2026-04-23 20:44:50,640 log 41400 19644 Invalid HTTP_HOST header: '192.168.137.1:8000'. You may need to add '192.168.137.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.137.1:8000'. You may need to add '192.168.137.1' to ALLOWED_HOSTS.
+WARNING 2026-04-23 20:44:50,647 log 41400 19644 "GET / HTTP/1.1" 400 79315
+ERROR 2026-04-23 20:45:35,555 log 41400 25788 Invalid HTTP_HOST header: '192.168.137.1:8000'. You may need to add '192.168.137.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.137.1:8000'. You may need to add '192.168.137.1' to ALLOWED_HOSTS.
+WARNING 2026-04-23 20:45:35,560 log 41400 25788 "GET / HTTP/1.1" 400 79619
+ERROR 2026-04-23 20:45:35,683 log 41400 37984 Invalid HTTP_HOST header: '192.168.137.1:8000'. You may need to add '192.168.137.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.137.1:8000'. You may need to add '192.168.137.1' to ALLOWED_HOSTS.
+WARNING 2026-04-23 20:45:35,688 log 41400 37984 "GET / HTTP/1.1" 400 79315
+ERROR 2026-04-23 20:45:35,888 log 41400 41164 Invalid HTTP_HOST header: '192.168.137.1:8000'. You may need to add '192.168.137.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.137.1:8000'. You may need to add '192.168.137.1' to ALLOWED_HOSTS.
+WARNING 2026-04-23 20:45:35,892 log 41400 41164 "GET /index.asp HTTP/1.1" 400 79308
+ERROR 2026-04-23 20:45:36,144 log 41400 26516 Invalid HTTP_HOST header: '192.168.137.1'. You may need to add '192.168.137.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.137.1'. You may need to add '192.168.137.1' to ALLOWED_HOSTS.
+WARNING 2026-04-23 20:45:36,148 log 41400 26516 "GET /loginMsg.js HTTP/1.1" 400 79389
+ERROR 2026-04-23 20:45:36,486 log 41400 12752 Invalid HTTP_HOST header: '192.168.137.1'. You may need to add '192.168.137.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.137.1'. You may need to add '192.168.137.1' to ALLOWED_HOSTS.
+WARNING 2026-04-23 20:45:36,490 log 41400 12752 "GET /cgi/get.cgi?cmd=home_login HTTP/1.1" 400 79811
+ERROR 2026-04-23 20:46:46,257 log 41400 36144 Invalid HTTP_HOST header: '192.168.1.121:8000'. You may need to add '192.168.1.121' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.1.121:8000'. You may need to add '192.168.1.121' to ALLOWED_HOSTS.
+WARNING 2026-04-23 20:46:46,263 log 41400 36144 "GET /swagger HTTP/1.1" 400 80121
+ERROR 2026-04-23 20:47:04,858 log 41400 27724 Invalid HTTP_HOST header: '192.168.1.121:8000'. You may need to add '192.168.1.121' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.1.121:8000'. You may need to add '192.168.1.121' to ALLOWED_HOSTS.
+WARNING 2026-04-23 20:47:04,865 log 41400 27724 "GET /favicon.ico HTTP/1.1" 400 80108
+INFO 2026-04-23 20:47:40,053 autoreload 41400 17352 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\settings\dev.py changed, reloading.
+INFO 2026-04-23 20:47:50,032 autoreload 13296 38408 Watching for file changes with StatReloader
+INFO 2026-04-23 20:47:59,308 autoreload 13296 38408 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\settings\dev.py changed, reloading.
+INFO 2026-04-23 20:48:04,820 autoreload 6408 39736 Watching for file changes with StatReloader
+ERROR 2026-04-23 20:48:34,152 log 6408 6616 Invalid HTTP_HOST header: '192.168.1.121:8000'. You may need to add '192.168.1.121' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.1.121:8000'. You may need to add '192.168.1.121' to ALLOWED_HOSTS.
+WARNING 2026-04-23 20:48:34,666 log 6408 6616 "GET /swagger HTTP/1.1" 400 80284
+ERROR 2026-04-23 20:48:34,777 log 6408 33012 Invalid HTTP_HOST header: '192.168.1.121:8000'. You may need to add '192.168.1.121' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.1.121:8000'. You may need to add '192.168.1.121' to ALLOWED_HOSTS.
+WARNING 2026-04-23 20:48:34,783 log 6408 33012 "GET /favicon.ico HTTP/1.1" 400 80134
+ERROR 2026-04-23 20:48:38,654 log 6408 7348 Invalid HTTP_HOST header: '192.168.1.121:8000'. You may need to add '192.168.1.121' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.1.121:8000'. You may need to add '192.168.1.121' to ALLOWED_HOSTS.
+WARNING 2026-04-23 20:48:38,662 log 6408 7348 "GET /swagger HTTP/1.1" 400 80284
+ERROR 2026-04-23 20:48:38,876 log 6408 38112 Invalid HTTP_HOST header: '192.168.1.121:8000'. You may need to add '192.168.1.121' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.1.121:8000'. You may need to add '192.168.1.121' to ALLOWED_HOSTS.
+WARNING 2026-04-23 20:48:38,881 log 6408 38112 "GET /favicon.ico HTTP/1.1" 400 80134
+ERROR 2026-04-23 20:49:07,157 log 6408 39740 Invalid HTTP_HOST header: '192.168.1.121:8000'. You may need to add '192.168.1.121' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.1.121:8000'. You may need to add '192.168.1.121' to ALLOWED_HOSTS.
+WARNING 2026-04-23 20:49:07,164 log 6408 39740 "GET /swagger HTTP/1.1" 400 80284
+ERROR 2026-04-23 20:49:07,383 log 6408 31576 Invalid HTTP_HOST header: '192.168.1.121:8000'. You may need to add '192.168.1.121' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.1.121:8000'. You may need to add '192.168.1.121' to ALLOWED_HOSTS.
+WARNING 2026-04-23 20:49:07,389 log 6408 31576 "GET /favicon.ico HTTP/1.1" 400 80134
+ERROR 2026-04-23 20:49:18,429 log 6408 2352 Invalid HTTP_HOST header: '192.168.1.121:8000'. You may need to add '192.168.1.121' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.1.121:8000'. You may need to add '192.168.1.121' to ALLOWED_HOSTS.
+WARNING 2026-04-23 20:49:18,433 log 6408 2352 "GET /swagger HTTP/1.1" 400 80147
+ERROR 2026-04-23 20:49:18,782 log 6408 22640 Invalid HTTP_HOST header: '192.168.1.121:8000'. You may need to add '192.168.1.121' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.1.121:8000'. You may need to add '192.168.1.121' to ALLOWED_HOSTS.
+WARNING 2026-04-23 20:49:18,789 log 6408 22640 "GET /favicon.ico HTTP/1.1" 400 80134
+ERROR 2026-04-23 20:50:07,295 log 6408 18456 Invalid HTTP_HOST header: '192.168.1.121:8000'. You may need to add '192.168.1.121' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.1.121:8000'. You may need to add '192.168.1.121' to ALLOWED_HOSTS.
+WARNING 2026-04-23 20:50:07,300 log 6408 18456 "GET /swagger HTTP/1.1" 400 80147
+ERROR 2026-04-23 20:50:07,740 log 6408 12492 Invalid HTTP_HOST header: '192.168.1.121:8000'. You may need to add '192.168.1.121' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.1.121:8000'. You may need to add '192.168.1.121' to ALLOWED_HOSTS.
+WARNING 2026-04-23 20:50:07,748 log 6408 12492 "GET /favicon.ico HTTP/1.1" 400 80134
+INFO 2026-04-23 20:51:54,120 autoreload 6408 39736 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\config\settings\dev.py changed, reloading.
+INFO 2026-04-23 20:51:58,002 autoreload 4568 40084 Watching for file changes with StatReloader
+INFO 2026-04-23 20:52:36,639 middleware 4568 17160 404 GET /swagger - 15.68ms
+INFO 2026-04-23 20:52:36,645 log 4568 17160 "GET /swagger HTTP/1.1" 301 0
+INFO 2026-04-23 20:52:39,897 middleware 4568 25352 404 GET /swagger - 24.89ms
+INFO 2026-04-23 20:52:39,902 log 4568 25352 "GET /swagger HTTP/1.1" 301 0
+INFO 2026-04-23 20:52:43,222 middleware 4568 25352 200 GET /swagger/ - 69.19ms
+INFO 2026-04-23 20:52:43,224 log 4568 25352 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-04-23 20:52:46,016 log 4568 13936 "GET /static/drf-yasg/style.css HTTP/1.1" 200 1187
+INFO 2026-04-23 20:52:46,580 log 4568 29708 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-04-23 20:52:46,802 log 4568 13936 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-04-23 20:52:47,001 log 4568 29944 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 177183
+INFO 2026-04-23 20:52:47,162 log 4568 29708 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-04-23 20:52:47,617 log 4568 32684 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 252451
+INFO 2026-04-23 20:52:51,416 log 4568 25352 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1510271
+INFO 2026-04-23 20:52:51,706 log 4568 32684 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-04-23 20:52:53,809 middleware 4568 25352 200 GET /swagger/ - 2127.12ms
+INFO 2026-04-23 20:52:53,815 log 4568 25352 "GET /swagger/?format=openapi HTTP/1.1" 200 298566
+INFO 2026-04-23 21:28:06,106 middleware 4568 23768 200 GET /api/companies/ - 15.41ms
+INFO 2026-04-23 21:28:06,109 log 4568 23768 "GET /api/companies/ HTTP/1.1" 200 123
+INFO 2026-04-23 21:34:49,948 middleware 4568 22212 200 GET /api/companies/ - 6.28ms
+INFO 2026-04-23 21:34:49,950 log 4568 22212 "GET /api/companies/ HTTP/1.1" 200 123
+INFO 2026-04-23 21:34:50,176 middleware 4568 22212 404 GET /favicon.ico - 25.27ms
+WARNING 2026-04-23 21:34:50,177 log 4568 22212 Not Found: /favicon.ico
+WARNING 2026-04-23 21:34:50,180 log 4568 22212 "GET /favicon.ico HTTP/1.1" 404 10210
+INFO 2026-04-23 21:35:38,201 middleware 4568 22212 200 GET /api/companies/ - 6.09ms
+INFO 2026-04-23 21:35:38,203 log 4568 22212 "GET /api/companies/ HTTP/1.1" 200 123
+INFO 2026-04-23 21:37:57,279 middleware 4568 39808 200 GET /api/companies/ - 8.99ms
+INFO 2026-04-23 21:37:57,281 log 4568 39808 "GET /api/companies/ HTTP/1.1" 200 123
+INFO 2026-04-23 21:41:05,836 middleware 4568 18480 200 GET /api/companies/ - 5.98ms
+INFO 2026-04-23 21:41:05,838 log 4568 18480 "GET /api/companies/ HTTP/1.1" 200 123
+INFO 2026-04-23 21:45:06,696 middleware 4568 11876 200 GET /api/companies/ - 8.77ms
+INFO 2026-04-23 21:45:06,699 log 4568 11876 "GET /api/companies/ HTTP/1.1" 200 123
+INFO 2026-04-23 21:48:46,233 middleware 4568 1532 200 GET /api/companies/ - 6.89ms
+INFO 2026-04-23 21:48:46,235 log 4568 1532 "GET /api/companies/ HTTP/1.1" 200 123
+INFO 2026-04-23 21:49:03,443 middleware 4568 17764 400 POST /api/auth/login/ - 1629.37ms
+WARNING 2026-04-23 21:49:03,444 log 4568 17764 Bad Request: /api/auth/login/
+WARNING 2026-04-23 21:49:03,446 log 4568 17764 "POST /api/auth/login/ HTTP/1.1" 400 57
+INFO 2026-04-23 21:52:30,402 middleware 4568 19564 400 POST /api/auth/login/ - 1620.48ms
+WARNING 2026-04-23 21:52:30,404 log 4568 19564 Bad Request: /api/auth/login/
+WARNING 2026-04-23 21:52:30,405 log 4568 19564 "POST /api/auth/login/ HTTP/1.1" 400 57
+INFO 2026-04-23 21:53:53,416 middleware 4568 19564 200 GET /api/companies/ - 5.82ms
+INFO 2026-04-23 21:53:53,418 log 4568 19564 "GET /api/companies/ HTTP/1.1" 200 123
+INFO 2026-04-23 21:59:22,634 autoreload 4568 40084 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\accounts\views.py changed, reloading.
+INFO 2026-04-23 21:59:35,208 autoreload 21652 26496 Watching for file changes with StatReloader
+INFO 2026-04-23 21:59:43,916 autoreload 21652 26496 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\accounts\views.py changed, reloading.
+INFO 2026-04-23 21:59:49,918 autoreload 36148 24152 Watching for file changes with StatReloader
+INFO 2026-04-23 22:00:48,236 middleware 36148 14456 200 GET /api/companies/ - 9.03ms
+INFO 2026-04-23 22:00:48,243 log 36148 14456 "GET /api/companies/ HTTP/1.1" 200 123
+INFO 2026-04-23 22:01:25,676 middleware 36148 8368 200 GET /api/companies/ - 5.12ms
+INFO 2026-04-23 22:01:25,678 log 36148 8368 "GET /api/companies/ HTTP/1.1" 200 123
+INFO 2026-04-23 22:02:22,691 middleware 36148 30788 200 GET /api/companies/ - 8.43ms
+INFO 2026-04-23 22:02:22,693 log 36148 30788 "GET /api/companies/ HTTP/1.1" 200 123
+INFO 2026-04-23 22:02:33,721 middleware 36148 19460 200 GET /swagger/ - 87.01ms
+INFO 2026-04-23 22:02:33,723 log 36148 19460 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-04-23 22:02:36,217 middleware 36148 19460 200 GET /swagger/ - 2142.34ms
+INFO 2026-04-23 22:02:36,221 log 36148 19460 "GET /swagger/?format=openapi HTTP/1.1" 200 298566
+INFO 2026-04-23 22:03:53,011 middleware 36148 19460 200 GET /swagger/ - 2.59ms
+INFO 2026-04-23 22:03:53,013 log 36148 19460 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-04-23 22:03:53,097 log 36148 19460 "GET /static/drf-yasg/style.css HTTP/1.1" 200 1187
+INFO 2026-04-23 22:03:53,115 log 36148 5712 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-04-23 22:03:53,124 log 36148 29792 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-04-23 22:03:53,634 log 36148 5712 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-04-23 22:03:59,629 log 36148 32008 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 177183
+INFO 2026-04-23 22:03:59,980 log 36148 32820 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 252451
+INFO 2026-04-23 22:04:00,972 log 36148 12028 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1510271
+INFO 2026-04-23 22:04:01,349 log 36148 32820 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-04-23 22:04:03,142 middleware 36148 12028 200 GET /swagger/ - 1839.84ms
+INFO 2026-04-23 22:04:03,147 log 36148 12028 "GET /swagger/?format=openapi HTTP/1.1" 200 298566
+INFO 2026-04-23 22:04:41,441 middleware 36148 18440 404 GET /swagger - 26.71ms
+INFO 2026-04-23 22:04:41,443 log 36148 18440 "GET /swagger HTTP/1.1" 301 0
+INFO 2026-04-23 22:04:41,524 middleware 36148 18440 200 GET /swagger/ - 3.99ms
+INFO 2026-04-23 22:04:41,526 log 36148 18440 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-04-23 22:04:41,565 log 36148 18440 "GET /static/drf-yasg/style.css HTTP/1.1" 200 1187
+INFO 2026-04-23 22:04:41,944 log 36148 37328 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-04-23 22:04:41,948 log 36148 26896 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-04-23 22:04:42,008 log 36148 18440 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-04-23 22:04:42,146 log 36148 39268 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 177183
+INFO 2026-04-23 22:04:42,187 log 36148 21652 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 252451
+INFO 2026-04-23 22:04:42,596 log 36148 22744 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1510271
+INFO 2026-04-23 22:04:43,035 log 36148 21652 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-04-23 22:04:45,252 middleware 36148 22744 200 GET /swagger/ - 2242.78ms
+INFO 2026-04-23 22:04:45,273 log 36148 22744 "GET /swagger/?format=openapi HTTP/1.1" 200 298566
+INFO 2026-04-23 22:08:13,670 middleware 36148 39292 200 GET /api/companies/ - 8.72ms
+INFO 2026-04-23 22:08:13,673 log 36148 39292 "GET /api/companies/ HTTP/1.1" 200 123
+INFO 2026-04-23 22:08:22,634 middleware 36148 26664 200 GET /api/companies/ - 7.70ms
+INFO 2026-04-23 22:08:22,636 log 36148 26664 "GET /api/companies/ HTTP/1.1" 200 123
+INFO 2026-04-23 22:09:20,581 autoreload 36148 24152 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\accounts\views.py changed, reloading.
+INFO 2026-04-23 22:09:25,321 autoreload 13024 28468 Watching for file changes with StatReloader
+INFO 2026-04-23 22:09:45,497 middleware 13024 7404 200 GET /swagger/ - 100.92ms
+INFO 2026-04-23 22:09:45,503 log 13024 7404 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-04-23 22:09:45,648 log 13024 7404 "GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+INFO 2026-04-23 22:09:45,651 log 13024 40792 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+INFO 2026-04-23 22:09:45,667 log 13024 7404 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2026-04-23 22:09:45,673 log 13024 40792 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2026-04-23 22:09:45,685 log 13024 7404 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2026-04-23 22:09:45,694 log 13024 40792 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2026-04-23 22:09:45,699 log 13024 7404 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2026-04-23 22:09:46,394 middleware 13024 7404 404 GET /swagger/logo.png - 26.66ms
+WARNING 2026-04-23 22:09:46,396 log 13024 7404 Not Found: /swagger/logo.png
+WARNING 2026-04-23 22:09:46,400 log 13024 7404 "GET /swagger/logo.png HTTP/1.1" 404 10221
+INFO 2026-04-23 22:09:46,637 log 13024 40792 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 304 0
+INFO 2026-04-23 22:09:49,330 middleware 13024 7404 200 GET /swagger/ - 2805.84ms
+INFO 2026-04-23 22:09:49,334 log 13024 7404 "GET /swagger/?format=openapi HTTP/1.1" 200 299058
+INFO 2026-04-23 22:11:42,738 middleware 13024 39984 200 GET /api/companies/ - 14.13ms
+INFO 2026-04-23 22:11:42,741 log 13024 39984 "GET /api/companies/ HTTP/1.1" 200 123
+INFO 2026-04-23 22:12:57,013 middleware 13024 6556 200 GET /api/companies/ - 6.91ms
+INFO 2026-04-23 22:12:57,016 log 13024 6556 "GET /api/companies/ HTTP/1.1" 200 123
+INFO 2026-04-23 22:13:10,006 autoreload 13024 28468 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\accounts\views.py changed, reloading.
+INFO 2026-04-23 22:13:16,777 autoreload 23184 20272 Watching for file changes with StatReloader
+INFO 2026-04-23 22:13:27,205 autoreload 23184 20272 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\accounts\views.py changed, reloading.
+INFO 2026-04-23 22:13:31,140 autoreload 23324 20408 Watching for file changes with StatReloader
+INFO 2026-04-23 22:13:34,109 middleware 23324 36992 200 GET /swagger/ - 87.62ms
+INFO 2026-04-23 22:13:34,117 log 23324 36992 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-04-23 22:13:34,837 middleware 23324 22844 200 GET /swagger/ - 2.95ms
+INFO 2026-04-23 22:13:34,841 log 23324 22844 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-04-23 22:13:37,085 middleware 23324 36992 404 GET /swagger/logo.png - 69.86ms
+WARNING 2026-04-23 22:13:37,117 log 23324 36992 Not Found: /swagger/logo.png
+WARNING 2026-04-23 22:13:37,237 log 23324 36992 "GET /swagger/logo.png HTTP/1.1" 404 10221
+INFO 2026-04-23 22:13:38,626 middleware 23324 22844 200 GET /swagger/ - 3437.99ms
+INFO 2026-04-23 22:13:38,697 log 23324 22844 "GET /swagger/?format=openapi HTTP/1.1" 200 299026
+INFO 2026-04-23 22:13:41,582 middleware 23324 36992 200 GET /swagger/ - 4154.74ms
+INFO 2026-04-23 22:13:41,584 log 23324 36992 "GET /swagger/?format=openapi HTTP/1.1" 200 299022
+INFO 2026-04-23 22:14:48,913 middleware 23324 41732 401 POST /api/auth/login/ - 1566.13ms
+WARNING 2026-04-23 22:14:48,914 log 23324 41732 Unauthorized: /api/auth/login/
+WARNING 2026-04-23 22:14:48,916 log 23324 41732 "POST /api/auth/login/ HTTP/1.1" 401 43
+INFO 2026-04-23 22:15:23,525 middleware 23324 22844 401 POST /api/auth/login/ - 1472.17ms
+WARNING 2026-04-23 22:15:23,526 log 23324 22844 Unauthorized: /api/auth/login/
+WARNING 2026-04-23 22:15:23,527 log 23324 22844 "POST /api/auth/login/ HTTP/1.1" 401 43
+INFO 2026-04-23 22:17:16,885 middleware 23324 36992 200 GET /login/ - 1026.16ms
+INFO 2026-04-23 22:17:16,889 log 23324 36992 "GET /login/ HTTP/1.1" 200 15103
+INFO 2026-04-23 22:17:18,926 middleware 23324 36992 404 GET /login/logo.png - 31.47ms
+WARNING 2026-04-23 22:17:18,929 log 23324 36992 Not Found: /login/logo.png
+WARNING 2026-04-23 22:17:18,933 log 23324 36992 "GET /login/logo.png HTTP/1.1" 404 10215
+ERROR 2026-04-23 22:19:22,325 log 23324 36992 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py", line 124, in login_view
+    if user.company and user.company.id != company.id:
+       ^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'company'
+INFO 2026-04-23 22:19:22,332 middleware 23324 36992 500 POST /login/ - 2156.31ms
+ERROR 2026-04-23 22:19:22,335 log 23324 36992 "POST /login/ HTTP/1.1" 500 80610
+INFO 2026-04-23 22:19:23,330 middleware 23324 36992 404 GET /login/logo.png - 17.50ms
+WARNING 2026-04-23 22:19:23,332 log 23324 36992 Not Found: /login/logo.png
+WARNING 2026-04-23 22:19:23,335 log 23324 36992 "GET /login/logo.png HTTP/1.1" 404 10215
+INFO 2026-04-23 22:33:26,520 autoreload 23908 23912 Watching for file changes with StatReloader
+INFO 2026-04-23 22:33:50,558 middleware 23908 3456 404 GET /favicon.ico - 578.06ms
+WARNING 2026-04-23 22:33:50,570 log 23908 3456 Not Found: /favicon.ico
+WARNING 2026-04-23 22:33:50,572 log 23908 3456 "GET /favicon.ico HTTP/1.1" 404 10206
+INFO 2026-04-23 22:36:43,963 middleware 23908 20920 200 GET /swagger/ - 824.17ms
+INFO 2026-04-23 22:36:44,002 log 23908 20920 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-04-23 22:36:44,177 log 23908 20920 "GET /static/drf-yasg/style.css HTTP/1.1" 200 1187
+INFO 2026-04-23 22:36:44,317 log 23908 21184 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-04-23 22:36:44,404 log 23908 20920 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-04-23 22:36:44,416 log 23908 20808 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 177183
+INFO 2026-04-23 22:36:44,446 log 23908 23100 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-04-23 22:36:44,692 log 23908 18132 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 252451
+INFO 2026-04-23 22:36:46,074 log 23908 21288 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1510271
+INFO 2026-04-23 22:36:46,659 log 23908 18132 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-04-23 22:36:50,421 middleware 23908 21288 200 GET /swagger/ - 3849.05ms
+INFO 2026-04-23 22:36:50,426 log 23908 21288 "GET /swagger/?format=openapi HTTP/1.1" 200 299026
+INFO 2026-04-23 22:37:23,554 middleware 23908 21288 401 POST /api/auth/login/ - 1140.41ms
+WARNING 2026-04-23 22:37:23,556 log 23908 21288 Unauthorized: /api/auth/login/
+WARNING 2026-04-23 22:37:23,557 log 23908 21288 "POST /api/auth/login/ HTTP/1.1" 401 43
+INFO 2026-04-23 22:37:30,110 autoreload 23908 23912 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\core\views.py changed, reloading.
+INFO 2026-04-23 22:37:34,122 autoreload 9248 21244 Watching for file changes with StatReloader
+INFO 2026-04-23 22:41:12,477 middleware 9248 13288 200 GET /swagger/ - 111.76ms
+INFO 2026-04-23 22:41:12,488 log 9248 13288 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-04-23 22:41:15,124 middleware 9248 13288 200 GET /swagger/ - 2100.29ms
+INFO 2026-04-23 22:41:15,127 log 9248 13288 "GET /swagger/?format=openapi HTTP/1.1" 200 299026
+ERROR 2026-04-23 22:45:32,855 log 9248 13288 Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\accounts\views.py", line 261, in post
+    if user.company and user.company.id != company.id:
+       ^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'company'
+INFO 2026-04-23 22:45:32,861 middleware 9248 13288 500 POST /api/auth/login/ - 1582.91ms
+ERROR 2026-04-23 22:45:32,863 log 9248 13288 "POST /api/auth/login/ HTTP/1.1" 500 22870
+INFO 2026-04-23 22:50:59,143 autoreload 9248 21244 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\companies\models.py changed, reloading.
+INFO 2026-04-23 22:51:03,994 autoreload 8112 22264 Watching for file changes with StatReloader
+INFO 2026-04-23 22:51:41,086 autoreload 8112 22264 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\companies\models.py changed, reloading.
+INFO 2026-04-23 22:51:44,331 autoreload 21592 17304 Watching for file changes with StatReloader
+INFO 2026-04-23 22:52:11,918 autoreload 2056 7644 Watching for file changes with StatReloader
+INFO 2026-04-23 22:54:43,679 autoreload 2056 7644 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\companies\models.py changed, reloading.
+INFO 2026-04-23 22:54:46,264 autoreload 10132 9700 Watching for file changes with StatReloader
+INFO 2026-04-23 22:55:23,755 autoreload 10132 9700 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\companies\models.py changed, reloading.
+INFO 2026-04-23 22:55:25,868 autoreload 10924 23388 Watching for file changes with StatReloader
+INFO 2026-04-23 22:55:53,437 autoreload 10924 23388 C:\Users\hounk\Desktop\AMZ\Gestion Tickets\ticket_backend\apps\accounts\models.py changed, reloading.
+INFO 2026-04-23 22:55:56,030 autoreload 888 8308 Watching for file changes with StatReloader
+INFO 2026-04-23 23:02:06,463 autoreload 12196 792 Watching for file changes with StatReloader
+INFO 2026-04-23 23:02:20,835 middleware 12196 17496 200 GET /swagger/ - 44.23ms
+INFO 2026-04-23 23:02:20,838 log 12196 17496 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-04-23 23:02:22,307 middleware 12196 17496 200 GET /swagger/ - 1243.07ms
+INFO 2026-04-23 23:02:22,309 log 12196 17496 "GET /swagger/?format=openapi HTTP/1.1" 200 299026
+INFO 2026-04-23 23:02:58,836 middleware 12196 17496 200 POST /api/auth/login/ - 1407.86ms
+INFO 2026-04-23 23:02:58,838 log 12196 17496 "POST /api/auth/login/ HTTP/1.1" 200 642

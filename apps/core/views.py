@@ -82,6 +82,36 @@ def register_company(request):
 
 
 def login_view(request):
+    """Connexion pour le web"""
+    from apps.companies.models import Company
+    
+    companies = Company.objects.filter(is_active=True)
+    
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        
+        user = authenticate(request, username=email, password=password)
+        
+        if user:
+            login(request, user)
+            messages.success(request, f'Bienvenue {user.get_full_name()} !')
+            
+            # Redirection selon le rôle
+            if user.role == 'admin':
+                return redirect('admin_dashboard')
+            elif user.role == 'employee':
+                return redirect('employee_dashboard')
+            elif user.role == 'validator':
+                return redirect('validator_dashboard')
+            elif user.role == 'finance':
+                return redirect('finance_dashboard')
+            elif user.role == 'provider':
+                return redirect('provider_dashboard')
+        else:
+            messages.error(request, 'Email ou mot de passe incorrect')
+    
+    return render(request, 'accounts/login.html', {'companies': companies})
     """Connexion avec sélection du rôle"""
     from apps.companies.models import Company
     

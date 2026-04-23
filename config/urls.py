@@ -6,6 +6,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
+from apps.companies.views import CompanyListView
 
 # Imports des vues core
 from apps.core.views import (
@@ -102,6 +103,8 @@ urlpatterns = [
     
     # Menus
     path('menus/', menu_list, name='menu_list'),
+
+    path('api/companies/', CompanyListView.as_view(), name='company_list'),
 
     # Ajouter dans urlpatterns
     path('api/admin/add-user/', api_add_user, name='api_add_user'),

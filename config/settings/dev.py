@@ -3,6 +3,8 @@ Paramètres de développement
 """
 from .base import *
 
+ALLOWED_HOSTS = ['*']
+
 DEBUG = True
 
 # Base de données SQLite pour le développement

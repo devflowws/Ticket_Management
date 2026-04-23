@@ -3,9 +3,6 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-# Import correct - sans "ticket_backend."
-from apps.companies.models import Company
-
 
 class Role(models.TextChoices):
     ADMIN = 'admin', _('Administrateur')
@@ -23,14 +20,14 @@ class User(AbstractUser):
     created_at = models.DateTimeField(_('date de création'), auto_now_add=True)
     updated_at = models.DateTimeField(_('date de modification'), auto_now=True)
     
-    # Company relation - temporairement commentée car companies n'existe pas encore
-    # company = models.ForeignKey(
-    #     Company, 
-    #     on_delete=models.CASCADE, 
-    #     related_name='users',
-    #     null=True, 
-    #     blank=True
-    # )
+    # Champ company - utiliser string pour éviter l'import circulaire
+    company = models.ForeignKey(
+        'companies.Company', 
+        on_delete=models.SET_NULL, 
+        null=True, 
+        blank=True, 
+        related_name='users'
+    )
     
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
