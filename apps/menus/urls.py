@@ -1,13 +1,16 @@
 # apps/menus/urls.py
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import DailyMenuViewSet, MenuDeadlineViewSet, MenuCategoryViewSet
+from .views import (
+    MenuViewSet, DailyMenuViewSet, MenuCategoryViewSet, EmployeeMenuViewSet
+)
 
 router = DefaultRouter()
-router.register(r'daily', DailyMenuViewSet, basename='menu-daily')
-router.register(r'deadlines', MenuDeadlineViewSet, basename='menu-deadline')
-router.register(r'categories', MenuCategoryViewSet, basename='menu-category')
+router.register(r'menus', MenuViewSet)
+router.register(r'daily-menus', DailyMenuViewSet)
+router.register(r'categories', MenuCategoryViewSet)
+router.register(r'employee', EmployeeMenuViewSet, basename='employee-menu')
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('api/menus/', include(router.urls)),
 ]

@@ -1,0 +1,360 @@
+<!-- templates/dashboard/my_tickets.html -->
+{% extends 'base/base.html' %}
+{% block title %}Mes tickets{% endblock %}
+
+{% block extra_css %}
+<style>
+    .ticket-design {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        position: relative;
+        overflow: hidden;
+        border: 2px solid #e0e0e0;
+    }
+    .ticket-design::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: -10px;
+        width: 20px;
+        height: 20px;
+        background: #f8f9fa;
+        border-radius: 50%;
+        transform: translateY(-50%);
+    }
+    .ticket-design::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -10px;
+        width: 20px;
+        height: 20px;
+        background: #f8f9fa;
+        border-radius: 50%;
+        transform: translateY(-50%);
+    }
+    .ticket-design.active {
+        border-color: #28a745;
+        background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    }
+    .ticket-design.used {
+        border-color: #6c757d;
+        background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+    }
+    .ticket-design.expired {
+        border-color: #dc3545;
+        background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+    }
+    .ticket-value {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #667eea;
+    }
+    .status-badge {
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    .status-active { background: #28a745; color: white; }
+    .status-used { background: #6c757d; color: white; }
+    .status-expired { background: #dc3545; color: white; }
+    .section-card {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        border: none;
+    }
+    .section-card .card-header {
+        background: transparent;
+        border: none;
+        padding: 25px;
+        border-radius: 20px 20px 0 0;
+    }
+    .section-card .card-body {
+        padding: 0 25px 25px;
+    }
+    .filter-btn {
+        border: 2px solid #e0e0e0;
+        background: white;
+        padding: 8px 20px;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+    }
+    .filter-btn.active {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-color: transparent;
+    }
+    .tab-btn {
+        border: none;
+        background: transparent;
+        padding: 15px 25px;
+        border-bottom: 3px solid transparent;
+        transition: all 0.3s ease;
+        font-weight: 600;
+    }
+    .tab-btn.active {
+        border-bottom-color: #667eea;
+        color: #667eea;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid px-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="h2 mb-2">Mes tickets</h1>
+            <p class="text-muted mb-0">Gérez vos tickets repas</p>
+        </div>
+    </div>
+    
+    <!-- Stats -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="ticket-design active">
+                <div class="card-body p-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="mb-1 text-success">Tickets actifs</h6>
+                            <h2 class="mb-0">{{ total_active }}</h2>
+                        </div>
+                        <i class="fas fa-check-circle fs-1 text-success opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="ticket-design used">
+                <div class="card-body p-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="mb-1 text-secondary">Tickets utilisés</h6>
+                            <h2 class="mb-0">{{ total_used }}</h2>
+                        </div>
+                        <i class="fas fa-history fs-1 text-secondary opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="ticket-design expired">
+                <div class="card-body p-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="mb-1 text-danger">Tickets expirés</h6>
+                            <h2 class="mb-0">{{ total_expired }}</h2>
+                        </div>
+                        <i class="fas fa-times-circle fs-1 text-danger opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="section-card">
+                <div class="card-body p-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="mb-1">Valeur totale</h6>
+                            <h2 class="mb-0 text-primary">{{ total_value }} FCFA</h2>
+                        </div>
+                        <i class="fas fa-wallet fs-1 text-primary opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Tabs -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="d-flex border-bottom">
+                <button class="tab-btn active" onclick="showTab('tickets')" id="tab-tickets">
+                    <i class="fas fa-ticket-alt me-2"></i>Mes tickets
+                </button>
+                <button class="tab-btn" onclick="showTab('lots')" id="tab-lots">
+                    <i class="fas fa-boxes me-2"></i>Mes lots
+                </button>
+                <button class="tab-btn" onclick="showTab('consumptions')" id="tab-consumptions">
+                    <i class="fas fa-utensils me-2"></i>Mes consommations
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mes Tickets -->
+    <div id="content-tickets" class="tab-content">
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="d-flex gap-2">
+                    <button class="filter-btn active" onclick="filterTickets('all')" id="filter-all">Tous</button>
+                    <button class="filter-btn" onclick="filterTickets('active')" id="filter-active">Actifs</button>
+                    <button class="filter-btn" onclick="filterTickets('used')" id="filter-used">Utilisés</button>
+                    <button class="filter-btn" onclick="filterTickets('expired')" id="filter-expired">Expirés</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row" id="tickets-container">
+            {% for ticket in active_tickets %}
+            <div class="col-md-4 mb-4 ticket-item" data-status="active">
+                <div class="ticket-design active">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <span class="status-badge status-active">Actif</span>
+                            </div>
+                            <i class="fas fa-ticket-alt text-success fs-2 opacity-50"></i>
+                        </div>
+                        <h3 class="ticket-value">1000 FCFA</h3>
+                        <p class="text-muted small mb-0">Ticket #{{ ticket.id }}</p>
+                        <p class="text-muted small mb-0">Lot #{{ ticket.lot.id }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+            {% for ticket in used_tickets %}
+            <div class="col-md-4 mb-4 ticket-item" data-status="used">
+                <div class="ticket-design used">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <span class="status-badge status-used">Utilisé</span>
+                            </div>
+                            <i class="fas fa-ticket-alt text-secondary fs-2 opacity-50"></i>
+                        </div>
+                        <h3 class="ticket-value text-secondary">1000 FCFA</h3>
+                        <p class="text-muted small mb-0">Ticket #{{ ticket.id }}</p>
+                        <p class="text-muted small mb-0">Utilisé le {{ ticket.used_at|date:"d/m/Y H:i" }}</p>
+                        {% if ticket.provider %}
+                        <p class="text-muted small mb-0">Chez {{ ticket.provider.name }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+            {% for ticket in expired_tickets %}
+            <div class="col-md-4 mb-4 ticket-item" data-status="expired">
+                <div class="ticket-design expired">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <span class="status-badge status-expired">Expiré</span>
+                            </div>
+                            <i class="fas fa-ticket-alt text-danger fs-2 opacity-50"></i>
+                        </div>
+                        <h3 class="ticket-value text-danger">1000 FCFA</h3>
+                        <p class="text-muted small mb-0">Ticket #{{ ticket.id }}</p>
+                        <p class="text-muted small mb-0">Expiré le {{ ticket.lot.expires_at|date:"d/m/Y" }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    <!-- Mes Lots -->
+    <div id="content-lots" class="tab-content" style="display: none;">
+        <div class="row">
+            {% for lot in ticket_lots %}
+            <div class="col-md-6 mb-4">
+                <div class="section-card">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <h5 class="mb-1">Lot #{{ lot.id }}</h5>
+                                <p class="text-muted small mb-0">{{ lot.created_at|date:"d/m/Y H:i" }}</p>
+                            </div>
+                            <span class="badge bg-primary">{{ lot.quantity }} tickets</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span class="text-muted">Valeur:</span>
+                            <strong>{{ lot.quantity * 1000 }} FCFA</strong>
+                        </div>
+                        {% if lot.expires_at %}
+                        <div class="d-flex justify-content-between">
+                            <span class="text-muted">Expiration:</span>
+                            <strong>{{ lot.expires_at|date:"d/m/Y" }}</strong>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    <!-- Mes Consommations -->
+    <div id="content-consumptions" class="tab-content" style="display: none;">
+        <div class="row">
+            {% for consumption in consumptions %}
+            <div class="col-md-6 mb-4">
+                <div class="section-card">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <h5 class="mb-1">{{ consumption.provider.name }}</h5>
+                                <p class="text-muted small mb-0">{{ consumption.created_at|date:"d/m/Y H:i" }}</p>
+                            </div>
+                            <span class="badge bg-success">{{ consumption.nb_tickets }} tickets</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span class="text-muted">Statut:</span>
+                            <strong class="text-success">Confirmé</strong>
+                        </div>
+                        {% if consumption.notes %}
+                        <div class="mt-2">
+                            <p class="text-muted small mb-0">{{ consumption.notes }}</p>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script>
+    function showTab(tabName) {
+        // Masquer tous les contenus
+        document.querySelectorAll('.tab-content').forEach(content => {
+            content.style.display = 'none';
+        });
+        
+        // Désactiver tous les boutons
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // Afficher le contenu sélectionné
+        document.getElementById('content-' + tabName).style.display = 'block';
+        document.getElementById('tab-' + tabName).classList.add('active');
+    }
+    
+    function filterTickets(status) {
+        const items = document.querySelectorAll('.ticket-item');
+        const buttons = document.querySelectorAll('.filter-btn');
+        
+        buttons.forEach(btn => btn.classList.remove('active'));
+        document.getElementById('filter-' + status).classList.add('active');
+        
+        items.forEach(item => {
+            if (status === 'all') {
+                item.style.display = 'block';
+            } else {
+                if (item.getAttribute('data-status') === status) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            }
+        });
+    }
+</script>
+{% endblock %}

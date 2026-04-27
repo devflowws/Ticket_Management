@@ -9,17 +9,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            background: #f7f9fc;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Segoe UI', sans-serif; background: #f7f9fc; }
         
         /* Sidebar */
         .sidebar {
@@ -28,128 +19,49 @@
             top: 0;
             width: 280px;
             height: 100%;
-            background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+            background: linear-gradient(180deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
             color: white;
             z-index: 1000;
             transition: all 0.3s;
+            box-shadow: 4px 0 20px rgba(0,0,0,0.1);
         }
-        
-        .sidebar-header {
-            padding: 25px 20px;
-            text-align: center;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+        .sidebar-header { padding: 30px 20px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden; }
+        .sidebar-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(102,126,234,0.2) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
         }
-        
-        .sidebar-header i {
-            font-size: 2rem;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
         }
-        
-        .sidebar-header h3 {
-            font-size: 1.2rem;
-            margin-top: 10px;
-            font-weight: 600;
-        }
-        
-        .sidebar .nav-link {
-            color: rgba(255,255,255,0.7);
-            padding: 12px 25px;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            font-size: 0.9rem;
-        }
-        
-        .sidebar .nav-link:hover {
-            background: rgba(255,255,255,0.1);
-            color: white;
-            padding-left: 30px;
-        }
-        
-        .sidebar .nav-link i {
-            width: 25px;
-            margin-right: 12px;
-            font-size: 1rem;
-        }
-        
-        .sidebar .nav-link.active {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-        }
-        
-        .sidebar .nav-section {
-            padding: 15px 25px 5px;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: rgba(255,255,255,0.4);
-        }
+        .sidebar-header i { font-size: 2.5rem; background: linear-gradient(135deg, #667eea, #764ba2, #f093fb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; position: relative; z-index: 1; }
+        .sidebar-header h3 { font-size: 1.3rem; margin-top: 12px; font-weight: 700; letter-spacing: 0.5px; position: relative; z-index: 1; }
+        .sidebar .nav-link { color: rgba(255,255,255,0.7); padding: 14px 25px; transition: all 0.3s; display: flex; align-items: center; font-size: 0.9rem; border-radius: 12px; margin: 4px 12px; }
+        .sidebar .nav-link:hover { background: rgba(255,255,255,0.1); color: white; transform: translateX(5px); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .sidebar .nav-link i { width: 25px; margin-right: 12px; font-size: 1.1rem; }
+        .sidebar .nav-link.active { background: linear-gradient(135deg, #667eea, #764ba2); color: white; box-shadow: 0 4px 15px rgba(102,126,234,0.4); }
+        .sidebar .nav-section { padding: 20px 25px 10px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,0.5); font-weight: 600; }
         
         /* Main Content */
-        .main-content {
-            margin-left: 280px;
-            padding: 20px;
-            min-height: 100vh;
-        }
+        .main-content { margin-left: 280px; padding: 20px; min-height: 100vh; }
         
         /* Top Navbar */
-        .top-navbar {
-            background: white;
-            border-radius: 16px;
-            padding: 12px 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .navbar-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.2rem;
-        }
-        
-        .user-dropdown {
-            cursor: pointer;
-        }
-        
-        .user-avatar {
-            width: 38px;
-            height: 38px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-        }
+        .top-navbar { background: white; border-radius: 16px; padding: 12px 25px; margin-bottom: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); display: flex; justify-content: space-between; align-items: center; }
+        .navbar-toggle { display: none; cursor: pointer; font-size: 1.2rem; }
+        .user-dropdown { cursor: pointer; }
+        .user-avatar { width: 38px; height: 38px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; }
         
         /* Responsive */
-        @media (max-width: 992px) {
-            .sidebar {
-                transform: translateX(-100%);
-            }
-            .sidebar.active {
-                transform: translateX(0);
-            }
-            .main-content {
-                margin-left: 0;
-            }
-            .navbar-toggle {
-                display: block;
-            }
-        }
+        @media (max-width: 992px) { .sidebar { transform: translateX(-100%); } .sidebar.active { transform: translateX(0); } .main-content { margin-left: 0; } .navbar-toggle { display: block; } }
         
         /* Alert */
-        .alert {
-            border-radius: 12px;
-            border: none;
-            font-size: 0.85rem;
-        }
+        .alert { border-radius: 12px; border: none; font-size: 0.85rem; }
     </style>
     {% block extra_css %}{% endblock %}
 </head>
@@ -165,36 +77,56 @@
     <ul class="nav flex-column">
         <li class="nav-section">Navigation</li>
         <li class="nav-item">
-            <a class="nav-link {% if request.resolver_match.url_name == 'admin_dashboard' %}active{% endif %}" href="{% url 'admin_dashboard' %}">
+            <a class="nav-link" href="#" id="dashboardLink">
                 <i class="fas fa-tachometer-alt"></i> Tableau de bord
             </a>
         </li>
         
-        {% if user.role == 'admin' %}
-        <li class="nav-section">GESTION</li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'admin_dashboard' %}"><i class="fas fa-tachometer-alt"></i> Tableau de bord</a></li>
-        <li class="nav-item"><a class="nav-link" href="#" onclick="document.querySelector('[data-tab=\'users\']').click(); return false;"><i class="fas fa-users"></i> Utilisateurs</a></li>
-        <li class="nav-item"><a class="nav-link" href="#" onclick="document.querySelector('[data-tab=\'providers\']').click(); return false;"><i class="fas fa-store"></i> Prestataires</a></li>
-        <li class="nav-item"><a class="nav-link" href="#" onclick="document.querySelector('[data-tab=\'tickets\']').click(); return false;"><i class="fas fa-ticket-alt"></i> Tickets</a></li>
-        <li class="nav-item"><a class="nav-link" href="#" onclick="document.querySelector('[data-tab=\'stats\']').click(); return false;"><i class="fas fa-chart-line"></i> Statistiques</a></li>
-        {% endif %}
+        <!-- ADMIN -->
+        <div id="adminMenu" style="display: none;">
+            <li class="nav-section">Gestion</li>
+            <li class="nav-item"><a class="nav-link" href="#" id="usersLink"><i class="fas fa-users"></i> Utilisateurs</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" id="providersLink"><i class="fas fa-store"></i> Prestataires</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" id="ticketsLink"><i class="fas fa-ticket-alt"></i> Tickets</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" id="statsLink"><i class="fas fa-chart-line"></i> Statistiques</a></li>
+        </div>
+        
+        <!-- EMPLOYEE -->
+        <div id="employeeMenu" style="display: none;">
+            <li class="nav-section">Mes Tickets</li>
+            <li class="nav-item"><a class="nav-link" href="#" id="balanceLink"><i class="fas fa-wallet"></i> Mon solde</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" id="buyTicketsLink"><i class="fas fa-shopping-cart"></i> Acheter des tickets</a></li>
+            <li class="nav-section">Commandes</li>
+            <li class="nav-item"><a class="nav-link" href="#" id="orderMenuLink"><i class="fas fa-utensils"></i> Commander un repas</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" id="myOrdersLink"><i class="fas fa-list"></i> Mes commandes</a></li>
+        </div>
+        
+        <!-- VALIDATOR -->
+        <div id="validatorMenu" style="display: none;">
+            <li class="nav-section">Validations</li>
+            <li class="nav-item"><a class="nav-link" href="#" id="pendingValidationsLink"><i class="fas fa-clock"></i> En attente</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" id="validationHistoryLink"><i class="fas fa-history"></i> Historique</a></li>
+        </div>
+        
+        <!-- FINANCE -->
+        <div id="financeMenu" style="display: none;">
+            <li class="nav-section">Reporting</li>
+            <li class="nav-item"><a class="nav-link" href="#" id="financeStatsLink"><i class="fas fa-chart-line"></i> Statistiques</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" id="paymentsLink"><i class="fas fa-money-bill"></i> Paiements prestataires</a></li>
+        </div>
+        
+        <!-- PROVIDER -->
+        <div id="providerMenu" style="display: none;">
+            <li class="nav-section">Gestion</li>
+            <li class="nav-item"><a class="nav-link" href="#" id="myMenusLink"><i class="fas fa-utensils"></i> Mes menus</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" id="ordersReceivedLink"><i class="fas fa-shopping-cart"></i> Commandes reçues</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" id="providerTransactionsLink"><i class="fas fa-chart-line"></i> Transactions</a></li>
+        </div>
         
         <li class="nav-section">Compte</li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'profile' %}">
-                <i class="fas fa-user"></i> Mon profil
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'change_password' %}">
-                <i class="fas fa-key"></i> Changer mot de passe
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-danger" href="{% url 'logout' %}">
-                <i class="fas fa-sign-out-alt"></i> Déconnexion
-            </a>
-        </li>
+        <li class="nav-item"><a class="nav-link" href="#" id="profileLink"><i class="fas fa-user"></i> Mon profil</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" id="changePasswordLink"><i class="fas fa-key"></i> Changer mot de passe</a></li>
+        <li class="nav-item"><a class="nav-link text-danger" href="#" id="logoutLink"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
     </ul>
 </div>
 
@@ -204,39 +136,26 @@
         <div class="navbar-toggle" id="sidebarToggle">
             <i class="fas fa-bars"></i>
         </div>
-        
         <div class="user-dropdown dropdown">
             <div class="d-flex align-items-center" data-bs-toggle="dropdown">
-                <div class="user-avatar me-2">
-                    {{ user.first_name|first|upper }}{{ user.last_name|first|upper }}
-                </div>
-                <div>
-                    <strong class="small">{{ user.get_full_name }}</strong>
-                    <br>
-                    <small class="text-muted">{{ user.get_role_display }}</small>
-                </div>
+                <div class="user-avatar me-2" id="userAvatar">JD</div>
+                <div><strong class="small" id="userName">Chargement...</strong><br><small class="text-muted" id="userRole"></small></div>
                 <i class="fas fa-chevron-down ms-2 text-muted small"></i>
             </div>
             <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="{% url 'profile' %}"><i class="fas fa-user me-2"></i> Mon profil</a></li>
-                <li><a class="dropdown-item" href="{% url 'change_password' %}"><i class="fas fa-key me-2"></i> Changer mot de passe</a></li>
+                <li><a class="dropdown-item" href="#" id="profileDropdown"><i class="fas fa-user me-2"></i> Mon profil</a></li>
+                <li><a class="dropdown-item" href="#" id="changePasswordDropdown"><i class="fas fa-key me-2"></i> Changer mot de passe</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item text-danger" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt me-2"></i> Déconnexion</a></li>
+                <li><a class="dropdown-item text-danger" href="#" id="logoutDropdown"><i class="fas fa-sign-out-alt me-2"></i> Déconnexion</a></li>
             </ul>
         </div>
     </div>
     
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-                <i class="fas fa-{% if message.tags == 'success' %}check-circle{% elif message.tags == 'error' %}exclamation-circle{% else %}info-circle{% endif %} me-2"></i>
-                {{ message }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            </div>
-        {% endfor %}
-    {% endif %}
+    <div id="alertContainer"></div>
     
-    {% block content %}{% endblock %}
+    <div id="pageContent">
+        {% block content %}{% endblock %}
+    </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -244,6 +163,120 @@
     // Toggle sidebar
     document.getElementById('sidebarToggle').addEventListener('click', function() {
         document.querySelector('.sidebar').classList.toggle('active');
+    });
+    
+    // Gestion du token
+    function getAccessToken() {
+        return localStorage.getItem('access_token');
+    }
+    
+    function getRefreshToken() {
+        return localStorage.getItem('refresh_token');
+    }
+    
+    function clearTokens() {
+        localStorage.removeItem('access_token');
+        localStorage.removeItem('refresh_token');
+        localStorage.removeItem('user_role');
+        localStorage.removeItem('user_name');
+    }
+    
+    function logout() {
+        const refreshToken = getRefreshToken();
+        if (refreshToken) {
+            fetch('/api/auth/logout/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ refresh: refreshToken })
+            }).catch(() => {});
+        }
+        clearTokens();
+        window.location.href = '/login/';
+    }
+    
+    // Charger le profil utilisateur
+    async function loadUserProfile() {
+        const token = getAccessToken();
+        if (!token) {
+            window.location.href = '/login/';
+            return;
+        }
+        
+        try {
+            const response = await fetch('/api/auth/me/', {
+                headers: { 'Authorization': `Bearer ${token}` }
+            });
+            
+            if (response.status === 401) {
+                logout();
+                return;
+            }
+            
+            const user = await response.json();
+            localStorage.setItem('user_role', user.role);
+            localStorage.setItem('user_name', `${user.first_name} ${user.last_name}`);
+            
+            // Mettre à jour l'interface
+            const userName = `${user.first_name} ${user.last_name}`;
+            document.getElementById('userName').innerText = userName;
+            document.getElementById('userAvatar').innerHTML = user.first_name?.charAt(0) + user.last_name?.charAt(0) || 'U';
+            
+            const roleNames = { admin: 'Administrateur', employee: 'Employé', validator: 'Validateur', finance: 'Direction financière', provider: 'Prestataire' };
+            document.getElementById('userRole').innerText = roleNames[user.role] || user.role;
+            
+            // Afficher le menu correspondant
+            document.getElementById('adminMenu').style.display = user.role === 'admin' ? 'block' : 'none';
+            document.getElementById('employeeMenu').style.display = user.role === 'employee' ? 'block' : 'none';
+            document.getElementById('validatorMenu').style.display = user.role === 'validator' ? 'block' : 'none';
+            document.getElementById('financeMenu').style.display = user.role === 'finance' ? 'block' : 'none';
+            document.getElementById('providerMenu').style.display = user.role === 'provider' ? 'block' : 'none';
+            
+            return user;
+        } catch (error) {
+            console.error('Erreur chargement profil:', error);
+            logout();
+        }
+    }
+    
+    // Redirection selon le lien
+    function setupNavigation(userRole) {
+        const role = userRole;
+        
+        document.getElementById('dashboardLink').onclick = () => { window.location.href = `/dashboard/${role}/`; };
+        
+        if (role === 'admin') {
+            document.getElementById('usersLink').onclick = () => { window.location.href = '/dashboard/admin/#users'; };
+            document.getElementById('providersLink').onclick = () => { window.location.href = '/dashboard/admin/#providers'; };
+            document.getElementById('ticketsLink').onclick = () => { window.location.href = '/dashboard/admin/#tickets'; };
+            document.getElementById('statsLink').onclick = () => { window.location.href = '/dashboard/admin/#stats'; };
+        } else if (role === 'employee') {
+            document.getElementById('balanceLink').onclick = () => { window.location.href = '/tickets/balance/'; };
+            document.getElementById('buyTicketsLink').onclick = () => { window.location.href = '/purchases/create/'; };
+            document.getElementById('orderMenuLink').onclick = () => { window.location.href = '/orders/menu/'; };
+            document.getElementById('myOrdersLink').onclick = () => { window.location.href = '/orders/my/'; };
+        } else if (role === 'validator') {
+            document.getElementById('pendingValidationsLink').onclick = () => { window.location.href = '/validations/pending/'; };
+            document.getElementById('validationHistoryLink').onclick = () => { window.location.href = '/validations/history/'; };
+        } else if (role === 'finance') {
+            document.getElementById('financeStatsLink').onclick = () => { window.location.href = '/reports/dashboard/'; };
+            document.getElementById('paymentsLink').onclick = () => { window.location.href = '/reports/provider-payment/'; };
+        } else if (role === 'provider') {
+            document.getElementById('myMenusLink').onclick = () => { window.location.href = '/dashboard/provider/menus/'; };
+            document.getElementById('ordersReceivedLink').onclick = () => { window.location.href = '/dashboard/provider/orders/'; };
+            document.getElementById('providerTransactionsLink').onclick = () => { window.location.href = '/dashboard/provider/transactions/'; };
+        }
+        
+        document.getElementById('profileLink').onclick = () => { window.location.href = '/profile/'; };
+        document.getElementById('profileDropdown').onclick = () => { window.location.href = '/profile/'; };
+        document.getElementById('changePasswordLink').onclick = () => { window.location.href = '/change-password/'; };
+        document.getElementById('changePasswordDropdown').onclick = () => { window.location.href = '/change-password/'; };
+        document.getElementById('logoutLink').onclick = (e) => { e.preventDefault(); logout(); };
+        document.getElementById('logoutDropdown').onclick = (e) => { e.preventDefault(); logout(); };
+    }
+    
+    // Initialisation
+    loadUserProfile().then(user => {
+        if (user) setupNavigation(user.role);
     });
 </script>
 {% block extra_js %}{% endblock %}

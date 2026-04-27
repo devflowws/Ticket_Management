@@ -236,18 +236,63 @@ def admin_dashboard(request):
 @login_required
 def employee_dashboard(request):
     """Dashboard pour l'employé"""
-    from apps.menus.models import DailyMenu
+    from apps.tickets.models import EmployeeBalance
+    from apps.purchases.models import PurchaseRequest
+    from apps.menus.models import DailyMenu, Menu
+    from apps.employees.models import Employee
     from datetime import datetime
     
-    employee = request.user.employee_profile
-    balance = EmployeeBalance.objects.filter(employee=employee).first()
+    # Créer le profil employé s'il n'existe pas
+    try:
+        employee = request.user.employee_profile
+        print(f"DEBUG: Employee found: {employee.user.username}")
+    except Employee.DoesNotExist:
+        employee = Employee.objects.create(user=request.user)
+        print(f"DEBUG: Employee created: {employee.user.username}")
     
-    context = {
-        'employee': employee,
-        'balance': balance.active_tickets if balance else 0,
-        'pending_purchases': PurchaseRequest.objects.filter(employee=employee, status='pending').count(),
-        'today_menus': DailyMenu.objects.filter(date=datetime.now().date(), is_available=True)[:3],
-    }
+    try:
+        balance = EmployeeBalance.objects.filter(employee=employee).first()
+        
+        # DEBUG: Vérifier les données
+        print(f"DEBUG: Employee company: {employee.company}")
+        print(f"DEBUG: Employee company ID: {employee.company.id if employee.company else None}")
+        
+        # Filtrer les menus par entreprise de l'employé
+        if employee.company:
+            # Afficher tous les menus disponibles des prestataires de l'entreprise
+            today_menus = DailyMenu.objects.filter(
+                is_available=True,
+                provider__company=employee.company
+            ).select_related('provider')
+            
+            print(f"DEBUG: Total menus found before limit: {today_menus.count()}")
+            today_menus = today_menus[:3]
+            print(f"DEBUG: Total menus after limit: {today_menus.count()}")
+            
+            # DEBUG: Afficher les détails des menus
+            for menu in today_menus:
+                print(f"DEBUG: Menu - ID: {menu.id}, Title: {menu.title}, Provider: {menu.provider.name}, Available: {menu.is_available}")
+        else:
+            # Si pas d'entreprise, afficher tous les menus disponibles
+            today_menus = DailyMenu.objects.filter(
+                is_available=True
+            ).select_related('provider')[:3]
+            print(f"DEBUG: No company, showing all menus: {today_menus.count()}")
+        
+        context = {
+            'employee': employee,
+            'balance': balance.active_tickets if balance else 0,
+            'pending_purchases': PurchaseRequest.objects.filter(employee=employee, status='pending').count(),
+            'today_menus': today_menus,
+        }
+    except Exception as e:
+        print(f"DEBUG: Exception in employee_dashboard: {e}")
+        context = {
+            'employee': employee,
+            'balance': 0,
+            'pending_purchases': 0,
+            'today_menus': [],
+        }
     return render(request, 'dashboard/employee_dashboard.html', context)
 
 
@@ -275,6 +320,147 @@ def finance_dashboard(request):
 
 
 @login_required
+def order_meal(request):
+    """Page commander un repas"""
+    from apps.menus.models import DailyMenu, Menu
+    from datetime import datetime
+    
+    try:
+        employee = request.user.employee_profile
+        company = employee.company
+        print(f"DEBUG order_meal: Employee {employee.user.username}, Company: {company}")
+    except Exception as e:
+        print(f"DEBUG order_meal: Exception getting employee: {e}")
+        return redirect('login')
+    
+    # Filtrer les menus par entreprise de l'employé
+    if company:
+        # Menu du jour = Uniquement les DailyMenu du jour actuel
+        today_menus = DailyMenu.objects.filter(
+            date=datetime.now().date(),
+            is_available=True,
+            provider__company=company
+        ).select_related('provider')
+        
+        # Autres menus = Les Menu qui ne sont PAS des DailyMenu ET qui ne sont pas du jour
+        # On exclut les menus qui sont aussi des DailyMenu (héritage)
+        daily_menu_ids = DailyMenu.objects.filter(
+            provider__company=company
+        ).values_list('menu_ptr_id', flat=True)
+        
+        other_menus = Menu.objects.filter(
+            is_available=True,
+            provider__company=company
+        ).exclude(
+            id__in=daily_menu_ids  # Exclure les menus qui sont aussi des DailyMenu
+        ).select_related('provider')
+        
+        print(f"DEBUG order_meal: Company {company.name}")
+        print(f"DEBUG: DailyMenu IDs to exclude: {list(daily_menu_ids)}")
+        print(f"DEBUG: Today menus found: {today_menus.count()}")
+        print(f"DEBUG: Other menus found: {other_menus.count()}")
+        
+        # DEBUG: Afficher les détails
+        for dm in today_menus:
+            print(f"  - Today: {dm.title} (ID: {dm.id})")
+        for om in other_menus:
+            print(f"  - Other: {om.name} (ID: {om.id})")
+    else:
+        today_menus = DailyMenu.objects.filter(
+            is_available=True
+        ).select_related('provider')
+        
+        other_menus = Menu.objects.filter(
+            is_available=True
+        ).select_related('provider')
+        
+        print(f"DEBUG order_meal: No company, Today menus found: {today_menus.count()}, Other menus found: {other_menus.count()}")
+    
+    # DEBUG: Afficher les détails des menus
+    for menu in today_menus:
+        print(f"DEBUG order_meal: Today Menu - ID: {menu.id}, Title: {menu.title}, Provider: {menu.provider.name}, Available: {menu.is_available}")
+    
+    for menu in other_menus:
+        print(f"DEBUG order_meal: Other Menu - ID: {menu.id}, Name: {menu.name}, Provider: {menu.provider.name}, Available: {menu.is_available}")
+    
+    # Historique des commandes
+    from apps.consumption_requests.models import ConsumptionRequest
+    order_history = ConsumptionRequest.objects.filter(
+        employee=employee
+    ).select_related('provider').order_by('-created_at')[:10]
+    
+    context = {
+        'today_menus': today_menus,
+        'other_menus': other_menus,
+        'order_history': order_history,
+    }
+    return render(request, 'dashboard/order_meal.html', context)
+
+
+@login_required
+def my_tickets(request):
+    """Page mes tickets"""
+    try:
+        employee = request.user.employee_profile
+    except:
+        return redirect('login')
+    
+    from apps.tickets.models import Ticket, TicketLot
+    from apps.tickets.models import EmployeeBalance
+    from apps.consumption_requests.models import ConsumptionRequest
+    
+    # Tickets
+    active_tickets = Ticket.objects.filter(
+        lot__employee=employee,
+        status='active'
+    ).select_related('lot')
+    
+    used_tickets = Ticket.objects.filter(
+        lot__employee=employee,
+        status='used'
+    ).select_related('lot')
+    
+    expired_tickets = Ticket.objects.filter(
+        lot__employee=employee,
+        status='expired'
+    ).select_related('lot')
+    
+    # Lots
+    ticket_lots = TicketLot.objects.filter(
+        employee=employee
+    ).order_by('-created_at')
+    
+    # Consommations
+    consumptions = ConsumptionRequest.objects.filter(
+        employee=employee,
+        status='confirmed'
+    ).select_related('provider').order_by('-created_at')
+    
+    # Balance
+    balance = EmployeeBalance.objects.filter(employee=employee).first()
+    
+    # Stats
+    total_active = active_tickets.count()
+    total_used = used_tickets.count()
+    total_expired = expired_tickets.count()
+    total_value = (total_active + total_used + total_expired) * 1000
+    
+    context = {
+        'active_tickets': active_tickets,
+        'used_tickets': used_tickets,
+        'expired_tickets': expired_tickets,
+        'ticket_lots': ticket_lots,
+        'consumptions': consumptions,
+        'balance': balance,
+        'total_active': total_active,
+        'total_used': total_used,
+        'total_expired': total_expired,
+        'total_value': total_value,
+    }
+    return render(request, 'dashboard/my_tickets.html', context)
+
+
+@login_required
 def provider_dashboard(request):
     """Dashboard pour le prestataire"""
     from apps.menus.models import DailyMenu
@@ -296,6 +482,56 @@ def provider_dashboard(request):
         'menus': DailyMenu.objects.filter(provider=provider, date=datetime.now().date()) if provider else [],
     }
     return render(request, 'dashboard/provider_dashboard.html', context)
+
+
+def provider_menus(request):
+    """Page complète des menus du prestataire"""
+    from apps.menus.models import DailyMenu
+    from apps.consumption_requests.models import ConsumptionRequest
+    
+    provider = None
+    try:
+        provider_user = request.user.provider_profile
+        provider = provider_user.provider
+    except:
+        pass
+    
+    context = {
+        'provider': provider,
+    }
+    return render(request, 'dashboard/provider_menus.html', context)
+
+
+@login_required
+def provider_transactions(request):
+    """Page transactions du prestataire"""
+    provider = None
+    try:
+        provider_user = request.user.provider_profile
+        provider = provider_user.provider
+    except:
+        pass
+    
+    context = {
+        'provider': provider,
+    }
+    return render(request, 'dashboard/provider_transactions.html', context)
+
+
+@login_required
+def provider_orders(request):
+    """Page commandes reçues du prestataire"""
+    provider = None
+    try:
+        provider_user = request.user.provider_profile
+        provider = provider_user.provider
+    except:
+        pass
+    
+    context = {
+        'provider': provider,
+    }
+    return render(request, 'dashboard/provider_orders.html', context)
 
 
 # Vues supplémentaires pour les URLs

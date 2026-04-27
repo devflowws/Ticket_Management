@@ -1,0 +1,784 @@
+<!-- templates/dashboard/order_meal.html -->
+{% extends 'base/base.html' %}
+{% block title %}Commander un repas{% endblock %}
+
+{% block extra_css %}
+<style>
+    .menu-card {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        border: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+    }
+    .menu-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+    .menu-card .menu-image {
+        height: 280px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 20px 20px 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 3rem;
+        overflow: hidden;
+        position: relative;
+        box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+    }
+    .menu-card .menu-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    .menu-card:hover .menu-image img {
+        transform: scale(1.05);
+    }
+    .menu-card .menu-content {
+        padding: 25px;
+    }
+    .menu-card .provider-badge {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        display: inline-block;
+    }
+    .menu-card .price-badge {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        color: white;
+        padding: 10px 25px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+    .filter-btn {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 25px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+    }
+    .filter-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+    }
+    .filter-btn.active {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        transform: scale(1.05);
+    }
+    .meal-type-btn {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 3px 10px rgba(79, 172, 254, 0.2);
+    }
+    .meal-type-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 15px rgba(79, 172, 254, 0.3);
+    }
+    .meal-type-btn.active {
+        background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        transform: scale(1.05);
+    }
+    .order-history-item {
+        background: white;
+        border-radius: 15px;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-left: 4px solid #667eea;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    .status-badge {
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+    .status-pending { background: #fff3cd; color: #856404; }
+    .status-confirmed { background: #d4edda; color: #155724; }
+    .status-rejected { background: #f8d7da; color: #721c24; }
+    
+    /* Modal Premium */
+    .modal-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        backdrop-filter: blur(10px);
+        z-index: 1040;
+        display: none;
+    }
+    .modal-backdrop.active {
+        display: block;
+    }
+    .modal-premium {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        border-radius: 30px;
+        box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        z-index: 1050;
+        max-width: 500px;
+        width: 90%;
+        max-height: 90vh;
+        overflow-y: auto;
+        display: none;
+    }
+    .modal-premium.active {
+        display: block;
+        animation: modalSlideIn 0.3s ease;
+    }
+    @keyframes modalSlideIn {
+        from {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.9);
+        }
+        to {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+    .modal-header-premium {
+        padding: 30px;
+        border-bottom: 1px solid #e0e0e0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 30px 30px 0 0;
+        color: white;
+    }
+    .modal-body-premium {
+        padding: 30px;
+    }
+    .modal-footer-premium {
+        padding: 20px 30px;
+        border-top: 1px solid #e0e0e0;
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+    }
+    .quantity-selector-modal {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        justify-content: center;
+        margin: 20px 0;
+    }
+    .quantity-btn-modal {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 3px solid #667eea;
+        background: white;
+        color: #667eea;
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .quantity-btn-modal:hover {
+        background: #667eea;
+        color: white;
+    }
+    .quantity-display-modal {
+        font-size: 2.5rem;
+        font-weight: 700;
+        min-width: 100px;
+        text-align: center;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid px-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="h2 mb-2">Commander un repas</h1>
+            <p class="text-muted mb-0">Sélectionnez un menu parmi les prestataires de votre entreprise</p>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="anonymousOrder" onchange="toggleAnonymous()">
+            <label class="form-check-label" for="anonymousOrder">Commander anonymement</label>
+        </div>
+    </div>
+    
+    <!-- Filtres -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="d-flex gap-2 mb-4">
+                <button class="filter-btn active" onclick="filterMenus('today')" id="filter-today">
+                    <i class="fas fa-calendar-day me-2"></i>Menu du jour
+                </button>
+                <button class="filter-btn" onclick="filterMenus('other')" id="filter-other">
+                    <i class="fas fa-utensils me-2"></i>Autres menus
+                </button>
+                <button class="filter-btn" onclick="filterMenus('all')" id="filter-all">
+                    <i class="fas fa-th-large me-2"></i>Tous
+                </button>
+            </div>
+            
+            <!-- Filtres par type de plat -->
+            <div class="d-flex gap-2 mb-4 flex-wrap">
+                <button class="meal-type-btn active" onclick="filterByMealType('all')" id="meal-type-all">
+                    <i class="fas fa-th me-2"></i>Tous types
+                </button>
+                <button class="meal-type-btn" onclick="filterByMealType('main')" id="meal-type-main">
+                    <i class="fas fa-drumstick-bite me-2"></i>Plats principaux
+                </button>
+                <button class="meal-type-btn" onclick="filterByMealType('starter')" id="meal-type-starter">
+                    <i class="fas fa-bowl-food me-2"></i>Entrées
+                </button>
+                <button class="meal-type-btn" onclick="filterByMealType('drink')" id="meal-type-drink">
+                    <i class="fas fa-glass-water me-2"></i>Boissons
+                </button>
+                <button class="meal-type-btn" onclick="filterByMealType('side')" id="meal-type-side">
+                    <i class="fas fa-bread-slice me-2"></i>Accompagnements
+                </button>
+                <button class="meal-type-btn" onclick="filterByMealType('dessert')" id="meal-type-dessert">
+                    <i class="fas fa-ice-cream me-2"></i>Desserts
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Liste des menus -->
+    <div class="row mb-4" id="menus-container">
+        {% for menu in today_menus %}
+        <div class="col-md-4 mb-4 menu-item" data-type="today" data-meal-type="{{ menu.meal_type }}">
+            <div class="menu-card">
+                <div class="menu-image">
+                    {% if menu.main_photo %}
+                    <img src="{{ menu.main_photo.url }}" alt="{{ menu.title }}">
+                    {% else %}
+                    <i class="fas fa-utensils"></i>
+                    {% endif %}
+                </div>
+                <div class="menu-content">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="provider-badge">{{ menu.provider.name }}</span>
+                        <span class="price-badge">{{ menu.price_tickets }} tickets</span>
+                    </div>
+                    <h5 class="mb-2">{{ menu.title }}</h5>
+                    <p class="text-muted small mb-3">{{ menu.description|truncatewords:20 }}</p>
+                    <button class="btn btn-primary w-100 btn-lg" data-menu-id="{{ menu.id }}" data-menu-title="{{ menu.title|escapejs }}" data-price="{{ menu.price_tickets }}" data-menu-type="daily" onclick="openAddToCartModal(this)">
+                        <i class="fas fa-plus me-2"></i>Ajouter au panier
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        
+        {% for menu in other_menus %}
+        <div class="col-md-4 mb-4 menu-item" data-type="other" data-meal-type="{{ menu.meal_type }}">
+            <div class="menu-card">
+                <div class="menu-image">
+                    {% if menu.photo %}
+                    <img src="{{ menu.photo.url }}" alt="{{ menu.name }}">
+                    {% else %}
+                    <i class="fas fa-utensils"></i>
+                    {% endif %}
+                </div>
+                <div class="menu-content">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="provider-badge">{{ menu.provider.name }}</span>
+                        <span class="price-badge">{{ menu.price_tickets }} tickets</span>
+                    </div>
+                    <h5 class="mb-2">{{ menu.name }}</h5>
+                    <p class="text-muted small mb-3">{{ menu.description|truncatewords:20 }}</p>
+                    <button class="btn btn-primary w-100 btn-lg" data-menu-id="{{ menu.id }}" data-menu-title="{{ menu.name|escapejs }}" data-price="{{ menu.price_tickets }}" data-menu-type="menu" onclick="openAddToCartModal(this)">
+                        <i class="fas fa-plus me-2"></i>Ajouter au panier
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <!-- Panier -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card border-0 shadow-sm rounded-4">
+                <div class="card-header bg-transparent border-0 pt-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0"><i class="fas fa-shopping-cart me-2"></i>Mon panier</h5>
+                        <span class="badge bg-primary" id="cart-count">0 articles</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div id="cart-items">
+                        <p class="text-center py-4 text-muted">Votre panier est vide</p>
+                    </div>
+                    <div class="mt-3 pt-3 border-top" id="cart-total" style="display: none;">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="mb-0">Total: <span id="total-tickets">0</span> tickets</h5>
+                            <h5 class="mb-0 text-primary"><span id="total-fcfa">0</span> FCFA</h5>
+                        </div>
+                        <button class="btn btn-success w-100 btn-lg" onclick="openConfirmOrderModal()">
+                            <i class="fas fa-check me-2"></i>Confirmer la commande
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Historique des commandes -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-0 shadow-sm rounded-4">
+                <div class="card-header bg-transparent border-0 pt-4">
+                    <h5 class="mb-0"><i class="fas fa-history me-2"></i>Historique des commandes</h5>
+                </div>
+                <div class="card-body">
+                    {% if order_history %}
+                        {% for order in order_history %}
+                        <div class="order-history-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-1">{{ order.provider.name }}</h6>
+                                    <small class="text-muted">{{ order.created_at|date:"d/m/Y H:i" }}</small>
+                                </div>
+                                <div class="text-end">
+                                    <span class="badge status-{{ order.status }}">{{ order.get_status_display }}</span>
+                                    <div class="mt-1">{{ order.nb_tickets }} tickets</div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <p class="text-center py-4 text-muted">Aucune commande récente</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Ajout au panier -->
+<div class="modal-backdrop" id="addToCartModalBackdrop" onclick="closeAddToCartModal()"></div>
+<div class="modal-premium" id="addToCartModal">
+    <div class="modal-header-premium">
+        <h4 class="mb-0"><i class="fas fa-utensils me-2"></i>Ajouter au panier</h4>
+        <button type="button" class="btn-close btn-close-white" onclick="closeAddToCartModal()"></button>
+    </div>
+    <div class="modal-body-premium">
+        <h5 id="modal-menu-title" class="mb-3">Nom du menu</h5>
+        <div class="text-center mb-3">
+            <span class="badge bg-primary fs-5" id="modal-menu-price">1 ticket</span>
+        </div>
+        <div class="quantity-selector-modal">
+            <button class="quantity-btn-modal" onclick="modalUpdateQuantity(-1)">-</button>
+            <div class="quantity-display-modal" id="modal-quantity">1</div>
+            <button class="quantity-btn-modal" onclick="modalUpdateQuantity(1)">+</button>
+        </div>
+        <div class="text-center">
+            <p class="mb-0 text-muted">Total: <strong id="modal-total">1 ticket</strong></p>
+            <p class="mb-0 text-primary fs-5" id="modal-total-fcfa">1000 FCFA</p>
+        </div>
+    </div>
+    <div class="modal-footer-premium">
+        <button class="btn btn-outline-secondary" onclick="closeAddToCartModal()">Annuler</button>
+        <button class="btn btn-primary" onclick="confirmAddToCart()">
+            <i class="fas fa-plus me-2"></i>Ajouter
+        </button>
+    </div>
+</div>
+
+<!-- Modal Login requis -->
+<div class="modal-backdrop" id="loginModalBackdrop" onclick="closeLoginModal()"></div>
+<div class="modal-premium" id="loginModal">
+    <div class="modal-header-premium">
+        <h4 class="mb-0"><i class="fas fa-exclamation-triangle me-2"></i>Connexion requise</h4>
+        <button type="button" class="btn-close btn-close-white" onclick="closeLoginModal()"></button>
+    </div>
+    <div class="modal-body-premium text-center">
+        <i class="fas fa-user-lock fs-1 text-warning mb-3"></i>
+        <h5>Vous devez être connecté pour commander</h5>
+        <p class="text-muted">Veuillez vous connecter pour accéder à cette fonctionnalité</p>
+    </div>
+    <div class="modal-footer-premium">
+        <button class="btn btn-primary w-100" onclick="redirectToLogin()">
+            <i class="fas fa-sign-in-alt me-2"></i>Se connecter
+        </button>
+    </div>
+</div>
+
+<!-- Modal Confirmation commande -->
+<div class="modal-backdrop" id="confirmOrderModalBackdrop" onclick="closeConfirmOrderModal()"></div>
+<div class="modal-premium" id="confirmOrderModal">
+    <div class="modal-header-premium">
+        <h4 class="mb-0"><i class="fas fa-check-circle me-2"></i>Confirmer la commande</h4>
+        <button type="button" class="btn-close btn-close-white" onclick="closeConfirmOrderModal()"></button>
+    </div>
+    <div class="modal-body-premium">
+        <div id="confirm-order-items">
+            <!-- Items will be populated here -->
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between mb-2">
+            <span>Total tickets:</span>
+            <strong id="confirm-total-tickets">0</strong>
+        </div>
+        <div class="d-flex justify-content-between">
+            <span>Total FCFA:</span>
+            <strong class="text-primary fs-5" id="confirm-total-fcfa">0</strong>
+        </div>
+        <div class="mt-3" id="confirm-balance-check">
+            <!-- Balance check will be shown here -->
+        </div>
+    </div>
+    <div class="modal-footer-premium">
+        <button class="btn btn-outline-secondary" onclick="closeConfirmOrderModal()">Annuler</button>
+        <button class="btn btn-success" onclick="confirmOrder()">
+            <i class="fas fa-check me-2"></i>Confirmer
+        </button>
+    </div>
+</div>
+
+<script>
+    function getToken() {
+        return localStorage.getItem('access_token');
+    }
+    
+    let cart = [];
+    let isAnonymous = false;
+    let modalQuantity = 1;
+    let currentMenu = null;
+    const TICKET_PRICE = 1000;
+    
+    function toggleAnonymous() {
+        isAnonymous = document.getElementById('anonymousOrder').checked;
+    }
+    
+    let currentMenuFilter = 'all';
+    let currentMealTypeFilter = 'all';
+    
+    function filterMenus(filterType) {
+        currentMenuFilter = filterType;
+        applyFilters();
+    }
+    
+    function filterByMealType(mealType) {
+        currentMealTypeFilter = mealType;
+        
+        // Mettre à jour les boutons actifs
+        document.querySelectorAll('.meal-type-btn').forEach(btn => btn.classList.remove('active'));
+        document.getElementById('meal-type-' + mealType).classList.add('active');
+        
+        applyFilters();
+    }
+    
+    function applyFilters() {
+        console.log(`=== FILTRES APPLIQUÉS: Menu=${currentMenuFilter}, MealType=${currentMealTypeFilter} ===`);
+        
+        const items = document.querySelectorAll('.menu-item');
+        
+        // Mettre à jour les boutons actifs pour les filtres de menu
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        document.getElementById('filter-' + currentMenuFilter).classList.add('active');
+        
+        let visibleCount = 0;
+        items.forEach(item => {
+            const itemType = item.getAttribute('data-type');
+            const mealType = item.getAttribute('data-meal-type');
+            
+            let showByMenuType = currentMenuFilter === 'all' || itemType === currentMenuFilter;
+            let showByMealType = currentMealTypeFilter === 'all' || mealType === currentMealTypeFilter;
+            
+            if (showByMenuType && showByMealType) {
+                item.style.display = 'block';
+                visibleCount++;
+            } else {
+                item.style.display = 'none';
+            }
+        });
+        
+        console.log(`Items visibles: ${visibleCount}`);
+    }
+    
+    function openAddToCartModal(button) {
+        const token = getToken();
+        if (!token) {
+            showLoginModal();
+            return;
+        }
+        
+        currentMenu = {
+            menu_id: parseInt(button.getAttribute('data-menu-id')),
+            menu_title: button.getAttribute('data-menu-title'),
+            price_tickets: parseInt(button.getAttribute('data-price')),
+            menu_type: button.getAttribute('data-menu-type')
+        };
+        
+        modalQuantity = 1;
+        document.getElementById('modal-menu-title').innerText = currentMenu.menu_title;
+        document.getElementById('modal-menu-price').innerText = currentMenu.price_tickets + ' ticket(s)';
+        document.getElementById('modal-quantity').innerText = modalQuantity;
+        document.getElementById('modal-total').innerText = modalQuantity + ' ticket(s)';
+        document.getElementById('modal-total-fcfa').innerText = (modalQuantity * currentMenu.price_tickets * TICKET_PRICE).toLocaleString() + ' FCFA';
+        
+        document.getElementById('addToCartModalBackdrop').classList.add('active');
+        document.getElementById('addToCartModal').classList.add('active');
+    }
+    
+    function closeAddToCartModal() {
+        document.getElementById('addToCartModalBackdrop').classList.remove('active');
+        document.getElementById('addToCartModal').classList.remove('active');
+        modalQuantity = 1;
+        currentMenu = null;
+    }
+    
+    function modalUpdateQuantity(delta) {
+        const newQuantity = modalQuantity + delta;
+        if (newQuantity >= 1 && newQuantity <= 10) {
+            modalQuantity = newQuantity;
+            document.getElementById('modal-quantity').innerText = modalQuantity;
+            document.getElementById('modal-total').innerText = modalQuantity + ' ticket(s)';
+            document.getElementById('modal-total-fcfa').innerText = (modalQuantity * currentMenu.price_tickets * TICKET_PRICE).toLocaleString() + ' FCFA';
+        }
+    }
+    
+    function confirmAddToCart() {
+        const existingItem = cart.find(item => item.menu_id === currentMenu.menu_id);
+        if (existingItem) {
+            existingItem.quantity += modalQuantity;
+        } else {
+            cart.push({
+                ...currentMenu,
+                quantity: modalQuantity
+            });
+        }
+        
+        updateCartDisplay();
+        closeAddToCartModal();
+    }
+    
+    function updateCartDisplay() {
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartTotal = document.getElementById('cart-total');
+        const cartCount = document.getElementById('cart-count');
+        const totalTickets = document.getElementById('total-tickets');
+        const totalFcfa = document.getElementById('total-fcfa');
+        
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = '<p class="text-center py-4 text-muted">Votre panier est vide</p>';
+            cartTotal.style.display = 'none';
+            cartCount.innerText = '0 articles';
+            return;
+        }
+        
+        let html = '';
+        let total = 0;
+        
+        cart.forEach((item, index) => {
+            html += `
+                <div class="d-flex justify-content-between align-items-center py-3 border-bottom">
+                    <div>
+                        <h6 class="mb-0">${item.menu_title}</h6>
+                        <small class="text-muted">${item.price_tickets} tickets × ${item.quantity}</small>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">${item.price_tickets * item.quantity} tickets</span>
+                        <button class="btn btn-sm btn-outline-danger" onclick="removeFromCart(${index})"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+            `;
+            total += item.price_tickets * item.quantity;
+        });
+        
+        cartItemsContainer.innerHTML = html;
+        cartTotal.style.display = 'block';
+        totalTickets.innerText = total;
+        totalFcfa.innerText = (total * TICKET_PRICE).toLocaleString() + ' FCFA';
+        cartCount.innerText = `${cart.length} article(s)`;
+    }
+    
+    function removeFromCart(index) {
+        cart.splice(index, 1);
+        updateCartDisplay();
+    }
+    
+    function openConfirmOrderModal() {
+        if (cart.length === 0) {
+            showEmptyCartModal();
+            return;
+        }
+        
+        let html = '';
+        let totalTickets = 0;
+        
+        cart.forEach(item => {
+            html += `
+                <div class="d-flex justify-content-between align-items-center py-2">
+                    <span>${item.menu_title} × ${item.quantity}</span>
+                    <strong>${item.price_tickets * item.quantity} tickets</strong>
+                </div>
+            `;
+            totalTickets += item.price_tickets * item.quantity;
+        });
+        
+        document.getElementById('confirm-order-items').innerHTML = html;
+        document.getElementById('confirm-total-tickets').innerText = totalTickets;
+        document.getElementById('confirm-total-fcfa').innerText = (totalTickets * TICKET_PRICE).toLocaleString() + ' FCFA';
+        
+        // Check balance
+        checkBalance(totalTickets);
+        
+        document.getElementById('confirmOrderModalBackdrop').classList.add('active');
+        document.getElementById('confirmOrderModal').classList.add('active');
+    }
+    
+    function closeConfirmOrderModal() {
+        document.getElementById('confirmOrderModalBackdrop').classList.remove('active');
+        document.getElementById('confirmOrderModal').classList.remove('active');
+    }
+    
+    function checkBalance(requiredTickets) {
+        const token = getToken();
+        fetch('/api/tickets/stats/', {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            const balanceCheck = document.getElementById('confirm-balance-check');
+            if (data.active_tickets >= requiredTickets) {
+                balanceCheck.innerHTML = `
+                    <div class="alert alert-success mb-0">
+                        <i class="fas fa-check-circle me-2"></i>
+                        Solde suffisant: ${data.active_tickets} tickets disponibles
+                    </div>
+                `;
+            } else {
+                balanceCheck.innerHTML = `
+                    <div class="alert alert-danger mb-0">
+                        <i class="fas fa-exclamation-circle me-2"></i>
+                        Solde insuffisant: ${data.active_tickets} tickets disponibles, ${requiredTickets} requis
+                    </div>
+                `;
+            }
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
+            document.getElementById('confirm-balance-check').innerHTML = `
+                <div class="alert alert-warning mb-0">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    Impossible de vérifier le solde
+                </div>
+            `;
+        });
+    }
+    
+    // Modal functions
+    function showLoginModal() {
+        document.getElementById('loginModalBackdrop').classList.add('active');
+        document.getElementById('loginModal').classList.add('active');
+    }
+    
+    function closeLoginModal() {
+        document.getElementById('loginModalBackdrop').classList.remove('active');
+        document.getElementById('loginModal').classList.remove('active');
+    }
+    
+    function redirectToLogin() {
+        window.location.href = '/login/';
+    }
+    
+    function showEmptyCartModal() {
+        showNotificationModal('Panier vide', 'Votre panier est vide. Veuillez ajouter des menus avant de confirmer.', 'warning');
+    }
+    
+    function showNotificationModal(title, message, type = 'info') {
+        const modalHtml = `
+            <div class="modal-backdrop active" id="notificationModalBackdrop" onclick="closeNotificationModal()"></div>
+            <div class="modal-premium active" id="notificationModal">
+                <div class="modal-header-premium">
+                    <h4 class="mb-0"><i class="fas fa-${type === 'success' ? 'check-circle' : type === 'warning' ? 'exclamation-triangle' : 'info-circle'} me-2"></i>${title}</h4>
+                    <button type="button" class="btn-close btn-close-white" onclick="closeNotificationModal()"></button>
+                </div>
+                <div class="modal-body-premium text-center">
+                    <p class="mb-0">${message}</p>
+                </div>
+                <div class="modal-footer-premium">
+                    <button class="btn btn-primary w-100" onclick="closeNotificationModal()">OK</button>
+                </div>
+            </div>
+        `;
+        
+        // Remove existing notification modal if any
+        const existingModal = document.getElementById('notificationModal');
+        const existingBackdrop = document.getElementById('notificationModalBackdrop');
+        if (existingModal) existingModal.remove();
+        if (existingBackdrop) existingBackdrop.remove();
+        
+        // Add new modal
+        document.body.insertAdjacentHTML('beforeend', modalHtml);
+    }
+    
+    function closeNotificationModal() {
+        const modal = document.getElementById('notificationModal');
+        const backdrop = document.getElementById('notificationModalBackdrop');
+        if (modal) modal.remove();
+        if (backdrop) backdrop.remove();
+    }
+    
+    function confirmOrder() {
+        const token = getToken();
+        if (!token) {
+            showLoginModal();
+            return;
+        }
+        
+        const orderData = {
+            items: cart,
+            is_anonymous: isAnonymous
+        };
+        
+        fetch('/api/orders/place_cart_order/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(orderData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                showNotificationModal('Erreur de commande', data.error, 'warning');
+            } else {
+                showNotificationModal('Commande réussie', 'Votre commande a été passée avec succès et envoyée au prestataire!', 'success');
+                cart = [];
+                updateCartDisplay();
+                closeConfirmOrderModal();
+                setTimeout(() => {
+                    location.reload();
+                }, 2000);
+            }
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
+            showNotificationModal('Erreur technique', 'Une erreur est survenue lors de la commande. Veuillez réessayer.', 'warning');
+        });
+    }
+</script>
+{% endblock %}

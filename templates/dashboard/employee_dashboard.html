@@ -81,14 +81,6 @@
                             </a>
                         </div>
                         <div class="col-6">
-                            <a href="{% url 'order_menu' %}" class="text-decoration-none">
-                                <div class="p-3 text-center border rounded-4">
-                                    <i class="fas fa-utensils fs-2 text-success mb-2 d-block"></i>
-                                    <span>Commander un repas</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-6">
                             <a href="{% url 'my_orders' %}" class="text-decoration-none">
                                 <div class="p-3 text-center border rounded-4">
                                     <i class="fas fa-list fs-2 text-info mb-2 d-block"></i>
@@ -123,8 +115,10 @@
                             </div>
                             <p class="text-muted small mb-2">{{ menu.description|truncatewords:15 }}</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">{{ menu.provider.name }}</small>
-                                <a href="{% url 'order_menu' %}?menu={{ menu.id }}" class="btn btn-sm btn-outline-primary">Commander</a>
+                                <small class="text-muted"><i class="fas fa-store me-1"></i>{{ menu.provider.name }}</small>
+                                <button class="btn btn-sm btn-primary" data-menu-id="{{ menu.id }}" data-menu-title="{{ menu.title|escapejs }}" data-price="{{ menu.price_tickets }}" onclick="addToCart(this)">
+                                    <i class="fas fa-plus me-1"></i>Commander
+                                </button>
                             </div>
                         </div>
                         {% endfor %}
@@ -136,4 +130,44 @@
         </div>
     </div>
 </div>
+<script>
+    function getToken() {
+        return localStorage.getItem('access_token');
+    }
+    
+    let cart = [];
+    
+    function addToCart(button) {
+        const token = getToken();
+        if (!token) {
+            alert('Vous devez être connecté pour commander');
+            return;
+        }
+        
+        const menuId = parseInt(button.getAttribute('data-menu-id'));
+        const menuTitle = button.getAttribute('data-menu-title');
+        const priceTickets = parseInt(button.getAttribute('data-price'));
+        
+        // Vérifier si le menu est déjà dans le panier
+        const existingItem = cart.find(item => item.menu_id === menuId);
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({
+                menu_id: menuId,
+                menu_title: menuTitle,
+                price_tickets: priceTickets,
+                quantity: 1
+            });
+        }
+        
+        updateCartDisplay();
+        alert('Menu ajouté au panier');
+    }
+    
+    function updateCartDisplay() {
+        // À implémenter : afficher le panier
+        console.log('Panier:', cart);
+    }
+</script>
 {% endblock %}

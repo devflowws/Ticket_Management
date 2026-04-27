@@ -1,0 +1,230 @@
+<!-- templates/dashboard/provider_transactions.html -->
+{% extends 'base/base.html' %}
+{% block title %}Transactions - Prestataire{% endblock %}
+
+{% block extra_css %}
+<style>
+    .stat-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 20px;
+        padding: 25px;
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+    .stat-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
+    }
+    .stat-card.success {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+    .stat-card.warning {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+    .stat-card .icon {
+        font-size: 2.5rem;
+        opacity: 0.3;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+    .stat-card h3 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 0;
+    }
+    .stat-card .label {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        margin-top: 5px;
+    }
+    .section-card {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        border: none;
+    }
+    .section-card .card-header {
+        background: transparent;
+        border: none;
+        padding: 25px;
+        border-radius: 20px 20px 0 0;
+    }
+    .section-card .card-body {
+        padding: 0 25px 25px;
+    }
+    .transaction-item {
+        padding: 20px;
+        border-bottom: 1px solid #f0f0f0;
+        transition: all 0.3s;
+    }
+    .transaction-item:hover {
+        background: #f8f9fa;
+    }
+    .transaction-item:last-child {
+        border-bottom: none;
+    }
+    .transaction-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+    }
+    .transaction-icon.success {
+        background: linear-gradient(135deg, #43e97b, #38f9d7);
+        color: white;
+    }
+    .transaction-icon.pending {
+        background: linear-gradient(135deg, #f093fb, #f5576c);
+        color: white;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid px-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="h2 mb-2">Mes transactions</h1>
+            <p class="text-muted mb-0">Historique des paiements reçus</p>
+        </div>
+    </div>
+    
+    <!-- Stats transactions -->
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="stat-card">
+                <i class="fas fa-wallet icon"></i>
+                <h3 id="totalRevenue">0 FCFA</h3>
+                <div class="label">Revenus totaux</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="stat-card success">
+                <i class="fas fa-check-circle icon"></i>
+                <h3 id="paidRevenue">0 FCFA</h3>
+                <div class="label">Paiements reçus</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="stat-card warning">
+                <i class="fas fa-clock icon"></i>
+                <h3 id="pendingRevenue">0 FCFA</h3>
+                <div class="label">En attente</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Liste des transactions -->
+    <div class="row">
+        <div class="col-12">
+            <div class="section-card">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="fas fa-history me-2"></i>Historique des transactions</h5>
+                </div>
+                <div class="card-body">
+                    <div id="transactionsList">
+                        <div class="text-center py-5">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Chargement...</span>
+                            </div>
+                            <p class="text-muted mt-3">Chargement des transactions...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function getToken() {
+        return localStorage.getItem('access_token');
+    }
+    
+    function loadTransactions() {
+        const token = getToken();
+        if (!token) {
+            window.location.href = '/login/';
+            return;
+        }
+        
+        // Pour l'instant, afficher des données fictives
+        // À remplacer par un appel API réel
+        const transactionsList = document.getElementById('transactionsList');
+        
+        const transactions = [
+            {
+                id: 1,
+                date: '2026-04-26',
+                amount: 25000,
+                status: 'paid',
+                description: 'Paiement semaine 16',
+                employee: 'Jean Dupont'
+            },
+            {
+                id: 2,
+                date: '2026-04-25',
+                amount: 15000,
+                status: 'paid',
+                description: 'Paiement semaine 16',
+                employee: 'Marie Martin'
+            },
+            {
+                id: 3,
+                date: '2026-04-24',
+                amount: 30000,
+                status: 'pending',
+                description: 'Paiement semaine 16',
+                employee: 'Pierre Bernard'
+            }
+        ];
+        
+        document.getElementById('totalRevenue').innerText = '70000 FCFA';
+        document.getElementById('paidRevenue').innerText = '40000 FCFA';
+        document.getElementById('pendingRevenue').innerText = '30000 FCFA';
+        
+        if (transactions.length === 0) {
+            transactionsList.innerHTML = '<div class="text-center py-5 text-muted">Aucune transaction</div>';
+            return;
+        }
+        
+        transactionsList.innerHTML = '';
+        transactions.forEach(transaction => {
+            const statusClass = transaction.status === 'paid' ? 'success' : 'pending';
+            const statusText = transaction.status === 'paid' ? 'Payé' : 'En attente';
+            const statusBadge = transaction.status === 'paid' ? 'bg-success' : 'bg-warning';
+            
+            transactionsList.innerHTML += `
+                <div class="transaction-item">
+                    <div class="d-flex align-items-center">
+                        <div class="transaction-icon ${statusClass} me-3">
+                            <i class="fas fa-${transaction.status === 'paid' ? 'check' : 'clock'}"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1 fw-bold">${transaction.description}</h6>
+                            <p class="text-muted small mb-0">${transaction.employee} • ${transaction.date}</p>
+                        </div>
+                        <div class="text-end">
+                            <h6 class="mb-1 fw-bold">${transaction.amount.toLocaleString()} FCFA</h6>
+                            <span class="badge ${statusBadge}">${statusText}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+    }
+    
+    loadTransactions();
+</script>
+{% endblock %}

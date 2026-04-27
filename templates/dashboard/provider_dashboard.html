@@ -1,68 +1,830 @@
- 
 <!-- templates/dashboard/provider_dashboard.html -->
 {% extends 'base/base.html' %}
 {% block title %}Dashboard Prestataire{% endblock %}
 
+{% block extra_css %}
+<style>
+    .menu-card-img {
+        background-color: #f8f9fa;
+        min-height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .menu-card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .stat-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 20px;
+        padding: 25px;
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+    .stat-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
+    }
+    .stat-card.warning {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+    .stat-card.success {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+    .stat-card.info {
+        background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    }
+    .stat-card .icon {
+        font-size: 2.5rem;
+        opacity: 0.3;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+    .stat-card h3 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 0;
+    }
+    .stat-card .label {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        margin-top: 5px;
+    }
+    .stat-card .trend {
+        font-size: 0.8rem;
+        margin-top: 10px;
+        opacity: 0.8;
+    }
+    .section-card {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        border: none;
+    }
+    .section-card .card-header {
+        background: transparent;
+        border: none;
+        padding: 25px;
+        border-radius: 20px 20px 0 0;
+    }
+    .section-card .card-body {
+        padding: 0 25px 25px;
+    }
+    .recent-activity-item {
+        padding: 15px 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .recent-activity-item:last-child {
+        border-bottom: none;
+    }
+    .activity-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+    }
+    .activity-icon.success {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+    }
+    .activity-icon.warning {
+        background: linear-gradient(135deg, #f093fb, #f5576c);
+        color: white;
+    }
+    .activity-icon.info {
+        background: linear-gradient(135deg, #4facfe, #00f2fe);
+        color: white;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
 <div class="container-fluid px-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="h2 mb-2">Mon espace prestataire</h1>
+            <p class="text-muted mb-0">Bienvenue, {{ user.get_full_name|default:"Prestataire" }} !</p>
+        </div>
+        <button class="btn btn-primary rounded-pill px-4" onclick="openAddMenuModal()">
+            <i class="fas fa-plus me-2"></i>Ajouter un plat
+        </button>
+    </div>
+    
+    <!-- Stats principales -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="stat-card">
+                <i class="fas fa-shopping-cart icon"></i>
+                <h3 id="todayOrders">0</h3>
+                <div class="label">Commandes aujourd'hui</div>
+                <div class="trend"><i class="fas fa-arrow-up"></i> +12% vs hier</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card warning">
+                <i class="fas fa-clock icon"></i>
+                <h3 id="pendingConsumptions">0</h3>
+                <div class="label">Consommations en attente</div>
+                <div class="trend"><i class="fas fa-exclamation-circle"></i> À traiter</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card success">
+                <i class="fas fa-check-circle icon"></i>
+                <h3 id="totalConsumptions">0</h3>
+                <div class="label">Total consommations</div>
+                <div class="trend"><i class="fas fa-arrow-up"></i> +8% cette semaine</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card info">
+                <i class="fas fa-utensils icon"></i>
+                <h3 id="activeMenus">0</h3>
+                <div class="label">Menus actifs</div>
+                <div class="trend"><i class="fas fa-leaf"></i> Disponibles</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Actions rapides -->
     <div class="row mb-4">
         <div class="col-12">
-            <h1 class="h3 mb-2">Mon espace prestataire</h1>
-            <p class="text-muted">Bienvenue, {{ user.get_full_name }} !</p>
+            <div class="section-card">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="fas fa-bolt me-2"></i>Actions rapides</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <button class="btn btn-primary w-100 py-3 rounded-3" onclick="openAddMenuModal()">
+                                <i class="fas fa-plus-circle me-2"></i>Ajouter un plat
+                            </button>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <a href="{% url 'provider_orders' %}" class="btn btn-outline-primary w-100 py-3 rounded-3">
+                                <i class="fas fa-list me-2"></i>Voir les commandes
+                            </a>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <a href="{% url 'provider_menus' %}" class="btn btn-outline-success w-100 py-3 rounded-3">
+                                <i class="fas fa-utensils me-2"></i>Gérer mes menus
+                            </a>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <a href="{% url 'provider_transactions' %}" class="btn btn-outline-info w-100 py-3 rounded-3">
+                                <i class="fas fa-wallet me-2"></i>Mes transactions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Commandes en attente -->
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <div class="section-card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0"><i class="fas fa-clock me-2"></i>Commandes en attente</h5>
+                    <a href="{% url 'provider_orders' %}" class="btn btn-sm btn-outline-primary rounded-pill">
+                        Voir tout <i class="fas fa-arrow-right ms-1"></i>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <div id="pendingOrdersList">
+                        <div class="text-center py-5">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Chargement...</span>
+                            </div>
+                            <p class="text-muted mt-3">Chargement des commandes...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="section-card">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="fas fa-history me-2"></i>Activité récente</h5>
+                </div>
+                <div class="card-body">
+                    <div id="recentActivity">
+                        <div class="recent-activity-item">
+                            <div class="d-flex align-items-center">
+                                <div class="activity-icon success me-3">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-0 small fw-bold">Nouvelle commande</p>
+                                    <p class="text-muted mb-0 small">Il y a 5 minutes</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recent-activity-item">
+                            <div class="d-flex align-items-center">
+                                <div class="activity-icon warning me-3">
+                                    <i class="fas fa-utensils"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-0 small fw-bold">Menu ajouté</p>
+                                    <p class="text-muted mb-0 small">Il y a 1 heure</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recent-activity-item">
+                            <div class="d-flex align-items-center">
+                                <div class="activity-icon info me-3">
+                                    <i class="fas fa-money-bill"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-0 small fw-bold">Paiement reçu</p>
+                                    <p class="text-muted mb-0 small">Il y a 2 heures</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     
     <div class="row">
-        <div class="col-md-4">
-            <div class="card border-0 shadow-sm rounded-4 bg-primary text-white">
+        <!-- Stats additionnelles -->
+        <div class="col-md-8">
+            <div class="section-card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="fas fa-chart-line me-2"></i>Performance cette semaine</h5>
+                </div>
                 <div class="card-body">
-                    <h6 class="mb-1 opacity-75">Commandes aujourd'hui</h6>
-                    <h2 class="mb-0">{{ today_orders|default:"0" }}</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="activity-icon success me-3">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Revenus du jour</h6>
+                                    <p class="text-muted mb-0 small" id="todayRevenue">0 FCFA</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="activity-icon warning me-3">
+                                    <i class="fas fa-calendar-week"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Revenus semaine</h6>
+                                    <p class="text-muted mb-0 small" id="weekRevenue">0 FCFA</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="activity-icon info me-3">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Clients uniques</h6>
+                                    <p class="text-muted mb-0 small" id="uniqueCustomers">0</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="activity-icon success me-3">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Note moyenne</h6>
+                                    <p class="text-muted mb-0 small" id="avgRating">N/A</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Menus récents -->
+            <div class="section-card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0"><i class="fas fa-utensils me-2"></i>Mes menus récents</h5>
+                    <a href="{% url 'provider_menus' %}" class="btn btn-outline-primary btn-sm rounded-pill">
+                        Voir plus <i class="fas fa-arrow-right ms-1"></i>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <div class="row" id="menusList">
+                        <div class="col-12 text-center">Chargement...</div>
+                    </div>
                 </div>
             </div>
         </div>
+        
+        <!-- Activité récente -->
         <div class="col-md-4">
-            <div class="card border-0 shadow-sm rounded-4 bg-warning text-white">
-                <div class="card-body">
-                    <h6 class="mb-1 opacity-75">Consommations en attente</h6>
-                    <h2 class="mb-0">{{ pending_consumptions|default:"0" }}</h2>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card border-0 shadow-sm rounded-4 bg-success text-white">
-                <div class="card-body">
-                    <h6 class="mb-1 opacity-75">Total consommations</h6>
-                    <h2 class="mb-0">{{ total_consumptions|default:"0" }}</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="row mt-4">
-        <div class="col-md-12">
-            <div class="card border-0 shadow-sm rounded-4">
-                <div class="card-header bg-transparent border-0 pt-4">
-                    <h5 class="mb-0">Mes menus du jour</h5>
+            <div class="section-card">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="fas fa-history me-2"></i>Activité récente</h5>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-hover">
-                            <thead class="table-light">
-                                <tr><th>Titre</th><th>Prix (tickets)</th><th>Disponible</th><th>Action</th></tr>
-                            </thead>
-                            <tbody>
-                                {% for menu in menus %}
-                                <tr><td>{{ menu.title }}</td><td>{{ menu.price_tickets }}</td><td>{% if menu.is_available %}Oui{% else %}Non{% endif %}</td><td><a href="#" class="btn btn-sm btn-outline-primary">Modifier</a></td></tr>
-                                {% empty %}
-                                <td><td colspan="4" class="text-center">Aucun menu</td></tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
+                    <div id="recentActivity">
+                        <div class="recent-activity-item">
+                            <div class="d-flex align-items-center">
+                                <div class="activity-icon success me-3">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-0 small fw-bold">Nouvelle commande</p>
+                                    <p class="text-muted mb-0 small">Il y a 5 minutes</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recent-activity-item">
+                            <div class="d-flex align-items-center">
+                                <div class="activity-icon warning me-3">
+                                    <i class="fas fa-utensils"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-0 small fw-bold">Menu ajouté</p>
+                                    <p class="text-muted mb-0 small">Il y a 1 heure</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recent-activity-item">
+                            <div class="d-flex align-items-center">
+                                <div class="activity-icon info me-3">
+                                    <i class="fas fa-money-bill"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-0 small fw-bold">Paiement reçu</p>
+                                    <p class="text-muted mb-0 small">Il y a 2 heures</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- MODAL AJOUTER/MODIFIER MENU -->
+<div class="modal fade" id="menuModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="menuModalTitle">Ajouter un plat</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="menuId">
+                
+                <div class="mb-3">
+                    <label class="form-label">Nom du plat <span class="text-danger">*</span></label>
+                    <input type="text" id="menuName" class="form-control" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Type de plat <span class="text-danger">*</span></label>
+                    <select id="menuType" class="form-control" required>
+                        <option value="main">Plat principal</option>
+                        <option value="starter">Entrée</option>
+                        <option value="dessert">Dessert</option>
+                        <option value="drink">Boisson</option>
+                        <option value="side">Accompagnement</option>
+                    </select>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Prix (tickets) <span class="text-danger">*</span></label>
+                    <input type="number" id="menuPriceTickets" class="form-control" value="1" min="1" max="50" required>
+                    <small class="text-muted">Maximum 50 tickets</small>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Description</label>
+                    <textarea id="menuDescription" class="form-control" rows="3"></textarea>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Photo (optionnel)</label>
+                    <input type="file" id="menuPhoto" class="form-control" accept="image/*">
+                </div>
+                
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <div class="form-check">
+                            <input type="checkbox" id="menuIsDaily" class="form-check-input">
+                            <label class="form-check-label">Menu du jour</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-check">
+                            <input type="checkbox" id="menuIsAvailable" class="form-check-input" checked>
+                            <label class="form-check-label">Disponible</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-primary" onclick="saveMenu()">Enregistrer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL DE CONFIRMATION -->
+<div class="modal fade" id="confirmationModal" tabindex="-1" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content border-0 shadow-lg">
+            <div class="modal-body text-center p-4">
+                <div class="mb-3">
+                    <div class="rounded-circle bg-success d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                        <i class="fas fa-check text-white" style="font-size: 40px;"></i>
+                    </div>
+                </div>
+                <h5 class="mb-2" id="confirmationTitle">Succès !</h5>
+                <p class="text-muted mb-4" id="confirmationMessage">Menu enregistré avec succès</p>
+                <button type="button" class="btn btn-success rounded-pill px-4" data-bs-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL D'ERREUR -->
+<div class="modal fade" id="errorModal" tabindex="-1" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content border-0 shadow-lg">
+            <div class="modal-body text-center p-4">
+                <div class="mb-3">
+                    <div class="rounded-circle bg-danger d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                        <i class="fas fa-times text-white" style="font-size: 40px;"></i>
+                    </div>
+                </div>
+                <h5 class="mb-2">Erreur !</h5>
+                <p class="text-muted mb-4" id="errorMessage">Une erreur s'est produite</p>
+                <button type="button" class="btn btn-danger rounded-pill px-4" data-bs-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL DE CONFIRMATION SUPPRESSION -->
+<div class="modal fade" id="deleteConfirmModal" tabindex="-1" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content border-0 shadow-lg">
+            <div class="modal-body text-center p-4">
+                <div class="mb-3">
+                    <div class="rounded-circle bg-warning d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                        <i class="fas fa-exclamation-triangle text-white" style="font-size: 40px;"></i>
+                    </div>
+                </div>
+                <h5 class="mb-2">Confirmer la suppression</h5>
+                <p class="text-muted mb-4">Voulez-vous vraiment supprimer ce menu ?</p>
+                <input type="hidden" id="deleteMenuId">
+                <div class="d-flex gap-2 justify-content-center">
+                    <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-danger rounded-pill px-4" onclick="confirmDelete()">Supprimer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Récupérer le token
+    function getToken() {
+        return localStorage.getItem('access_token');
+    }
+    
+    // Charger les stats
+    function loadStats() {
+        const token = getToken();
+        fetch('/api/menus/provider-stats/', {
+            headers: { 'Authorization': `Bearer ${token}` }
+        })
+        .then(response => {
+            if (response.status === 401) {
+                window.location.href = '/login/';
+                return;
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data && data.orders) {
+                document.getElementById('todayOrders').innerText = data.orders.today;
+                document.getElementById('pendingConsumptions').innerText = data.orders.pending_consumptions;
+                document.getElementById('totalConsumptions').innerText = data.orders.total_consumptions;
+                document.getElementById('activeMenus').innerText = data.menus.active;
+                document.getElementById('todayRevenue').innerText = data.revenue.today.toLocaleString() + ' FCFA';
+                document.getElementById('weekRevenue').innerText = data.revenue.week.toLocaleString() + ' FCFA';
+                document.getElementById('uniqueCustomers').innerText = data.customers.unique_week;
+                document.getElementById('avgRating').innerText = '4.5/5'; // À implémenter avec un système de rating
+            }
+        })
+        .catch(error => {
+            console.error('Erreur lors du chargement des stats:', error);
+        });
+    }
+    
+    // Charger les commandes en attente depuis l'API MealOrder
+    function loadPendingOrders() {
+        const token = getToken();
+        fetch('/api/orders/?status=pending', {
+            headers: { 'Authorization': `Bearer ${token}` }
+        })
+        .then(response => {
+            if (response.status === 401) {
+                window.location.href = '/login/';
+                return;
+            }
+            return response.json();
+        })
+        .then(data => {
+            const pendingOrdersList = document.getElementById('pendingOrdersList');
+            const orders = Array.isArray(data) ? data : (data.results || []);
+            
+            if (orders.length === 0) {
+                pendingOrdersList.innerHTML = '<div class="text-center py-5 text-muted">Aucune commande en attente</div>';
+                return;
+            }
+            
+            pendingOrdersList.innerHTML = '';
+            orders.slice(0, 5).forEach(order => {
+                const createdAt = new Date(order.created_at);
+                const formattedDate = createdAt.toLocaleDateString('fr-FR') + ' ' + createdAt.toLocaleTimeString('fr-FR', {hour: '2-digit', minute:'2-digit'});
+                
+                pendingOrdersList.innerHTML += `
+                    <div class="order-item" style="padding: 15px; border-bottom: 1px solid #f0f0f0;">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <h6 class="mb-1 fw-bold">${order.menu_title || 'Hors menu'}</h6>
+                                <p class="text-muted small mb-0">
+                                    <i class="fas fa-user me-1"></i>${order.employee_name || 'Anonyme'}
+                                    <span class="mx-2">•</span>
+                                    <i class="fas fa-clock me-1"></i>${formattedDate}
+                                </p>
+                            </div>
+                            <div class="text-end">
+                                <span class="badge bg-primary mb-1">${order.quantity}x</span>
+                                <div>
+                                    <button class="btn btn-sm btn-success me-1" onclick="confirmOrder(${order.id})" title="Confirmer">
+                                        <i class="fas fa-check"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-danger" onclick="cancelOrder(${order.id})" title="Annuler">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        })
+        .catch(error => {
+            console.error('Erreur lors du chargement des commandes:', error);
+            document.getElementById('pendingOrdersList').innerHTML = '<div class="text-center py-5 text-muted">Erreur lors du chargement</div>';
+        });
+    }
+    
+    // Confirmer une commande via l'API MealOrder
+    function confirmOrder(id) {
+        const token = getToken();
+        fetch(`/api/orders/${id}/confirm/`, {
+            method: 'POST',
+            headers: { 'Authorization': `Bearer ${token}` }
+        })
+        .then(() => {
+            loadPendingOrders();
+            loadStats();
+        })
+        .catch(error => console.error('Erreur:', error));
+    }
+    
+    // Annuler une commande via l'API MealOrder
+    function cancelOrder(id) {
+        if (!confirm('Voulez-vous vraiment annuler cette commande ?')) return;
+        
+        const token = getToken();
+        fetch(`/api/orders/${id}/cancel/`, {
+            method: 'POST',
+            headers: { 'Authorization': `Bearer ${token}` }
+        })
+        .then(() => {
+            loadPendingOrders();
+            loadStats();
+        })
+        .catch(error => console.error('Erreur:', error));
+    }
+    
+    // Charger la liste des menus
+    function loadMenus() {
+        const token = getToken();
+        if (!token) {
+            window.location.href = '/login/';
+            return;
+        }
+        
+        fetch('/api/menus/daily/', {
+            headers: { 'Authorization': `Bearer ${token}` }
+        })
+        .then(response => {
+            if (response.status === 401) {
+                window.location.href = '/login/';
+                return;
+            }
+            return response.json();
+        })
+        .then(data => {
+            const menuList = document.getElementById('menusList');
+            const menus = Array.isArray(data) ? data : (data.results || []);
+            
+            if (!menus || menus.length === 0) {
+                menuList.innerHTML = '<div class="col-12 text-center text-muted py-5">Aucun menu</div>';
+                return;
+            }
+            
+            menuList.innerHTML = '';
+            const typeLabels = { main: 'Plat principal', starter: 'Entrée', dessert: 'Dessert', drink: 'Boisson', side: 'Accompagnement' };
+            
+            menus.slice(0, 3).forEach(menu => {
+                const imageUrl = menu.main_photo_url || 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"%3E%3Crect fill="%23f8f9fa" width="200" height="200"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="14" fill="%236c757d"%3EPas d%27image%3C/text%3E%3C/svg%3E';
+                menuList.innerHTML += `
+                    <div class="col-md-4 mb-4">
+                        <div class="card border-0 shadow-sm rounded-4 h-100">
+                            <div class="position-relative menu-card-img rounded-top-4">
+                                <img src="${imageUrl}" class="card-img-top rounded-top-4" style="height: 150px; object-fit: cover;" alt="${menu.title}">
+                                <div class="position-absolute top-0 end-0 m-2">
+                                    ${menu.is_available ? '<span class="badge bg-success rounded-pill">Disponible</span>' : '<span class="badge bg-danger rounded-pill">Non disponible</span>'}
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold mb-1">${menu.title}</h6>
+                                <p class="text-muted small mb-2">${typeLabels[menu.meal_type] || menu.meal_type}</p>
+                                <span class="badge bg-primary rounded-pill">${menu.price_tickets} ticket(s)</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        })
+        .catch(error => {
+            console.error('Erreur lors du chargement des menus:', error);
+        });
+    }
+    
+    // Afficher le modal de confirmation de suppression
+    function showDeleteModal(id) {
+        document.getElementById('deleteMenuId').value = id;
+        new bootstrap.Modal(document.getElementById('deleteConfirmModal')).show();
+    }
+    
+    // Confirmer la suppression
+    function confirmDelete() {
+        const id = document.getElementById('deleteMenuId').value;
+        const token = getToken();
+        
+        fetch(`/api/menus/daily/${id}/`, {
+            method: 'DELETE',
+            headers: { 'Authorization': `Bearer ${token}` }
+        })
+        .then(() => {
+            bootstrap.Modal.getInstance(document.getElementById('deleteConfirmModal')).hide();
+            loadMenus();
+            loadStats();
+            document.getElementById('confirmationMessage').innerText = 'Menu supprimé avec succès';
+            new bootstrap.Modal(document.getElementById('confirmationModal')).show();
+        })
+        .catch(error => {
+            bootstrap.Modal.getInstance(document.getElementById('deleteConfirmModal')).hide();
+            document.getElementById('errorMessage').innerText = 'Erreur lors de la suppression';
+            new bootstrap.Modal(document.getElementById('errorModal')).show();
+        });
+    }
+    
+    // Ouvrir la modale d'ajout
+    function openAddMenuModal() {
+        document.getElementById('menuModalTitle').innerText = 'Ajouter un plat';
+        document.getElementById('menuId').value = '';
+        document.getElementById('menuName').value = '';
+        document.getElementById('menuType').value = 'main';
+        document.getElementById('menuPriceTickets').value = '1';
+        document.getElementById('menuDescription').value = '';
+        document.getElementById('menuPhoto').value = '';
+        document.getElementById('menuIsDaily').checked = false;
+        document.getElementById('menuIsAvailable').checked = true;
+        
+        new bootstrap.Modal(document.getElementById('menuModal')).show();
+    }
+    
+    // Modifier un menu
+    function editMenu(id) {
+        const token = getToken();
+        fetch(`/api/menus/daily/${id}/`, {
+            headers: { 'Authorization': `Bearer ${token}` }
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('menuModalTitle').innerText = 'Modifier le plat';
+            document.getElementById('menuId').value = data.id;
+            document.getElementById('menuName').value = data.title;
+            document.getElementById('menuType').value = data.meal_type || 'main';
+            document.getElementById('menuPriceTickets').value = data.price_tickets;
+            document.getElementById('menuDescription').value = data.description || '';
+            document.getElementById('menuIsDaily').checked = data.is_daily || false;
+            document.getElementById('menuIsAvailable').checked = data.is_available;
+            document.getElementById('menuPhoto').value = '';
+            
+            new bootstrap.Modal(document.getElementById('menuModal')).show();
+        })
+        .catch(error => {
+            document.getElementById('errorMessage').innerText = 'Erreur lors du chargement du menu';
+            new bootstrap.Modal(document.getElementById('errorModal')).show();
+        });
+    }
+    
+    // Sauvegarder un menu
+    function saveMenu() {
+        const id = document.getElementById('menuId').value;
+        const priceTickets = parseInt(document.getElementById('menuPriceTickets').value);
+        
+        if (priceTickets > 50) {
+            document.getElementById('errorMessage').innerText = 'Le prix en tickets ne peut pas dépasser 50';
+            new bootstrap.Modal(document.getElementById('errorModal')).show();
+            return;
+        }
+        
+        const formData = new FormData();
+        formData.append('title', document.getElementById('menuName').value);
+        formData.append('meal_type', document.getElementById('menuType').value);
+        formData.append('price_tickets', priceTickets);
+        formData.append('description', document.getElementById('menuDescription').value);
+        formData.append('is_daily', document.getElementById('menuIsDaily').checked);
+        formData.append('is_available', document.getElementById('menuIsAvailable').checked);
+        formData.append('date', new Date().toISOString().split('T')[0]);
+        
+        const photo = document.getElementById('menuPhoto').files[0];
+        if (photo) {
+            formData.append('main_photo', photo);
+        }
+        
+        const token = getToken();
+        const url = id ? `/api/menus/daily/${id}/` : '/api/menus/daily/';
+        const method = id ? 'PUT' : 'POST';
+        
+        fetch(url, {
+            method: method,
+            body: formData,
+            headers: { 'Authorization': `Bearer ${token}` }
+        })
+        .then(response => {
+            if (response.status === 401) {
+                document.getElementById('errorMessage').innerText = 'Session expirée';
+                new bootstrap.Modal(document.getElementById('errorModal')).show();
+                window.location.href = '/login/';
+                return;
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.id || data.title) {
+                bootstrap.Modal.getInstance(document.getElementById('menuModal')).hide();
+                loadMenus();
+                loadStats();
+                document.getElementById('confirmationMessage').innerText = 'Menu enregistré avec succès';
+                new bootstrap.Modal(document.getElementById('confirmationModal')).show();
+            } else {
+                document.getElementById('errorMessage').innerText = 'Erreur: ' + JSON.stringify(data);
+                new bootstrap.Modal(document.getElementById('errorModal')).show();
+            }
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
+            document.getElementById('errorMessage').innerText = 'Erreur lors de l\'enregistrement';
+            new bootstrap.Modal(document.getElementById('errorModal')).show();
+        });
+    }
+    
+    // Chargement initial
+    loadStats();
+    loadPendingOrders();
+    loadMenus();
+</script>
 {% endblock %}

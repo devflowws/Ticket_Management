@@ -55,3 +55,13 @@ class IsAdminOrValidator(permissions.BasePermission):
         return request.user.is_authenticated and (
             request.user.role == 'admin' or request.user.role == 'validator'
         )
+    
+
+class IsProvider(permissions.BasePermission):
+    """Permission pour les prestataires"""
+    
+    def has_permission(self, request, view):
+        return request.user.is_authenticated and request.user.role == 'provider'
+    
+    def has_object_permission(self, request, view, obj):
+        return request.user.is_authenticated and request.user.role == 'provider'

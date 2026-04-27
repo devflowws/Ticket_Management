@@ -28,6 +28,13 @@ class User(AbstractUser):
         blank=True, 
         related_name='users'
     )
+
+    profile_photo = models.ImageField(
+        upload_to='profile_photos/%Y/%m/%d/',
+        null=True, 
+        blank=True,
+        verbose_name=_('photo de profil')
+    )
     
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name']

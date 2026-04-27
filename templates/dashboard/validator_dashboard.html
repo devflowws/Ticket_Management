@@ -1,60 +1,307 @@
- 
-<!-- templates/dashboard/validator_dashboard.html -->
+ <!-- templates/dashboard/validator_dashboard.html -->
 {% extends 'base/base.html' %}
 {% block title %}Dashboard Validateur{% endblock %}
 
+{% block extra_css %}
+<style>
+    .stat-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 20px;
+        padding: 25px;
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+    .stat-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
+    }
+    .stat-card.success {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+    .stat-card.warning {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+    .stat-card.info {
+        background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    }
+    .stat-card .icon {
+        font-size: 2.5rem;
+        opacity: 0.3;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+    .stat-card h3 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 0;
+    }
+    .stat-card .label {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        margin-top: 5px;
+    }
+    .section-card {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        border: none;
+    }
+    .section-card .card-header {
+        background: transparent;
+        border: none;
+        padding: 25px;
+        border-radius: 20px 20px 0 0;
+    }
+    .section-card .card-body {
+        padding: 0 25px 25px;
+    }
+    .request-item {
+        padding: 20px;
+        border-bottom: 1px solid #f0f0f0;
+        transition: all 0.3s;
+    }
+    .request-item:hover {
+        background: #f8f9fa;
+        transform: translateX(5px);
+    }
+    .request-item:last-child {
+        border-bottom: none;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
 <div class="container-fluid px-4">
-    <div class="row mb-4">
-        <div class="col-12">
-            <h1 class="h3 mb-2">Validation des demandes</h1>
-            <p class="text-muted">Bienvenue, {{ user.get_full_name }} !</p>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="h2 mb-2">Mon espace validateur</h1>
+            <p class="text-muted mb-0">Bienvenue, {{ user.get_full_name|default:"Validateur" }} !</p>
         </div>
     </div>
     
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card border-0 shadow-sm rounded-4">
-                <div class="card-header bg-transparent border-0 pt-4">
-                    <h5 class="mb-0">Demandes d'achat en attente</h5>
+    <!-- Stats principales -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="stat-card">
+                <i class="fas fa-clock icon"></i>
+                <h3 id="pendingRequests">0</h3>
+                <div class="label">Demandes en attente</div>
+                <div class="trend"><i class="fas fa-exclamation-circle"></i> À traiter</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card success">
+                <i class="fas fa-check-circle icon"></i>
+                <h3 id="approvedRequests">0</h3>
+                <div class="label">Demandes validées</div>
+                <div class="trend"><i class="fas fa-arrow-up"></i> Cette semaine</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card warning">
+                <i class="fas fa-times-circle icon"></i>
+                <h3 id="refusedRequests">0</h3>
+                <div class="label">Demandes refusées</div>
+                <div class="trend"><i class="fas fa-arrow-down"></i> Cette semaine</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card info">
+                <i class="fas fa-ticket-alt icon"></i>
+                <h3 id="ticketsGenerated">0</h3>
+                <div class="label">Tickets générés</div>
+                <div class="trend"><i class="fas fa-calendar"></i> Total</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Demandes en attente -->
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <div class="section-card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0"><i class="fas fa-clock me-2"></i>Demandes en attente</h5>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-hover">
-                            <thead class="table-light">
-                                <tr>
-                                    <th>Employé</th>
-                                    <th>Quantité</th>
-                                    <th>Montant</th>
-                                    <th>Date</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for request in pending_requests %}
-                                <tr>
-                                    <td>{{ request.employee.user.get_full_name }}</td>
-                                    <td>{{ request.quantity }}</td>
-                                    <td>{{ request.total_employee_amount }} FCFA</td>
-                                    <td>{{ request.created_at|date:"d/m/Y H:i" }}</td>
-                                    <td>
-                                        <a href="{% url 'validate_request' request.id %}" class="btn btn-sm btn-success me-1">
-                                            <i class="fas fa-check"></i> Valider
-                                        </a>
-                                        <a href="{% url 'refuse_request' request.id %}" class="btn btn-sm btn-danger">
-                                            <i class="fas fa-times"></i> Refuser
-                                        </a>
-                                    </td>
-                                </tr>
-                                {% empty %}
-                                <tr><td colspan="5" class="text-center py-4 text-muted">Aucune demande en attente</td></tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
+                    <div id="pendingRequestsList">
+                        <div class="text-center py-5">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Chargement...</span>
+                            </div>
+                            <p class="text-muted mt-3">Chargement des demandes...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="section-card">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="fas fa-history me-2"></i>Activité récente</h5>
+                </div>
+                <div class="card-body">
+                    <div id="recentActivity">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="activity-icon success me-3">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <p class="mb-0 small fw-bold">Demande validée</p>
+                                <p class="text-muted mb-0 small">Il y a 10 minutes</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="activity-icon warning me-3">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <div>
+                                <p class="mb-0 small fw-bold">Demande refusée</p>
+                                <p class="text-muted mb-0 small">Il y a 30 minutes</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="activity-icon info me-3">
+                                <i class="fas fa-ticket-alt"></i>
+                            </div>
+                            <div>
+                                <p class="mb-0 small fw-bold">Tickets générés</p>
+                                <p class="text-muted mb-0 small">Il y a 1 heure</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    function getToken() {
+        return localStorage.getItem('access_token');
+    }
+    
+    function loadValidatorStats() {
+        const token = getToken();
+        fetch('/api/validations/stats/', {
+            headers: { 'Authorization': `Bearer ${token}` }
+        })
+        .then(response => {
+            if (response.status === 401) {
+                window.location.href = '/login/';
+                return;
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data) {
+                document.getElementById('pendingRequests').innerText = data.pending || 0;
+                document.getElementById('approvedRequests').innerText = data.approved || 0;
+                document.getElementById('refusedRequests').innerText = data.refused || 0;
+                document.getElementById('ticketsGenerated').innerText = data.tickets_generated || 0;
+            }
+        })
+        .catch(error => {
+            console.error('Erreur lors du chargement des stats:', error);
+        });
+    }
+    
+    function loadPendingRequests() {
+        const token = getToken();
+        fetch('/api/purchases/?status=pending', {
+            headers: { 'Authorization': `Bearer ${token}` }
+        })
+        .then(response => {
+            if (response.status === 401) {
+                window.location.href = '/login/';
+                return;
+            }
+            return response.json();
+        })
+        .then(data => {
+            const pendingRequestsList = document.getElementById('pendingRequestsList');
+            const requests = Array.isArray(data) ? data : (data.results || []);
+            
+            if (requests.length === 0) {
+                pendingRequestsList.innerHTML = '<div class="text-center py-5 text-muted">Aucune demande en attente</div>';
+                return;
+            }
+            
+            pendingRequestsList.innerHTML = '';
+            requests.slice(0, 5).forEach(request => {
+                const createdAt = new Date(request.created_at);
+                const formattedDate = createdAt.toLocaleDateString('fr-FR') + ' ' + createdAt.toLocaleTimeString('fr-FR', {hour: '2-digit', minute:'2-digit'});
+                
+                pendingRequestsList.innerHTML += `
+                    <div class="request-item">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <h6 class="mb-1 fw-bold">${request.employee_name || 'Employé'}</h6>
+                                <p class="text-muted small mb-0">
+                                    <i class="fas fa-ticket-alt me-1"></i>${request.quantity} tickets
+                                    <span class="mx-2">•</span>
+                                    <i class="fas fa-money-bill me-1"></i>${request.total_employee_amount || request.amount || 0} FCFA
+                                    <span class="mx-2">•</span>
+                                    <i class="fas fa-clock me-1"></i>${formattedDate}
+                                </p>
+                            </div>
+                            <div class="text-end">
+                                <button class="btn btn-sm btn-success me-1" onclick="approveRequest(${request.id})" title="Valider">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger" onclick="refuseRequest(${request.id})" title="Refuser">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        })
+        .catch(error => {
+            console.error('Erreur lors du chargement des demandes:', error);
+            document.getElementById('pendingRequestsList').innerHTML = '<div class="text-center py-5 text-muted">Erreur lors du chargement</div>';
+        });
+    }
+    
+    function approveRequest(id) {
+        const token = getToken();
+        fetch(`/api/purchases/${id}/approve/`, {
+            method: 'POST',
+            headers: { 'Authorization': `Bearer ${token}` }
+        })
+        .then(() => {
+            loadValidatorStats();
+            loadPendingRequests();
+        })
+        .catch(error => console.error('Erreur:', error));
+    }
+    
+    function refuseRequest(id) {
+        if (!confirm('Voulez-vous vraiment refuser cette demande ?')) return;
+        
+        const token = getToken();
+        fetch(`/api/purchases/${id}/refuse/`, {
+            method: 'POST',
+            headers: { 'Authorization': `Bearer ${token}` }
+        })
+        .then(() => {
+            loadValidatorStats();
+            loadPendingRequests();
+        })
+        .catch(error => console.error('Erreur:', error));
+    }
+    
+    // Chargement initial
+    loadValidatorStats();
+    loadPendingRequests();
+</script>
 {% endblock %}

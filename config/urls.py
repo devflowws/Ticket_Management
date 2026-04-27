@@ -10,11 +10,12 @@ from apps.companies.views import CompanyListView
 
 # Imports des vues core
 from apps.core.views import (
-    landing_page, register_company, login_view, logout_view, profile_view, 
-    change_password_view, admin_dashboard, employee_dashboard, validator_dashboard, 
-    finance_dashboard, provider_dashboard, my_balance, purchase_request_create, 
-    my_orders, pending_validations, validation_history, reports_dashboard, 
-    provider_payment, provider_list, menu_list, order_menu, select_company
+    landing_page, register_company, login_view, logout_view, profile_view,
+    change_password_view, admin_dashboard, employee_dashboard, validator_dashboard,
+    finance_dashboard, provider_dashboard, provider_menus, provider_transactions, provider_orders,
+    my_balance, purchase_request_create,
+    my_orders, pending_validations, validation_history, reports_dashboard,
+    provider_payment, provider_list, menu_list, order_menu, select_company, order_meal, my_tickets
 )
 
 # Imports des vues API admin
@@ -77,12 +78,16 @@ urlpatterns = [
     path('dashboard/validator/', validator_dashboard, name='validator_dashboard'),
     path('dashboard/finance/', finance_dashboard, name='finance_dashboard'),
     path('dashboard/provider/', provider_dashboard, name='provider_dashboard'),
+    path('dashboard/provider/menus/', provider_menus, name='provider_menus'),
+    path('dashboard/provider/transactions/', provider_transactions, name='provider_transactions'),
+    path('dashboard/provider/orders/', provider_orders, name='provider_orders'),
 
     # Configuration
     path('admin/quota-config/', quota_config, name='quota_config'),
     
     # Tickets
     path('tickets/balance/', my_balance, name='my_balance'),
+    path('tickets/my/', my_tickets, name='my_tickets'),
     
     # Purchases
     path('purchases/create/', purchase_request_create, name='purchase_request_create'),
@@ -103,6 +108,8 @@ urlpatterns = [
     
     # Menus
     path('menus/', menu_list, name='menu_list'),
+    path('order-meal/', order_meal, name='order_meal'),
+    path('orders/menu/', order_meal, name='orders_menu'),
 
     path('api/companies/', CompanyListView.as_view(), name='company_list'),
 

@@ -1,49 +1,122 @@
- 
-<!-- templates/dashboard/finance_dashboard.html -->
+ <!-- templates/dashboard/finance_dashboard.html -->
 {% extends 'base/base.html' %}
 {% block title %}Dashboard Finance{% endblock %}
 
+{% block extra_css %}
+<style>
+    .stat-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 20px;
+        padding: 25px;
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+    .stat-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
+    }
+    .stat-card.success {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+    .stat-card.warning {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+    .stat-card.info {
+        background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    }
+    .stat-card .icon {
+        font-size: 2.5rem;
+        opacity: 0.3;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+    .stat-card h3 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 0;
+    }
+    .stat-card .label {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        margin-top: 5px;
+    }
+    .section-card {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        border: none;
+    }
+    .section-card .card-header {
+        background: transparent;
+        border: none;
+        padding: 25px;
+        border-radius: 20px 20px 0 0;
+    }
+    .section-card .card-body {
+        padding: 0 25px 25px;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
 <div class="container-fluid px-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="h2 mb-2">Reporting financier</h1>
+            <p class="text-muted mb-0">Bienvenue, {{ user.get_full_name|default:"Finance" }} !</p>
+        </div>
+    </div>
+    
+    <!-- Stats principales -->
     <div class="row mb-4">
-        <div class="col-12">
-            <h1 class="h3 mb-2">Reporting financier</h1>
-            <p class="text-muted">Bienvenue, {{ user.get_full_name }} !</p>
+        <div class="col-md-3">
+            <div class="stat-card">
+                <i class="fas fa-ticket-alt icon"></i>
+                <h3 id="ticketsSold">0</h3>
+                <div class="label">Tickets vendus</div>
+                <div class="trend"><i class="fas fa-arrow-up"></i> Ce mois</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card success">
+                <i class="fas fa-money-bill-wave icon"></i>
+                <h3 id="totalRevenue">0 FCFA</h3>
+                <div class="label">Chiffre d'affaires</div>
+                <div class="trend"><i class="fas fa-chart-line"></i> Ce mois</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card warning">
+                <i class="fas fa-hand-holding-usd icon"></i>
+                <h3 id="toPay">0 FCFA</h3>
+                <div class="label">À payer prestataires</div>
+                <div class="trend"><i class="fas fa-exclamation-circle"></i> En attente</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card info">
+                <i class="fas fa-users icon"></i>
+                <h3 id="activeEmployees">0</h3>
+                <div class="label">Employés actifs</div>
+                <div class="trend"><i class="fas fa-user-check"></i> Total</div>
+            </div>
         </div>
     </div>
     
+    <!-- Rapport mensuel -->
     <div class="row">
-        <div class="col-md-4">
-            <div class="card border-0 shadow-sm rounded-4 bg-primary text-white">
-                <div class="card-body">
-                    <h6 class="mb-1 opacity-75">Tickets vendus</h6>
-                    <h2 class="mb-0">{{ total_tickets_sold|default:"0" }}</h2>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card border-0 shadow-sm rounded-4 bg-success text-white">
-                <div class="card-body">
-                    <h6 class="mb-1 opacity-75">Chiffre d'affaires</h6>
-                    <h2 class="mb-0">{{ total_revenue|default:"0" }} FCFA</h2>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card border-0 shadow-sm rounded-4 bg-warning text-white">
-                <div class="card-body">
-                    <h6 class="mb-1 opacity-75">À payer prestataires</h6>
-                    <h2 class="mb-0">{{ total_to_pay|default:"0" }} FCFA</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="row mt-4">
-        <div class="col-md-12">
-            <div class="card border-0 shadow-sm rounded-4">
-                <div class="card-header bg-transparent border-0 pt-4">
-                    <h5 class="mb-0">Rapport mensuel</h5>
+        <div class="col-12">
+            <div class="section-card">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="fas fa-chart-bar me-2"></i>Rapport mensuel</h5>
                 </div>
                 <div class="card-body">
                     <canvas id="monthlyChart" height="300"></canvas>
@@ -55,22 +128,61 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    const ctx = document.getElementById('monthlyChart').getContext('2d');
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aoû', 'Sep', 'Oct', 'Nov', 'Déc'],
-            datasets: [{
-                label: 'Tickets vendus',
-                data: {{ monthly_data|safe }},
-                backgroundColor: '#667eea',
-                borderRadius: 8
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: true
-        }
-    });
+    function getToken() {
+        return localStorage.getItem('access_token');
+    }
+    
+    function loadFinanceStats() {
+        const token = getToken();
+        fetch('/api/reports/stats/', {
+            headers: { 'Authorization': `Bearer ${token}` }
+        })
+        .then(response => {
+            if (response.status === 401) {
+                window.location.href = '/login/';
+                return;
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data) {
+                document.getElementById('ticketsSold').innerText = data.tickets_sold || 0;
+                document.getElementById('totalRevenue').innerText = (data.total_revenue || 0).toLocaleString() + ' FCFA';
+                document.getElementById('toPay').innerText = (data.to_pay || 0).toLocaleString() + ' FCFA';
+                document.getElementById('activeEmployees').innerText = data.active_employees || 0;
+                
+                // Chart
+                if (data.monthly_data) {
+                    renderChart(data.monthly_data);
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Erreur lors du chargement des stats:', error);
+        });
+    }
+    
+    function renderChart(monthlyData) {
+        const ctx = document.getElementById('monthlyChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aoû', 'Sep', 'Oct', 'Nov', 'Déc'],
+                datasets: [{
+                    label: 'Tickets vendus',
+                    data: monthlyData,
+                    backgroundColor: '#667eea',
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true
+            }
+        });
+    }
+    
+    // Chargement initial
+    loadFinanceStats();
 </script>
 {% endblock %}

@@ -1,25 +1,244 @@
 <!-- templates/purchases/create.html -->
 {% extends 'base/base.html' %}
 {% block title %}Acheter des tickets{% endblock %}
+
+{% block extra_css %}
+<style>
+    .ticket-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 20px;
+        padding: 30px;
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+    .ticket-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
+    }
+    .ticket-card .icon {
+        font-size: 4rem;
+        opacity: 0.3;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+    .info-card {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        border: none;
+    }
+    .info-card .card-header {
+        background: transparent;
+        border: none;
+        padding: 25px;
+        border-radius: 20px 20px 0 0;
+    }
+    .info-card .card-body {
+        padding: 0 25px 25px;
+    }
+    .quantity-selector {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    .quantity-btn {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid #667eea;
+        background: white;
+        color: #667eea;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .quantity-btn:hover {
+        background: #667eea;
+        color: white;
+    }
+    .quantity-display {
+        font-size: 2rem;
+        font-weight: 700;
+        min-width: 80px;
+        text-align: center;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
-<h1>Demande d'achat de tickets</h1>
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <div class="mb-3">
-        <label>Nombre de tickets</label>
-        <input type="number" name="quantity" class="form-control" required>
+<div class="container-fluid px-4">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="h2 mb-2">Acheter des tickets</h1>
+            <p class="text-muted">Complétez le formulaire pour acheter des tickets repas</p>
+        </div>
     </div>
-    <div class="mb-3">
-        <label>Mode de paiement</label>
-        <select name="payment_method" class="form-control">
-            <option value="moov">Moov Money</option>
-            <option value="mixx_by_yas">Mixx By Yas</option>
-        </select>
+    
+    <!-- Info ticket -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="ticket-card">
+                <i class="fas fa-ticket-alt icon"></i>
+                <h3 class="mb-2">Valeur du ticket</h3>
+                <h1 class="mb-0">1000 FCFA</h1>
+                <p class="mb-0 opacity-75">Prix unitaire</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="info-card">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="fas fa-info-circle me-2"></i>Informations</h5>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-between mb-3">
+                        <span>Votre quota mensuel:</span>
+                        <strong>{{ employee.monthly_ticket_quota|default:30 }} tickets</strong>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3">
+                        <span>Tickets achetés ce mois:</span>
+                        <strong>{{ employee.current_month_tickets|default:0 }} tickets</strong>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <span>Quota restant:</span>
+                        <strong class="text-success">{{ employee.remaining_quota|default:30 }} tickets</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="mb-3">
-        <label>Référence de paiement</label>
-        <input type="text" name="payment_reference" class="form-control">
+    
+    <!-- Formulaire -->
+    <div class="row">
+        <div class="col-md-8">
+            <div class="info-card">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="fas fa-shopping-cart me-2"></i>Détails de l'achat</h5>
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data" id="purchaseForm">
+                        {% csrf_token %}
+                        
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Nombre de tickets</label>
+                            <div class="quantity-selector">
+                                <button type="button" class="quantity-btn" onclick="updateQuantity(-1)">-</button>
+                                <div class="quantity-display" id="quantityDisplay">1</div>
+                                <button type="button" class="quantity-btn" onclick="updateQuantity(1)">+</button>
+                            </div>
+                            <input type="number" name="quantity" id="quantityInput" value="1" min="1" max="{{ employee.remaining_quota|default:30 }}" required style="display: none;">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Mode de paiement</label>
+                            <select name="payment_method" class="form-select form-select-lg" required>
+                                <option value="">Sélectionner un mode de paiement</option>
+                                <option value="moov">Moov Money</option>
+                                <option value="mixx_by_yas">Mixx By Yas</option>
+                                <option value="orange_money">Orange Money</option>
+                                <option value="wave">Wave</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Référence de paiement</label>
+                            <input type="text" name="payment_reference" class="form-control form-control-lg" placeholder="Entrez votre référence de transaction" required>
+                            <small class="text-muted">Ex: numéro de confirmation de votre mobile money</small>
+                        </div>
+                        
+                        <!-- Récapitulatif -->
+                        <div class="bg-light rounded-4 p-4 mb-4">
+                            <h5 class="mb-3">Récapitulatif</h5>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Nombre de tickets:</span>
+                                <strong id="summaryQuantity">1</strong>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Prix unitaire:</span>
+                                <strong>1000 FCFA</strong>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between">
+                                <span class="fs-5">Total:</span>
+                                <strong class="fs-4 text-primary" id="summaryTotal">1000 FCFA</strong>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-lg w-100">
+                            <i class="fas fa-paper-plane me-2"></i>Envoyer la demande
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="info-card">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="fas fa-lightbulb me-2"></i>Conseils</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            Vérifiez votre solde avant d'acheter
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            La demande sera soumise à validation
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            Les tickets seront crédités après validation
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            Conservez votre référence de paiement
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-    <button type="submit" class="btn btn-primary">Envoyer la demande</button>
-</form>
+</div>
+
+<script>
+    let quantity = 1;
+    const maxQuantity = parseInt(document.getElementById('quantityInput').getAttribute('max')) || 30;
+    const ticketPrice = 1000;
+    
+    function updateQuantity(delta) {
+        const newQuantity = quantity + delta;
+        if (newQuantity >= 1 && newQuantity <= maxQuantity) {
+            quantity = newQuantity;
+            document.getElementById('quantityDisplay').innerText = quantity;
+            document.getElementById('quantityInput').value = quantity;
+            updateSummary();
+        }
+    }
+    
+    function updateSummary() {
+        document.getElementById('summaryQuantity').innerText = quantity;
+        document.getElementById('summaryTotal').innerText = (quantity * ticketPrice).toLocaleString() + ' FCFA';
+    }
+    
+    // Empêcher la soumission si la quantité dépasse le quota
+    document.getElementById('purchaseForm').addEventListener('submit', function(e) {
+        const qtyInput = document.getElementById('quantityInput');
+        if (parseInt(qtyInput.value) > maxQuantity) {
+            e.preventDefault();
+            alert('La quantité dépasse votre quota restant');
+        }
+    });
+</script>
 {% endblock %}

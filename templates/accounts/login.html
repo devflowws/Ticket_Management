@@ -8,12 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', 'Poppins', sans-serif;
             min-height: 100vh;
@@ -24,8 +19,6 @@
             position: relative;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
-        
-        /* Background image floutée */
         body::before {
             content: '';
             position: absolute;
@@ -40,261 +33,35 @@
             opacity: 0.3;
             z-index: 0;
         }
-        
-        .login-container {
-            width: 100%;
-            max-width: 500px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .login-card {
-            background: white;
-            border-radius: 30px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
-            overflow: hidden;
-        }
-        
-        .login-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 40px 30px;
-            text-align: center;
-            color: white;
-        }
-        
-        .login-header i {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-        
-        .login-header h2 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-        
-        .login-header p {
-            opacity: 0.9;
-            font-size: 0.9rem;
-        }
-        
-        .login-body {
-            padding: 40px 35px;
-        }
-        
-        .form-group {
-            margin-bottom: 25px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #333;
-        }
-        
-        .form-group label i {
-            margin-right: 8px;
-            color: #667eea;
-        }
-        
-        .input-wrapper {
-            position: relative;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e9ecef;
-            border-radius: 12px;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-        
-        .form-control:focus {
-            border-color: #667eea;
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
-        }
-        
-        .password-toggle {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-            color: #aaa;
-            background: white;
-            padding-left: 8px;
-            transition: all 0.3s;
-        }
-        
-        .password-toggle:hover {
-            color: #667eea;
-        }
-        
-        .btn-login {
-            width: 100%;
-            padding: 14px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border: none;
-            border-radius: 12px;
-            color: white;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .btn-login:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(102,126,234,0.4);
-        }
-        
-        .login-footer {
-            text-align: center;
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px solid #e9ecef;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .login-footer a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.85rem;
-        }
-        
-        .login-footer a:hover {
-            text-decoration: underline;
-        }
-        
-        .back-link {
-            color: #64748b;
-        }
-        
-        .back-link:hover {
-            color: #667eea;
-        }
-        
-        .alert {
-            padding: 12px 15px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            font-size: 0.85rem;
-        }
-        
-        .alert-danger {
-            background: #fee2e2;
-            color: #dc2626;
-            border: 1px solid #fecaca;
-        }
-        
-        .alert-success {
-            background: #dcfce7;
-            color: #16a34a;
-            border: 1px solid #bbf7d0;
-        }
-        
-        /* Company selector styling */
-        .company-select {
-            position: relative;
-        }
-        
-        .company-select select {
-            appearance: none;
-            cursor: pointer;
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e9ecef;
-            border-radius: 12px;
-            font-size: 1rem;
-            background: white;
-        }
-        
-        .company-select select:focus {
-            border-color: #667eea;
-            outline: none;
-        }
-        
-        .company-select i.fa-chevron-down {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #aaa;
-            pointer-events: none;
-        }
-        
-        /* Search input */
-        .company-search {
-            margin-bottom: 10px;
-        }
-        
-        .company-search input {
-            padding: 10px 12px;
-            font-size: 0.85rem;
-            border: 2px solid #e9ecef;
-            border-radius: 10px;
-            width: 100%;
-        }
-        
-        .company-search input:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-        
-        /* Role selector */
-        .role-selector {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-        }
-        
-        .role-btn {
-            flex: 1;
-            padding: 10px;
-            border: 2px solid #e9ecef;
-            background: white;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-align: center;
-            font-weight: 500;
-            font-size: 0.85rem;
-        }
-        
-        .role-btn.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-color: #667eea;
-            color: white;
-        }
-        
-        .role-btn i {
-            margin-right: 5px;
-        }
-        
-        @media (max-width: 576px) {
-            .login-body {
-                padding: 30px 25px;
-            }
-            .login-header {
-                padding: 30px 25px;
-            }
-            .login-header h2 {
-                font-size: 1.5rem;
-            }
-            .role-btn {
-                font-size: 0.7rem;
-                padding: 8px;
-            }
-        }
+        .login-container { width: 100%; max-width: 500px; position: relative; z-index: 1; }
+        .login-card { background: white; border-radius: 30px; box-shadow: 0 25px 50px rgba(0,0,0,0.2); overflow: hidden; }
+        .login-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 40px 30px; text-align: center; color: white; }
+        .login-header i { font-size: 3rem; margin-bottom: 15px; }
+        .login-header h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 5px; }
+        .login-header p { opacity: 0.9; font-size: 0.9rem; }
+        .login-body { padding: 40px 35px; }
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: #333; }
+        .form-group label i { margin-right: 8px; color: #667eea; }
+        .input-wrapper { position: relative; }
+        .form-control { width: 100%; padding: 12px 15px; border: 2px solid #e9ecef; border-radius: 12px; font-size: 1rem; transition: all 0.3s; }
+        .form-control:focus { border-color: #667eea; outline: none; box-shadow: 0 0 0 3px rgba(102,126,234,0.1); }
+        .password-toggle { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #aaa; background: white; padding-left: 8px; }
+        .btn-login { width: 100%; padding: 14px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; border-radius: 12px; color: white; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.3s; }
+        .btn-login:hover { transform: translateY(-2px); box-shadow: 0 5px 20px rgba(102,126,234,0.4); }
+        .login-footer { text-align: center; margin-top: 25px; padding-top: 20px; border-top: 1px solid #e9ecef; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .login-footer a { color: #667eea; text-decoration: none; font-weight: 500; font-size: 0.85rem; }
+        .alert { padding: 12px 15px; border-radius: 12px; margin-bottom: 20px; font-size: 0.85rem; }
+        .alert-danger { background: #fee2e2; color: #dc2626; border: 1px solid #fecaca; }
+        .role-selector { display: flex; gap: 10px; margin-bottom: 25px; flex-wrap: wrap; }
+        .role-btn { flex: 1; padding: 10px; border: 2px solid #e9ecef; background: white; border-radius: 12px; cursor: pointer; transition: all 0.3s; text-align: center; font-weight: 500; font-size: 0.85rem; }
+        .role-btn.active { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-color: #667eea; color: white; }
+        .company-select { position: relative; }
+        .company-select select { appearance: none; cursor: pointer; width: 100%; padding: 12px 15px; border: 2px solid #e9ecef; border-radius: 12px; font-size: 1rem; background: white; }
+        .company-select i.fa-chevron-down { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #aaa; pointer-events: none; }
+        .company-search { margin-bottom: 10px; }
+        .company-search input { padding: 10px 12px; font-size: 0.85rem; border: 2px solid #e9ecef; border-radius: 10px; width: 100%; }
+        @media (max-width: 576px) { .login-body { padding: 30px 25px; } .login-header { padding: 30px 25px; } }
     </style>
 </head>
 <body>
@@ -306,36 +73,18 @@
                 <p>Connectez-vous à votre espace de travail</p>
             </div>
             <div class="login-body">
-                {% if messages %}
-                    {% for message in messages %}
-                        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-                            <i class="fas fa-{% if message.tags == 'success' %}check-circle{% else %}exclamation-circle{% endif %} me-2"></i>
-                            {{ message }}
-                            <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
-                        </div>
-                    {% endfor %}
-                {% endif %}
+                <div id="alertMessage" class="alert alert-danger" style="display: none;"></div>
                 
                 <!-- Sélecteur de rôle -->
                 <div class="role-selector">
-                    <button type="button" class="role-btn" data-role="admin" id="roleAdminBtn">
-                        <i class="fas fa-user-shield"></i> Administrateur
-                    </button>
-                    <button type="button" class="role-btn" data-role="employee" id="roleEmployeeBtn">
-                        <i class="fas fa-user"></i> Employé
-                    </button>
-                    <button type="button" class="role-btn" data-role="validator" id="roleValidatorBtn">
-                        <i class="fas fa-check-double"></i> Validateur
-                    </button>
-                    <button type="button" class="role-btn" data-role="finance" id="roleFinanceBtn">
-                        <i class="fas fa-chart-pie"></i> Finance
-                    </button>
-                    <button type="button" class="role-btn" data-role="provider" id="roleProviderBtn">
-                        <i class="fas fa-store"></i> Prestataire
-                    </button>
+                    <button type="button" class="role-btn" data-role="admin" id="roleAdminBtn"><i class="fas fa-user-shield"></i> Administrateur</button>
+                    <button type="button" class="role-btn" data-role="employee" id="roleEmployeeBtn"><i class="fas fa-user"></i> Employé</button>
+                    <button type="button" class="role-btn" data-role="validator" id="roleValidatorBtn"><i class="fas fa-check-double"></i> Validateur</button>
+                    <button type="button" class="role-btn" data-role="finance" id="roleFinanceBtn"><i class="fas fa-chart-pie"></i> Finance</button>
+                    <button type="button" class="role-btn" data-role="provider" id="roleProviderBtn"><i class="fas fa-store"></i> Prestataire</button>
                 </div>
                 
-                <form method="post" id="loginForm">
+                <form id="loginForm">
                     {% csrf_token %}
                     <input type="hidden" name="role" id="selectedRole" value="admin">
                     
@@ -343,14 +92,12 @@
                     <div class="form-group company-select" id="companyField" style="display: none;">
                         <label><i class="fas fa-building"></i> Entreprise</label>
                         <div class="company-search">
-                            <input type="text" id="companySearch" class="form-control" placeholder="Rechercher une entreprise...">
+                            <input type="text" id="companySearch" placeholder="Rechercher une entreprise...">
                         </div>
-                        <select name="company_id" id="companySelect" class="form-control">
+                        <select name="company_id" id="companySelect">
                             <option value="">-- Sélectionnez votre entreprise --</option>
                             {% for company in companies %}
-                            <option value="{{ company.id }}" data-name="{{ company.name }}" data-city="{{ company.city }}">
-                                {{ company.name }} - {{ company.city }}
-                            </option>
+                            <option value="{{ company.id }}">{{ company.name }} - {{ company.city }}</option>
                             {% endfor %}
                         </select>
                         <i class="fas fa-chevron-down"></i>
@@ -379,25 +126,17 @@
                 </form>
                 
                 <div class="login-footer">
-                    <a href="/" class="back-link">
-                        <i class="fas fa-arrow-left"></i> Retour à l'accueil
-                    </a>
+                    <a href="/">Retour à l'accueil</a>
                     <a href="#">Mot de passe oublié ?</a>
-                </div>
-                
-                <div class="text-center mt-3">
-                    <p class="mb-0" style="font-size: 0.8rem;">Vous êtes une entreprise ? <a href="/register-company/">Créer mon espace</a></p>
                 </div>
             </div>
         </div>
     </div>
     
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Toggle password visibility
         const togglePassword = document.getElementById('togglePassword');
         const passwordInput = document.getElementById('password');
-        
         togglePassword.addEventListener('click', function() {
             const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
             passwordInput.setAttribute('type', type);
@@ -413,15 +152,11 @@
         
         roleBtns.forEach(btn => {
             btn.addEventListener('click', function() {
-                // Remove active class from all
                 roleBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked
                 this.classList.add('active');
-                
                 const role = this.dataset.role;
                 selectedRoleInput.value = role;
                 
-                // Show company field for non-admin roles
                 if (role === 'admin') {
                     companyField.style.display = 'none';
                     companySelect.required = false;
@@ -432,7 +167,6 @@
             });
         });
         
-        // Set default active (admin)
         document.getElementById('roleAdminBtn').classList.add('active');
         
         // Company search filter
@@ -446,14 +180,69 @@
                 options.forEach(option => {
                     if (option.value === '') return;
                     const text = option.textContent.toLowerCase();
-                    if (text.includes(searchTerm)) {
-                        option.style.display = '';
-                    } else {
-                        option.style.display = 'none';
-                    }
+                    option.style.display = text.includes(searchTerm) ? '' : 'none';
                 });
             });
         }
+        
+        // Stocker le token dans localStorage
+        function storeToken(token, refreshToken) {
+            localStorage.setItem('access_token', token);
+            localStorage.setItem('refresh_token', refreshToken);
+        }
+        
+        // Redirection selon le rôle
+        function redirectToDashboard(role) {
+            switch(role) {
+                case 'admin': window.location.href = '/dashboard/admin/'; break;
+                case 'employee': window.location.href = '/dashboard/employee/'; break;
+                case 'validator': window.location.href = '/dashboard/validator/'; break;
+                case 'finance': window.location.href = '/dashboard/finance/'; break;
+                case 'provider': window.location.href = '/dashboard/provider/'; break;
+                default: window.location.href = '/';
+            }
+        }
+        
+        // Submit form
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const role = document.getElementById('selectedRole').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const companyId = document.getElementById('companySelect').value;
+            
+            const payload = { email, password };
+            if (role !== 'admin') {
+                if (!companyId) {
+                    document.getElementById('alertMessage').innerText = 'Veuillez sélectionner votre entreprise';
+                    document.getElementById('alertMessage').style.display = 'block';
+                    return;
+                }
+                payload.company_id = parseInt(companyId);
+            }
+            
+            try {
+                const response = await fetch('/api/auth/login/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok && data.access) {
+                    storeToken(data.access, data.refresh);
+                    redirectToDashboard(data.user.role);
+                } else {
+                    document.getElementById('alertMessage').innerText = data.error || 'Email ou mot de passe incorrect';
+                    document.getElementById('alertMessage').style.display = 'block';
+                }
+            } catch (error) {
+                document.getElementById('alertMessage').innerText = 'Erreur de connexion';
+                document.getElementById('alertMessage').style.display = 'block';
+            }
+        });
     </script>
 </body>
 </html>

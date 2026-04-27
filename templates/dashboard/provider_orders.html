@@ -1,0 +1,417 @@
+<!-- templates/dashboard/provider_orders.html -->
+{% extends 'base/base.html' %}
+{% block title %}Commandes Reçues - Prestataire{% endblock %}
+
+{% block extra_css %}
+<style>
+    .stat-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 20px;
+        padding: 25px;
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+    .stat-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
+    }
+    .stat-card.success {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+    .stat-card.warning {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+    .stat-card.info {
+        background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    }
+    .stat-card .icon {
+        font-size: 2.5rem;
+        opacity: 0.3;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+    .stat-card h3 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 0;
+    }
+    .stat-card .label {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        margin-top: 5px;
+    }
+    .section-card {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        border: none;
+    }
+    .section-card .card-header {
+        background: transparent;
+        border: none;
+        padding: 25px;
+        border-radius: 20px 20px 0 0;
+    }
+    .section-card .card-body {
+        padding: 0 25px 25px;
+    }
+    .order-item {
+        padding: 20px;
+        border-bottom: 1px solid #f0f0f0;
+        transition: all 0.3s;
+    }
+    .order-item:hover {
+        background: #f8f9fa;
+        transform: translateX(5px);
+    }
+    .order-item:last-child {
+        border-bottom: none;
+    }
+    .order-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+    }
+    .order-icon.pending { background: linear-gradient(135deg, #f093fb, #f5576c); color: white; }
+    .order-icon.confirmed { background: linear-gradient(135deg, #43e97b, #38f9d7); color: white; }
+    .order-icon.preparing { background: linear-gradient(135deg, #667eea, #764ba2); color: white; }
+    .order-icon.ready { background: linear-gradient(135deg, #f093fb, #f5576c); color: white; }
+    .order-icon.delivered { background: linear-gradient(135deg, #4facfe, #00f2fe); color: white; }
+    .order-icon.cancelled { background: linear-gradient(135deg, #ff6b6b, #ee5a5a); color: white; }
+    .filter-btn {
+        border-radius: 20px;
+        padding: 8px 20px;
+        font-size: 0.85rem;
+        transition: all 0.3s;
+    }
+    .filter-btn.active {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid px-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="h2 mb-2">Commandes reçues</h1>
+            <p class="text-muted mb-0">Gestion des commandes des employés</p>
+        </div>
+    </div>
+    
+    <!-- Stats commandes -->
+    <div class="row mb-4">
+        <div class="col-md-2">
+            <div class="stat-card">
+                <i class="fas fa-shopping-cart icon"></i>
+                <h3 id="totalOrders">0</h3>
+                <div class="label">Total</div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="stat-card warning">
+                <i class="fas fa-clock icon"></i>
+                <h3 id="pendingOrders">0</h3>
+                <div class="label">En attente</div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="stat-card success">
+                <i class="fas fa-check-circle icon"></i>
+                <h3 id="confirmedOrders">0</h3>
+                <div class="label">Confirmées</div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="stat-card">
+                <i class="fas fa-fire icon"></i>
+                <h3 id="preparingOrders">0</h3>
+                <div class="label">En préparation</div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="stat-card info">
+                <i class="fas fa-utensils icon"></i>
+                <h3 id="readyOrders">0</h3>
+                <div class="label">Prêtes</div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="stat-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                <i class="fas fa-truck icon"></i>
+                <h3 id="deliveredOrders">0</h3>
+                <div class="label">Livré</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Filtres -->
+    <div class="row mb-3">
+        <div class="col-12">
+            <div class="d-flex gap-2 flex-wrap">
+                <button class="btn btn-outline-primary filter-btn active" onclick="filterOrders('all')">Toutes</button>
+                <button class="btn btn-outline-primary filter-btn" onclick="filterOrders('pending')">En attente</button>
+                <button class="btn btn-outline-primary filter-btn" onclick="filterOrders('confirmed')">Confirmées</button>
+                <button class="btn btn-outline-primary filter-btn" onclick="filterOrders('preparing')">En préparation</button>
+                <button class="btn btn-outline-primary filter-btn" onclick="filterOrders('ready')">Prêtes</button>
+                <button class="btn btn-outline-primary filter-btn" onclick="filterOrders('delivered')">Livré</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Liste des commandes -->
+    <div class="row">
+        <div class="col-12">
+            <div class="section-card">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="fas fa-list me-2"></i>Liste des commandes</h5>
+                </div>
+                <div class="card-body">
+                    <div id="ordersList">
+                        <div class="text-center py-5">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Chargement...</span>
+                            </div>
+                            <p class="text-muted mt-3">Chargement des commandes...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentFilter = 'all';
+    let allOrders = [];
+    
+    function getToken() {
+        return localStorage.getItem('access_token');
+    }
+    
+    function loadOrders() {
+        const token = getToken();
+        if (!token) {
+            window.location.href = '/login/';
+            return;
+        }
+        
+        fetch('/api/orders/', {
+            headers: { 'Authorization': `Bearer ${token}` }
+        })
+        .then(response => {
+            if (response.status === 401) {
+                window.location.href = '/login/';
+                return;
+            }
+            return response.json();
+        })
+        .then(data => {
+            const ordersList = document.getElementById('ordersList');
+            allOrders = Array.isArray(data) ? data : (data.results || []);
+            
+            updateStats();
+            renderOrders();
+        })
+        .catch(error => {
+            console.error('Erreur lors du chargement des commandes:', error);
+            document.getElementById('ordersList').innerHTML = '<div class="text-center py-5 text-muted">Erreur lors du chargement</div>';
+        });
+    }
+    
+    function updateStats() {
+        document.getElementById('totalOrders').innerText = allOrders.length;
+        document.getElementById('pendingOrders').innerText = allOrders.filter(o => o.status === 'pending').length;
+        document.getElementById('confirmedOrders').innerText = allOrders.filter(o => o.status === 'confirmed').length;
+        document.getElementById('preparingOrders').innerText = allOrders.filter(o => o.status === 'preparing').length;
+        document.getElementById('readyOrders').innerText = allOrders.filter(o => o.status === 'ready').length;
+        document.getElementById('deliveredOrders').innerText = allOrders.filter(o => o.status === 'delivered').length;
+    }
+    
+    function filterOrders(status) {
+        currentFilter = status;
+        
+        // Update active button
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+        
+        renderOrders();
+    }
+    
+    function renderOrders() {
+        const ordersList = document.getElementById('ordersList');
+        let filteredOrders = currentFilter === 'all' ? allOrders : allOrders.filter(o => o.status === currentFilter);
+        
+        if (filteredOrders.length === 0) {
+            ordersList.innerHTML = '<div class="text-center py-5 text-muted">Aucune commande</div>';
+            return;
+        }
+        
+        ordersList.innerHTML = '';
+        filteredOrders.forEach(order => {
+            const statusClass = order.status;
+            const statusTexts = {
+                'pending': 'En attente',
+                'confirmed': 'Confirmée',
+                'preparing': 'En préparation',
+                'ready': 'Prête',
+                'delivered': 'Livré',
+                'cancelled': 'Annulée'
+            };
+            const statusBadges = {
+                'pending': 'bg-warning',
+                'confirmed': 'bg-success',
+                'preparing': 'bg-primary',
+                'ready': 'bg-info',
+                'delivered': 'bg-secondary',
+                'cancelled': 'bg-danger'
+            };
+            const statusIcons = {
+                'pending': 'clock',
+                'confirmed': 'check-circle',
+                'preparing': 'fire',
+                'ready': 'utensils',
+                'delivered': 'truck',
+                'cancelled': 'times'
+            };
+            
+            const createdAt = new Date(order.created_at);
+            const formattedDate = createdAt.toLocaleDateString('fr-FR') + ' ' + createdAt.toLocaleTimeString('fr-FR', {hour: '2-digit', minute:'2-digit'});
+            
+            let actionsHtml = '';
+            if (order.status === 'pending') {
+                actionsHtml = `
+                    <button class="btn btn-sm btn-success me-1" onclick="confirmOrder(${order.id})" title="Confirmer">
+                        <i class="fas fa-check"></i>
+                    </button>
+                    <button class="btn btn-sm btn-danger" onclick="cancelOrder(${order.id})" title="Annuler">
+                        <i class="fas fa-times"></i>
+                    </button>
+                `;
+            } else if (order.status === 'confirmed') {
+                actionsHtml = `
+                    <button class="btn btn-sm btn-primary me-1" onclick="startPreparing(${order.id})" title="Commencer préparation">
+                        <i class="fas fa-fire"></i>
+                    </button>
+                `;
+            } else if (order.status === 'preparing') {
+                actionsHtml = `
+                    <button class="btn btn-sm btn-info me-1" onclick="markAsReady(${order.id})" title="Marquer comme prêt">
+                        <i class="fas fa-utensils"></i>
+                    </button>
+                `;
+            } else if (order.status === 'ready') {
+                actionsHtml = `
+                    <button class="btn btn-sm btn-secondary me-1" onclick="markAsDelivered(${order.id})" title="Marquer comme livré">
+                        <i class="fas fa-truck"></i>
+                    </button>
+                `;
+            }
+            
+            ordersList.innerHTML += `
+                <div class="order-item">
+                    <div class="d-flex align-items-center">
+                        <div class="order-icon ${statusClass} me-3">
+                            <i class="fas fa-${statusIcons[order.status]}"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1 fw-bold">${order.menu_title || 'Hors menu'}</h6>
+                            <p class="text-muted small mb-1">
+                                <i class="fas fa-user me-1"></i>${order.employee_name || 'Anonyme'}
+                                <span class="mx-2">•</span>
+                                <i class="fas fa-calendar me-1"></i>${formattedDate}
+                            </p>
+                            <p class="text-muted small mb-0">
+                                <span class="badge bg-primary">${order.quantity}x</span>
+                                ${order.order_type_display ? `<span class="badge bg-secondary ms-1">${order.order_type_display}</span>` : ''}
+                            </p>
+                        </div>
+                        <div class="text-end">
+                            <span class="badge ${statusBadges[order.status]} mb-2">${statusTexts[order.status]}</span>
+                            <div>
+                                ${actionsHtml}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+    }
+    
+    function confirmOrder(id) {
+        const token = getToken();
+        fetch(`/api/orders/${id}/confirm/`, {
+            method: 'POST',
+            headers: { 'Authorization': `Bearer ${token}` }
+        })
+        .then(() => loadOrders())
+        .catch(error => console.error('Erreur:', error));
+    }
+    
+    function cancelOrder(id) {
+        if (!confirm('Voulez-vous vraiment annuler cette commande ?')) return;
+        
+        const token = getToken();
+        fetch(`/api/orders/${id}/cancel/`, {
+            method: 'POST',
+            headers: { 'Authorization': `Bearer ${token}` }
+        })
+        .then(() => loadOrders())
+        .catch(error => console.error('Erreur:', error));
+    }
+    
+    function startPreparing(id) {
+        const token = getToken();
+        fetch(`/api/orders/${id}/`, {
+            method: 'PATCH',
+            headers: { 
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ status: 'preparing' })
+        })
+        .then(() => loadOrders())
+        .catch(error => console.error('Erreur:', error));
+    }
+    
+    function markAsReady(id) {
+        const token = getToken();
+        fetch(`/api/orders/${id}/`, {
+            method: 'PATCH',
+            headers: { 
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ status: 'ready' })
+        })
+        .then(() => loadOrders())
+        .catch(error => console.error('Erreur:', error));
+    }
+    
+    function markAsDelivered(id) {
+        const token = getToken();
+        fetch(`/api/orders/${id}/deliver/`, {
+            method: 'POST',
+            headers: { 'Authorization': `Bearer ${token}` }
+        })
+        .then(() => loadOrders())
+        .catch(error => console.error('Erreur:', error));
+    }
+    
+    loadOrders();
+</script>
+{% endblock %}

@@ -2,6 +2,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+from rest_framework import viewsets, status
 from django.db.models import Sum, Count, Q
 from django.utils import timezone
 from datetime import timedelta
@@ -12,6 +13,58 @@ from apps.providers.models import Provider
 from apps.tickets.models import Ticket, TicketLot
 from .exports import export_to_excel, export_to_pdf
 from .serializers import MonthlyReportSerializer, ProviderReportSerializer, EmployeeReportSerializer
+
+
+class FinanceStatsViewSet(viewsets.ViewSet):
+    """ViewSet pour les stats de la finance"""
+    permission_classes = [IsAuthenticated]
+    
+    def list(self, request):
+        user = request.user
+        if user.role not in ['finance', 'admin']:
+            return Response({'error': 'Accès réservé à la finance'}, status=status.HTTP_403_FORBIDDEN)
+        
+        # Stats du mois en cours
+        now = timezone.now()
+        month_start = now.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
+        
+        # Tickets vendus ce mois
+        tickets_sold = TicketLot.objects.filter(
+            created_at__gte=month_start
+        ).aggregate(total=Sum('quantity'))['total'] or 0
+        
+        # Chiffre d'affaires ce mois (1000 FCFA par ticket)
+        total_revenue = tickets_sold * 1000
+        
+        # À payer aux prestataires (60% du CA)
+        to_pay = total_revenue * 0.6
+        
+        # Employés actifs
+        active_employees = Employee.objects.filter(user__is_active=True).count()
+        
+        # Données mensuelles pour le graphique
+        monthly_data = []
+        for i in range(12):
+            month_start_i = now.replace(day=1, month=(now.month - i - 1) % 12 + 1 if now.month - i - 1 > 0 else 12)
+            if now.month - i - 1 <= 0:
+                month_start_i = month_start_i.replace(year=now.year - 1)
+            month_end_i = (month_start_i + timedelta(days=32)).replace(day=1) - timedelta(days=1)
+            
+            month_tickets = TicketLot.objects.filter(
+                created_at__gte=month_start_i,
+                created_at__lte=month_end_i
+            ).aggregate(total=Sum('quantity'))['total'] or 0
+            monthly_data.append(month_tickets)
+        
+        monthly_data.reverse()
+        
+        return Response({
+            'tickets_sold': tickets_sold,
+            'total_revenue': total_revenue,
+            'to_pay': to_pay,
+            'active_employees': active_employees,
+            'monthly_data': monthly_data,
+        })
 
 
 class MonthlyReportView(APIView):

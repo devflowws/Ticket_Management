@@ -1,0 +1,427 @@
+<!-- templates/dashboard/provider_menus.html -->
+{% extends 'base/base.html' %}
+{% block title %}Mes Menus{% endblock %}
+
+{% block extra_css %}
+<style>
+    .menu-card-img {
+        background-color: #f8f9fa;
+        min-height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .menu-card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid px-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="h2 mb-2">Mes menus</h1>
+            <p class="text-muted mb-0">Gérez tous vos menus</p>
+        </div>
+        <button class="btn btn-primary rounded-pill px-4" onclick="openAddMenuModal()">
+            <i class="fas fa-plus me-2"></i>Ajouter un plat
+        </button>
+    </div>
+    
+    <!-- Filtres -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card-body">
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <label class="form-label fw-bold">Type de plat</label>
+                    <select id="filterType" class="form-select" onchange="loadMenus()">
+                        <option value="">Tous</option>
+                        <option value="main">Plat principal</option>
+                        <option value="starter">Entrée</option>
+                        <option value="dessert">Dessert</option>
+                        <option value="drink">Boisson</option>
+                        <option value="side">Accompagnement</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label fw-bold">Disponibilité</label>
+                    <select id="filterAvailable" class="form-select" onchange="loadMenus()">
+                        <option value="">Tous</option>
+                        <option value="true">Disponible</option>
+                        <option value="false">Non disponible</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label fw-bold">Menu du jour</label>
+                    <select id="filterDaily" class="form-select" onchange="loadMenus()">
+                        <option value="">Tous</option>
+                        <option value="true">Menu du jour</option>
+                        <option value="false">Hors menu</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label fw-bold">Date</label>
+                    <input type="date" id="filterDate" class="form-control" onchange="loadMenus()">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Liste des menus -->
+    <div class="card border-0 shadow-sm rounded-4">
+        <div class="card-body">
+            <div class="row" id="menusList">
+                <div class="col-12 text-center">Chargement...</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL AJOUTER/MODIFIER MENU -->
+<div class="modal fade" id="menuModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="menuModalTitle">Ajouter un plat</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="menuId">
+                
+                <div class="mb-3">
+                    <label class="form-label">Nom du plat <span class="text-danger">*</span></label>
+                    <input type="text" id="menuName" class="form-control" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Type de plat <span class="text-danger">*</span></label>
+                    <select id="menuType" class="form-control" required>
+                        <option value="main">Plat principal</option>
+                        <option value="starter">Entrée</option>
+                        <option value="dessert">Dessert</option>
+                        <option value="drink">Boisson</option>
+                        <option value="side">Accompagnement</option>
+                    </select>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Prix (tickets) <span class="text-danger">*</span></label>
+                    <input type="number" id="menuPriceTickets" class="form-control" value="1" min="1" max="50" required>
+                    <small class="text-muted">Maximum 50 tickets</small>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Description</label>
+                    <textarea id="menuDescription" class="form-control" rows="3"></textarea>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Photo (optionnel)</label>
+                    <input type="file" id="menuPhoto" class="form-control" accept="image/*">
+                </div>
+                
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <div class="form-check">
+                            <input type="checkbox" id="menuIsDaily" class="form-check-input">
+                            <label class="form-check-label">Menu du jour</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-check">
+                            <input type="checkbox" id="menuIsAvailable" class="form-check-input" checked>
+                            <label class="form-check-label">Disponible</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-primary" onclick="saveMenu()">Enregistrer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL DE CONFIRMATION -->
+<div class="modal fade" id="confirmationModal" tabindex="-1" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content border-0 shadow-lg">
+            <div class="modal-body text-center p-4">
+                <div class="mb-3">
+                    <div class="rounded-circle bg-success d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                        <i class="fas fa-check text-white" style="font-size: 40px;"></i>
+                    </div>
+                </div>
+                <h5 class="mb-2" id="confirmationTitle">Succès !</h5>
+                <p class="text-muted mb-4" id="confirmationMessage">Menu enregistré avec succès</p>
+                <button type="button" class="btn btn-success rounded-pill px-4" data-bs-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL D'ERREUR -->
+<div class="modal fade" id="errorModal" tabindex="-1" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content border-0 shadow-lg">
+            <div class="modal-body text-center p-4">
+                <div class="mb-3">
+                    <div class="rounded-circle bg-danger d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                        <i class="fas fa-times text-white" style="font-size: 40px;"></i>
+                    </div>
+                </div>
+                <h5 class="mb-2">Erreur !</h5>
+                <p class="text-muted mb-4" id="errorMessage">Une erreur s'est produite</p>
+                <button type="button" class="btn btn-danger rounded-pill px-4" data-bs-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL DE CONFIRMATION SUPPRESSION -->
+<div class="modal fade" id="deleteConfirmModal" tabindex="-1" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content border-0 shadow-lg">
+            <div class="modal-body text-center p-4">
+                <div class="mb-3">
+                    <div class="rounded-circle bg-warning d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                        <i class="fas fa-exclamation-triangle text-white" style="font-size: 40px;"></i>
+                    </div>
+                </div>
+                <h5 class="mb-2">Confirmer la suppression</h5>
+                <p class="text-muted mb-4">Voulez-vous vraiment supprimer ce menu ?</p>
+                <input type="hidden" id="deleteMenuId">
+                <div class="d-flex gap-2 justify-content-center">
+                    <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-danger rounded-pill px-4" onclick="confirmDelete()">Supprimer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Récupérer le token
+    function getToken() {
+        return localStorage.getItem('access_token');
+    }
+    
+    // Charger la liste des menus avec filtres
+    function loadMenus() {
+        const token = getToken();
+        if (!token) {
+            window.location.href = '/login/';
+            return;
+        }
+        
+        const filterType = document.getElementById('filterType').value;
+        const filterAvailable = document.getElementById('filterAvailable').value;
+        const filterDaily = document.getElementById('filterDaily').value;
+        const filterDate = document.getElementById('filterDate').value;
+        
+        let url = '/api/menus/daily/?';
+        if (filterType) url += `meal_type=${filterType}&`;
+        if (filterAvailable) url += `is_available=${filterAvailable}&`;
+        if (filterDaily) url += `is_daily=${filterDaily}&`;
+        if (filterDate) url += `date=${filterDate}&`;
+        
+        fetch(url, {
+            headers: { 'Authorization': `Bearer ${token}` }
+        })
+        .then(response => {
+            if (response.status === 401) {
+                window.location.href = '/login/';
+                return;
+            }
+            return response.json();
+        })
+        .then(data => {
+            const menuList = document.getElementById('menusList');
+            const menus = Array.isArray(data) ? data : (data.results || []);
+            
+            if (!menus || menus.length === 0) {
+                menuList.innerHTML = '<div class="col-12 text-center text-muted py-5">Aucun menu trouvé</div>';
+                return;
+            }
+            
+            menuList.innerHTML = '';
+            const typeLabels = { main: 'Plat principal', starter: 'Entrée', dessert: 'Dessert', drink: 'Boisson', side: 'Accompagnement' };
+            
+            menus.forEach(menu => {
+                const imageUrl = menu.main_photo_url || 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"%3E%3Crect fill="%23f8f9fa" width="200" height="200"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="14" fill="%236c757d"%3EPas d%27image%3C/text%3E%3C/svg%3E';
+                menuList.innerHTML += `
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card border-0 shadow-sm rounded-4 h-100">
+                            <div class="position-relative menu-card-img rounded-top-4">
+                                <img src="${imageUrl}" class="card-img-top rounded-top-4" style="height: 200px; object-fit: cover;" alt="${menu.title}">
+                                <div class="position-absolute top-0 end-0 m-3">
+                                    ${menu.is_available ? '<span class="badge bg-success rounded-pill">Disponible</span>' : '<span class="badge bg-danger rounded-pill">Non disponible</span>'}
+                                </div>
+                                ${menu.is_daily ? '<div class="position-absolute top-0 start-0 m-3"><span class="badge bg-warning rounded-pill">Menu du jour</span></div>' : ''}
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">${menu.title}</h5>
+                                <p class="text-muted small mb-2">${typeLabels[menu.meal_type] || menu.meal_type}</p>
+                                ${menu.description ? `<p class="card-text text-muted small">${menu.description}</p>` : ''}
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="badge bg-primary rounded-pill fs-6">${menu.price_tickets} ticket(s)</span>
+                                    <div>
+                                        <button class="btn btn-sm btn-outline-primary me-1" onclick="editMenu(${menu.id})">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger" onclick="showDeleteModal(${menu.id})">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        })
+        .catch(error => {
+            console.error('Erreur lors du chargement des menus:', error);
+            document.getElementById('errorMessage').innerText = 'Erreur lors du chargement des menus: ' + error.message;
+            new bootstrap.Modal(document.getElementById('errorModal')).show();
+        });
+    }
+    
+    // Afficher le modal de confirmation de suppression
+    function showDeleteModal(id) {
+        document.getElementById('deleteMenuId').value = id;
+        new bootstrap.Modal(document.getElementById('deleteConfirmModal')).show();
+    }
+    
+    // Confirmer la suppression
+    function confirmDelete() {
+        const id = document.getElementById('deleteMenuId').value;
+        const token = getToken();
+        
+        fetch(`/api/menus/daily/${id}/`, {
+            method: 'DELETE',
+            headers: { 'Authorization': `Bearer ${token}` }
+        })
+        .then(() => {
+            bootstrap.Modal.getInstance(document.getElementById('deleteConfirmModal')).hide();
+            loadMenus();
+            document.getElementById('confirmationMessage').innerText = 'Menu supprimé avec succès';
+            new bootstrap.Modal(document.getElementById('confirmationModal')).show();
+        })
+        .catch(error => {
+            bootstrap.Modal.getInstance(document.getElementById('deleteConfirmModal')).hide();
+            document.getElementById('errorMessage').innerText = 'Erreur lors de la suppression';
+            new bootstrap.Modal(document.getElementById('errorModal')).show();
+        });
+    }
+    
+    // Ouvrir la modale d'ajout
+    function openAddMenuModal() {
+        document.getElementById('menuModalTitle').innerText = 'Ajouter un plat';
+        document.getElementById('menuId').value = '';
+        document.getElementById('menuName').value = '';
+        document.getElementById('menuType').value = 'main';
+        document.getElementById('menuPriceTickets').value = '1';
+        document.getElementById('menuDescription').value = '';
+        document.getElementById('menuPhoto').value = '';
+        document.getElementById('menuIsDaily').checked = false;
+        document.getElementById('menuIsAvailable').checked = true;
+        
+        new bootstrap.Modal(document.getElementById('menuModal')).show();
+    }
+    
+    // Modifier un menu
+    function editMenu(id) {
+        const token = getToken();
+        fetch(`/api/menus/daily/${id}/`, {
+            headers: { 'Authorization': `Bearer ${token}` }
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('menuModalTitle').innerText = 'Modifier le plat';
+            document.getElementById('menuId').value = data.id;
+            document.getElementById('menuName').value = data.title;
+            document.getElementById('menuType').value = data.meal_type || 'main';
+            document.getElementById('menuPriceTickets').value = data.price_tickets;
+            document.getElementById('menuDescription').value = data.description || '';
+            document.getElementById('menuIsDaily').checked = data.is_daily || false;
+            document.getElementById('menuIsAvailable').checked = data.is_available;
+            document.getElementById('menuPhoto').value = '';
+            
+            new bootstrap.Modal(document.getElementById('menuModal')).show();
+        })
+        .catch(error => {
+            document.getElementById('errorMessage').innerText = 'Erreur lors du chargement du menu';
+            new bootstrap.Modal(document.getElementById('errorModal')).show();
+        });
+    }
+    
+    // Sauvegarder un menu
+    function saveMenu() {
+        const id = document.getElementById('menuId').value;
+        const priceTickets = parseInt(document.getElementById('menuPriceTickets').value);
+        
+        if (priceTickets > 50) {
+            document.getElementById('errorMessage').innerText = 'Le prix en tickets ne peut pas dépasser 50';
+            new bootstrap.Modal(document.getElementById('errorModal')).show();
+            return;
+        }
+        
+        const formData = new FormData();
+        formData.append('title', document.getElementById('menuName').value);
+        formData.append('meal_type', document.getElementById('menuType').value);
+        formData.append('price_tickets', priceTickets);
+        formData.append('description', document.getElementById('menuDescription').value);
+        formData.append('is_daily', document.getElementById('menuIsDaily').checked);
+        formData.append('is_available', document.getElementById('menuIsAvailable').checked);
+        formData.append('date', new Date().toISOString().split('T')[0]);
+        
+        const photo = document.getElementById('menuPhoto').files[0];
+        if (photo) {
+            formData.append('main_photo', photo);
+        }
+        
+        const token = getToken();
+        const url = id ? `/api/menus/daily/${id}/` : '/api/menus/daily/';
+        const method = id ? 'PUT' : 'POST';
+        
+        fetch(url, {
+            method: method,
+            body: formData,
+            headers: { 'Authorization': `Bearer ${token}` }
+        })
+        .then(response => {
+            if (response.status === 401) {
+                document.getElementById('errorMessage').innerText = 'Session expirée';
+                new bootstrap.Modal(document.getElementById('errorModal')).show();
+                window.location.href = '/login/';
+                return;
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.id || data.title) {
+                bootstrap.Modal.getInstance(document.getElementById('menuModal')).hide();
+                loadMenus();
+                document.getElementById('confirmationMessage').innerText = 'Menu enregistré avec succès';
+                new bootstrap.Modal(document.getElementById('confirmationModal')).show();
+            } else {
+                document.getElementById('errorMessage').innerText = 'Erreur: ' + JSON.stringify(data);
+                new bootstrap.Modal(document.getElementById('errorModal')).show();
+            }
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
+            document.getElementById('errorMessage').innerText = 'Erreur lors de l\'enregistrement';
+            new bootstrap.Modal(document.getElementById('errorModal')).show();
+        });
+    }
+    
+    // Chargement initial
+    loadMenus();
+</script>
+{% endblock %}

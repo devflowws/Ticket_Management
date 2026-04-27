@@ -16,6 +16,70 @@ from .serializers import (
 from apps.accounts.permissions import IsAdmin, IsEmployee
 
 
+class EmployeeTicketStatsViewSet(viewsets.ViewSet):
+    """ViewSet pour les statistiques des tickets de l'employé"""
+    permission_classes = [IsAuthenticated]
+    
+    def list(self, request):
+        user = request.user
+        if user.role != 'employee':
+            return Response({'error': 'Accès réservé aux employés'}, status=status.HTTP_403_FORBIDDEN)
+        
+        try:
+            employee = user.employee_profile
+        except:
+            return Response({'error': 'Profil employé introuvable'}, status=status.HTTP_400_BAD_REQUEST)
+        
+        # Stats des tickets
+        active_tickets = Ticket.objects.filter(
+            lot__employee=employee,
+            status='active'
+        ).count()
+        
+        used_tickets = Ticket.objects.filter(
+            lot__employee=employee,
+            status='used'
+        ).count()
+        
+        expired_tickets = Ticket.objects.filter(
+            lot__employee=employee,
+            status='expired'
+        ).count()
+        
+        # Lots
+        total_lots = TicketLot.objects.filter(employee=employee).count()
+        
+        # Balance
+        balance = EmployeeBalance.objects.filter(employee=employee).first()
+        active_balance = balance.active_tickets if balance else 0
+        
+        # Valeur totale
+        ticket_value = 1000
+        total_value = (active_tickets + used_tickets + expired_tickets) * ticket_value
+        
+        # Consommations ce mois
+        from apps.consumption_requests.models import ConsumptionRequest
+        month_start = timezone.now().replace(day=1, hour=0, minute=0, second=0, microsecond=0)
+        monthly_consumptions = ConsumptionRequest.objects.filter(
+            employee=employee,
+            status='confirmed',
+            created_at__gte=month_start
+        ).aggregate(total=Sum('nb_tickets'))['total'] or 0
+        
+        return Response({
+            'active_tickets': active_tickets,
+            'used_tickets': used_tickets,
+            'expired_tickets': expired_tickets,
+            'total_lots': total_lots,
+            'active_balance': active_balance,
+            'total_value': total_value,
+            'ticket_value': ticket_value,
+            'monthly_consumptions': monthly_consumptions,
+            'remaining_quota': employee.remaining_quota,
+            'monthly_quota': employee.monthly_ticket_quota,
+        })
+
+
 class TicketLotViewSet(viewsets.ModelViewSet):
     """ViewSet pour la gestion des lots de tickets"""
     queryset = TicketLot.objects.select_related('employee__user').all()
