@@ -184,13 +184,17 @@ class EmployeeBalanceView(generics.RetrieveAPIView):
         if self.request.user.is_authenticated and self.request.user.role == 'employee':
             try:
                 employee = self.request.user.employee_profile
-                if employee.id != employee_id:
+                if employee.id != int(employee_id):  
                     raise PermissionError
-            except:
+            except PermissionError:  
+                raise PermissionError
+            except Exception:
                 raise PermissionError
         
-        balance, created = EmployeeBalance.objects.get_or_create(employee_id=employee_id)
-        balance.update_balance()  # Rafraîchit le solde
+        balance, created = EmployeeBalance.objects.get_or_create(
+            employee_id=employee_id
+        )
+        balance.update_balance()
         return balance
 
 

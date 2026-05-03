@@ -9001,3 +9001,1272 @@ INFO 2026-04-27 10:02:13,790 middleware 4792 14872 304 GET /media/menus/1/1_None
 INFO 2026-04-27 10:02:13,793 log 4792 14872 "GET /media/menus/1/1_None_1777279747.png HTTP/1.1" 304 0
 INFO 2026-04-27 10:02:14,318 middleware 4792 14872 200 GET /api/auth/me/ - 141.12ms
 INFO 2026-04-27 10:02:14,320 log 4792 14872 "GET /api/auth/me/ HTTP/1.1" 200 328
+INFO 2026-04-27 18:02:38,057 autoreload 5920 25360 Watching for file changes with StatReloader
+INFO 2026-04-27 18:04:08,049 autoreload 14888 24760 Watching for file changes with StatReloader
+INFO 2026-04-27 18:10:29,554 autoreload 27232 6856 Watching for file changes with StatReloader
+INFO 2026-04-28 10:27:20,531 autoreload 14284 30644 Watching for file changes with StatReloader
+INFO 2026-04-28 10:28:56,314 autoreload 28860 7620 Watching for file changes with StatReloader
+INFO 2026-04-28 10:30:42,621 autoreload 23636 28568 Watching for file changes with StatReloader
+INFO 2026-04-28 10:35:13,965 middleware 23636 11016 404 GET / admin - 4.35ms
+WARNING 2026-04-28 10:35:13,975 log 23636 11016 Not Found: / admin
+WARNING 2026-04-28 10:35:13,976 basehttp 23636 11016 "GET /%20admin HTTP/1.1" 404 11307
+INFO 2026-04-28 10:35:14,123 middleware 23636 11016 404 GET /favicon.ico - 7.44ms
+WARNING 2026-04-28 10:35:14,125 log 23636 11016 Not Found: /favicon.ico
+WARNING 2026-04-28 10:35:14,126 basehttp 23636 11016 "GET /favicon.ico HTTP/1.1" 404 11320
+INFO 2026-04-28 10:35:33,081 middleware 23636 11016 404 GET /admin - 8.40ms
+INFO 2026-04-28 10:35:33,083 basehttp 23636 11016 "GET /admin HTTP/1.1" 301 0
+INFO 2026-04-28 10:35:33,175 middleware 23636 28612 302 GET /admin/ - 84.69ms
+INFO 2026-04-28 10:35:33,177 basehttp 23636 28612 "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-04-28 10:35:33,288 middleware 23636 28612 200 GET /admin/login/ - 102.96ms
+INFO 2026-04-28 10:35:33,289 basehttp 23636 28612 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4245
+INFO 2026-04-28 10:35:33,345 basehttp 23636 28612 "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2026-04-28 10:35:33,347 basehttp 23636 9540 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2026-04-28 10:35:33,349 basehttp 23636 21892 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2026-04-28 10:35:33,350 basehttp 23636 24932 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2026-04-28 10:35:33,352 basehttp 23636 22532 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2026-04-28 10:35:33,352 basehttp 23636 18488 "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2026-04-28 10:35:33,359 basehttp 23636 18488 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2026-04-28 11:13:03,119 autoreload 24380 32704 Watching for file changes with StatReloader
+INFO 2026-04-28 11:13:11,697 middleware 24380 23404 200 GET /admin/login/ - 241.59ms
+INFO 2026-04-28 11:13:11,700 basehttp 24380 23404 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4245
+INFO 2026-04-28 11:13:29,440 middleware 24380 23404 302 POST /admin/login/ - 1671.41ms
+INFO 2026-04-28 11:13:29,455 basehttp 24380 23404 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2026-04-28 11:13:29,520 middleware 24380 23404 200 GET /admin/ - 53.70ms
+INFO 2026-04-28 11:13:29,524 basehttp 24380 23404 "GET /admin/ HTTP/1.1" 200 13423
+INFO 2026-04-28 11:13:29,628 basehttp 24380 23404 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2026-04-28 11:13:29,629 basehttp 24380 31316 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2026-04-28 11:13:29,630 basehttp 24380 27344 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2026-04-28 11:13:34,202 middleware 24380 31316 200 GET /admin/companies/company/add/ - 66.55ms
+INFO 2026-04-28 11:13:34,202 basehttp 24380 31316 "GET /admin/companies/company/add/ HTTP/1.1" 200 21624
+INFO 2026-04-28 11:13:34,312 basehttp 24380 31316 "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2026-04-28 11:13:34,315 basehttp 24380 10472 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2026-04-28 11:13:34,315 basehttp 24380 24064 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2026-04-28 11:13:34,324 basehttp 24380 3088 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2026-04-28 11:13:34,329 basehttp 24380 31316 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2026-04-28 11:13:34,331 middleware 24380 27344 200 GET /admin/jsi18n/ - 30.59ms
+INFO 2026-04-28 11:13:34,333 basehttp 24380 10472 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2026-04-28 11:13:34,338 basehttp 24380 24064 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2026-04-28 11:13:34,340 basehttp 24380 3088 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11973
+INFO 2026-04-28 11:13:34,340 basehttp 24380 27344 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2026-04-28 11:13:34,345 basehttp 24380 10472 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2026-04-28 11:13:34,351 basehttp 24380 23404 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2026-04-28 11:13:34,358 basehttp 24380 31316 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2026-04-28 11:13:34,378 basehttp 24380 31316 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2026-04-28 11:16:11,566 middleware 24380 31316 302 POST /admin/companies/company/add/ - 102.75ms
+INFO 2026-04-28 11:16:11,575 basehttp 24380 31316 "POST /admin/companies/company/add/ HTTP/1.1" 302 0
+INFO 2026-04-28 11:16:11,685 middleware 24380 31316 200 GET /admin/companies/company/ - 97.19ms
+INFO 2026-04-28 11:16:11,688 basehttp 24380 31316 "GET /admin/companies/company/ HTTP/1.1" 200 18617
+INFO 2026-04-28 11:16:11,769 basehttp 24380 31316 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2026-04-28 11:16:11,779 middleware 24380 23404 200 GET /admin/jsi18n/ - 11.06ms
+INFO 2026-04-28 11:16:11,782 basehttp 24380 31316 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2026-04-28 11:16:11,785 basehttp 24380 23404 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2026-04-28 11:16:11,786 basehttp 24380 10472 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2026-04-28 11:16:11,808 basehttp 24380 10472 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2026-04-28 11:16:11,829 basehttp 24380 10472 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2026-04-28 11:16:11,837 basehttp 24380 10472 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2026-04-28 11:16:53,862 autoreload 1740 15092 Watching for file changes with StatReloader
+INFO 2026-04-28 11:27:10,404 middleware 1740 10948 200 GET /api/companies/ - 154.63ms
+INFO 2026-04-28 11:27:10,414 basehttp 1740 10948 "GET /api/companies/ HTTP/1.1" 200 197
+INFO 2026-04-28 11:27:10,700 middleware 1740 10948 404 GET /favicon.ico - 54.09ms
+WARNING 2026-04-28 11:27:10,707 log 1740 10948 Not Found: /favicon.ico
+WARNING 2026-04-28 11:27:10,709 basehttp 1740 10948 "GET /favicon.ico HTTP/1.1" 404 11320
+INFO 2026-05-01 00:46:01,280 autoreload 27472 11768 Watching for file changes with StatReloader
+INFO 2026-05-02 14:17:32,884 autoreload 28104 1484 Watching for file changes with StatReloader
+INFO 2026-05-02 14:22:27,776 middleware 28104 10708 200 GET /api/companies/ - 17.64ms
+INFO 2026-05-02 14:22:27,780 basehttp 28104 10708 "GET /api/companies/ HTTP/1.1" 200 197
+INFO 2026-05-02 14:24:30,673 middleware 28104 5544 200 POST /api/auth/login/ - 4250.16ms
+INFO 2026-05-02 14:24:30,673 basehttp 28104 5544 "POST /api/auth/login/ HTTP/1.1" 200 640
+INFO 2026-05-02 14:24:33,117 middleware 28104 29272 404 GET /api/menus/daily/ - 50.39ms
+INFO 2026-05-02 14:24:33,120 middleware 28104 25220 200 GET /api/orders/my_orders/ - 57.22ms
+INFO 2026-05-02 14:24:33,123 basehttp 28104 25220 "GET /api/orders/my_orders/ HTTP/1.1" 200 2
+INFO 2026-05-02 14:24:33,123 middleware 28104 7236 200 GET /api/purchases/my_requests/ - 58.21ms
+INFO 2026-05-02 14:24:33,130 middleware 28104 24444 200 GET /api/tickets/lots/ - 60.78ms
+INFO 2026-05-02 14:24:33,131 basehttp 28104 7236 "GET /api/purchases/my_requests/ HTTP/1.1" 200 2
+INFO 2026-05-02 14:24:33,134 basehttp 28104 24444 "GET /api/tickets/lots/ HTTP/1.1" 200 52
+WARNING 2026-05-02 14:24:33,141 log 28104 29272 Not Found: /api/menus/daily/
+WARNING 2026-05-02 14:24:33,144 basehttp 28104 29272 "GET /api/menus/daily/ HTTP/1.1" 404 11431
+ERROR 2026-05-02 14:24:33,214 log 28104 21436 Internal Server Error: /api/tickets/balance/12/
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 188, in get_object
+    raise PermissionError
+PermissionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 190, in get_object
+    raise PermissionError
+PermissionError
+ERROR 2026-05-02 14:24:33,218 log 28104 5544 Internal Server Error: /api/tickets/balance/12/
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 188, in get_object
+    raise PermissionError
+PermissionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 190, in get_object
+    raise PermissionError
+PermissionError
+INFO 2026-05-02 14:24:33,221 middleware 28104 21436 500 GET /api/tickets/balance/12/ - 145.15ms
+INFO 2026-05-02 14:24:33,222 middleware 28104 5544 500 GET /api/tickets/balance/12/ - 277.43ms
+ERROR 2026-05-02 14:24:33,224 basehttp 28104 21436 "GET /api/tickets/balance/12/ HTTP/1.1" 500 24742
+ERROR 2026-05-02 14:24:33,224 basehttp 28104 5544 "GET /api/tickets/balance/12/ HTTP/1.1" 500 24742
+INFO 2026-05-02 14:24:33,354 middleware 28104 7236 200 GET /api/orders/my_orders/ - 22.06ms
+INFO 2026-05-02 14:24:33,357 basehttp 28104 7236 "GET /api/orders/my_orders/ HTTP/1.1" 200 2
+INFO 2026-05-02 14:24:51,985 middleware 28104 19280 200 PATCH /api/auth/me/ - 93.49ms
+INFO 2026-05-02 14:24:51,986 basehttp 28104 19280 "PATCH /api/auth/me/ HTTP/1.1" 200 330
+INFO 2026-05-02 14:25:04,715 middleware 28104 27924 200 GET /api/companies/ - 7.99ms
+INFO 2026-05-02 14:25:04,718 basehttp 28104 27924 "GET /api/companies/ HTTP/1.1" 200 197
+INFO 2026-05-02 14:25:23,816 middleware 28104 24632 200 POST /api/auth/login/ - 799.71ms
+INFO 2026-05-02 14:25:23,817 basehttp 28104 24632 "POST /api/auth/login/ HTTP/1.1" 200 641
+ERROR 2026-05-02 14:25:24,888 log 28104 24632 Internal Server Error: /api/tickets/balance/12/
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 188, in get_object
+    raise PermissionError
+PermissionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 190, in get_object
+    raise PermissionError
+PermissionError
+INFO 2026-05-02 14:25:24,889 middleware 28104 24632 500 GET /api/tickets/balance/12/ - 31.62ms
+ERROR 2026-05-02 14:25:24,890 basehttp 28104 24632 "GET /api/tickets/balance/12/ HTTP/1.1" 500 24743
+INFO 2026-05-02 14:25:25,207 middleware 28104 6064 200 GET /api/orders/my_orders/ - 38.71ms
+INFO 2026-05-02 14:25:25,248 middleware 28104 25636 404 GET /api/menus/daily/ - 44.39ms
+INFO 2026-05-02 14:25:25,257 basehttp 28104 6064 "GET /api/orders/my_orders/ HTTP/1.1" 200 2
+WARNING 2026-05-02 14:25:25,262 log 28104 25636 Not Found: /api/menus/daily/
+INFO 2026-05-02 14:25:25,264 middleware 28104 27836 200 GET /api/purchases/my_requests/ - 81.50ms
+INFO 2026-05-02 14:25:25,298 middleware 28104 24488 200 GET /api/tickets/lots/ - 101.91ms
+INFO 2026-05-02 14:25:25,304 middleware 28104 24632 200 GET /api/orders/my_orders/ - 49.89ms
+WARNING 2026-05-02 14:25:25,306 basehttp 28104 25636 "GET /api/menus/daily/ HTTP/1.1" 404 11431
+INFO 2026-05-02 14:25:25,310 basehttp 28104 27836 "GET /api/purchases/my_requests/ HTTP/1.1" 200 2
+INFO 2026-05-02 14:25:25,316 basehttp 28104 24488 "GET /api/tickets/lots/ HTTP/1.1" 200 52
+INFO 2026-05-02 14:25:25,319 basehttp 28104 24632 "GET /api/orders/my_orders/ HTTP/1.1" 200 2
+ERROR 2026-05-02 14:25:25,375 log 28104 25004 Internal Server Error: /api/tickets/balance/12/
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 188, in get_object
+    raise PermissionError
+PermissionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 190, in get_object
+    raise PermissionError
+PermissionError
+INFO 2026-05-02 14:25:25,379 middleware 28104 25004 500 GET /api/tickets/balance/12/ - 203.46ms
+ERROR 2026-05-02 14:25:25,381 basehttp 28104 25004 "GET /api/tickets/balance/12/ HTTP/1.1" 500 24743
+INFO 2026-05-02 14:31:49,959 middleware 28104 13116 200 POST /api/auth/upload-photo/ - 91.37ms
+INFO 2026-05-02 14:31:49,961 basehttp 28104 13116 "POST /api/auth/upload-photo/ HTTP/1.1" 200 139
+INFO 2026-05-02 14:31:50,122 middleware 28104 13116 200 GET /api/auth/me/ - 10.35ms
+INFO 2026-05-02 14:31:50,124 basehttp 28104 13116 "GET /api/auth/me/ HTTP/1.1" 200 330
+INFO 2026-05-02 14:31:50,496 middleware 28104 24448 404 GET /api/media/profile_photos/2026/05/02/scaled_1000783656.jpg - 7.05ms
+WARNING 2026-05-02 14:31:50,497 log 28104 24448 Not Found: /api/media/profile_photos/2026/05/02/scaled_1000783656.jpg
+WARNING 2026-05-02 14:31:50,497 basehttp 28104 24448 "GET /api/media/profile_photos/2026/05/02/scaled_1000783656.jpg HTTP/1.1" 404 11454
+INFO 2026-05-02 15:00:04,001 autoreload 26568 29040 Watching for file changes with StatReloader
+INFO 2026-05-02 15:01:02,488 middleware 26568 26032 404 GET /api/menus/ - 35.12ms
+WARNING 2026-05-02 15:01:02,495 log 26568 26032 Not Found: /api/menus/
+WARNING 2026-05-02 15:01:02,497 basehttp 26568 26032 "GET /api/menus/ HTTP/1.1" 404 11413
+INFO 2026-05-02 15:01:02,543 middleware 26568 28920 200 GET /api/purchases/my_requests/ - 79.28ms
+INFO 2026-05-02 15:01:02,546 middleware 26568 18728 200 GET /api/tickets/lots/ - 81.29ms
+INFO 2026-05-02 15:01:02,551 middleware 26568 26512 200 GET /api/orders/my_orders/ - 106.73ms
+INFO 2026-05-02 15:01:02,556 basehttp 26568 28920 "GET /api/purchases/my_requests/ HTTP/1.1" 200 2
+INFO 2026-05-02 15:01:02,558 basehttp 26568 18728 "GET /api/tickets/lots/ HTTP/1.1" 200 52
+INFO 2026-05-02 15:01:02,559 basehttp 26568 26512 "GET /api/orders/my_orders/ HTTP/1.1" 200 2
+ERROR 2026-05-02 15:01:02,589 log 26568 26280 Internal Server Error: /api/tickets/balance/12/
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 188, in get_object
+    raise PermissionError
+PermissionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 190, in get_object
+    raise PermissionError
+PermissionError
+ERROR 2026-05-02 15:01:02,592 log 26568 20816 Internal Server Error: /api/tickets/balance/12/
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 188, in get_object
+    raise PermissionError
+PermissionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 190, in get_object
+    raise PermissionError
+PermissionError
+INFO 2026-05-02 15:01:02,595 middleware 26568 26280 500 GET /api/tickets/balance/12/ - 133.91ms
+INFO 2026-05-02 15:01:02,596 middleware 26568 20816 500 GET /api/tickets/balance/12/ - 147.37ms
+ERROR 2026-05-02 15:01:02,596 basehttp 26568 26280 "GET /api/tickets/balance/12/ HTTP/1.1" 500 24742
+ERROR 2026-05-02 15:01:02,598 basehttp 26568 20816 "GET /api/tickets/balance/12/ HTTP/1.1" 500 24742
+INFO 2026-05-02 15:01:04,036 middleware 26568 26280 200 GET /api/orders/my_orders/ - 11.96ms
+INFO 2026-05-02 15:01:04,039 basehttp 26568 26280 "GET /api/orders/my_orders/ HTTP/1.1" 200 2
+INFO 2026-05-02 15:01:10,613 middleware 26568 21132 404 GET /api/media/profile_photos/2026/05/02/scaled_1000783656.jpg - 9.01ms
+WARNING 2026-05-02 15:01:10,614 log 26568 21132 Not Found: /api/media/profile_photos/2026/05/02/scaled_1000783656.jpg
+WARNING 2026-05-02 15:01:10,615 basehttp 26568 21132 "GET /api/media/profile_photos/2026/05/02/scaled_1000783656.jpg HTTP/1.1" 404 11454
+INFO 2026-05-02 15:01:13,892 middleware 26568 21132 404 GET /api/media/profile_photos/2026/05/02/scaled_1000783656.jpg - 10.50ms
+WARNING 2026-05-02 15:01:13,893 log 26568 21132 Not Found: /api/media/profile_photos/2026/05/02/scaled_1000783656.jpg
+WARNING 2026-05-02 15:01:13,894 basehttp 26568 21132 "GET /api/media/profile_photos/2026/05/02/scaled_1000783656.jpg HTTP/1.1" 404 11454
+INFO 2026-05-02 15:01:20,473 middleware 26568 21132 404 GET /api/media/profile_photos/2026/05/02/scaled_1000783656.jpg - 5.46ms
+WARNING 2026-05-02 15:01:20,474 log 26568 21132 Not Found: /api/media/profile_photos/2026/05/02/scaled_1000783656.jpg
+WARNING 2026-05-02 15:01:20,475 basehttp 26568 21132 "GET /api/media/profile_photos/2026/05/02/scaled_1000783656.jpg HTTP/1.1" 404 11454
+INFO 2026-05-02 15:01:21,963 middleware 26568 25016 200 PATCH /api/auth/me/ - 94.08ms
+INFO 2026-05-02 15:01:21,965 basehttp 26568 25016 "PATCH /api/auth/me/ HTTP/1.1" 200 342
+INFO 2026-05-02 15:01:23,006 middleware 26568 21132 404 GET /api/media/profile_photos/2026/05/02/scaled_1000783656.jpg - 12.52ms
+WARNING 2026-05-02 15:01:23,007 log 26568 21132 Not Found: /api/media/profile_photos/2026/05/02/scaled_1000783656.jpg
+WARNING 2026-05-02 15:01:23,009 basehttp 26568 21132 "GET /api/media/profile_photos/2026/05/02/scaled_1000783656.jpg HTTP/1.1" 404 11454
+INFO 2026-05-02 15:01:30,586 middleware 26568 21132 404 GET /api/media/profile_photos/2026/05/02/scaled_1000783656.jpg - 13.76ms
+WARNING 2026-05-02 15:01:30,587 log 26568 21132 Not Found: /api/media/profile_photos/2026/05/02/scaled_1000783656.jpg
+WARNING 2026-05-02 15:01:30,588 basehttp 26568 21132 "GET /api/media/profile_photos/2026/05/02/scaled_1000783656.jpg HTTP/1.1" 404 11454
+INFO 2026-05-02 15:01:31,014 middleware 26568 20840 200 POST /api/auth/upload-photo/ - 236.44ms
+INFO 2026-05-02 15:01:31,015 basehttp 26568 20840 "POST /api/auth/upload-photo/ HTTP/1.1" 200 139
+INFO 2026-05-02 15:01:31,108 middleware 26568 20840 200 GET /api/auth/me/ - 5.07ms
+INFO 2026-05-02 15:01:31,109 basehttp 26568 20840 "GET /api/auth/me/ HTTP/1.1" 200 342
+INFO 2026-05-02 15:01:31,399 middleware 26568 21132 404 GET /api/media/profile_photos/2026/05/02/scaled_1000783656.jpg - 9.27ms
+WARNING 2026-05-02 15:01:31,401 log 26568 21132 Not Found: /api/media/profile_photos/2026/05/02/scaled_1000783656.jpg
+WARNING 2026-05-02 15:01:31,402 basehttp 26568 21132 "GET /api/media/profile_photos/2026/05/02/scaled_1000783656.jpg HTTP/1.1" 404 11454
+INFO 2026-05-02 15:01:31,493 middleware 26568 28376 200 GET /media/profile_photos/2026/05/02/scaled_1000789573.png - 1.51ms
+INFO 2026-05-02 15:01:31,494 basehttp 26568 28376 "GET /media/profile_photos/2026/05/02/scaled_1000789573.png HTTP/1.1" 200 10937
+INFO 2026-05-02 15:02:00,217 middleware 26568 27000 200 POST /api/auth/upload-photo/ - 663.54ms
+INFO 2026-05-02 15:02:00,220 basehttp 26568 27000 "POST /api/auth/upload-photo/ HTTP/1.1" 200 139
+INFO 2026-05-02 15:02:00,273 middleware 26568 27000 200 GET /api/auth/me/ - 6.97ms
+INFO 2026-05-02 15:02:00,275 basehttp 26568 27000 "GET /api/auth/me/ HTTP/1.1" 200 342
+INFO 2026-05-02 15:02:00,719 middleware 26568 18156 200 GET /media/profile_photos/2026/05/02/scaled_1000733450.jpg - 2.00ms
+INFO 2026-05-02 15:02:00,723 basehttp 26568 18156 "GET /media/profile_photos/2026/05/02/scaled_1000733450.jpg HTTP/1.1" 200 21966
+INFO 2026-05-02 15:02:22,840 middleware 26568 26208 200 PATCH /api/auth/me/ - 53.03ms
+INFO 2026-05-02 15:02:22,842 basehttp 26568 26208 "PATCH /api/auth/me/ HTTP/1.1" 200 342
+INFO 2026-05-02 15:03:43,032 middleware 26568 23256 200 PATCH /api/auth/me/ - 64.15ms
+INFO 2026-05-02 15:03:43,035 basehttp 26568 23256 "PATCH /api/auth/me/ HTTP/1.1" 200 324
+INFO 2026-05-02 15:17:40,548 middleware 26568 19980 404 GET /api/menus/ - 12.17ms
+WARNING 2026-05-02 15:17:40,549 log 26568 19980 Not Found: /api/menus/
+INFO 2026-05-02 15:17:40,558 middleware 26568 3044 200 GET /api/purchases/my_requests/ - 24.49ms
+WARNING 2026-05-02 15:17:40,558 basehttp 26568 19980 "GET /api/menus/ HTTP/1.1" 404 11413
+INFO 2026-05-02 15:17:40,561 basehttp 26568 3044 "GET /api/purchases/my_requests/ HTTP/1.1" 200 2
+INFO 2026-05-02 15:17:40,565 middleware 26568 5456 200 GET /api/orders/my_orders/ - 25.84ms
+INFO 2026-05-02 15:17:40,568 middleware 26568 24384 200 GET /api/tickets/lots/ - 36.89ms
+INFO 2026-05-02 15:17:40,570 basehttp 26568 5456 "GET /api/orders/my_orders/ HTTP/1.1" 200 2
+INFO 2026-05-02 15:17:40,570 basehttp 26568 24384 "GET /api/tickets/lots/ HTTP/1.1" 200 52
+ERROR 2026-05-02 15:17:40,581 log 26568 27988 Internal Server Error: /api/tickets/balance/12/
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 188, in get_object
+    raise PermissionError
+PermissionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 190, in get_object
+    raise PermissionError
+PermissionError
+ERROR 2026-05-02 15:17:40,592 log 26568 29328 Internal Server Error: /api/tickets/balance/12/
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 188, in get_object
+    raise PermissionError
+PermissionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 190, in get_object
+    raise PermissionError
+PermissionError
+INFO 2026-05-02 15:17:40,593 middleware 26568 27988 500 GET /api/tickets/balance/12/ - 74.48ms
+INFO 2026-05-02 15:17:40,595 middleware 26568 29328 500 GET /api/tickets/balance/12/ - 66.67ms
+ERROR 2026-05-02 15:17:40,596 basehttp 26568 27988 "GET /api/tickets/balance/12/ HTTP/1.1" 500 24739
+ERROR 2026-05-02 15:17:40,596 basehttp 26568 29328 "GET /api/tickets/balance/12/ HTTP/1.1" 500 24739
+INFO 2026-05-02 15:17:40,908 middleware 26568 29328 200 GET /api/orders/my_orders/ - 4.97ms
+INFO 2026-05-02 15:17:40,909 basehttp 26568 29328 "GET /api/orders/my_orders/ HTTP/1.1" 200 2
+INFO 2026-05-02 15:17:51,410 middleware 26568 26136 200 GET /media/profile_photos/2026/05/02/scaled_1000733450.jpg - 2.12ms
+INFO 2026-05-02 15:17:51,414 basehttp 26568 26136 "GET /media/profile_photos/2026/05/02/scaled_1000733450.jpg HTTP/1.1" 200 21966
+INFO 2026-05-02 15:18:06,575 middleware 26568 28820 200 PATCH /api/auth/me/ - 49.13ms
+INFO 2026-05-02 15:18:06,579 basehttp 26568 28820 "PATCH /api/auth/me/ HTTP/1.1" 200 342
+INFO 2026-05-02 15:18:06,794 middleware 26568 28820 200 GET /api/auth/me/ - 3.96ms
+INFO 2026-05-02 15:18:06,795 basehttp 26568 28820 "GET /api/auth/me/ HTTP/1.1" 200 342
+INFO 2026-05-02 15:18:07,482 middleware 26568 28820 200 GET /api/auth/me/ - 8.00ms
+INFO 2026-05-02 15:18:07,483 basehttp 26568 28820 "GET /api/auth/me/ HTTP/1.1" 200 342
+INFO 2026-05-02 15:18:57,177 middleware 26568 4432 200 POST /api/auth/upload-photo/ - 381.22ms
+INFO 2026-05-02 15:18:57,179 basehttp 26568 4432 "POST /api/auth/upload-photo/ HTTP/1.1" 200 139
+INFO 2026-05-02 15:18:57,436 middleware 26568 4432 200 GET /api/auth/me/ - 3.57ms
+INFO 2026-05-02 15:18:57,454 basehttp 26568 4432 "GET /api/auth/me/ HTTP/1.1" 200 342
+INFO 2026-05-02 15:18:57,600 middleware 26568 17424 200 GET /media/profile_photos/2026/05/02/scaled_1000783656.jpg - 4.07ms
+INFO 2026-05-02 15:18:57,767 basehttp 26568 17424 "GET /media/profile_photos/2026/05/02/scaled_1000783656.jpg HTTP/1.1" 200 65588
+INFO 2026-05-02 15:19:17,745 middleware 26568 200 200 POST /api/auth/upload-photo/ - 59.05ms
+INFO 2026-05-02 15:19:17,745 basehttp 26568 200 "POST /api/auth/upload-photo/ HTTP/1.1" 200 139
+INFO 2026-05-02 15:19:17,855 middleware 26568 200 200 GET /api/auth/me/ - 15.02ms
+INFO 2026-05-02 15:19:17,855 basehttp 26568 200 "GET /api/auth/me/ HTTP/1.1" 200 342
+INFO 2026-05-02 15:19:26,702 middleware 26568 26700 200 PATCH /api/auth/me/ - 32.51ms
+INFO 2026-05-02 15:19:26,702 basehttp 26568 26700 "PATCH /api/auth/me/ HTTP/1.1" 200 330
+INFO 2026-05-02 15:19:26,925 middleware 26568 26700 200 GET /api/auth/me/ - 9.40ms
+INFO 2026-05-02 15:19:26,925 basehttp 26568 26700 "GET /api/auth/me/ HTTP/1.1" 200 330
+INFO 2026-05-02 15:19:27,638 middleware 26568 26700 200 GET /api/auth/me/ - 21.02ms
+INFO 2026-05-02 15:19:27,638 basehttp 26568 26700 "GET /api/auth/me/ HTTP/1.1" 200 330
+INFO 2026-05-02 15:19:41,321 middleware 26568 28148 200 POST /api/auth/upload-photo/ - 359.80ms
+INFO 2026-05-02 15:19:41,324 basehttp 26568 28148 "POST /api/auth/upload-photo/ HTTP/1.1" 200 139
+INFO 2026-05-02 15:19:41,424 middleware 26568 28148 200 GET /api/auth/me/ - 7.62ms
+INFO 2026-05-02 15:19:41,425 basehttp 26568 28148 "GET /api/auth/me/ HTTP/1.1" 200 330
+INFO 2026-05-02 15:19:41,822 middleware 26568 21216 200 GET /media/profile_photos/2026/05/02/scaled_1000789720.png - 2.00ms
+INFO 2026-05-02 15:19:41,827 basehttp 26568 21216 "GET /media/profile_photos/2026/05/02/scaled_1000789720.png HTTP/1.1" 200 40103
+INFO 2026-05-02 15:20:11,657 middleware 26568 26644 200 GET /api/companies/ - 8.11ms
+INFO 2026-05-02 15:20:11,660 basehttp 26568 26644 "GET /api/companies/ HTTP/1.1" 200 197
+INFO 2026-05-02 15:20:36,592 middleware 26568 27632 200 POST /api/auth/login/ - 740.42ms
+INFO 2026-05-02 15:20:36,594 basehttp 26568 27632 "POST /api/auth/login/ HTTP/1.1" 200 641
+ERROR 2026-05-02 15:20:37,544 log 26568 27632 Internal Server Error: /api/tickets/balance/12/
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 188, in get_object
+    raise PermissionError
+PermissionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 190, in get_object
+    raise PermissionError
+PermissionError
+INFO 2026-05-02 15:20:37,546 middleware 26568 27632 500 GET /api/tickets/balance/12/ - 20.35ms
+ERROR 2026-05-02 15:20:37,547 basehttp 26568 27632 "GET /api/tickets/balance/12/ HTTP/1.1" 500 24742
+INFO 2026-05-02 15:20:37,641 middleware 26568 15332 200 GET /api/tickets/lots/ - 5.76ms
+INFO 2026-05-02 15:20:37,642 basehttp 26568 15332 "GET /api/tickets/lots/ HTTP/1.1" 200 52
+INFO 2026-05-02 15:20:37,670 middleware 26568 28852 404 GET /api/menus/ - 5.28ms
+WARNING 2026-05-02 15:20:37,676 log 26568 28852 Not Found: /api/menus/
+WARNING 2026-05-02 15:20:37,677 basehttp 26568 28852 "GET /api/menus/ HTTP/1.1" 404 11413
+INFO 2026-05-02 15:20:37,679 middleware 26568 4176 200 GET /api/purchases/my_requests/ - 5.04ms
+INFO 2026-05-02 15:20:37,681 middleware 26568 24608 200 GET /api/orders/my_orders/ - 9.52ms
+INFO 2026-05-02 15:20:37,681 basehttp 26568 4176 "GET /api/purchases/my_requests/ HTTP/1.1" 200 2
+INFO 2026-05-02 15:20:37,687 basehttp 26568 24608 "GET /api/orders/my_orders/ HTTP/1.1" 200 2
+ERROR 2026-05-02 15:20:37,695 log 26568 21648 Internal Server Error: /api/tickets/balance/12/
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 188, in get_object
+    raise PermissionError
+PermissionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 190, in get_object
+    raise PermissionError
+PermissionError
+INFO 2026-05-02 15:20:37,697 middleware 26568 21648 500 GET /api/tickets/balance/12/ - 26.20ms
+ERROR 2026-05-02 15:20:37,697 basehttp 26568 21648 "GET /api/tickets/balance/12/ HTTP/1.1" 500 24742
+INFO 2026-05-02 15:20:37,852 middleware 26568 4176 200 GET /api/orders/my_orders/ - 3.09ms
+INFO 2026-05-02 15:20:37,853 basehttp 26568 4176 "GET /api/orders/my_orders/ HTTP/1.1" 200 2
+INFO 2026-05-02 15:21:06,370 middleware 26568 5716 200 POST /api/auth/upload-photo/ - 43.70ms
+INFO 2026-05-02 15:21:06,372 basehttp 26568 5716 "POST /api/auth/upload-photo/ HTTP/1.1" 200 139
+INFO 2026-05-02 15:21:06,468 middleware 26568 5716 200 GET /api/auth/me/ - 5.96ms
+INFO 2026-05-02 15:21:06,469 basehttp 26568 5716 "GET /api/auth/me/ HTTP/1.1" 200 330
+INFO 2026-05-02 15:21:54,187 middleware 26568 21588 200 POST /api/auth/upload-photo/ - 44.95ms
+INFO 2026-05-02 15:21:54,188 basehttp 26568 21588 "POST /api/auth/upload-photo/ HTTP/1.1" 200 139
+INFO 2026-05-02 15:21:54,339 middleware 26568 21588 200 GET /api/auth/me/ - 8.99ms
+INFO 2026-05-02 15:21:54,341 basehttp 26568 21588 "GET /api/auth/me/ HTTP/1.1" 200 330
+INFO 2026-05-02 15:21:54,730 middleware 26568 27200 200 GET /media/profile_photos/2026/05/02/scaled_1000789720.png - 0.98ms
+INFO 2026-05-02 15:21:54,733 basehttp 26568 27200 "GET /media/profile_photos/2026/05/02/scaled_1000789720.png HTTP/1.1" 200 40103
+INFO 2026-05-02 15:25:41,815 middleware 26568 29208 404 GET /api/docs/ - 6.25ms
+WARNING 2026-05-02 15:25:41,815 log 26568 29208 Not Found: /api/docs/
+WARNING 2026-05-02 15:25:41,818 basehttp 26568 29208 "GET /api/docs/ HTTP/1.1" 404 11310
+INFO 2026-05-02 15:25:41,966 middleware 26568 29208 404 GET /favicon.ico - 9.06ms
+WARNING 2026-05-02 15:25:41,967 log 26568 29208 Not Found: /favicon.ico
+WARNING 2026-05-02 15:25:41,969 basehttp 26568 29208 "GET /favicon.ico HTTP/1.1" 404 11316
+INFO 2026-05-02 15:26:33,712 middleware 26568 6828 404 GET /api/docs - 4.53ms
+WARNING 2026-05-02 15:26:33,713 log 26568 6828 Not Found: /api/docs
+WARNING 2026-05-02 15:26:33,715 basehttp 26568 6828 "GET /api/docs HTTP/1.1" 404 11307
+INFO 2026-05-02 15:26:33,830 middleware 26568 6828 404 GET /favicon.ico - 5.00ms
+WARNING 2026-05-02 15:26:33,830 log 26568 6828 Not Found: /favicon.ico
+WARNING 2026-05-02 15:26:33,832 basehttp 26568 6828 "GET /favicon.ico HTTP/1.1" 404 11316
+INFO 2026-05-02 15:26:53,385 middleware 26568 6828 404 GET /api - 7.96ms
+WARNING 2026-05-02 15:26:53,386 log 26568 6828 Not Found: /api
+WARNING 2026-05-02 15:26:53,387 basehttp 26568 6828 "GET /api HTTP/1.1" 404 11292
+INFO 2026-05-02 15:27:54,167 middleware 26568 6828 404 GET /swgger - 9.21ms
+WARNING 2026-05-02 15:27:54,168 log 26568 6828 Not Found: /swgger
+WARNING 2026-05-02 15:27:54,171 basehttp 26568 6828 "GET /swgger HTTP/1.1" 404 11301
+INFO 2026-05-02 15:28:04,741 middleware 26568 6828 404 GET /swagger - 6.64ms
+INFO 2026-05-02 15:28:04,742 basehttp 26568 6828 "GET /swagger HTTP/1.1" 301 0
+INFO 2026-05-02 15:28:04,806 middleware 26568 10464 200 GET /swagger/ - 56.62ms
+INFO 2026-05-02 15:28:04,806 basehttp 26568 10464 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-05-02 15:28:04,853 basehttp 26568 10464 "GET /static/drf-yasg/style.css HTTP/1.1" 200 1187
+INFO 2026-05-02 15:28:04,858 basehttp 26568 19260 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-02 15:28:04,861 basehttp 26568 28016 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-02 15:28:04,872 basehttp 26568 25112 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 252451
+INFO 2026-05-02 15:28:04,873 basehttp 26568 19260 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-02 15:28:04,873 basehttp 26568 10960 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 177183
+INFO 2026-05-02 15:28:04,889 basehttp 26568 26752 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1510271
+INFO 2026-05-02 15:28:05,070 basehttp 26568 10960 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-02 15:28:06,049 middleware 26568 26752 200 GET /swagger/ - 1009.05ms
+INFO 2026-05-02 15:28:06,049 basehttp 26568 26752 "GET /swagger/?format=openapi HTTP/1.1" 200 326267
+INFO 2026-05-02 15:30:40,248 middleware 26568 28584 200 POST /api/auth/upload-photo/ - 41.07ms
+INFO 2026-05-02 15:30:40,249 basehttp 26568 28584 "POST /api/auth/upload-photo/ HTTP/1.1" 200 139
+INFO 2026-05-02 15:30:40,329 middleware 26568 28584 200 GET /api/auth/me/ - 6.21ms
+INFO 2026-05-02 15:30:40,331 basehttp 26568 28584 "GET /api/auth/me/ HTTP/1.1" 200 330
+INFO 2026-05-02 15:30:40,665 middleware 26568 8832 200 GET /media/profile_photos/2026/05/02/scaled_1000733450.jpg - 2.13ms
+INFO 2026-05-02 15:30:40,668 basehttp 26568 8832 "GET /media/profile_photos/2026/05/02/scaled_1000733450.jpg HTTP/1.1" 200 21966
+INFO 2026-05-02 15:48:02,933 middleware 26568 21556 404 GET /api/menus/ - 14.24ms
+WARNING 2026-05-02 15:48:02,946 log 26568 21556 Not Found: /api/menus/
+WARNING 2026-05-02 15:48:02,949 basehttp 26568 21556 "GET /api/menus/ HTTP/1.1" 404 11413
+INFO 2026-05-02 15:48:03,116 middleware 26568 21556 404 GET /favicon.ico - 10.27ms
+WARNING 2026-05-02 15:48:03,118 log 26568 21556 Not Found: /favicon.ico
+WARNING 2026-05-02 15:48:03,119 basehttp 26568 21556 "GET /favicon.ico HTTP/1.1" 404 11316
+INFO 2026-05-02 16:05:33,097 middleware 26568 12512 200 POST /api/auth/upload-photo/ - 33.27ms
+INFO 2026-05-02 16:05:33,097 basehttp 26568 12512 "POST /api/auth/upload-photo/ HTTP/1.1" 200 139
+INFO 2026-05-02 16:05:33,250 middleware 26568 12512 200 GET /api/auth/me/ - 8.10ms
+INFO 2026-05-02 16:05:33,251 basehttp 26568 12512 "GET /api/auth/me/ HTTP/1.1" 200 330
+INFO 2026-05-02 16:05:33,629 middleware 26568 27788 200 GET /media/profile_photos/2026/05/02/scaled_1000789720.png - 1.00ms
+INFO 2026-05-02 16:05:33,631 basehttp 26568 27788 "GET /media/profile_photos/2026/05/02/scaled_1000789720.png HTTP/1.1" 200 40103
+INFO 2026-05-02 16:05:43,222 middleware 26568 28132 200 GET /api/companies/ - 5.28ms
+INFO 2026-05-02 16:05:43,222 basehttp 26568 28132 "GET /api/companies/ HTTP/1.1" 200 197
+INFO 2026-05-02 16:09:56,310 middleware 26568 9972 401 GET /api/menus/api/menus/employee/ - 0.00ms
+WARNING 2026-05-02 16:09:56,311 log 26568 9972 Unauthorized: /api/menus/api/menus/employee/
+WARNING 2026-05-02 16:09:56,312 basehttp 26568 9972 "GET /api/menus/api/menus/employee/ HTTP/1.1" 401 58
+INFO 2026-05-02 16:10:18,008 middleware 26568 9972 401 GET /api/menus/api/menus/employee/ - 0.00ms
+WARNING 2026-05-02 16:10:18,009 log 26568 9972 Unauthorized: /api/menus/api/menus/employee/
+WARNING 2026-05-02 16:10:18,009 basehttp 26568 9972 "GET /api/menus/api/menus/employee/ HTTP/1.1" 401 58
+INFO 2026-05-02 16:10:20,994 middleware 26568 9972 401 GET /api/menus/api/menus/employee/ - 0.00ms
+WARNING 2026-05-02 16:10:20,996 log 26568 9972 Unauthorized: /api/menus/api/menus/employee/
+WARNING 2026-05-02 16:10:20,996 basehttp 26568 9972 "GET /api/menus/api/menus/employee/ HTTP/1.1" 401 58
+INFO 2026-05-02 16:12:08,278 middleware 26568 9972 200 POST /api/auth/login/ - 924.26ms
+INFO 2026-05-02 16:12:08,278 basehttp 26568 9972 "POST /api/auth/login/ HTTP/1.1" 200 641
+INFO 2026-05-02 16:12:57,191 middleware 26568 9972 401 GET /api/menus/api/menus/employee/ - 0.35ms
+WARNING 2026-05-02 16:12:57,191 log 26568 9972 Unauthorized: /api/menus/api/menus/employee/
+WARNING 2026-05-02 16:12:57,192 basehttp 26568 9972 "GET /api/menus/api/menus/employee/ HTTP/1.1" 401 58
+INFO 2026-05-02 16:13:02,403 middleware 26568 9972 200 GET /swagger/ - 1.41ms
+INFO 2026-05-02 16:13:02,404 basehttp 26568 9972 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-05-02 16:13:03,787 middleware 26568 9972 200 GET /swagger/ - 1115.97ms
+INFO 2026-05-02 16:13:03,789 basehttp 26568 9972 "GET /swagger/?format=openapi HTTP/1.1" 200 326267
+INFO 2026-05-02 16:13:52,636 middleware 26568 9972 401 GET /api/menus/api/menus/employee/ - 0.37ms
+WARNING 2026-05-02 16:13:52,636 log 26568 9972 Unauthorized: /api/menus/api/menus/employee/
+WARNING 2026-05-02 16:13:52,637 basehttp 26568 9972 "GET /api/menus/api/menus/employee/ HTTP/1.1" 401 58
+INFO 2026-05-02 16:14:08,964 middleware 26568 9972 401 GET /api/menus/api/menus/employee/ - 0.30ms
+WARNING 2026-05-02 16:14:08,966 log 26568 9972 Unauthorized: /api/menus/api/menus/employee/
+WARNING 2026-05-02 16:14:08,967 basehttp 26568 9972 "GET /api/menus/api/menus/employee/ HTTP/1.1" 401 58
+INFO 2026-05-02 16:15:14,749 middleware 26568 9972 401 GET /api/menus/api/menus/employee/ - 0.00ms
+WARNING 2026-05-02 16:15:14,750 log 26568 9972 Unauthorized: /api/menus/api/menus/employee/
+WARNING 2026-05-02 16:15:14,750 basehttp 26568 9972 "GET /api/menus/api/menus/employee/ HTTP/1.1" 401 58
+INFO 2026-05-02 16:17:16,765 middleware 26568 9972 401 GET /api/menus/api/menus/employee/ - 1.00ms
+WARNING 2026-05-02 16:17:16,766 log 26568 9972 Unauthorized: /api/menus/api/menus/employee/
+WARNING 2026-05-02 16:17:16,766 basehttp 26568 9972 "GET /api/menus/api/menus/employee/ HTTP/1.1" 401 58
+INFO 2026-05-02 16:22:37,575 middleware 26568 28632 200 GET /swagger/ - 0.00ms
+INFO 2026-05-02 16:22:37,575 basehttp 26568 28632 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-05-02 16:22:38,789 middleware 26568 28632 200 GET /swagger/ - 1041.45ms
+INFO 2026-05-02 16:22:38,789 basehttp 26568 28632 "GET /swagger/?format=openapi HTTP/1.1" 200 326267
+INFO 2026-05-02 16:22:45,973 middleware 26568 28632 401 GET /api/menus/api/menus/employee/ - 0.00ms
+WARNING 2026-05-02 16:22:45,973 log 26568 28632 Unauthorized: /api/menus/api/menus/employee/
+WARNING 2026-05-02 16:22:45,974 basehttp 26568 28632 "GET /api/menus/api/menus/employee/ HTTP/1.1" 401 58
+INFO 2026-05-02 16:24:00,892 middleware 26568 28632 401 GET /api/menus/api/menus/employee/ - 0.47ms
+WARNING 2026-05-02 16:24:00,893 log 26568 28632 Unauthorized: /api/menus/api/menus/employee/
+WARNING 2026-05-02 16:24:00,894 basehttp 26568 28632 "GET /api/menus/api/menus/employee/ HTTP/1.1" 401 58
+INFO 2026-05-02 16:24:06,265 middleware 26568 28632 401 GET /api/menus/api/menus/employee/ - 0.00ms
+WARNING 2026-05-02 16:24:06,266 log 26568 28632 Unauthorized: /api/menus/api/menus/employee/
+WARNING 2026-05-02 16:24:06,266 basehttp 26568 28632 "GET /api/menus/api/menus/employee/ HTTP/1.1" 401 58
+INFO 2026-05-02 16:32:30,312 autoreload 27860 23200 Watching for file changes with StatReloader
+INFO 2026-05-02 16:35:28,131 middleware 27860 14568 200 GET /api/purchases/my_requests/ - 44.15ms
+INFO 2026-05-02 16:35:28,134 basehttp 27860 14568 "GET /api/purchases/my_requests/ HTTP/1.1" 200 2
+INFO 2026-05-02 16:35:28,136 middleware 27860 11124 200 GET /api/tickets/lots/ - 50.67ms
+INFO 2026-05-02 16:35:28,138 basehttp 27860 11124 "GET /api/tickets/lots/ HTTP/1.1" 200 52
+INFO 2026-05-02 16:35:28,170 middleware 27860 21320 200 GET /api/orders/my_orders/ - 7.00ms
+INFO 2026-05-02 16:35:28,178 basehttp 27860 21320 "GET /api/orders/my_orders/ HTTP/1.1" 200 2
+ERROR 2026-05-02 16:35:28,199 log 27860 24308 Internal Server Error: /api/tickets/balance/12/
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 188, in get_object
+    raise PermissionError
+PermissionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 190, in get_object
+    raise PermissionError
+PermissionError
+ERROR 2026-05-02 16:35:28,199 log 27860 24236 Internal Server Error: /api/tickets/balance/12/
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 188, in get_object
+    raise PermissionError
+PermissionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 190, in get_object
+    raise PermissionError
+PermissionError
+INFO 2026-05-02 16:35:28,202 middleware 27860 24308 500 GET /api/tickets/balance/12/ - 114.98ms
+INFO 2026-05-02 16:35:28,203 middleware 27860 24236 500 GET /api/tickets/balance/12/ - 121.93ms
+ERROR 2026-05-02 16:35:28,204 basehttp 27860 24308 "GET /api/tickets/balance/12/ HTTP/1.1" 500 24742
+ERROR 2026-05-02 16:35:28,205 basehttp 27860 24236 "GET /api/tickets/balance/12/ HTTP/1.1" 500 24742
+ERROR 2026-05-02 16:35:28,239 log 27860 28424 Internal Server Error: /api/menus/api/menus/employee/
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\db\models\sql\query.py", line 2245, in add_fields
+    join_info = self.setup_joins(
+                ^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1908, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+                                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1813, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'menu_ptr_id' into field. Choices are: additional_photos, created_at, created_by, created_by_id, date, description, id, is_available, is_daily, main_photo, max_orders_per_day, meal_type, order_end_time, order_start_time, orders, price_tickets, provider, provider_id, title, updated_at
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\apps\menus\views.py", line 152, in list
+    daily_menu_ids = DailyMenu.objects.all().values_list('menu_ptr_id', flat=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\db\models\query.py", line 1411, in values_list
+    clone = self._values(*_fields, **expressions)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\db\models\query.py", line 1365, in _values
+    clone.query.set_values(fields)
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\db\models\sql\query.py", line 2584, in set_values
+    self.add_fields(field_names, True)
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\db\models\sql\query.py", line 2286, in add_fields
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'menu_ptr_id' into field. Choices are: additional_photos, created_at, created_by, created_by_id, date, description, id, is_available, is_daily, main_photo, max_orders_per_day, meal_type, order_end_time, order_start_time, orders, price_tickets, provider, provider_id, title, updated_at
+INFO 2026-05-02 16:35:28,242 middleware 27860 28424 500 GET /api/menus/api/menus/employee/ - 82.06ms
+ERROR 2026-05-02 16:35:28,242 basehttp 27860 28424 "GET /api/menus/api/menus/employee/ HTTP/1.1" 500 26548
+INFO 2026-05-02 16:35:28,508 middleware 27860 28424 200 GET /api/orders/my_orders/ - 4.51ms
+INFO 2026-05-02 16:35:28,508 basehttp 27860 28424 "GET /api/orders/my_orders/ HTTP/1.1" 200 2
+INFO 2026-05-02 16:35:43,594 middleware 27860 26496 200 POST /api/auth/upload-photo/ - 36.29ms
+INFO 2026-05-02 16:35:43,594 basehttp 27860 26496 "POST /api/auth/upload-photo/ HTTP/1.1" 200 139
+INFO 2026-05-02 16:35:43,735 middleware 27860 26496 200 GET /api/auth/me/ - 9.66ms
+INFO 2026-05-02 16:35:43,737 basehttp 27860 26496 "GET /api/auth/me/ HTTP/1.1" 200 330
+INFO 2026-05-02 16:35:44,322 middleware 27860 20836 200 GET /media/profile_photos/2026/05/02/scaled_1000789371.png - 9.01ms
+INFO 2026-05-02 16:35:44,326 basehttp 27860 20836 "GET /media/profile_photos/2026/05/02/scaled_1000789371.png HTTP/1.1" 200 21791
+INFO 2026-05-02 16:36:14,231 middleware 27860 28736 200 GET /api/companies/ - 7.62ms
+INFO 2026-05-02 16:36:14,234 basehttp 27860 28736 "GET /api/companies/ HTTP/1.1" 200 197
+INFO 2026-05-02 16:36:44,894 middleware 27860 23460 200 POST /api/auth/login/ - 758.02ms
+INFO 2026-05-02 16:36:44,895 basehttp 27860 23460 "POST /api/auth/login/ HTTP/1.1" 200 641
+ERROR 2026-05-02 16:36:45,813 log 27860 23460 Internal Server Error: /api/tickets/balance/12/
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 188, in get_object
+    raise PermissionError
+PermissionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 190, in get_object
+    raise PermissionError
+PermissionError
+INFO 2026-05-02 16:36:45,815 middleware 27860 23460 500 GET /api/tickets/balance/12/ - 28.03ms
+ERROR 2026-05-02 16:36:45,816 basehttp 27860 23460 "GET /api/tickets/balance/12/ HTTP/1.1" 500 24742
+INFO 2026-05-02 16:36:45,877 middleware 27860 25276 200 GET /api/tickets/lots/ - 17.57ms
+INFO 2026-05-02 16:36:45,879 basehttp 27860 25276 "GET /api/tickets/lots/ HTTP/1.1" 200 52
+INFO 2026-05-02 16:36:45,881 middleware 27860 23876 200 GET /api/orders/my_orders/ - 12.84ms
+INFO 2026-05-02 16:36:45,884 middleware 27860 29436 200 GET /api/purchases/my_requests/ - 17.92ms
+INFO 2026-05-02 16:36:45,887 basehttp 27860 23876 "GET /api/orders/my_orders/ HTTP/1.1" 200 2
+INFO 2026-05-02 16:36:45,891 basehttp 27860 29436 "GET /api/purchases/my_requests/ HTTP/1.1" 200 2
+ERROR 2026-05-02 16:36:45,902 log 27860 26204 Internal Server Error: /api/tickets/balance/12/
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 188, in get_object
+    raise PermissionError
+PermissionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 190, in get_object
+    raise PermissionError
+PermissionError
+INFO 2026-05-02 16:36:45,908 middleware 27860 23460 200 GET /api/orders/my_orders/ - 5.45ms
+INFO 2026-05-02 16:36:45,908 middleware 27860 26204 500 GET /api/tickets/balance/12/ - 51.38ms
+INFO 2026-05-02 16:36:45,910 basehttp 27860 23460 "GET /api/orders/my_orders/ HTTP/1.1" 200 2
+ERROR 2026-05-02 16:36:45,912 basehttp 27860 26204 "GET /api/tickets/balance/12/ HTTP/1.1" 500 24742
+ERROR 2026-05-02 16:36:45,933 log 27860 11740 Internal Server Error: /api/menus/api/menus/employee/
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\db\models\sql\query.py", line 2245, in add_fields
+    join_info = self.setup_joins(
+                ^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1908, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+                                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1813, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'menu_ptr_id' into field. Choices are: additional_photos, created_at, created_by, created_by_id, date, description, id, is_available, is_daily, main_photo, max_orders_per_day, meal_type, order_end_time, order_start_time, orders, price_tickets, provider, provider_id, title, updated_at
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\apps\menus\views.py", line 152, in list
+    daily_menu_ids = DailyMenu.objects.all().values_list('menu_ptr_id', flat=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\db\models\query.py", line 1411, in values_list
+    clone = self._values(*_fields, **expressions)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\db\models\query.py", line 1365, in _values
+    clone.query.set_values(fields)
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\db\models\sql\query.py", line 2584, in set_values
+    self.add_fields(field_names, True)
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\db\models\sql\query.py", line 2286, in add_fields
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'menu_ptr_id' into field. Choices are: additional_photos, created_at, created_by, created_by_id, date, description, id, is_available, is_daily, main_photo, max_orders_per_day, meal_type, order_end_time, order_start_time, orders, price_tickets, provider, provider_id, title, updated_at
+INFO 2026-05-02 16:36:45,935 middleware 27860 11740 500 GET /api/menus/api/menus/employee/ - 71.82ms
+ERROR 2026-05-02 16:36:45,935 basehttp 27860 11740 "GET /api/menus/api/menus/employee/ HTTP/1.1" 500 26548
+INFO 2026-05-02 16:37:00,036 middleware 27860 24224 200 PATCH /api/auth/me/ - 140.74ms
+INFO 2026-05-02 16:37:00,037 basehttp 27860 24224 "PATCH /api/auth/me/ HTTP/1.1" 200 328
+INFO 2026-05-02 16:37:00,162 middleware 27860 24224 200 GET /api/auth/me/ - 6.07ms
+INFO 2026-05-02 16:37:00,164 basehttp 27860 24224 "GET /api/auth/me/ HTTP/1.1" 200 328
+INFO 2026-05-02 16:37:00,574 middleware 27860 24224 200 GET /api/auth/me/ - 5.00ms
+INFO 2026-05-02 16:37:00,575 basehttp 27860 24224 "GET /api/auth/me/ HTTP/1.1" 200 328
+INFO 2026-05-02 16:37:08,674 middleware 27860 24728 200 PATCH /api/auth/me/ - 30.29ms
+INFO 2026-05-02 16:37:08,674 basehttp 27860 24728 "PATCH /api/auth/me/ HTTP/1.1" 200 324
+INFO 2026-05-02 16:37:08,748 middleware 27860 24728 200 GET /api/auth/me/ - 7.02ms
+INFO 2026-05-02 16:37:08,750 basehttp 27860 24728 "GET /api/auth/me/ HTTP/1.1" 200 324
+INFO 2026-05-02 16:37:09,039 middleware 27860 24728 200 GET /api/auth/me/ - 12.82ms
+INFO 2026-05-02 16:37:09,041 basehttp 27860 24728 "GET /api/auth/me/ HTTP/1.1" 200 324
+INFO 2026-05-02 16:37:28,069 middleware 27860 28748 200 PATCH /api/auth/me/ - 26.58ms
+INFO 2026-05-02 16:37:28,070 basehttp 27860 28748 "PATCH /api/auth/me/ HTTP/1.1" 200 330
+INFO 2026-05-02 16:37:28,174 middleware 27860 28748 200 GET /api/auth/me/ - 7.00ms
+INFO 2026-05-02 16:37:28,176 basehttp 27860 28748 "GET /api/auth/me/ HTTP/1.1" 200 330
+INFO 2026-05-02 16:37:28,599 middleware 27860 28748 200 GET /api/auth/me/ - 7.79ms
+INFO 2026-05-02 16:37:28,602 basehttp 27860 28748 "GET /api/auth/me/ HTTP/1.1" 200 330
+INFO 2026-05-02 16:37:54,125 middleware 27860 9116 200 POST /api/auth/upload-photo/ - 56.44ms
+INFO 2026-05-02 16:37:54,126 basehttp 27860 9116 "POST /api/auth/upload-photo/ HTTP/1.1" 200 139
+INFO 2026-05-02 16:37:54,226 middleware 27860 9116 200 GET /api/auth/me/ - 3.58ms
+INFO 2026-05-02 16:37:54,227 basehttp 27860 9116 "GET /api/auth/me/ HTTP/1.1" 200 330
+INFO 2026-05-02 16:37:54,596 middleware 27860 5732 200 GET /media/profile_photos/2026/05/02/scaled_1000783653.jpg - 2.07ms
+INFO 2026-05-02 16:37:54,600 basehttp 27860 5732 "GET /media/profile_photos/2026/05/02/scaled_1000783653.jpg HTTP/1.1" 200 64217
+ERROR 2026-05-02 17:18:04,522 log 27860 27924 Internal Server Error: /api/tickets/balance/12/
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 188, in get_object
+    raise PermissionError
+PermissionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 190, in get_object
+    raise PermissionError
+PermissionError
+INFO 2026-05-02 17:18:04,524 middleware 27860 27924 500 GET /api/tickets/balance/12/ - 28.36ms
+ERROR 2026-05-02 17:18:04,525 basehttp 27860 27924 "GET /api/tickets/balance/12/ HTTP/1.1" 500 24742
+INFO 2026-05-02 17:18:04,697 middleware 27860 27492 200 GET /api/orders/my_orders/ - 33.38ms
+INFO 2026-05-02 17:18:04,704 basehttp 27860 27492 "GET /api/orders/my_orders/ HTTP/1.1" 200 2
+INFO 2026-05-02 17:18:04,705 middleware 27860 676 200 GET /api/purchases/my_requests/ - 37.48ms
+INFO 2026-05-02 17:18:04,707 middleware 27860 2820 200 GET /api/tickets/lots/ - 34.55ms
+INFO 2026-05-02 17:18:04,713 basehttp 27860 676 "GET /api/purchases/my_requests/ HTTP/1.1" 200 2
+INFO 2026-05-02 17:18:04,715 basehttp 27860 2820 "GET /api/tickets/lots/ HTTP/1.1" 200 52
+ERROR 2026-05-02 17:18:04,723 log 27860 26720 Internal Server Error: /api/tickets/balance/12/
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 188, in get_object
+    raise PermissionError
+PermissionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\apps\tickets\views.py", line 190, in get_object
+    raise PermissionError
+PermissionError
+INFO 2026-05-02 17:18:04,725 middleware 27860 26720 500 GET /api/tickets/balance/12/ - 65.72ms
+ERROR 2026-05-02 17:18:04,727 basehttp 27860 26720 "GET /api/tickets/balance/12/ HTTP/1.1" 500 24742
+ERROR 2026-05-02 17:18:04,748 log 27860 22264 Internal Server Error: /api/menus/api/menus/employee/
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\db\models\sql\query.py", line 2245, in add_fields
+    join_info = self.setup_joins(
+                ^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1908, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+                                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1813, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'menu_ptr_id' into field. Choices are: additional_photos, created_at, created_by, created_by_id, date, description, id, is_available, is_daily, main_photo, max_orders_per_day, meal_type, order_end_time, order_start_time, orders, price_tickets, provider, provider_id, title, updated_at
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\apps\menus\views.py", line 152, in list
+    daily_menu_ids = DailyMenu.objects.all().values_list('menu_ptr_id', flat=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\db\models\query.py", line 1411, in values_list
+    clone = self._values(*_fields, **expressions)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\db\models\query.py", line 1365, in _values
+    clone.query.set_values(fields)
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\db\models\sql\query.py", line 2584, in set_values
+    self.add_fields(field_names, True)
+  File "C:\TicketMeal Pro\Ticket_Management\.venv\Lib\site-packages\django\db\models\sql\query.py", line 2286, in add_fields
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'menu_ptr_id' into field. Choices are: additional_photos, created_at, created_by, created_by_id, date, description, id, is_available, is_daily, main_photo, max_orders_per_day, meal_type, order_end_time, order_start_time, orders, price_tickets, provider, provider_id, title, updated_at
+INFO 2026-05-02 17:18:04,750 middleware 27860 22264 500 GET /api/menus/api/menus/employee/ - 73.07ms
+ERROR 2026-05-02 17:18:04,751 basehttp 27860 22264 "GET /api/menus/api/menus/employee/ HTTP/1.1" 500 26548
+INFO 2026-05-02 17:18:05,067 middleware 27860 27924 200 GET /api/orders/my_orders/ - 4.04ms
+INFO 2026-05-02 17:18:05,068 basehttp 27860 27924 "GET /api/orders/my_orders/ HTTP/1.1" 200 2
+INFO 2026-05-02 17:18:12,100 middleware 27860 23048 200 POST /api/auth/upload-photo/ - 43.96ms
+INFO 2026-05-02 17:18:12,103 basehttp 27860 23048 "POST /api/auth/upload-photo/ HTTP/1.1" 200 139
+INFO 2026-05-02 17:18:13,187 middleware 27860 9976 200 GET /media/profile_photos/2026/05/02/scaled_1000789569.png - 1.01ms
+INFO 2026-05-02 17:18:13,188 basehttp 27860 9976 "GET /media/profile_photos/2026/05/02/scaled_1000789569.png HTTP/1.1" 200 3318
+INFO 2026-05-02 17:18:29,520 middleware 27860 14272 200 POST /api/auth/upload-photo/ - 162.85ms
+INFO 2026-05-02 17:18:29,523 basehttp 27860 14272 "POST /api/auth/upload-photo/ HTTP/1.1" 200 139
+INFO 2026-05-02 17:18:30,225 middleware 27860 11936 200 GET /media/profile_photos/2026/05/02/scaled_1000733450.jpg - 1.01ms
+INFO 2026-05-02 17:18:30,227 basehttp 27860 11936 "GET /media/profile_photos/2026/05/02/scaled_1000733450.jpg HTTP/1.1" 200 21966
+INFO 2026-05-02 18:22:25,637 middleware 27860 26776 200 GET / - 196.88ms
+INFO 2026-05-02 18:22:25,668 basehttp 27860 26776 "GET / HTTP/1.1" 200 21850
+INFO 2026-05-02 18:22:34,381 middleware 27860 25496 200 GET / - 0.00ms
+INFO 2026-05-02 18:22:34,392 basehttp 27860 25496 - Broken pipe from ('10.1.1.98', 63380)
+INFO 2026-05-02 18:22:34,413 middleware 27860 9520 404 GET /loginMsg.js - 21.60ms
+WARNING 2026-05-02 18:22:34,413 log 27860 9520 Not Found: /loginMsg.js
+WARNING 2026-05-02 18:22:34,413 basehttp 27860 9520 "GET /loginMsg.js HTTP/1.1" 404 11311
+INFO 2026-05-02 18:22:34,439 middleware 27860 2292 404 GET /cgi/get.cgi - 18.64ms
+WARNING 2026-05-02 18:22:34,439 log 27860 2292 Not Found: /cgi/get.cgi
+WARNING 2026-05-02 18:22:34,439 basehttp 27860 2292 "GET /cgi/get.cgi?cmd=home_login HTTP/1.1" 404 11326
+INFO 2026-05-02 18:26:05,928 middleware 27860 24560 200 GET / - 0.00ms
+INFO 2026-05-02 18:26:05,929 basehttp 27860 24560 "GET / HTTP/1.1" 200 21850
+INFO 2026-05-02 18:26:14,224 middleware 27860 24464 200 GET / - 0.00ms
+INFO 2026-05-02 18:26:14,269 basehttp 27860 24464 - Broken pipe from ('172.29.85.2', 57216)
+INFO 2026-05-02 18:26:14,285 middleware 27860 6732 404 GET /loginMsg.js - 8.21ms
+WARNING 2026-05-02 18:26:14,293 log 27860 6732 Not Found: /loginMsg.js
+WARNING 2026-05-02 18:26:14,297 basehttp 27860 6732 "GET /loginMsg.js HTTP/1.1" 404 11313
+INFO 2026-05-02 18:26:14,318 middleware 27860 18876 404 GET /cgi/get.cgi - 16.38ms
+WARNING 2026-05-02 18:26:14,318 log 27860 18876 Not Found: /cgi/get.cgi
+WARNING 2026-05-02 18:26:14,318 basehttp 27860 18876 "GET /cgi/get.cgi?cmd=home_login HTTP/1.1" 404 11328
+INFO 2026-05-03 18:52:38,544 autoreload 18436 24100 Watching for file changes with StatReloader
+INFO 2026-05-03 18:53:23,017 middleware 18436 33656 200 GET /swagger/ - 57.42ms
+INFO 2026-05-03 18:53:23,018 basehttp 18436 33656 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-05-03 18:53:23,070 basehttp 18436 33656 "GET /static/drf-yasg/style.css HTTP/1.1" 200 1187
+INFO 2026-05-03 18:53:23,083 basehttp 18436 33656 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-03 18:53:23,083 basehttp 18436 12000 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-03 18:53:23,089 basehttp 18436 33692 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-03 18:53:23,098 basehttp 18436 2792 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 177183
+INFO 2026-05-03 18:53:23,107 basehttp 18436 31652 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 252451
+INFO 2026-05-03 18:53:23,130 basehttp 18436 6964 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1510271
+INFO 2026-05-03 18:53:23,349 basehttp 18436 31652 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-03 18:53:24,366 middleware 18436 6964 200 GET /swagger/ - 1036.73ms
+INFO 2026-05-03 18:53:24,368 basehttp 18436 6964 "GET /swagger/?format=openapi HTTP/1.1" 200 326271
+INFO 2026-05-03 18:53:38,106 middleware 18436 6964 401 GET /api/employees/quota/config/ - 1.01ms
+WARNING 2026-05-03 18:53:38,119 log 18436 6964 Unauthorized: /api/employees/quota/config/
+WARNING 2026-05-03 18:53:38,120 basehttp 18436 6964 "GET /api/employees/quota/config/ HTTP/1.1" 401 58
+INFO 2026-05-03 18:53:45,692 middleware 18436 6964 401 GET /api/employees/me/ - 1.12ms
+WARNING 2026-05-03 18:53:45,692 log 18436 6964 Unauthorized: /api/employees/me/
+WARNING 2026-05-03 18:53:45,693 basehttp 18436 6964 "GET /api/employees/me/ HTTP/1.1" 401 58
+INFO 2026-05-03 18:53:48,420 middleware 18436 6964 401 GET /api/employees/me/ - 0.00ms
+WARNING 2026-05-03 18:53:48,421 log 18436 6964 Unauthorized: /api/employees/me/
+WARNING 2026-05-03 18:53:48,422 basehttp 18436 6964 "GET /api/employees/me/ HTTP/1.1" 401 58
+INFO 2026-05-03 18:54:21,335 middleware 18436 6964 200 GET /swagger/ - 2.61ms
+INFO 2026-05-03 18:54:21,336 basehttp 18436 6964 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-05-03 18:54:22,572 middleware 18436 6964 200 GET /swagger/ - 981.80ms
+INFO 2026-05-03 18:54:22,574 basehttp 18436 6964 "GET /swagger/?format=openapi HTTP/1.1" 200 326271
+INFO 2026-05-03 18:55:02,677 middleware 18436 6964 200 POST /api/auth/login/ - 1030.13ms
+INFO 2026-05-03 18:55:02,678 basehttp 18436 6964 "POST /api/auth/login/ HTTP/1.1" 200 641
+INFO 2026-05-03 18:55:24,366 middleware 18436 6964 200 GET /swagger/ - 1.32ms
+INFO 2026-05-03 18:55:24,368 basehttp 18436 6964 "GET /swagger/ HTTP/1.1" 200 1681
+INFO 2026-05-03 18:55:25,617 middleware 18436 6964 200 GET /swagger/ - 1079.16ms
+INFO 2026-05-03 18:55:25,619 basehttp 18436 6964 "GET /swagger/?format=openapi HTTP/1.1" 200 326271
+INFO 2026-05-03 18:56:01,764 middleware 18436 6964 401 GET /api/employees/me/ - 0.37ms
+WARNING 2026-05-03 18:56:01,764 log 18436 6964 Unauthorized: /api/employees/me/
+WARNING 2026-05-03 18:56:01,766 basehttp 18436 6964 "GET /api/employees/me/ HTTP/1.1" 401 58
